@@ -1,0 +1,16 @@
+{
+  "name": "InvestID - 인도네시아 비즈니스 & 부동산 매물",
+  "short_name": "InvestID",
+  "description": "자카르타 · BSD · 가딩 세르퐁 · 발리 — 영업권·루코·직거래 전문 인도네시아 M&A 부동산 플랫폼",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#003c82",
+  "lang": "ko",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

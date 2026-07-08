@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인도네시아 비즈니스 & 부동산 매물 | InvestID</title>
+  <meta name="description" content="자카르타 · BSD · 가딩 세르퐁 · 발리 — 영업권·루코·직거래 전문 인도네시아 M&A 부동산 플랫폼.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ===== PWA ===== -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#003c82">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="InvestID">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="header-top">
+    <a href="#" class="logo">
+      <span class="logo-flag">🇮🇩</span>
+      <div class="logo-text">
+        <h1>InvestID</h1>
+        <span>인도네시아 비즈니스 & 부동산 매물</span>
+      </div>
+    </a>
+    <div class="header-actions">
+      <button class="btn-map-toggle" id="mapToggleBtn">🗺️ 지도 보기</button>
+      <button class="btn-register" onclick="alert('매물 등록 문의: wa.me/6281234560000')">+ 매물 등록</button>
+      <a href="admin.html" class="admin-link">⚙️ 매물 관리</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <h2>🇮🇩 인도네시아 비즈니스 & 부동산 매물</h2>
+  <p>자카르타 · BSD · 가딩 세르퐁 · 발리 — 영업권·루코·직거래 전문</p>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="키워드 검색 (카페, 루코, BSD...)">
+    <select id="locationSelect">
+      <!-- JS로 채워짐 -->
+    </select>
+    <select id="businessTypeSelect">
+      <!-- JS로 채워짐 -->
+    </select>
+    <button class="btn-search" id="searchBtn">🔍 검색</button>
+  </div>
+</section>
+
+<!-- ===== STATS BAR ===== -->
+<div class="stats-bar">
+  <div class="stats-inner" id="statsBar">
+    <div class="stat-item">총 매물 <strong id="statTotal">105</strong>개</div>
+    <div class="stat-item">M&A 매물 <strong id="statMa">45</strong>개</div>
+    <div class="stat-item">부동산 <strong id="statProp">60</strong>개</div>
+    <div class="stat-item">직거래 <strong id="statC2c">10</strong>개</div>
+    <div class="stat-item">대응 지역 <strong id="statRegion">14</strong>개</div>
+  </div>
+</div>
+
+<!-- ===== DIRECT TRADE WARNING BANNER ===== -->
+<div class="direct-warning-banner">
+  ⚠️ 직거래 주의: 계약 시 반드시 공증인(Notaris)을 동반하세요. 사기 위험이 있습니다.
+</div>
+
+<!-- ===== MAP PANEL ===== -->
+<div class="map-panel" id="mapPanel">
+  <div class="map-panel-header">
+    <span>매물 지도</span>
+    <button class="map-panel-close" id="mapPanelClose">✕ 닫기</button>
+  </div>
+  <div id="mainMap"></div>
+  <div class="map-legend">
+    <span class="legend-item"><span class="legend-dot dot-mna"></span>비즈니스 M&A</span>
+    <span class="legend-item"><span class="legend-dot dot-ruko"></span>루코 & 상업</span>
+    <span class="legend-item"><span class="legend-dot dot-properti"></span>부동산</span>
+  </div>
+</div>
+
+<!-- ===== MAIN ===== -->
+<div class="main-wrap">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h3>필터</h3>
+
+    <div class="filter-group">
+      <label>카테고리</label>
+      <div class="cat-buttons">
+        <button class="cat-btn active" data-cat="all">
+          전체 <span class="count">0</span>
+        </button>
+        <button class="cat-btn" data-cat="bisnis">
+          💼 비즈니스 M&A <span class="count">0</span>
+        </button>
+        <button class="cat-btn" data-cat="ruko">
+          🏢 루코 & 상업용 <span class="count">0</span>
+        </button>
+        <button class="cat-btn" data-cat="properti">
+          🏡 부동산 <span class="count">0</span>
+        </button>
+        <button class="cat-btn" data-cat="c2c">
+          🤝 직거래 C2C <span class="count">0</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label>지역 선택</label>
+      <select id="sidebarLocation">
+        <!-- JS로 채워짐 -->
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>가격 범위</label>
+      <input type="range" id="priceRange"
+        min="100000000" max="25000000000" step="100000000" value="25000000000">
+      <div class="price-display" id="priceDisplay">전체</div>
+    </div>
+
+    <div class="filter-group">
+      <button class="btn-reset" id="resetBtn">필터 초기화</button>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content-area">
+    <div class="content-header">
+      <h2>매물 목록</h2>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+        <span class="result-count" id="resultCount">총 <strong>0</strong>개 매물</span>
+        <select class="sort-select" id="sortSelect">
+          <option value="latest">최신순</option>
+          <option value="price-asc">가격 낮은순</option>
+          <option value="price-desc">가격 높은순</option>
+          <option value="revenue">월매출 높은순</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 로딩 스피너 -->
+    <div class="loading-spinner" id="loadingSpinner">
+      <div class="spinner"></div>
+      <p>매물을 불러오는 중...</p>
+    </div>
+
+    <div class="c2c-warning hidden" id="c2cWarning">
+      ⚠️ <div><strong>직거래 주의:</strong> C2C 매물은 중개 수수료가 없지만 사기 위험이 있습니다.
+      반드시 현장 방문 후 계약하고, 공증인(Notaris) 공증을 통해 거래하세요.</div>
+    </div>
+
+    <div class="listings-grid" id="listingsGrid">
+      <!-- JS로 렌더링 -->
+    </div>
+  </main>
+</div>
+
+<!-- ===== FOREIGN INFO SECTION ===== -->
+<section class="foreign-section">
+  <h2>🌏 외국인 투자자 필수 안내</h2>
+  <p class="subtitle">인도네시아 투자 시 반드시 알아야 할 법적 사항 | Panduan Investor Asing</p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="icon">📜</div>
+      <h4>SHM vs HGB 토지권</h4>
+      <p><strong>SHM (Sertifikat Hak Milik)</strong>: 완전 소유권, 인도네시아 내국인만 취득 가능.<br>
+      <strong>HGB (Hak Guna Bangunan)</strong>: 건물 사용권 30년 (연장 가능), 외국인·법인 취득 가능.</p>
+    </div>
+    <div class="info-card">
+      <div class="icon">🏢</div>
+      <h4>PT PMA 법인 설립</h4>
+      <p>외국인 투자회사 (Penanaman Modal Asing). 최소 자본금 약 10억 루피아. 법인 명의로 HGB 부동산 취득 가능. 설립 기간 약 2~3개월.</p>
+    </div>
+    <div class="info-card">
+      <div class="icon">⚖️</div>
+      <h4>공증인(Notaris) / PPAT 필수</h4>
+      <p>모든 부동산 거래는 공증인(Notaris) 및 부동산 양도 관리인(PPAT) 필수. 계약서 공증 없이는 법적 효력 없음. 수수료 약 1~2%.</p>
+    </div>
+    <div class="info-card">
+      <div class="icon">🔒</div>
+      <h4>에스크로 (Rekber)</h4>
+      <p>Rekening Bersama (공동 계좌). 거래 완료 전 자금 중간 보관 서비스. 사기 예방에 필수. 신뢰할 수 있는 은행 또는 공인 플랫폼 이용 권장.</p>
+    </div>
+    <div class="info-card">
+      <div class="icon">📋</div>
+      <h4>Leasehold 장기 임대</h4>
+      <p>발리 등 인기 지역은 장기 임대(Leasehold) 방식으로 외국인 거래 가능. 통상 25~30년 계약, 연장 옵션 포함. 별장·빌라 투자에 많이 사용.</p>
+    </div>
+    <div class="info-card">
+      <div class="icon">💰</div>
+      <h4>세금 안내</h4>
+      <p>부동산 양도세(BPHTB): 거래가의 5%. 소득세(PPh): 매도인 부담 2.5%. 법인 투자 시 별도 세율 적용. 세무사 상담 필수.</p>
+    </div>
+  </div>
+
+  <div class="agent-list">
+    <h4>🏆 추천 대형 부동산 에이전트</h4>
+    <div class="agent-tags">
+      <span class="agent-tag">PropNex Indonesia</span>
+      <span class="agent-tag">ERA Indonesia</span>
+      <span class="agent-tag">Century21 Indonesia</span>
+      <span class="agent-tag">Ray White Indonesia</span>
+      <span class="agent-tag">Coldwell Banker</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="modal-header-text">
+        <h3 id="modalTitle"></h3>
+        <p id="modalLocation"></p>
+      </div>
+      <button class="modal-close" id="modalClose">&times;</button>
+    </div>
+    <div class="modal-tabs">
+      <button class="modal-tab active" data-tab="info">기본정보</button>
+      <button class="modal-tab" data-tab="finance">재무현황</button>
+      <button class="modal-tab" data-tab="foreign">외국인 안내</button>
+      <button class="modal-tab" data-tab="location">위치</button>
+    </div>
+    <div class="modal-body">
+      <!-- 기본정보 탭 -->
+      <div class="tab-content active" id="tab-info">
+        <div class="modal-emoji" id="modalEmoji"></div>
+        <div class="modal-price" id="modalPrice"></div>
+        <div class="modal-stats" id="modalStats"></div>
+        <p class="modal-desc" id="modalDesc"></p>
+        <div class="modal-facilities">
+          <h4>포함 사항 / 특징</h4>
+          <div class="facility-list" id="modalFacilities"></div>
+        </div>
+      </div>
+
+      <!-- 재무현황 탭 -->
+      <div class="tab-content" id="tab-finance">
+        <div class="modal-stats" id="modalFinanceStats"></div>
+      </div>
+
+      <!-- 외국인 안내 탭 -->
+      <div class="tab-content" id="tab-foreign">
+        <div class="foreign-warning" id="foreignWarning"></div>
+        <div class="foreign-info-mini">
+          <p><strong>PT PMA 법인:</strong> 외국인 투자 시 PT PMA 설립 권장. 최소 자본금 약 10억 루피아.</p>
+          <p><strong>공증인(Notaris):</strong> 모든 거래 계약 시 공증인 동반 필수.</p>
+          <p><strong>에스크로(Rekber):</strong> 자금 사기 예방을 위해 공동 계좌 이용 권장.</p>
+        </div>
+      </div>
+
+      <!-- 위치 탭 -->
+      <div class="tab-content" id="tab-location">
+        <div id="modalMap" style="height:280px;border-radius:8px;"></div>
+        <p class="modal-location-text" id="modalLocationText"></p>
+      </div>
+
+      <div class="modal-footer">
+        <a class="btn-wa-large" id="modalWaBtn" href="#" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp 문의
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p><strong>인도네시아 비즈니스·부동산 전문 플랫폼</strong> | 자카르타 현지 법무사 상담 가능</p>
+  <p style="margin-top:6px;">본 플랫폼의 매물 정보는 참고용입니다. 실제 거래 전 반드시 현지 전문가와 상담하세요.</p>
+  <p style="margin-top:4px; font-size:11px; opacity:.6;">Platform Jual Beli Bisnis & Properti untuk Investor Korea · © 2025 InvestID</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/data.js"></script>
+<script src="js/live_data.js"></script>
+<script src="js/db.js"></script>
+<script src="js/app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch((err) => console.warn('SW 등록 실패:', err));
+  });
+}
+</script>
+</body>
+</html>

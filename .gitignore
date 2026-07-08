@@ -1,0 +1,5 @@
+.playwright-mcp/
+scraper/output/
+.omc/
+docs/
+MNA1.txt

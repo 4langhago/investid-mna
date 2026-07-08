@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>매물 관리 어드민 | InvestID</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="icon" href="icons/icon-192.png">
+  <meta name="theme-color" content="#003c82">
+</head>
+<body>
+
+<header class="admin-header">
+  <div class="admin-header-inner">
+    <div class="admin-header-title">🇮🇩 매물 관리 어드민</div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <button class="btn-back" id="logoutBtn" style="display:none;border:none;cursor:pointer;" onclick="handleLogout()">로그아웃</button>
+      <a href="index.html" class="btn-back">← 메인으로</a>
+    </div>
+  </div>
+</header>
+
+<div class="auth-notice" id="authNotice" style="display:none;"></div>
+
+<!-- 관리자 로그인 오버레이 -->
+<div id="loginOverlay" style="display:none;position:fixed;inset:0;z-index:1000;background:#f3f4f6;align-items:center;justify-content:center;">
+  <form id="loginForm" onsubmit="handleLogin(event)" style="background:#fff;padding:36px 32px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.12);width:340px;">
+    <div style="font-size:20px;font-weight:800;margin-bottom:4px;">🔐 관리자 로그인</div>
+    <div style="font-size:13px;color:#6b7280;margin-bottom:20px;">매물 관리 페이지는 관리자 전용입니다.</div>
+    <div class="form-group" style="margin-bottom:12px;">
+      <label>이메일</label>
+      <input type="email" id="loginEmail" class="form-control" autocomplete="username" required>
+    </div>
+    <div class="form-group" style="margin-bottom:16px;">
+      <label>비밀번호</label>
+      <input type="password" id="loginPassword" class="form-control" autocomplete="current-password" required>
+    </div>
+    <div id="loginError" style="display:none;color:#dc2626;font-size:13px;margin-bottom:12px;"></div>
+    <button type="submit" class="btn-submit" id="loginSubmitBtn" style="width:100%;">로그인</button>
+  </form>
+</div>
+
+<div class="admin-layout">
+
+  <aside class="panel-list">
+    <div class="panel-list-header">
+      <h2>등록된 매물</h2>
+      <span class="listing-count" id="listingCount">0개</span>
+    </div>
+    <div class="panel-list-body" id="listingTableBody">
+      <div class="empty-state">
+        <div style="font-size:32px;">📋</div>
+        <p>매물을 불러오는 중...</p>
+      </div>
+    </div>
+  </aside>
+
+  <main class="panel-form">
+    <div class="form-header">
+      <h2 id="formTitle">신규 매물 등록</h2>
+      <button class="btn-new" onclick="resetForm()">+ 신규 등록</button>
+    </div>
+
+    <form id="listingForm" novalidate>
+      <input type="hidden" id="editId">
+
+      <div class="form-card">
+        <div class="form-card-title">📝 기본정보</div>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>매물 제목 <span class="required">*</span></label>
+            <input type="text" id="fTitle" class="form-control" placeholder="예: 스페셜티 카페 - 가딩 세르퐁">
+          </div>
+          <div class="form-group">
+            <label>카테고리 <span class="required">*</span></label>
+            <select id="fCategory" class="form-control" onchange="onCategoryChange()">
+              <option value="">선택하세요</option>
+              <option value="bisnis">비즈니스 M&amp;A</option>
+              <option value="ruko">루코 &amp; 상업부동산</option>
+              <option value="properti">부동산 (빌라·토지·빌딩)</option>
+              <option value="c2c">직거래 C2C</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>거래유형 <span class="required">*</span></label>
+            <select id="fSubtype" class="form-control">
+              <option value="">선택하세요</option>
+              <option value="akuisisi">완전인수 (akuisisi)</option>
+              <option value="investor">지분투자 (investor)</option>
+              <option value="jual">매매 (jual)</option>
+              <option value="sewa">임대 (sewa)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>업종</label>
+            <input type="text" id="fBusinessType" class="form-control" placeholder="예: 카페, 레스토랑, 제조업">
+          </div>
+          <div class="form-group">
+            <label>WhatsApp 번호 <span class="required">*</span></label>
+            <input type="text" id="fWhatsapp" class="form-control" placeholder="+628XXXXXXXXXX">
+          </div>
+          <div class="form-group full" style="display:flex;gap:24px;margin-top:4px;">
+            <label class="checkbox-group">
+              <input type="checkbox" id="fC2c">
+              <label for="fC2c">직거래 매물</label>
+            </label>
+            <label class="checkbox-group">
+              <input type="checkbox" id="fFeatured">
+              <label for="fFeatured">추천 매물</label>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="form-card-title">📍 위치</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>지역 <span class="required">*</span></label>
+            <select id="fLocation" class="form-control" onchange="onLocationChange()">
+              <option value="">선택하세요</option>
+              <option value="Jakarta Selatan">자카르타 남부</option>
+              <option value="Jakarta Utara">자카르타 북부</option>
+              <option value="Jakarta Timur">자카르타 동부</option>
+              <option value="Jakarta Barat">자카르타 서부</option>
+              <option value="Jakarta Pusat">자카르타 중부</option>
+              <option value="Gading Serpong">가딩 세르퐁</option>
+              <option value="BSD">BSD</option>
+              <option value="Depok">데포</option>
+              <option value="Tangerang">탕그랑</option>
+              <option value="Bali">발리</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>상세 주소</label>
+            <input type="text" id="fAddress" class="form-control" placeholder="거리명, 지구 등">
+          </div>
+          <div class="form-group">
+            <label>위도 (lat)</label>
+            <input type="number" id="fLat" class="form-control" placeholder="-6.2000" step="0.0001">
+          </div>
+          <div class="form-group">
+            <label>경도 (lng)</label>
+            <input type="number" id="fLng" class="form-control" placeholder="106.8000" step="0.0001">
+          </div>
+          <div class="form-group full">
+            <div class="map-hint">지도를 클릭하면 위도/경도가 자동으로 입력됩니다.</div>
+            <div id="adminMap"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card section-mna" id="sectionMna">
+        <div class="form-card-title">💼 재무정보 (M&amp;A)</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>인수가격 (IDR)</label>
+            <input type="number" id="fPrice" class="form-control" placeholder="500000000" oninput="updatePriceDisplay('fPrice','dispPrice')">
+            <div class="price-display" id="dispPrice"></div>
+          </div>
+          <div class="form-group">
+            <label>월 매출 (IDR)</label>
+            <input type="number" id="fMonthlyRevenue" class="form-control" placeholder="80000000" oninput="updatePriceDisplay('fMonthlyRevenue','dispRevenue')">
+            <div class="price-display" id="dispRevenue"></div>
+          </div>
+          <div class="form-group">
+            <label>이익률 (%)</label>
+            <input type="number" id="fProfit" class="form-control" placeholder="22" min="0" max="100">
+          </div>
+          <div class="form-group">
+            <label>설립연도</label>
+            <input type="number" id="fEstablished" class="form-control" placeholder="2020" min="1900" max="2030">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card section-property" id="sectionProperty">
+        <div class="form-card-title">🏢 부동산 정보</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>가격 (IDR)</label>
+            <input type="number" id="fPropPrice" class="form-control" placeholder="4500000000" oninput="updatePriceDisplay('fPropPrice','dispPropPrice')">
+            <div class="price-display" id="dispPropPrice"></div>
+          </div>
+          <div class="form-group">
+            <label>면적 (m²)</label>
+            <input type="number" id="fArea" class="form-control" placeholder="120">
+          </div>
+          <div class="form-group">
+            <label>층수</label>
+            <input type="number" id="fFloors" class="form-control" placeholder="3" min="1">
+          </div>
+          <div class="form-group">
+            <label>토지 면적 (m²)</label>
+            <input type="number" id="fLandArea" class="form-control" placeholder="200">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="form-card-title">📄 매물 설명</div>
+        <div class="form-group">
+          <textarea id="fDescription" class="form-control" placeholder="매물에 대한 상세 설명을 입력하세요."></textarea>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn-cancel" onclick="resetForm()">취소</button>
+        <button type="button" class="btn-submit" onclick="saveListing()">저장</button>
+      </div>
+    </form>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/data.js"></script>
+<script src="js/live_data.js"></script>
+<script src="js/db.js"></script>
+<script>
+var adminMap = null;
+var adminMarker = null;
+
+var LOCATION_COORDS = {
+  'Jakarta Selatan': [-6.2615, 106.8106],
+  'Jakarta Utara': [-6.1384, 106.8627],
+  'Jakarta Timur': [-6.2250, 106.9004],
+  'Jakarta Barat': [-6.1674, 106.7637],
+  'Jakarta Pusat': [-6.1805, 106.8283],
+  'Gading Serpong': [-6.2311, 106.6200],
+  'BSD': [-6.3016, 106.6538],
+  'Depok': [-6.4025, 106.7942],
+  'Tangerang': [-6.1784, 106.6319],
+  'Bali': [-8.4095, 115.1889]
+};
+
+var LOCATION_KO_MAP = {
+  'Jakarta Selatan': '자카르타 남부',
+  'Jakarta Utara': '자카르타 북부',
+  'Jakarta Timur': '자카르타 동부',
+  'Jakarta Barat': '자카르타 서부',
+  'Jakarta Pusat': '자카르타 중부',
+  'Gading Serpong': '가딩 세르퐁',
+  'BSD': 'BSD',
+  'Depok': '데포',
+  'Tangerang': '탕그랑',
+  'Bali': '발리'
+};
+
+var BADGE_MAP = {
+  'akuisisi': '완전인수',
+  'investor': '지분투자',
+  'jual': '매매',
+  'sewa': '임대'
+};
+
+function initAdminMap(lat, lng) {
+  var centerLat = lat || -6.2088;
+  var centerLng = lng || 106.8456;
+  if (adminMap) {
+    adminMap.setView([centerLat, centerLng], 12);
+    return;
+  }
+  adminMap = L.map('adminMap').setView([centerLat, centerLng], 11);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap'
+  }).addTo(adminMap);
+  adminMap.on('click', function(e) {
+    var lat = e.latlng.lat;
+    var lng = e.latlng.lng;
+    document.getElementById('fLat').value = lat.toFixed(6);
+    document.getElementById('fLng').value = lng.toFixed(6);
+    placeMarker(lat, lng);
+  });
+}
+
+function placeMarker(lat, lng) {
+  if (adminMarker) {
+    adminMarker.setLatLng([lat, lng]);
+  } else {
+    adminMarker = L.marker([lat, lng]).addTo(adminMap);
+  }
+  adminMap.setView([lat, lng], adminMap.getZoom());
+}
+
+function onLocationChange() {
+  var loc = document.getElementById('fLocation').value;
+  var coords = LOCATION_COORDS[loc];
+  if (coords && adminMap) {
+    adminMap.setView(coords, 13);
+  }
+}
+
+function onCategoryChange() {
+  var cat = document.getElementById('fCategory').value;
+  var mna = document.getElementById('sectionMna');
+  var prop = document.getElementById('sectionProperty');
+  mna.classList.remove('visible');
+  prop.classList.remove('visible');
+  if (cat === 'bisnis') {
+    mna.classList.add('visible');
+  } else if (cat === 'ruko' || cat === 'properti' || cat === 'c2c') {
+    prop.classList.add('visible');
+  }
+}
+
+function updatePriceDisplay(inputId, displayId) {
+  var val = parseFloat(document.getElementById(inputId).value);
+  var el = document.getElementById(displayId);
+  if (!isNaN(val) && val > 0) {
+    el.textContent = 'Rp ' + val.toLocaleString('id-ID');
+  } else {
+    el.textContent = '';
+  }
+}
+
+function escapeHtml(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+function renderListings() {
+  var body = document.getElementById('listingTableBody');
+  var count = document.getElementById('listingCount');
+  if (!LISTINGS || LISTINGS.length === 0) {
+    body.innerHTML = '<div class="empty-state"><div style="font-size:32px;">📋</div><p>등록된 매물이 없습니다.</p></div>';
+    count.textContent = '0개';
+    return;
+  }
+  count.textContent = LISTINGS.length + '개';
+  var html = '';
+  for (var i = 0; i < LISTINGS.length; i++) {
+    var l = LISTINGS[i];
+    var tagClass = l.type === 'bisnis' ? 'tag-bisnis' : (l.c2c ? 'tag-c2c' : 'tag-ruko');
+    var tagLabel = l.type === 'bisnis' ? 'M&A' : (l.c2c ? 'C2C' : (l.type === 'properti' ? '부동산' : '루코'));
+    html += '<div class="listing-row" id="row-' + l.id + '">';
+    html += '<div class="listing-row-info" onclick="editListing(' + l.id + ')">';
+    html += '<div class="listing-row-title">' + escapeHtml(l.title) + '</div>';
+    html += '<div class="listing-row-meta">';
+    html += '<span class="tag ' + tagClass + '">' + tagLabel + '</span>';
+    html += '<span>' + escapeHtml(l.locationKo || l.location) + '</span>';
+    html += '<span>' + escapeHtml(l.price || '-') + '</span>';
+    html += '</div></div>';
+    html += '<div class="listing-row-actions">';
+    html += '<button class="btn-edit" onclick="editListing(' + l.id + ')">수정</button>';
+    html += '<button class="btn-delete" onclick="confirmDelete(' + l.id + ')">삭제</button>';
+    html += '</div></div>';
+  }
+  body.innerHTML = html;
+}
+
+function editListing(id) {
+  var l = null;
+  for (var i = 0; i < LISTINGS.length; i++) {
+    if (LISTINGS[i].id == id) { l = LISTINGS[i]; break; }
+  }
+  if (!l) return;
+
+  document.getElementById('editId').value = l.id;
+  document.getElementById('formTitle').textContent = '매물 수정';
+  document.getElementById('fTitle').value = l.title || '';
+  document.getElementById('fCategory').value = l.type || '';
+  document.getElementById('fSubtype').value = l.subtype || '';
+  document.getElementById('fBusinessType').value = l.category || '';
+  document.getElementById('fWhatsapp').value = l.whatsapp || '';
+  document.getElementById('fC2c').checked = !!l.c2c;
+  document.getElementById('fFeatured').checked = !!l.featured;
+  document.getElementById('fLocation').value = l.location || '';
+  document.getElementById('fAddress').value = l.address || '';
+  document.getElementById('fDescription').value = l.description || '';
+
+  if (l.lat && l.lng) {
+    document.getElementById('fLat').value = l.lat;
+    document.getElementById('fLng').value = l.lng;
+    if (adminMap) {
+      adminMap.setView([l.lat, l.lng], 14);
+      placeMarker(l.lat, l.lng);
+    }
+  }
+
+  document.getElementById('fPrice').value = l.priceNum || '';
+  document.getElementById('fMonthlyRevenue').value = l.monthlyRevenueNum || '';
+  document.getElementById('fProfit').value = l.profit ? parseFloat(l.profit) : '';
+  document.getElementById('fEstablished').value = l.established || '';
+  if (l.priceNum) updatePriceDisplay('fPrice', 'dispPrice');
+  if (l.monthlyRevenueNum) updatePriceDisplay('fMonthlyRevenue', 'dispRevenue');
+
+  document.getElementById('fPropPrice').value = l.priceNum || '';
+  document.getElementById('fArea').value = l.area || '';
+  document.getElementById('fFloors').value = l.floors || '';
+  document.getElementById('fLandArea').value = l.landArea || '';
+  if (l.priceNum) updatePriceDisplay('fPropPrice', 'dispPropPrice');
+
+  onCategoryChange();
+
+  var rows = document.querySelectorAll('.listing-row');
+  for (var i = 0; i < rows.length; i++) rows[i].classList.remove('active');
+  var row = document.getElementById('row-' + id);
+  if (row) row.classList.add('active');
+
+  document.querySelector('.panel-form').scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+async function confirmDelete(id) {
+  var l = null;
+  for (var i = 0; i < LISTINGS.length; i++) {
+    if (LISTINGS[i].id == id) { l = LISTINGS[i]; break; }
+  }
+  if (!l) return;
+  if (!confirm('"' + l.title + '" 매물을 삭제하시겠습니까?')) return;
+
+  try {
+    await deleteListing(id);
+    renderListings();
+    resetForm();
+    showToast('매물이 삭제되었습니다.', 'success');
+  } catch (e) {
+    showToast('삭제 실패: ' + e.message, 'error');
+  }
+}
+
+function validateForm() {
+  var valid = true;
+  var required = ['fTitle', 'fCategory', 'fSubtype', 'fWhatsapp', 'fLocation'];
+  for (var i = 0; i < required.length; i++) {
+    var el = document.getElementById(required[i]);
+    if (!el.value.trim()) {
+      el.classList.add('error');
+      valid = false;
+    } else {
+      el.classList.remove('error');
+    }
+  }
+  return valid;
+}
+
+async function saveListing() {
+  if (!validateForm()) {
+    showToast('필수 항목을 모두 입력해주세요.', 'error');
+    return;
+  }
+
+  var id = document.getElementById('editId').value;
+  var cat = document.getElementById('fCategory').value;
+  var priceVal = cat === 'bisnis'
+    ? parseFloat(document.getElementById('fPrice').value) || null
+    : parseFloat(document.getElementById('fPropPrice').value) || null;
+
+  var priceStr = null;
+  if (priceVal) {
+    if (priceVal >= 1000000000) {
+      priceStr = 'Rp ' + (priceVal / 1000000000).toFixed(1) + ' M';
+    } else {
+      priceStr = 'Rp ' + (priceVal / 1000000).toFixed(0) + ' jt';
+    }
+  }
+
+  var locVal = document.getElementById('fLocation').value;
+  var data = {
+    title: document.getElementById('fTitle').value.trim(),
+    type: cat,
+    subtype: document.getElementById('fSubtype').value,
+    category: document.getElementById('fBusinessType').value.trim(),
+    whatsapp: document.getElementById('fWhatsapp').value.trim(),
+    c2c: document.getElementById('fC2c').checked,
+    featured: document.getElementById('fFeatured').checked,
+    location: locVal,
+    locationKo: LOCATION_KO_MAP[locVal] || locVal,
+    address: document.getElementById('fAddress').value.trim(),
+    lat: parseFloat(document.getElementById('fLat').value) || null,
+    lng: parseFloat(document.getElementById('fLng').value) || null,
+    description: document.getElementById('fDescription').value.trim(),
+    priceNum: priceVal,
+    price: priceStr,
+    badge: BADGE_MAP[document.getElementById('fSubtype').value] || '',
+    images: '🏷️',
+    facilities: []
+  };
+
+  if (cat === 'bisnis') {
+    var rev = parseFloat(document.getElementById('fMonthlyRevenue').value) || null;
+    data.monthlyRevenueNum = rev;
+    data.monthlyRevenue = rev ? 'Rp ' + (rev / 1000000).toFixed(0) + ' jt' : null;
+    data.profit = document.getElementById('fProfit').value ? document.getElementById('fProfit').value + '%' : null;
+    data.established = parseInt(document.getElementById('fEstablished').value) || null;
+  } else {
+    data.area = parseFloat(document.getElementById('fArea').value) || null;
+    data.floors = parseInt(document.getElementById('fFloors').value) || null;
+    data.landArea = parseFloat(document.getElementById('fLandArea').value) || null;
+  }
+
+  // 수정 시 이모지/시설 등 기존 필드 보존
+  if (id) {
+    delete data.images;
+    delete data.facilities;
+  }
+
+  try {
+    if (id) {
+      await updateListing(id, data);
+      showToast('매물이 수정되었습니다.', 'success');
+    } else {
+      await insertListing(data);
+      showToast('매물이 등록되었습니다.', 'success');
+    }
+    renderListings();
+    resetForm();
+  } catch (e) {
+    showToast('저장 실패: ' + e.message, 'error');
+  }
+}
+
+function resetForm() {
+  document.getElementById('listingForm').reset();
+  document.getElementById('editId').value = '';
+  document.getElementById('formTitle').textContent = '신규 매물 등록';
+  document.getElementById('sectionMna').classList.remove('visible');
+  document.getElementById('sectionProperty').classList.remove('visible');
+  var rows = document.querySelectorAll('.listing-row');
+  for (var i = 0; i < rows.length; i++) rows[i].classList.remove('active');
+  ['dispPrice', 'dispRevenue', 'dispPropPrice'].forEach(function(id) {
+    document.getElementById(id).textContent = '';
+  });
+  var errEls = document.querySelectorAll('.form-control.error');
+  for (var i = 0; i < errEls.length; i++) errEls[i].classList.remove('error');
+  if (adminMarker && adminMap) {
+    adminMap.removeLayer(adminMarker);
+    adminMarker = null;
+  }
+}
+
+function showToast(msg, type) {
+  var t = document.getElementById('toast');
+  var prefix = (type === 'success') ? '✅ ' : '❌ ';
+  t.textContent = prefix + msg;
+  t.className = 'toast ' + type + ' show';
+  setTimeout(function() { t.classList.remove('show'); }, 3000);
+}
+
+// ── 관리자 인증 게이트 ──
+function showLoginOverlay(show) {
+  document.getElementById('loginOverlay').style.display = show ? 'flex' : 'none';
+  document.getElementById('logoutBtn').style.display = show ? 'none' : '';
+}
+
+async function initAuth() {
+  var notice = document.getElementById('authNotice');
+  if (!isSupabaseConfigured()) {
+    // 로컬 개발 모드: DB 연동 없음, 변경사항은 이 브라우저(localStorage)에만 저장
+    notice.textContent = 'ℹ️ 로컬 개발 모드 — Supabase 미설정으로 로그인 없이 동작하며, 변경사항은 이 브라우저에만 저장됩니다.';
+    notice.style.display = '';
+    return;
+  }
+  var session = await getAdminSession();
+  showLoginOverlay(!session);
+}
+
+async function handleLogin(e) {
+  e.preventDefault();
+  var btn = document.getElementById('loginSubmitBtn');
+  var errEl = document.getElementById('loginError');
+  errEl.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = '로그인 중...';
+  try {
+    await signInAdmin(
+      document.getElementById('loginEmail').value.trim(),
+      document.getElementById('loginPassword').value
+    );
+    showLoginOverlay(false);
+    renderListings();
+    showToast('로그인되었습니다.', 'success');
+  } catch (err) {
+    errEl.textContent = '로그인 실패: 이메일 또는 비밀번호를 확인해주세요.';
+    errEl.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '로그인';
+  }
+}
+
+async function handleLogout() {
+  await signOutAdmin();
+  showLoginOverlay(true);
+  document.getElementById('loginPassword').value = '';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  initAdminMap();
+  renderListings();
+  initAuth();
+});
+</script>
+</body>
+</html>
