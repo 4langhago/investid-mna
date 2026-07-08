@@ -1,0 +1,40 @@
+name: 매물 자동 수집
+
+on:
+  schedule:
+    # 매일 00:00 UTC = 한국 09:00 / 자카르타 07:00
+    - cron: "0 0 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 매물 수집
+        run: python scraper/scrape_99co.py
+
+      - name: 변경 사항 커밋 & 푸시
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet js/live_data.js; then
+            echo "변경 사항 없음 - 커밋 생략"
+            exit 0
+          fi
+          git add js/live_data.js
+          git commit -m "chore: auto-update listings ($(date -u +%Y-%m-%d))"
+          git push
