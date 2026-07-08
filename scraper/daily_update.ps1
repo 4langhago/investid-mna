@@ -25,7 +25,7 @@ if ([string]::IsNullOrWhiteSpace($status)) {
 }
 
 git add js/live_data.js 2>&1 | ForEach-Object { Log $_ }
-git commit -m "chore: 매물 데이터 자동 갱신 ($(Get-Date -Format 'yyyy-MM-dd'))" 2>&1 | ForEach-Object { Log $_ }
+git commit -m "chore: auto-update listings ($(Get-Date -Format 'yyyy-MM-dd'))" 2>&1 | ForEach-Object { Log $_ }
 git push origin main 2>&1 | ForEach-Object { Log $_ }
 
 if ($LASTEXITCODE -eq 0) {
