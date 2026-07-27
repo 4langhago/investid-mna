@@ -44,6 +44,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 ROOT = Path(__file__).resolve().parent.parent
 LIVE_JS = ROOT / "js" / "live_data.js"
+BUSINESS_JS = ROOT / "js" / "business_data.js"
 EXPORT_JS = Path(__file__).resolve().parent / "export_listings.js"
 STATE_FILE = Path(__file__).resolve().parent / "telegram_state.json"
 
@@ -59,6 +60,10 @@ MAX_DATA_AGE_HOURS = 48
 # 이런 매물이 매번 추천 최상단을 차지한다.
 MIN_PLAUSIBLE_PRICE = 100_000_000        # 루코 최저가 Rp 100 jt
 MIN_PLAUSIBLE_PRICE_PER_M2 = 1_000_000   # m²당 Rp 1 jt
+# 사업체 인수는 소규모(세탁소·카페 등)가 많아 하한을 따로 둔다.
+MIN_BUSINESS_PRICE = 10_000_000          # Rp 10 jt
+
+BUSINESS_SLOTS = 3   # 한 번에 보낼 사업체 인수 매물 수(나머지는 부동산으로 채움)
 
 # 순번 플레이스홀더 번호(+6281234567001 ~ +6281234567105). 실제 매도인 연락처가 아님.
 PLACEHOLDER_WA = re.compile(r"^\+?6281234567\d{3}$")
@@ -79,6 +84,15 @@ def load_listings():
     """99.co 실수집 매물과 그 수집 시각을 함께 반환."""
     listings = export_var(LIVE_JS, "LIVE_LISTINGS")
     updated_at = export_var(LIVE_JS, "LIVE_LISTINGS_UPDATED_AT")
+    return listings, updated_at
+
+
+def load_business_listings():
+    """사업체 인수 매물(scrape_business.py 수집). 파일이 없으면 빈 목록."""
+    if not BUSINESS_JS.exists():
+        return [], None
+    listings = export_var(BUSINESS_JS, "BUSINESS_LISTINGS")
+    updated_at = export_var(BUSINESS_JS, "BUSINESS_LISTINGS_UPDATED_AT")
     return listings, updated_at
 
 
@@ -116,8 +130,9 @@ def url_is_live(url):
         return False, f"접속 실패({type(e).__name__})"
 
 
-def validate(item, check_url=False):
+def validate(item, check_url=False, min_price=None):
     """실재성 검증. 통과하면 (True, ''), 아니면 (False, 탈락사유)."""
+    min_price = MIN_PLAUSIBLE_PRICE if min_price is None else min_price
     for field in REQUIRED_FIELDS:
         v = item.get(field)
         if v is None or v == "":
@@ -128,7 +143,7 @@ def validate(item, check_url=False):
         return False, f"sourceUrl 형식 오류: {source_url}"
 
     price_num = price_value(item)
-    if price_num < MIN_PLAUSIBLE_PRICE:
+    if price_num < min_price:
         return False, f"표시가 비정상({item.get('price')}) - 단위 오기재로 보임"
     area = item.get("area")
     if area and price_num / float(area) < MIN_PLAUSIBLE_PRICE_PER_M2:
@@ -154,10 +169,10 @@ def price_value(item):
         return 0.0
 
 
-def select_candidates(listings, check_url=False):
+def select_candidates(listings, check_url=False, min_price=None):
     valid, rejected = [], 0
     for x in listings:
-        ok, reason = validate(x, check_url=check_url)
+        ok, reason = validate(x, check_url=check_url, min_price=min_price)
         if ok:
             valid.append(x)
         else:
@@ -180,11 +195,11 @@ def save_state(state):
     STATE_FILE.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def pick_batch(candidates, cursor):
+def pick_batch(candidates, cursor, size=BATCH_SIZE):
     n = len(candidates)
-    if n == 0:
+    if n == 0 or size <= 0:
         return [], cursor
-    picked = [candidates[(cursor + i) % n] for i in range(min(BATCH_SIZE, n))]
+    picked = [candidates[(cursor + i) % n] for i in range(min(size, n))]
     next_cursor = (cursor + len(picked)) % n
     return picked, next_cursor
 
@@ -197,6 +212,10 @@ def md_safe(text):
 def format_item(item, rank):
     wa = str(item.get("whatsapp") or "").replace("+", "").replace(" ", "")
     desc = md_safe(item.get("description")).strip()
+    # 설명 앞머리의 "Lokasi: <주소>"는 바로 위 📍 줄과 중복이므로 잘라낸다.
+    desc = re.sub(r"^(?:Lokasi|Alamat)\s*[:\-]\s*", "", desc, flags=re.I)
+    if item.get("address") and desc.startswith(item["address"]):
+        desc = desc[len(item["address"]):].lstrip(" .,-")
     if len(desc) > 150:
         desc = desc[:147] + "..."
 
@@ -206,11 +225,14 @@ def format_item(item, rank):
     if item.get("floors"):
         spec.append(f"{item['floors']}층")
 
+    where = md_safe(item.get("address") or item.get("locationKo") or item.get("location"))
     lines = [
         f"{rank}. *{md_safe(item['title'])}*",
-        f"   📍 {md_safe(item.get('locationKo') or item.get('location'))}",
+        f"   📍 {where}",
         f"   💰 {md_safe(item['price'])}" + (f" · {' · '.join(spec)}" if spec else ""),
     ]
+    if item.get("postedAt"):
+        lines.append(f"   🗓 게시일 {item['postedAt'][:10]}")
     if desc:
         lines.append(f"   {desc}")
     if wa:
@@ -219,13 +241,31 @@ def format_item(item, rank):
     return "\n".join(lines)
 
 
-def build_message(picked, updated_at):
+def build_message(business, property_items, updated_at):
     today = datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d")
-    header = (f"*오늘의 매물 추천* ({today})\n"
-              f"99.co 실시간 수집 매물 {len(picked)}건 · 수집시각 {updated_at}\n"
-              f"_가격 순으로 순환 추천합니다. 계약 전 원본 링크와 현장 실사로 직접 확인하세요._\n")
-    body = "\n\n".join(format_item(x, i + 1) for i, x in enumerate(picked))
-    return header + "\n" + body
+    total = len(business) + len(property_items)
+    parts = [f"*오늘의 매물 추천* ({today})\n"
+             f"실수집 매물 {total}건 · 부동산 수집시각 {updated_at}\n"
+             f"_계약 전 원본 링크와 현장 실사로 직접 확인하세요._"]
+
+    rank = 0
+    if business:
+        parts.append(f"*■ 사업체 인수 (운영 중)* {len(business)}건")
+        section = []
+        for x in business:
+            rank += 1
+            section.append(format_item(x, rank))
+        parts.append("\n\n".join(section))
+
+    if property_items:
+        parts.append(f"*■ 부동산/루코 매매* {len(property_items)}건")
+        section = []
+        for x in property_items:
+            rank += 1
+            section.append(format_item(x, rank))
+        parts.append("\n\n".join(section))
+
+    return "\n\n".join(parts)
 
 
 def send_telegram(message):
@@ -265,16 +305,25 @@ def main():
         sys.exit(1)
 
     candidates = select_candidates(listings, check_url=check_url)
-    print(f"[검증] 수집 {len(listings)}건 중 {len(candidates)}건 검증 통과")
+    print(f"[검증] 부동산 {len(listings)}건 중 {len(candidates)}건 검증 통과")
 
-    if not candidates:
+    biz_all, biz_updated = load_business_listings()
+    biz_candidates = select_candidates(biz_all, check_url=check_url,
+                                       min_price=MIN_BUSINESS_PRICE) if biz_all else []
+    print(f"[검증] 사업체 인수 {len(biz_all)}건 중 {len(biz_candidates)}건 검증 통과"
+          + (f" (수집시각 {biz_updated})" if biz_updated else " (수집 파일 없음)"))
+
+    if not candidates and not biz_candidates:
         print("!! 실재가 확인된 매물이 0건 - 발송하지 않고 종료")
         print("!! 확인되지 않은 매물을 추천으로 내보내지 않는 것이 의도된 동작임")
         sys.exit(1)
 
     state = load_state()
-    picked, next_cursor = pick_batch(candidates, state.get("cursor", 0))
-    message = build_message(picked, updated_at)
+    biz_picked, biz_next = pick_batch(biz_candidates, state.get("bizCursor", 0),
+                                      size=min(BUSINESS_SLOTS, len(biz_candidates)))
+    picked, next_cursor = pick_batch(candidates, state.get("cursor", 0),
+                                     size=BATCH_SIZE - len(biz_picked))
+    message = build_message(biz_picked, picked, updated_at)
 
     print("----- 발송 내용 미리보기 -----")
     print(message)
@@ -286,6 +335,7 @@ def main():
 
     send_telegram(message)
     state["cursor"] = next_cursor
+    state["bizCursor"] = biz_next
     state["lastRunAt"] = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
     state["lastSentIds"] = [x["id"] for x in picked]
     save_state(state)

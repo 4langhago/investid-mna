@@ -24,18 +24,23 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: 매물 수집
+      - name: 부동산 매물 수집 (99.co)
         run: python scraper/scrape_99co.py
+
+      # 실패해도 부동산 발송은 계속되어야 하므로 워크플로를 중단시키지 않는다.
+      - name: 사업체 인수 매물 수집 (tempat-usaha.com)
+        continue-on-error: true
+        run: python scraper/scrape_business.py
 
       - name: 변경 사항 커밋 & 푸시
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet js/live_data.js; then
+          if git diff --quiet js/live_data.js js/business_data.js; then
             echo "변경 사항 없음 - 커밋 생략"
             exit 0
           fi
-          git add js/live_data.js
+          git add js/live_data.js js/business_data.js
           git commit -m "chore: auto-update listings ($(date -u +%Y-%m-%d))"
           git push
 
