@@ -1,22 +1,32 @@
 # -*- coding: utf-8 -*-
 """
-'완전인수(akuisisi)' 매물 중 실제 운영 가능한 사업체만 골라 매일 5건을 텔레그램으로 추천.
+99.co에서 실제로 수집된 매물만 골라 매일 5건을 텔레그램으로 추천.
 
-- 대상: js/data.js LISTINGS 중 subtype === "akuisisi" && source 필드 존재(A그룹, 샘플 제외)
-- 검증: 아래 4단계를 모두 통과한 매물만 발송 — 사람 개입 없음
-    1) 필수 필드(연락처/가격/월매출/수익률/설명) 누락 없음
-    2) sourceUrl 보유 (원본 역추적 가능해야 함)
-    3) whatsapp 번호가 플레이스홀더 패턴(+62812345670XX)이 아님
-    4) sourceUrl 이 실제로 살아있음 (HTTP 200)
-  ⚠️ 2026-07-27 기준 js/data.js 105건은 (2)(3)에서 전량 탈락한다.
-     실재가 확인되지 않는 매물을 추천으로 내보내는 것을 막기 위한 의도된 동작이다.
-- 선정: 수익률(profit) 내림차순 정렬 후, 이전 발송 위치(scraper/output/telegram_state.json)
+- 대상: js/live_data.js 의 LIVE_LISTINGS (scrape_99co.py 가 99.co에서 직접 수집)
+  ※ js/data.js 는 사용하지 않는다. 해당 105건은 whatsapp 번호가 순번 플레이스홀더
+    (+6281234567001~105)이고 sourceUrl 이 없어 실재를 확인할 수 없는 데이터다.
+    2026-07-27 이전까지 이 파일이 발송 소스였고, 그래서 발송을 중단했었다.
+
+- 검증: 아래를 모두 통과한 매물만 발송 — 사람 개입 없음
+    1) 데이터 신선도: LIVE_LISTINGS_UPDATED_AT 이 MAX_DATA_AGE_HOURS 이내
+       (같은 워크플로에서 scrape_99co.py 가 방금 99.co 목록에서 실제로 가져온 것이므로,
+        신선도 자체가 '해당 시점에 게시 중이었다'는 증거다)
+    2) 필수 필드(제목/지역/가격/면적) 누락 없음
+    3) sourceUrl 보유 — 수신자가 원본을 직접 확인할 수 있어야 함
+    4) whatsapp 이 플레이스홀더 패턴이 아님 (값이 없으면 원본 링크로 안내)
+  --verify-urls 를 주면 sourceUrl HTTP 확인을 추가로 수행한다. 다만 99.co는 상세
+  페이지 봇 요청에 404를 주므로 기본값으로는 켜지 않는다 (url_is_live docstring 참고).
+
+- 선정: 가격(priceNum) 오름차순 정렬 후, 이전 발송 위치(scraper/telegram_state.json)
         다음부터 5건씩 순환(로테이션). 끝까지 가면 처음부터 다시 순환.
+  ※ 수익률 정렬을 쓰지 않는 이유: 실수집 매물에는 월매출·수익률 데이터가 없다.
+    없는 수치를 추천 근거로 만들어내지 않는다.
 - 전송: Telegram Bot API (TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 환경변수 필요)
 
 사용법:
-  python scraper/telegram_recommend.py            # 실제 전송
+  python scraper/telegram_recommend.py             # 실제 전송
   python scraper/telegram_recommend.py --dry-run   # 전송 없이 선정 결과만 출력
+  python scraper/telegram_recommend.py --verify-urls  # 원본 URL 생존까지 확인
 """
 import json
 import os
@@ -33,12 +43,22 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA_JS = ROOT / "js" / "data.js"
+LIVE_JS = ROOT / "js" / "live_data.js"
 EXPORT_JS = Path(__file__).resolve().parent / "export_listings.js"
 STATE_FILE = Path(__file__).resolve().parent / "telegram_state.json"
 
-REQUIRED_FIELDS = ["title", "location", "price", "priceNum", "monthlyRevenue", "profit", "whatsapp"]
+# 실수집 매물에 반드시 있어야 하는 값. 월매출/수익률은 99.co가 제공하지 않으므로 넣지 않는다.
+REQUIRED_FIELDS = ["title", "location", "price", "priceNum", "sourceUrl"]
 BATCH_SIZE = 5
+# 이 시간을 넘긴 데이터는 '현재 게시 중'이라고 말할 수 없으므로 발송하지 않는다.
+MAX_DATA_AGE_HOURS = 48
+
+# 가격 타당성 하한. 99.co에는 매도인이 단위를 잘못 입력한 매물이 섞여 있다
+# (예: 건물 130m² 루코가 "Rp 2,3 Juta" = 약 20만원). 실재하는 매물이지만 표시가가
+# 틀렸으므로 추천에서 제외한다. 가격 오름차순 정렬 특성상 걸러내지 않으면
+# 이런 매물이 매번 추천 최상단을 차지한다.
+MIN_PLAUSIBLE_PRICE = 100_000_000        # 루코 최저가 Rp 100 jt
+MIN_PLAUSIBLE_PRICE_PER_M2 = 1_000_000   # m²당 Rp 1 jt
 
 # 순번 플레이스홀더 번호(+6281234567001 ~ +6281234567105). 실제 매도인 연락처가 아님.
 PLACEHOLDER_WA = re.compile(r"^\+?6281234567\d{3}$")
@@ -47,12 +67,30 @@ USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
 URL_CHECK_TIMEOUT = 15
 
 
-def load_listings():
+def export_var(js_file, var_name):
     out = subprocess.run(
-        ["node", str(EXPORT_JS), str(DATA_JS), "LISTINGS"],
+        ["node", str(EXPORT_JS), str(js_file), var_name],
         capture_output=True, check=True,
     )
     return json.loads(out.stdout.decode("utf-8"))
+
+
+def load_listings():
+    """99.co 실수집 매물과 그 수집 시각을 함께 반환."""
+    listings = export_var(LIVE_JS, "LIVE_LISTINGS")
+    updated_at = export_var(LIVE_JS, "LIVE_LISTINGS_UPDATED_AT")
+    return listings, updated_at
+
+
+def data_age_hours(updated_at):
+    """수집 시각으로부터 경과 시간(시간 단위). 파싱 불가면 None."""
+    try:
+        ts = datetime.fromisoformat(updated_at)
+    except (TypeError, ValueError):
+        return None
+    if ts.tzinfo is None:
+        ts = ts.replace(tzinfo=timezone.utc)
+    return (datetime.now(timezone.utc) - ts).total_seconds() / 3600
 
 
 def url_is_live(url):
@@ -78,19 +116,27 @@ def url_is_live(url):
         return False, f"접속 실패({type(e).__name__})"
 
 
-def validate(item, check_url=True):
+def validate(item, check_url=False):
     """실재성 검증. 통과하면 (True, ''), 아니면 (False, 탈락사유)."""
     for field in REQUIRED_FIELDS:
         v = item.get(field)
         if v is None or v == "":
             return False, f"필수 필드 누락: {field}"
 
-    source_url = (item.get("sourceUrl") or "").strip()
-    if not source_url:
-        return False, "sourceUrl 없음 - 원본 역추적 불가"
+    source_url = str(item.get("sourceUrl")).strip()
+    if not source_url.startswith("http"):
+        return False, f"sourceUrl 형식 오류: {source_url}"
 
-    wa = str(item.get("whatsapp", "")).replace(" ", "").replace("-", "")
-    if PLACEHOLDER_WA.match(wa):
+    price_num = price_value(item)
+    if price_num < MIN_PLAUSIBLE_PRICE:
+        return False, f"표시가 비정상({item.get('price')}) - 단위 오기재로 보임"
+    area = item.get("area")
+    if area and price_num / float(area) < MIN_PLAUSIBLE_PRICE_PER_M2:
+        return False, (f"m²당 단가 비정상({item.get('price')} / {area}m²) - 단위 오기재로 보임")
+
+    # 연락처는 없어도 된다(원본 링크로 안내). 단, 있다면 진짜여야 한다.
+    wa = str(item.get("whatsapp") or "").replace(" ", "").replace("-", "")
+    if wa and PLACEHOLDER_WA.match(wa):
         return False, f"연락처가 플레이스홀더 패턴({wa})"
 
     if check_url:
@@ -101,23 +147,25 @@ def validate(item, check_url=True):
     return True, ""
 
 
-def profit_value(item):
+def price_value(item):
     try:
-        return float(str(item.get("profit", "0")).replace("%", "").strip())
-    except ValueError:
+        return float(item.get("priceNum") or 0)
+    except (TypeError, ValueError):
         return 0.0
 
 
-def select_candidates(listings, check_url=True):
-    akuisisi = [x for x in listings if x.get("subtype") == "akuisisi" and x.get("source")]
-    valid = []
-    for x in akuisisi:
+def select_candidates(listings, check_url=False):
+    valid, rejected = [], 0
+    for x in listings:
         ok, reason = validate(x, check_url=check_url)
         if ok:
             valid.append(x)
         else:
+            rejected += 1
             print(f"  !! 검증 실패로 제외: id={x.get('id')} {x.get('title')} - {reason}")
-    valid.sort(key=profit_value, reverse=True)
+    if rejected:
+        print(f"  -- 검증 탈락 합계: {rejected}건")
+    valid.sort(key=price_value)
     return valid
 
 
@@ -141,30 +189,41 @@ def pick_batch(candidates, cursor):
     return picked, next_cursor
 
 
+def md_safe(text):
+    """텔레그램 Markdown 파싱이 깨지지 않도록 서식 문자를 제거."""
+    return re.sub(r"[*_`\[\]]", "", str(text or ""))
+
+
 def format_item(item, rank):
-    wa = item.get("whatsapp", "")
-    wa_digits = wa.replace("+", "").replace(" ", "")
-    wa_link = f"https://wa.me/{wa_digits}" if wa_digits else ""
-    desc = (item.get("description") or "").strip()
+    wa = str(item.get("whatsapp") or "").replace("+", "").replace(" ", "")
+    desc = md_safe(item.get("description")).strip()
     if len(desc) > 150:
         desc = desc[:147] + "..."
+
+    spec = []
+    if item.get("area"):
+        spec.append(f"건물 {item['area']:g}m²")
+    if item.get("floors"):
+        spec.append(f"{item['floors']}층")
+
     lines = [
-        f"{rank}. *{item['title']}*",
-        f"   📍 {item.get('locationKo') or item.get('location')}",
-        f"   💰 인수가 {item['price']} · 월매출 {item['monthlyRevenue']} · 수익률 {item['profit']}",
+        f"{rank}. *{md_safe(item['title'])}*",
+        f"   📍 {md_safe(item.get('locationKo') or item.get('location'))}",
+        f"   💰 {md_safe(item['price'])}" + (f" · {' · '.join(spec)}" if spec else ""),
     ]
     if desc:
         lines.append(f"   {desc}")
-    if wa_link:
-        lines.append(f"   📞 {wa_link}")
-    if item.get("sourceUrl"):
-        lines.append(f"   🔗 원본: {item['sourceUrl']}")
+    if wa:
+        lines.append(f"   📞 https://wa.me/{wa}")
+    lines.append(f"   🔗 원본: {item['sourceUrl']}")
     return "\n".join(lines)
 
 
-def build_message(picked):
+def build_message(picked, updated_at):
     today = datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d")
-    header = f"*오늘의 인수 추천 매물* ({today})\n실제 운영 중인 사업체 완전인수 매물 {len(picked)}건\n"
+    header = (f"*오늘의 매물 추천* ({today})\n"
+              f"99.co 실시간 수집 매물 {len(picked)}건 · 수집시각 {updated_at}\n"
+              f"_가격 순으로 순환 추천합니다. 계약 전 원본 링크와 현장 실사로 직접 확인하세요._\n")
     body = "\n\n".join(format_item(x, i + 1) for i, x in enumerate(picked))
     return header + "\n" + body
 
@@ -191,11 +250,22 @@ def send_telegram(message):
 
 def main():
     dry_run = "--dry-run" in sys.argv
-    check_url = "--skip-url-check" not in sys.argv
+    check_url = "--verify-urls" in sys.argv
 
-    listings = load_listings()
+    listings, updated_at = load_listings()
+
+    age = data_age_hours(updated_at)
+    if age is None:
+        print(f"!! 수집 시각을 해석할 수 없음({updated_at}) - 발송하지 않고 종료")
+        sys.exit(1)
+    print(f"[신선도] 수집 시각 {updated_at} (경과 {age:.1f}시간 / 허용 {MAX_DATA_AGE_HOURS}시간)")
+    if age > MAX_DATA_AGE_HOURS:
+        print("!! 데이터가 오래되어 현재 게시 중이라고 보장할 수 없음 - 발송하지 않고 종료")
+        print("!! scrape_99co.py 를 먼저 실행해 js/live_data.js 를 갱신할 것")
+        sys.exit(1)
+
     candidates = select_candidates(listings, check_url=check_url)
-    print(f"[검증] 완전인수(실사) 대상 {len(candidates)}건 (검증 통과)")
+    print(f"[검증] 수집 {len(listings)}건 중 {len(candidates)}건 검증 통과")
 
     if not candidates:
         print("!! 실재가 확인된 매물이 0건 - 발송하지 않고 종료")
@@ -204,7 +274,7 @@ def main():
 
     state = load_state()
     picked, next_cursor = pick_batch(candidates, state.get("cursor", 0))
-    message = build_message(picked)
+    message = build_message(picked, updated_at)
 
     print("----- 발송 내용 미리보기 -----")
     print(message)
