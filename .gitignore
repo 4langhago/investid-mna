@@ -4,3 +4,4 @@ scraper/output/
 docs/
 MNA1.txt
 scraper/logs/
+__pycache__/

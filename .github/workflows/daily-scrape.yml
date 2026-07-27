@@ -39,13 +39,24 @@ jobs:
           git commit -m "chore: auto-update listings ($(date -u +%Y-%m-%d))"
           git push
 
+      # ⛔ 2026-07-27 발송 중단
+      # 사유: 발송 소스인 js/data.js 105건 전체가 실재 확인 불가 매물임.
+      #   - whatsapp 번호가 +6281234567001~105 순번 플레이스홀더 (105/105건)
+      #   - sourceUrl 필드 자체가 없어 원본 역추적 불가
+      #   - 좌표는 소수점 2자리 반올림, 상세주소 없음
+      #   - 월매출/수익률은 근거자료 없는 주장치
+      # 재개 조건: 아래 3가지를 모두 만족하는 매물이 1건 이상 존재할 것
+      #   ① sourceUrl 보유  ② 플레이스홀더 아닌 실번호  ③ 원본 URL HTTP 200
+      # (검증 로직은 scraper/telegram_recommend.py is_valid() 에 이미 구현됨)
       - name: 텔레그램 매물 추천 (완전인수 5건)
+        if: ${{ false }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scraper/telegram_recommend.py
 
       - name: 로테이션 상태 커밋 & 푸시
+        if: ${{ false }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

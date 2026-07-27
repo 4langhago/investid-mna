@@ -3,7 +3,13 @@
 '완전인수(akuisisi)' 매물 중 실제 운영 가능한 사업체만 골라 매일 5건을 텔레그램으로 추천.
 
 - 대상: js/data.js LISTINGS 중 subtype === "akuisisi" && source 필드 존재(A그룹, 샘플 제외)
-- 검증: 필수 필드(연락처/가격/월매출/수익률/설명) 누락 매물은 자동 제외 — 사람 개입 없음
+- 검증: 아래 4단계를 모두 통과한 매물만 발송 — 사람 개입 없음
+    1) 필수 필드(연락처/가격/월매출/수익률/설명) 누락 없음
+    2) sourceUrl 보유 (원본 역추적 가능해야 함)
+    3) whatsapp 번호가 플레이스홀더 패턴(+62812345670XX)이 아님
+    4) sourceUrl 이 실제로 살아있음 (HTTP 200)
+  ⚠️ 2026-07-27 기준 js/data.js 105건은 (2)(3)에서 전량 탈락한다.
+     실재가 확인되지 않는 매물을 추천으로 내보내는 것을 막기 위한 의도된 동작이다.
 - 선정: 수익률(profit) 내림차순 정렬 후, 이전 발송 위치(scraper/output/telegram_state.json)
         다음부터 5건씩 순환(로테이션). 끝까지 가면 처음부터 다시 순환.
 - 전송: Telegram Bot API (TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 환경변수 필요)
@@ -14,8 +20,10 @@
 """
 import json
 import os
+import re
 import subprocess
 import sys
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
@@ -32,6 +40,12 @@ STATE_FILE = Path(__file__).resolve().parent / "telegram_state.json"
 REQUIRED_FIELDS = ["title", "location", "price", "priceNum", "monthlyRevenue", "profit", "whatsapp"]
 BATCH_SIZE = 5
 
+# 순번 플레이스홀더 번호(+6281234567001 ~ +6281234567105). 실제 매도인 연락처가 아님.
+PLACEHOLDER_WA = re.compile(r"^\+?6281234567\d{3}$")
+USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+              "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
+URL_CHECK_TIMEOUT = 15
+
 
 def load_listings():
     out = subprocess.run(
@@ -41,12 +55,50 @@ def load_listings():
     return json.loads(out.stdout.decode("utf-8"))
 
 
-def is_valid(item):
+def url_is_live(url):
+    """원본 게시글이 아직 살아있는지 확인. 200 이면 통과.
+
+    ⚠️ 알려진 한계 (2026-07-27 실측):
+      99.co 는 상세 페이지(/id/properti/...)에 대해 봇 요청에 404 를 반환한다.
+      검색엔진이 색인 중인 = 확실히 살아있는 URL 로 테스트해도 404 가 나왔고,
+      목록 페이지(/id/jual/...)만 200 이 나온다. 즉 이 함수는 현재 99.co 매물에
+      대해 '죽은 매물'과 '봇 차단'을 구분하지 못한다.
+      따라서 전부 탈락시키며, 이는 안전한 방향의 오탐(false negative)이다.
+      제대로 고치려면 scrape_99co.py 가 쓰는 JSON API 로 매물 id 를 재조회해야 한다.
+    """
+    req = urllib.request.Request(url, method="GET",
+                                 headers={"User-Agent": USER_AGENT,
+                                          "Accept-Language": "id-ID,id;q=0.9"})
+    try:
+        with urllib.request.urlopen(req, timeout=URL_CHECK_TIMEOUT) as res:
+            return res.status == 200, f"HTTP {res.status}"
+    except urllib.error.HTTPError as e:
+        return False, f"HTTP {e.code}"
+    except Exception as e:  # 타임아웃/DNS/SSL 등 - 확인 불가면 발송하지 않는다
+        return False, f"접속 실패({type(e).__name__})"
+
+
+def validate(item, check_url=True):
+    """실재성 검증. 통과하면 (True, ''), 아니면 (False, 탈락사유)."""
     for field in REQUIRED_FIELDS:
         v = item.get(field)
         if v is None or v == "":
-            return False
-    return True
+            return False, f"필수 필드 누락: {field}"
+
+    source_url = (item.get("sourceUrl") or "").strip()
+    if not source_url:
+        return False, "sourceUrl 없음 - 원본 역추적 불가"
+
+    wa = str(item.get("whatsapp", "")).replace(" ", "").replace("-", "")
+    if PLACEHOLDER_WA.match(wa):
+        return False, f"연락처가 플레이스홀더 패턴({wa})"
+
+    if check_url:
+        live, detail = url_is_live(source_url)
+        if not live:
+            return False, f"원본 URL 확인 실패({detail}): {source_url}"
+
+    return True, ""
 
 
 def profit_value(item):
@@ -56,13 +108,15 @@ def profit_value(item):
         return 0.0
 
 
-def select_candidates(listings):
+def select_candidates(listings, check_url=True):
     akuisisi = [x for x in listings if x.get("subtype") == "akuisisi" and x.get("source")]
-    valid, invalid = [], []
+    valid = []
     for x in akuisisi:
-        (valid if is_valid(x) else invalid).append(x)
-    for x in invalid:
-        print(f"  !! 검증 실패로 제외: id={x.get('id')} {x.get('title')}")
+        ok, reason = validate(x, check_url=check_url)
+        if ok:
+            valid.append(x)
+        else:
+            print(f"  !! 검증 실패로 제외: id={x.get('id')} {x.get('title')} - {reason}")
     valid.sort(key=profit_value, reverse=True)
     return valid
 
@@ -103,6 +157,8 @@ def format_item(item, rank):
         lines.append(f"   {desc}")
     if wa_link:
         lines.append(f"   📞 {wa_link}")
+    if item.get("sourceUrl"):
+        lines.append(f"   🔗 원본: {item['sourceUrl']}")
     return "\n".join(lines)
 
 
@@ -135,13 +191,15 @@ def send_telegram(message):
 
 def main():
     dry_run = "--dry-run" in sys.argv
+    check_url = "--skip-url-check" not in sys.argv
 
     listings = load_listings()
-    candidates = select_candidates(listings)
+    candidates = select_candidates(listings, check_url=check_url)
     print(f"[검증] 완전인수(실사) 대상 {len(candidates)}건 (검증 통과)")
 
     if not candidates:
-        print("!! 발송 가능한 매물이 없음 - 종료")
+        print("!! 실재가 확인된 매물이 0건 - 발송하지 않고 종료")
+        print("!! 확인되지 않은 매물을 추천으로 내보내지 않는 것이 의도된 동작임")
         sys.exit(1)
 
     state = load_state()
