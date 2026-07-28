@@ -47,10 +47,26 @@ REQUEST_DELAY_SEC = 1.5   # 안전장치: 완화 금지
 PAGE_SIZE = 40
 MAX_PAGES = 5
 
-QUERIES = ["take over usaha", "take over cafe", "take over restoran",
-           "take over laundry", "take over salon", "take over minimarket",
-           "oper usaha", "dijual usaha", "jual bisnis", "usaha berjalan",
-           "alih usaha", "take over franchise"]
+# 검색어 선정 근거(2026-07-28 수율 측정):
+#  - 카테고리 열거(category=5090 등)는 512건당 0~2건으로 수율이 낮아 쓰지 않는다.
+#  - 'dijual usaha' 같은 광범위 검색어는 512건을 훑어도 4건뿐이다.
+#  - 반면 양수·양도를 직접 가리키는 표현은 수율이 높다.
+#    예: 'over usaha' 40건 중 23건(58%), 'usaha aktif dijual' 40건 중 19건.
+#  즉 물량은 페이지 깊이가 아니라 '정밀한 표현'에서 나온다.
+QUERIES = [
+    # 핵심 양수·양도 표현 (고수율)
+    "take over usaha", "takeover usaha", "over usaha", "oper usaha", "alih usaha",
+    "usaha aktif dijual", "jual usaha berjalan", "usaha berjalan", "jual bisnis",
+    "dijual usaha", "take over franchise",
+    # 업종별 (건수는 적지만 정확도가 높다)
+    "take over cafe", "take over kopi", "take over restoran", "take over warung",
+    "take over warteg", "take over bakso", "take over ayam geprek",
+    "take over laundry", "take over salon", "take over barbershop",
+    "take over toko", "take over minimarket", "take over klinik", "take over apotek",
+    "take over bengkel", "take over cuci mobil", "take over gym", "take over kos",
+    "take over kontrakan", "take over catering", "take over percetakan",
+    "take over konter", "take over sekolah", "take over pet shop",
+]
 
 DEFAULT_MAX_AGE_DAYS = 180
 MIN_PRICE = 10_000_000
