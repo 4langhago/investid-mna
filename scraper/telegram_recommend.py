@@ -45,6 +45,7 @@ if hasattr(sys.stdout, "reconfigure"):
 ROOT = Path(__file__).resolve().parent.parent
 LIVE_JS = ROOT / "js" / "live_data.js"
 BUSINESS_JS = ROOT / "js" / "business_data.js"
+OLX_JS = ROOT / "js" / "olx_data.js"
 EXPORT_JS = Path(__file__).resolve().parent / "export_listings.js"
 STATE_FILE = Path(__file__).resolve().parent / "telegram_state.json"
 
@@ -88,12 +89,22 @@ def load_listings():
 
 
 def load_business_listings():
-    """사업체 인수 매물(scrape_business.py 수집). 파일이 없으면 빈 목록."""
-    if not BUSINESS_JS.exists():
-        return [], None
-    listings = export_var(BUSINESS_JS, "BUSINESS_LISTINGS")
-    updated_at = export_var(BUSINESS_JS, "BUSINESS_LISTINGS_UPDATED_AT")
-    return listings, updated_at
+    """사업체 인수 매물을 두 소스에서 합친다. 파일이 없는 소스는 건너뛴다.
+
+    부동산이 함께 딸린 매물(propertyIncluded)은 사업체 인수와 성격이 달라
+    추천 대상에서 제외한다. 사이트에는 그대로 노출된다.
+    """
+    listings, updated = [], []
+    for js_file, var, ts_var in (
+            (BUSINESS_JS, "BUSINESS_LISTINGS", "BUSINESS_LISTINGS_UPDATED_AT"),
+            (OLX_JS, "OLX_LISTINGS", "OLX_LISTINGS_UPDATED_AT")):
+        if not js_file.exists():
+            continue
+        listings.extend(export_var(js_file, var))
+        updated.append(export_var(js_file, ts_var))
+
+    listings = [x for x in listings if not x.get("propertyIncluded")]
+    return listings, (max(updated) if updated else None)
 
 
 def data_age_hours(updated_at):

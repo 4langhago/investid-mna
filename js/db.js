@@ -76,8 +76,8 @@ const LS_KEY = 'mna_listings_v1';
 
 function persistLocalListings() {
   try {
-    // 자동 수집 매물(live-/biz-/iw-)은 스크래퍼가 관리하므로 저장 대상에서 제외
-    const own = LISTINGS.filter(l => !/^(live-|biz-|iw-)/.test(String(l.id)));
+    // 자동 수집 매물(live-/biz-/olx-/iw-)은 스크래퍼가 관리하므로 저장 대상에서 제외
+    const own = LISTINGS.filter(l => !/^(live-|biz-|olx-|iw-)/.test(String(l.id)));
     localStorage.setItem(LS_KEY, JSON.stringify(own));
   } catch (e) {
     console.warn('로컬 매물 데이터 저장 실패:', e);
@@ -88,12 +88,14 @@ function persistLocalListings() {
 // 각 소스는 고유 id 접두어를 쓴다. 병합 전에 같은 접두어의 기존 항목을 제거해
 // 수집기가 내려준 목록이 항상 최신 상태가 되도록 한다.
 //   live- : js/live_data.js      (scrape_99co.py — 99.co 부동산)
-//   biz-  : js/business_data.js  (scrape_business.py — 사업체 인수)
+//   biz-  : js/business_data.js  (scrape_business.py — tempat-usaha.com 사업체 인수)
+//   olx-  : js/olx_data.js       (scrape_olx.py — OLX 사업체 인수, 주력 소스)
 //   iw-   : js/community_data.js (scrape_indoweb.py — 한인 커뮤니티, 색인형)
 (function mergeScrapedListings() {
   const sources = [
     { prefix: 'live-', data: typeof LIVE_LISTINGS !== 'undefined' ? LIVE_LISTINGS : null },
     { prefix: 'biz-', data: typeof BUSINESS_LISTINGS !== 'undefined' ? BUSINESS_LISTINGS : null },
+    { prefix: 'olx-', data: typeof OLX_LISTINGS !== 'undefined' ? OLX_LISTINGS : null },
     { prefix: 'iw-', data: typeof COMMUNITY_LISTINGS !== 'undefined' ? COMMUNITY_LISTINGS : null }
   ];
 
