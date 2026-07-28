@@ -341,9 +341,14 @@ def main():
     state["cursor"] = next_cursor
     state["bizCursor"] = biz_next
     state["lastRunAt"] = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
-    state["lastSentIds"] = [x["id"] for x in picked]
+    # 두 섹션을 모두 기록한다. 부동산만 남기면 실제 발송분과 기록이 어긋난다.
+    state["lastSentBusinessIds"] = [x["id"] for x in biz_picked]
+    state["lastSentPropertyIds"] = [x["id"] for x in picked]
+    state["lastSentIds"] = [x["id"] for x in biz_picked + picked]
     save_state(state)
-    print(f"[전송 완료] {len(picked)}건, 다음 커서 위치: {next_cursor}")
+    print(f"[전송 완료] 총 {len(biz_picked) + len(picked)}건"
+          f" (사업체 {len(biz_picked)} / 부동산 {len(picked)})"
+          f", 다음 커서 - 사업체 {biz_next} · 부동산 {next_cursor}")
 
 
 if __name__ == "__main__":
