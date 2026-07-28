@@ -32,15 +32,21 @@ jobs:
         continue-on-error: true
         run: python scraper/scrape_business.py
 
+      # 색인형 수집(제목/지역/게시일/링크만). 인도웹은 요청을 조여 실패가 잦으므로
+      # 마찬가지로 워크플로를 중단시키지 않는다.
+      - name: 한인 커뮤니티 매물 색인 (indoweb.org)
+        continue-on-error: true
+        run: python scraper/scrape_indoweb.py
+
       - name: 변경 사항 커밋 & 푸시
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet js/live_data.js js/business_data.js; then
+          if git diff --quiet js/live_data.js js/business_data.js js/community_data.js; then
             echo "변경 사항 없음 - 커밋 생략"
             exit 0
           fi
-          git add js/live_data.js js/business_data.js
+          git add js/live_data.js js/business_data.js js/community_data.js
           git commit -m "chore: auto-update listings ($(date -u +%Y-%m-%d))"
           git push
 

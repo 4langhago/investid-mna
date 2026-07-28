@@ -76,23 +76,36 @@ const LS_KEY = 'mna_listings_v1';
 
 function persistLocalListings() {
   try {
-    // 실시간 수집 매물(live-*)은 스크래퍼가 관리하므로 저장 대상에서 제외
-    const own = LISTINGS.filter(l => String(l.id).indexOf('live-') !== 0);
+    // 자동 수집 매물(live-/biz-/iw-)은 스크래퍼가 관리하므로 저장 대상에서 제외
+    const own = LISTINGS.filter(l => !/^(live-|biz-|iw-)/.test(String(l.id)));
     localStorage.setItem(LS_KEY, JSON.stringify(own));
   } catch (e) {
     console.warn('로컬 매물 데이터 저장 실패:', e);
   }
 }
 
-// ── 실시간 수집 매물 병합 (js/live_data.js — scraper/scrape_99co.py가 생성) ──
-(function mergeLiveListings() {
-  if (typeof LIVE_LISTINGS === 'undefined' || !Array.isArray(LIVE_LISTINGS)) return;
-  for (let i = LISTINGS.length - 1; i >= 0; i--) {
-    if (String(LISTINGS[i].id).indexOf('live-') === 0) LISTINGS.splice(i, 1);
-  }
-  const existing = new Set(LISTINGS.map(l => l.id));
-  LIVE_LISTINGS.forEach(l => {
-    if (!existing.has(l.id)) LISTINGS.push(l);
+// ── 자동 수집 매물 병합 ──
+// 각 소스는 고유 id 접두어를 쓴다. 병합 전에 같은 접두어의 기존 항목을 제거해
+// 수집기가 내려준 목록이 항상 최신 상태가 되도록 한다.
+//   live- : js/live_data.js      (scrape_99co.py — 99.co 부동산)
+//   biz-  : js/business_data.js  (scrape_business.py — 사업체 인수)
+//   iw-   : js/community_data.js (scrape_indoweb.py — 한인 커뮤니티, 색인형)
+(function mergeScrapedListings() {
+  const sources = [
+    { prefix: 'live-', data: typeof LIVE_LISTINGS !== 'undefined' ? LIVE_LISTINGS : null },
+    { prefix: 'biz-', data: typeof BUSINESS_LISTINGS !== 'undefined' ? BUSINESS_LISTINGS : null },
+    { prefix: 'iw-', data: typeof COMMUNITY_LISTINGS !== 'undefined' ? COMMUNITY_LISTINGS : null }
+  ];
+
+  sources.forEach(function (source) {
+    if (!Array.isArray(source.data)) return;
+    for (let i = LISTINGS.length - 1; i >= 0; i--) {
+      if (String(LISTINGS[i].id).indexOf(source.prefix) === 0) LISTINGS.splice(i, 1);
+    }
+    const existing = new Set(LISTINGS.map(l => l.id));
+    source.data.forEach(l => {
+      if (!existing.has(l.id)) LISTINGS.push(l);
+    });
   });
 })();
 

@@ -145,8 +145,12 @@ def validate(item, check_url=False, min_price=None):
     price_num = price_value(item)
     if price_num < min_price:
         return False, f"표시가 비정상({item.get('price')}) - 단위 오기재로 보임"
+    # m²당 단가 규칙은 루코·상가처럼 '건물 면적'이 값을 결정하는 매물에만 유효하다.
+    # 사업체 인수(양계장·농장 등 대지가 넓은 업종)에 적용하면 정상 매물이 탈락한다.
+    # 예: 양계장 Rp 16 M / 32,000m² = m²당 500 → 오탐.
     area = item.get("area")
-    if area and price_num / float(area) < MIN_PLAUSIBLE_PRICE_PER_M2:
+    if (item.get("subtype") != "akuisisi" and area
+            and price_num / float(area) < MIN_PLAUSIBLE_PRICE_PER_M2):
         return False, (f"m²당 단가 비정상({item.get('price')} / {area}m²) - 단위 오기재로 보임")
 
     # 연락처는 없어도 된다(원본 링크로 안내). 단, 있다면 진짜여야 한다.

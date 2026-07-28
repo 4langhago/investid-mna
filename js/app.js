@@ -123,7 +123,7 @@ function renderMapMarkers(listings) {
       .bindPopup(`
         <div style="min-width:180px;">
           <strong style="font-size:13px;">${escapeHtml(l.title)}</strong><br>
-          <span style="color:#CE1126;font-weight:700;">${l.price}</span><br>
+          <span style="color:#CE1126;font-weight:700;">${escapeHtml(l.price || '가격 문의')}</span><br>
           <span style="font-size:12px;color:#666;">📍 ${l.locationKo || l.location}</span><br>
           <button onclick="openModal('${String(l.id).replace(/[^\w-]/g, '')}')" style="
             margin-top:8px;padding:5px 12px;background:#CE1126;
@@ -274,10 +274,15 @@ function getFiltered() {
     results = results.filter(l => l.category === businessType);
   }
 
-  results = results.filter(l => l.priceNum <= maxPrice);
+  // 색인형 매물(커뮤니티)은 가격이 없다. null 을 0으로 취급하면 가격 필터를 항상
+  // 통과하고 오름차순 최상단을 차지하므로, 가격 미표기는 필터에서 제외하지 않고
+  // 정렬에서만 뒤로 보낸다.
+  results = results.filter(l => l.priceNum == null || l.priceNum <= maxPrice);
 
-  if (state.sort === 'price-asc') results.sort((a, b) => a.priceNum - b.priceNum);
-  else if (state.sort === 'price-desc') results.sort((a, b) => b.priceNum - a.priceNum);
+  const priceAsc = l => (l.priceNum == null ? Infinity : l.priceNum);
+  const priceDesc = l => (l.priceNum == null ? -Infinity : l.priceNum);
+  if (state.sort === 'price-asc') results.sort((a, b) => priceAsc(a) - priceAsc(b));
+  else if (state.sort === 'price-desc') results.sort((a, b) => priceDesc(b) - priceDesc(a));
   else if (state.sort === 'revenue') {
     results.sort((a, b) => (b.monthlyRevenueNum || 0) - (a.monthlyRevenueNum || 0));
   } else {
@@ -356,7 +361,7 @@ function renderCard(l) {
         <div class="card-title">${escapeHtml(l.title)}</div>
         <div class="card-location">📍 ${escapeHtml(locationLabel)}</div>
         <div class="card-stats">${stats.join('') || '<span class="stat-pill pill-area">상세정보 보기</span>'}</div>
-        <div class="card-price">${escapeHtml(l.price)}</div>
+        <div class="card-price">${escapeHtml(l.price || '가격 문의 · 원문 확인')}</div>
         <div class="card-footer">
           <button class="btn-detail" data-id="${l.id}">상세보기</button>
           ${l.lat ? `<button class="btn-map" data-id="${l.id}" title="지도에서 보기" style="padding:9px 10px;border:1.5px solid var(--blue);border-radius:8px;background:#fff;color:var(--blue);cursor:pointer;font-size:14px;">🗺️</button>` : ''}
@@ -384,8 +389,10 @@ function openModal(id) {
   $('modalTitle').textContent = l.title;
   $('modalLocation').textContent = '📍 ' + (l.locationKo || l.location) + ' · ' + l.category;
   $('modalEmoji').textContent = l.images;
-  $('modalPrice').textContent = l.price;
-  $('modalDesc').textContent = l.description;
+  $('modalPrice').textContent = l.price || '가격 문의 · 원문 확인';
+  // 색인형 매물(커뮤니티)은 본문을 저장하지 않으므로 원문으로 안내한다.
+  $('modalDesc').textContent = l.description
+    || (l.indexOnly ? '이 매물은 원문 링크에서 상세 내용을 확인하세요.' : '');
 
   const infoStats = [
     l.area ? { label: '면적', value: l.area + 'm²' } : null,
