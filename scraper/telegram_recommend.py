@@ -14,6 +14,9 @@
     2) 필수 필드(제목/지역/가격/면적) 누락 없음
     3) sourceUrl 보유 — 수신자가 원본을 직접 확인할 수 있어야 함
     4) whatsapp 이 플레이스홀더 패턴이 아님 (값이 없으면 원본 링크로 안내)
+    5) 외국인(한국인) 취득 가능 - foreign_eligibility.classify 가 '불가'로 본 매물은 제외.
+       Girik 미등기 토지, 외국인 투자 유보 업종(노점·생필품 소매 등)이 여기에 해당한다.
+       '조건부'(PT PMA 설립·HGB 전환 필요)는 절차를 함께 안내하고 발송한다.
   --verify-urls 를 주면 sourceUrl HTTP 확인을 추가로 수행한다. 다만 99.co는 상세
   페이지 봇 요청에 404를 주므로 기본값으로는 켜지 않는다 (url_is_live docstring 참고).
 
@@ -27,6 +30,7 @@
   python scraper/telegram_recommend.py             # 실제 전송
   python scraper/telegram_recommend.py --dry-run   # 전송 없이 선정 결과만 출력
   python scraper/telegram_recommend.py --verify-urls  # 원본 URL 생존까지 확인
+  python scraper/telegram_recommend.py --foreign-only-eligible  # 외국인 '가능' 등급만 발송
 """
 import json
 import os
@@ -38,6 +42,10 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import foreign_eligibility as fe  # noqa: E402
+from korean_brief import build_korean_brief  # noqa: E402
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -66,11 +74,20 @@ MIN_BUSINESS_PRICE = 10_000_000          # Rp 10 jt
 
 BUSINESS_SLOTS = 3   # 한 번에 보낼 사업체 인수 매물 수(나머지는 부동산으로 채움)
 
+# 외국인(한국인) 취득 가능성 필터.
+#   기본값: '불가'로 판정된 매물은 발송하지 않고, '가능'을 '조건부'보다 앞에 배치한다.
+#   --foreign-only-eligible 을 주면 '가능'만 발송한다(표본이 크게 줄어들 수 있음).
+# 조건부를 기본 포함하는 이유: 인도네시아에서 외국인의 상업용 부동산·사업체 인수는
+# PT PMA 설립을 전제로 하는 것이 통상적이며, 이를 전부 제외하면 추천 대상이 사실상
+# 아파트만 남는다. 대신 각 매물에 필요한 절차를 메시지에 명시한다.
+ALLOWED_FOREIGN_STATUSES = (fe.ELIGIBLE, fe.CONDITIONAL)
+
 # 순번 플레이스홀더 번호(+6281234567001 ~ +6281234567105). 실제 매도인 연락처가 아님.
 PLACEHOLDER_WA = re.compile(r"^\+?6281234567\d{3}$")
 USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
               "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 URL_CHECK_TIMEOUT = 15
+TELEGRAM_MAX_CHARS = 4096  # sendMessage text 상한
 
 
 def export_var(js_file, var_name):
@@ -141,8 +158,8 @@ def url_is_live(url):
         return False, f"접속 실패({type(e).__name__})"
 
 
-def validate(item, check_url=False, min_price=None):
-    """실재성 검증. 통과하면 (True, ''), 아니면 (False, 탈락사유)."""
+def validate(item, check_url=False, min_price=None, allowed_statuses=ALLOWED_FOREIGN_STATUSES):
+    """실재성 + 외국인 취득 가능성 검증. 통과하면 (True, ''), 아니면 (False, 탈락사유)."""
     min_price = MIN_PLAUSIBLE_PRICE if min_price is None else min_price
     for field in REQUIRED_FIELDS:
         v = item.get(field)
@@ -169,6 +186,11 @@ def validate(item, check_url=False, min_price=None):
     if wa and PLACEHOLDER_WA.match(wa):
         return False, f"연락처가 플레이스홀더 패턴({wa})"
 
+    # 외국인이 취득할 수 없는 구조의 매물은 추천 대상이 아니다.
+    status, reason, _steps = fe.classify(item)
+    if status not in allowed_statuses:
+        return False, f"외국인 취득 {status}: {reason}"
+
     if check_url:
         live, detail = url_is_live(source_url)
         if not live:
@@ -184,10 +206,12 @@ def price_value(item):
         return 0.0
 
 
-def select_candidates(listings, check_url=False, min_price=None):
+def select_candidates(listings, check_url=False, min_price=None,
+                      allowed_statuses=ALLOWED_FOREIGN_STATUSES):
     valid, rejected = [], 0
     for x in listings:
-        ok, reason = validate(x, check_url=check_url, min_price=min_price)
+        ok, reason = validate(x, check_url=check_url, min_price=min_price,
+                              allowed_statuses=allowed_statuses)
         if ok:
             valid.append(x)
         else:
@@ -195,7 +219,8 @@ def select_candidates(listings, check_url=False, min_price=None):
             print(f"  !! 검증 실패로 제외: id={x.get('id')} {x.get('title')} - {reason}")
     if rejected:
         print(f"  -- 검증 탈락 합계: {rejected}건")
-    valid.sort(key=price_value)
+    # 외국인이 바로 취득 가능한 매물을 앞에, 그 안에서는 가격 오름차순.
+    valid.sort(key=lambda x: (fe.rank_key(fe.classify(x)[0]), price_value(x)))
     return valid
 
 
@@ -224,63 +249,193 @@ def md_safe(text):
     return re.sub(r"[*_`\[\]]", "", str(text or ""))
 
 
-def format_item(item, rank):
+def maps_link(item):
+    """지도 링크. 좌표가 있으면 좌표로, 없으면 주소/지역명 검색으로 연결.
+
+    좌표는 수집기가 매물 지역에서 받아온 값이며 건물 단위 정확도가 아닐 수 있다.
+    그래서 '대략 위치'로 표기한다 - 없는 정확도를 있는 것처럼 말하지 않는다.
+    """
+    lat, lng = item.get("lat"), item.get("lng")
+    if lat and lng:
+        return f"https://www.google.com/maps/search/?api=1&query={lat},{lng}"
+    where = item.get("address") or item.get("location")
+    if not where:
+        return None
+    return ("https://www.google.com/maps/search/?api=1&query="
+            + urllib.parse.quote_plus(str(where)))
+
+
+def median(values):
+    s = sorted(values)
+    n = len(s)
+    if not n:
+        return None
+    mid = n // 2
+    return s[mid] if n % 2 else (s[mid - 1] + s[mid]) / 2
+
+
+def build_review(item, peers):
+    """수집된 값만으로 만드는 자동 분석 코멘트.
+
+    ⚠️ 여기서 만들어내는 문장은 전부 실제 수집 필드에서 계산된 것이어야 한다.
+    매물 품질·입지 평가처럼 데이터에 없는 판단은 넣지 않는다(추측 금지).
+    비교군(peers)은 같은 검증 통과 후보들이며, 표본이 5건 미만이면 시세 비교를
+    생략한다 - 표본이 적으면 중앙값이 시세를 대표하지 못한다.
+    """
+    notes = []
+    price = price_value(item)
+    area = item.get("area")
+
+    # 1) 같은 지역 동일 유형 대비 가격 위치
+    same = [p for p in peers
+            if p.get("id") != item.get("id")
+            and p.get("location") == item.get("location")
+            and p.get("type") == item.get("type")]
+    scope = f"{md_safe(item.get('locationKo') or item.get('location'))} 동일 유형"
+    if len(same) < 5:  # 지역 표본이 얇으면 유형 전체로 넓힌다
+        same = [p for p in peers
+                if p.get("id") != item.get("id") and p.get("type") == item.get("type")]
+        scope = "수집 매물 동일 유형"
+    if len(same) >= 5:
+        med = median([price_value(p) for p in same])
+        if med:
+            diff = (price / med - 1) * 100
+            word = "낮음" if diff < -10 else ("높음" if diff > 10 else "비슷")
+            notes.append(f"가격: {scope} {len(same)}건 중앙값 대비 {diff:+.0f}% ({word})")
+
+    # 2) m²당 단가 - 면적이 있는 매물끼리만 비교
+    if area:
+        unit = price / float(area)
+        notes.append(f"m²당 {unit/1_000_000:.1f} jt (건물 {float(area):g}m²)")
+        peer_units = [price_value(p) / float(p["area"]) for p in same if p.get("area")]
+        if len(peer_units) >= 5:
+            med_unit = median(peer_units)
+            if med_unit:
+                notes.append(f"m²당 단가는 비교군 중앙값 대비 {(unit/med_unit - 1)*100:+.0f}%")
+
+    # 3) 수익 관련 - 값이 있을 때만. 대부분의 실수집 매물에는 없다.
+    if item.get("monthlyRevenue"):
+        line = f"월매출 {md_safe(item['monthlyRevenue'])}"
+        rev = item.get("monthlyRevenueNum")
+        if rev:
+            try:
+                months = price / float(rev)
+                line += f" · 매매가 회수까지 약 {months:.0f}개월치 매출 규모"
+            except (TypeError, ValueError, ZeroDivisionError):
+                pass
+        notes.append(line)
+    if item.get("profit"):
+        notes.append(f"수익 정보: {md_safe(item['profit'])}")
+    if item.get("established"):
+        notes.append(f"영업 개시 {md_safe(item['established'])}")
+    else:
+        if item.get("subtype") == "akuisisi":
+            notes.append("영업 기간·매출 미공개 - 매도인에게 장부 확인 필요")
+
+    # 4) 게시 신선도
+    if item.get("postedAt"):
+        days = data_age_hours(item["postedAt"])
+        if days is not None:
+            d = days / 24
+            notes.append(f"원본 게시 {d:.0f}일 전"
+                         + (" (오래된 글, 거래 완료 여부 확인 필요)" if d > 30 else ""))
+
+    if item.get("propertyIncluded"):
+        notes.append("부동산 포함 매각 - 사업체만 인수하는 조건과 가격 구조가 다름")
+    if not item.get("whatsapp"):
+        notes.append("연락처 미공개 - 원본 링크 내 채팅으로 문의")
+
+    return notes
+
+
+def format_item(item, rank, total, peers):
+    """매물 1건을 텔레그램 메시지 하나로 상세 포맷."""
     wa = str(item.get("whatsapp") or "").replace("+", "").replace(" ", "")
     desc = md_safe(item.get("description")).strip()
-    # 설명 앞머리의 "Lokasi: <주소>"는 바로 위 📍 줄과 중복이므로 잘라낸다.
+    # 설명 앞머리의 "Lokasi: <주소>"는 바로 아래 📍 줄과 중복이므로 잘라낸다.
     desc = re.sub(r"^(?:Lokasi|Alamat)\s*[:\-]\s*", "", desc, flags=re.I)
     if item.get("address") and desc.startswith(item["address"]):
         desc = desc[len(item["address"]):].lstrip(" .,-")
-    if len(desc) > 150:
-        desc = desc[:147] + "..."
+    if len(desc) > 700:
+        desc = desc[:697] + "..."
 
     spec = []
     if item.get("area"):
-        spec.append(f"건물 {item['area']:g}m²")
+        spec.append(f"건물 {float(item['area']):g}m²")
     if item.get("floors"):
         spec.append(f"{item['floors']}층")
 
     where = md_safe(item.get("address") or item.get("locationKo") or item.get("location"))
-    lines = [
-        f"{rank}. *{md_safe(item['title'])}*",
-        f"   📍 {where}",
-        f"   💰 {md_safe(item['price'])}" + (f" · {' · '.join(spec)}" if spec else ""),
-    ]
+    kind = " / ".join(x for x in (md_safe(item.get("category")), md_safe(item.get("badge"))) if x)
+
+    lines = [f"*[{rank}/{total}] {md_safe(item['title'])}*", ""]
+    if kind:
+        lines.append(f"🏷 {kind}")
+    lines.append(f"📍 {where}")
+    lines.append(f"💰 *{md_safe(item['price'])}*" + (f"\n📐 {' · '.join(spec)}" if spec else ""))
     if item.get("postedAt"):
-        lines.append(f"   🗓 게시일 {item['postedAt'][:10]}")
+        lines.append(f"🗓 게시일 {item['postedAt'][:10]}")
+
+    facilities = [md_safe(f) for f in (item.get("facilities") or []) if f]
+    if facilities:
+        lines.append(f"✅ {' · '.join(facilities)}")
+
+    # 한글 요약을 원문보다 먼저 둔다. 수신자가 인도네시아어를 읽지 않아도
+    # 매물 성격을 파악할 수 있어야 한다. 요약은 원문에서 뽑은 항목만으로 구성된다.
+    brief = build_korean_brief(item)
+    if brief:
+        lines.append("\n🇰🇷 *한글 요약* (원문에서 추출)")
+        lines.extend(f"• {md_safe(b)}" for b in brief)
+
+    status, reason, steps = fe.classify(item)
+    mark = {fe.ELIGIBLE: "🟢", fe.CONDITIONAL: "🟡"}.get(status, "🔴")
+    lines.append(f"\n{mark} *외국인 취득: {status}*")
+    lines.append(f"• {md_safe(reason)}")
+    lines.extend(f"• {md_safe(s)}" for s in steps)
+
     if desc:
-        lines.append(f"   {desc}")
+        lines.append(f"\n📝 *매물 설명(원문)*\n{desc}")
+
+    review = build_review(item, peers)
+    if review:
+        lines.append("\n🔍 *자동 분석* (수집 데이터 기준)")
+        lines.extend(f"• {n}" for n in review)
+
+    lines.append("\n🔗 *링크*")
+    lines.append(f"원본({md_safe(item.get('source'))}): {item['sourceUrl']}")
+    m = maps_link(item)
+    if m:
+        kind_of_pin = "좌표 기준 대략 위치" if (item.get("lat") and item.get("lng")) else "지역명 검색"
+        lines.append(f"지도({kind_of_pin}): {m}")
     if wa:
-        lines.append(f"   📞 https://wa.me/{wa}")
-    lines.append(f"   🔗 원본: {item['sourceUrl']}")
+        lines.append(f"연락처: https://wa.me/{wa}")
+
     return "\n".join(lines)
 
 
-def build_message(business, property_items, updated_at):
+def build_messages(business, property_items, updated_at, peers):
+    """머리말 1건 + 매물 1건당 1메시지. 텔레그램 4096자 제한을 넘기지 않기 위함."""
     today = datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d")
     total = len(business) + len(property_items)
-    parts = [f"*오늘의 매물 추천* ({today})\n"
-             f"실수집 매물 {total}건 · 부동산 수집시각 {updated_at}\n"
-             f"_계약 전 원본 링크와 현장 실사로 직접 확인하세요._"]
+    messages = [f"*오늘의 매물 추천* ({today})\n"
+                f"실수집 매물 {total}건 (사업체 인수 {len(business)} · 부동산 {len(property_items)})\n"
+                f"부동산 수집시각 {updated_at}\n\n"
+                f"_모든 매물은 외국인(한국인) 취득 가능 여부를 1차 스크리닝해 "
+                f"'불가' 판정 매물을 제외한 것입니다._\n"
+                f"_🟢 외국인 명의로 바로 취득 가능 · 🟡 PT PMA 설립 등 절차 필요_\n"
+                f"_아래 분석은 수집된 공개 정보만으로 자동 계산한 것이며 법률 자문이 아닙니다._\n"
+                f"_계약 전 원본 링크·현장 실사와 공증인(notaris) 확인이 필요합니다._"]
 
     rank = 0
-    if business:
-        parts.append(f"*■ 사업체 인수 (운영 중)* {len(business)}건")
-        section = []
-        for x in business:
+    for label, group in (("■ 사업체 인수 (운영 중)", business),
+                         ("■ 부동산/루코 매매", property_items)):
+        if not group:
+            continue
+        messages.append(f"*{label}* {len(group)}건")
+        for x in group:
             rank += 1
-            section.append(format_item(x, rank))
-        parts.append("\n\n".join(section))
-
-    if property_items:
-        parts.append(f"*■ 부동산/루코 매매* {len(property_items)}건")
-        section = []
-        for x in property_items:
-            rank += 1
-            section.append(format_item(x, rank))
-        parts.append("\n\n".join(section))
-
-    return "\n\n".join(parts)
+            messages.append(format_item(x, rank, total, peers))
+    return messages
 
 
 def send_telegram(message):
@@ -288,6 +443,10 @@ def send_telegram(message):
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
     if not token or not chat_id:
         raise RuntimeError("TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 환경변수가 설정되지 않음")
+
+    # 상세 포맷은 길어질 수 있다. 4096자를 넘으면 텔레그램이 전송을 거부하므로 잘라 보낸다.
+    if len(message) > TELEGRAM_MAX_CHARS:
+        message = message[:TELEGRAM_MAX_CHARS - 20] + "\n…(생략)"
 
     url = f"https://api.telegram.org/bot{token}/sendMessage"
     data = urllib.parse.urlencode({
@@ -306,6 +465,9 @@ def send_telegram(message):
 def main():
     dry_run = "--dry-run" in sys.argv
     check_url = "--verify-urls" in sys.argv
+    allowed = ((fe.ELIGIBLE,) if "--foreign-only-eligible" in sys.argv
+               else ALLOWED_FOREIGN_STATUSES)
+    print(f"[외국인 취득 필터] 발송 허용 등급: {' / '.join(allowed)}")
 
     listings, updated_at = load_listings()
 
@@ -319,12 +481,13 @@ def main():
         print("!! scrape_99co.py 를 먼저 실행해 js/live_data.js 를 갱신할 것")
         sys.exit(1)
 
-    candidates = select_candidates(listings, check_url=check_url)
+    candidates = select_candidates(listings, check_url=check_url, allowed_statuses=allowed)
     print(f"[검증] 부동산 {len(listings)}건 중 {len(candidates)}건 검증 통과")
 
     biz_all, biz_updated = load_business_listings()
     biz_candidates = select_candidates(biz_all, check_url=check_url,
-                                       min_price=MIN_BUSINESS_PRICE) if biz_all else []
+                                       min_price=MIN_BUSINESS_PRICE,
+                                       allowed_statuses=allowed) if biz_all else []
     print(f"[검증] 사업체 인수 {len(biz_all)}건 중 {len(biz_candidates)}건 검증 통과"
           + (f" (수집시각 {biz_updated})" if biz_updated else " (수집 파일 없음)"))
 
@@ -338,17 +501,22 @@ def main():
                                       size=min(BUSINESS_SLOTS, len(biz_candidates)))
     picked, next_cursor = pick_batch(candidates, state.get("cursor", 0),
                                      size=BATCH_SIZE - len(biz_picked))
-    message = build_message(biz_picked, picked, updated_at)
+    # 비교군은 검증을 통과한 전체 후보. 분석 수치는 여기서만 계산한다.
+    messages = build_messages(biz_picked, picked, updated_at,
+                              peers=biz_candidates + candidates)
 
     print("----- 발송 내용 미리보기 -----")
-    print(message)
+    for m in messages:
+        print(m)
+        print("- - - - -")
     print("-----------------------------")
 
     if dry_run:
         print("[dry-run] 전송 생략")
         return
 
-    send_telegram(message)
+    for m in messages:
+        send_telegram(m)
     state["cursor"] = next_cursor
     state["bizCursor"] = biz_next
     state["lastRunAt"] = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
