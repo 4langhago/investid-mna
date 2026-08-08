@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_business.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-08-07T02:53:57+00:00
-const BUSINESS_LISTINGS_UPDATED_AT = "2026-08-07T02:53:57+00:00";
+// 갱신 시각: 2026-08-08T01:56:15+00:00
+const BUSINESS_LISTINGS_UPDATED_AT = "2026-08-08T01:56:15+00:00";
 const BUSINESS_LISTINGS = [
   {
     "id": "biz-10932",
