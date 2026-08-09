@@ -1,22 +1,22 @@
 {
-  "cursor": 24,
+  "cursor": 26,
   "note": "2026-07-27 발송 소스를 js/data.js(실재 미확인) -> js/live_data.js(99.co 실수집)로 교체하면서 커서 초기화. 이전 커서(25)와 lastSentIds(46,78,102,57,47)는 실재 미확인 매물 기준이므로 승계하지 않음.",
-  "bizCursor": 36,
-  "lastRunAt": "2026-08-08T01:57:13+00:00",
+  "bizCursor": 39,
+  "lastRunAt": "2026-08-09T02:04:57+00:00",
   "lastSentIds": [
-    "olx-947072911",
     "olx-947093099",
+    "olx-940942012",
     "olx-947007609",
-    "live-1012832812",
-    "live-1014238100"
+    "live-1011538991",
+    "live-4561"
   ],
   "lastSentBusinessIds": [
-    "olx-947072911",
     "olx-947093099",
+    "olx-940942012",
     "olx-947007609"
   ],
   "lastSentPropertyIds": [
-    "live-1012832812",
-    "live-1014238100"
+    "live-1011538991",
+    "live-4561"
   ]
 }
