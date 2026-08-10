@@ -1,7 +1,7 @@
 // 자동 생성 파일 — scraper/scrape_indoweb.py 가 갱신합니다. 직접 수정 금지.
 // 색인형 데이터: 제목/지역/게시일/원문링크만 보관하며 본문·연락처는 담지 않는다.
-// 갱신 시각: 2026-08-09T02:04:55+00:00
-const COMMUNITY_LISTINGS_UPDATED_AT = "2026-08-09T02:04:55+00:00";
+// 갱신 시각: 2026-08-10T02:10:21+00:00
+const COMMUNITY_LISTINGS_UPDATED_AT = "2026-08-10T02:10:21+00:00";
 const COMMUNITY_LISTINGS = [
   {
     "id": "iw-market-63690",
