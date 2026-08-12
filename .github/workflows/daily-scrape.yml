@@ -16,7 +16,8 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # 인도웹 수집이 요청당 12초(사이트 보호)라 30분으로는 부족해졌다.
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
 
@@ -36,11 +37,12 @@ jobs:
         continue-on-error: true
         run: python scraper/scrape_business.py
 
-      # 색인형 수집(제목/지역/게시일/링크만). 인도웹은 요청을 조여 실패가 잦으므로
-      # 마찬가지로 워크플로를 중단시키지 않는다.
-      - name: 한인 커뮤니티 매물 색인 (indoweb.org)
+      # 한인 커뮤니티는 추천 1순위 소스다(한국인이 실제로 인수·운영하는 매물).
+      # 다만 인도웹은 요청을 조여 실패가 잦으므로 워크플로를 중단시키지는 않는다.
+      # 요청 간 12초 딜레이 + 상세 페이지 수집이라 시간이 걸린다(아래 timeout 참고).
+      - name: 한인 커뮤니티 매물 수집 (indoweb.org — 1순위)
         continue-on-error: true
-        run: python scraper/scrape_indoweb.py
+        run: python scraper/scrape_indoweb.py --pages 2
 
       - name: 변경 사항 커밋 & 푸시
         run: |
@@ -57,7 +59,7 @@ jobs:
       # 2026-07-27: 발송 소스를 js/data.js(실재 확인 불가) → js/live_data.js(99.co 실수집)로
       # 교체하고 재개함. 반드시 위 '매물 수집' 스텝 뒤에 있어야 한다 —
       # telegram_recommend.py 는 live_data.js 가 48시간 이내 갱신된 경우에만 발송한다.
-      - name: 텔레그램 매물 추천 (99.co 실매물 5건)
+      - name: 텔레그램 매물 추천 (한인 커뮤니티 2 + 사업체 2 + 부동산)
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

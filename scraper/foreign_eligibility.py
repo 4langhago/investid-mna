@@ -42,9 +42,16 @@ BLOCKED_BUSINESS = [
 PT_PMA_MIN_INVESTMENT = 10_000_000_000
 
 # 인수가가 이 금액에도 못 미치면 PT PMA 를 세워 인수하는 구조 자체가 성립하지 않는다.
-# (법인 설립·인허가 비용만으로 인수가를 넘어서고, 최소 투자 요건과의 격차가 너무 크다.)
+# (법인 설립·인허가 비용만으로 인수가를 넘어서는 수준.)
 # 예: 임차권 양도 수준의 Rp 1,150만짜리 세탁소는 제도상 외국인 인수 대상이 아니다.
-BUSINESS_REALISTIC_MIN = 1_000_000_000
+#
+# 2026-08-11 하향(Rp 10억 → Rp 1억): 기존 값은 한국인이 실제로 인수해 운영하는 규모의
+# 매물을 통째로 잘라내고 있었다. 인도웹에 올라온 '끌라빠가딩 카페 양도(약 Rp 4.5억)',
+# '땅그랑 세차장(약 Rp 8억)'이 전부 '불가'로 떨어져 추천이 0건이 됐다.
+# PT PMA 최소 투자 Rp 100억은 '인수 대금'이 아니라 '투자 계획 총액(설비·운전자금 포함,
+# 토지·건물 제외)' 기준이므로, 인수가가 그보다 작다는 사실만으로 불가라고 할 수 없다.
+# 따라서 이 선 아래만 구조 불성립으로 보고, 그 위는 '조건부'로 두어 요건 충족 방법을 안내한다.
+BUSINESS_REALISTIC_MIN = 100_000_000
 
 # 외국인 개인 주거용 취득 최소 가격(지역별 상이, 자카르타권 기준을 보수적으로 사용).
 FOREIGN_HOME_MIN_PRICE = 3_000_000_000
@@ -100,18 +107,31 @@ def classify(item):
         if blocked:
             return BLOCKED, blocked, []
 
-        if price < BUSINESS_REALISTIC_MIN:
+        # 가격 미표기(한인 커뮤니티 글은 '연락 주세요'로 끝나는 경우가 흔하다)를
+        # 0원으로 읽어 불가 처리하면, 정작 실제 인수 대상인 매물이 전부 사라진다.
+        # 모르는 값은 모른다고 하고 확인 절차를 안내한다.
+        if not price:
+            steps.append("인수가 미표기 - 매도인에게 총액과 포함 범위(권리금·재고·설비) 확인")
+        elif price < BUSINESS_REALISTIC_MIN:
             return (BLOCKED,
-                    f"인수가 {rupiah_ko(price)} - PT PMA 설립·최소 투자 요건(Rp 100억)에 비해"
-                    " 규모가 너무 작아 외국인 인수 구조가 성립하지 않음",
+                    f"인수가 {rupiah_ko(price)} - 법인 설립·인허가 비용에도 못 미치는 규모로"
+                    " 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
                     [])
 
         steps.append("PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가")
         steps.append("해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인")
+        if not price:
+            status = CONDITIONAL
+            reason = "PT PMA 설립 시 인수 가능 - 인수가가 공개되지 않아 규모 확인 필요"
+            if item.get("propertyIncluded") or has_shm:
+                steps.append("부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - "
+                             "HGB 전환 또는 부동산 임차 구조로 분리 필요")
+            return status, reason, steps
         if price < PT_PMA_MIN_INVESTMENT:
             steps.append(
                 f"인수가 {rupiah_ko(price)} < PT PMA 최소 투자 요건 Rp 100억"
-                " - 설비·운전자금 등 추가 투자 계획으로 요건을 채워야 함")
+                " - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함,"
+                " 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것")
             status = CONDITIONAL
             reason = "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달"
         else:
