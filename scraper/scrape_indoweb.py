@@ -367,8 +367,32 @@ def to_model(row):
     }, None
 
 
+# 매물 글은 아니지만 '매물을 가진 곳'인 한인 중개·컨설팅 업체 글.
+# 공개 크롤링으로 잡히는 매물은 빙산의 일각이고, 실제 물건은 이런 업체가 들고 있다.
+# 그래서 매물에서 걸러낸 글 중 이 유형만 따로 모아 연락 채널 목록으로 남긴다.
+BROKER_RE = re.compile(
+    r"부동산|컨설팅|법인\s*설립|인허가|비자|KITAS|회계|세무|중개|매물\s*(?:문의|안내)|"
+    r"공장\s*(?:임대|매매)\s*전문|투자\s*자문")
+BROKER_JSON = Path(__file__).resolve().parent / "output" / "korean_brokers.json"
+
+
+def collect_brokers(rows, sink):
+    """중개·컨설팅 업체 글을 모은다. 업체명은 제목에 드러난 것만, 연락처는 담지 않는다."""
+    for row in rows:
+        title = re.sub(r"\s*(?:댓글\s*\d+\s*개|좋아요\s*\d+)\s*", " ", row["title"]).strip()
+        if not BROKER_RE.search(title) or DEAL_RE.search(title):
+            continue
+        posted = parse_date(row["date"])
+        sink.append({
+            "title": title,
+            "board": row["boardKo"],
+            "postedAt": posted.isoformat() if posted else None,
+            "sourceUrl": detail_url(row),
+        })
+
+
 def collect(pages, with_detail=True):
-    results, rejected = [], {}
+    results, rejected, brokers = [], {}, []
     for board, board_ko in BOARDS:
         for page in range(1, pages + 1):
             url = f"{BASE}?bo_table={board}&page={page}"
@@ -382,6 +406,7 @@ def collect(pages, with_detail=True):
 
             rows = parse_rows(page_html, board, board_ko)
             print(f"  → 목록 {len(rows)}건")
+            collect_brokers(rows, brokers)
             for row in rows:
                 item, reason = to_model(row)
                 if item is None:
@@ -396,6 +421,16 @@ def collect(pages, with_detail=True):
             seen.add(item["id"])
             unique.append(item)
     unique.sort(key=lambda x: x["postedAt"] or "", reverse=True)
+
+    seen_b, uniq_b = set(), []
+    for b in sorted(brokers, key=lambda x: x["postedAt"] or "", reverse=True):
+        if b["sourceUrl"] not in seen_b:
+            seen_b.add(b["sourceUrl"])
+            uniq_b.append(b)
+    BROKER_JSON.parent.mkdir(parents=True, exist_ok=True)
+    BROKER_JSON.write_text(json.dumps(uniq_b[:30], ensure_ascii=False, indent=2),
+                           encoding="utf-8")
+    print(f"[저장] 한인 중개·컨설팅 채널 {len(uniq_b)}건 → {BROKER_JSON.name}")
 
     if with_detail:
         # 목록만으로는 가격·면적·영업현황을 알 수 없어 '운영 가능한 매물'인지 판단할 수 없다.

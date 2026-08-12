@@ -63,16 +63,26 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # 없으면 구글 실측 검증만 건너뛰고 나머지는 정상 동작한다.
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
         run: python scraper/telegram_recommend.py
 
-      - name: 로테이션 상태 커밋 & 푸시
+      # 매물 이력(가격 변동·체류 기간)과 Places 캐시는 실행 간에 유지돼야 의미가 있다.
+      # 커밋하지 않으면 매 실행이 '첫 실행'이 되어 추적이 영원히 시작되지 않는다.
+      - name: 발송 상태·매물 이력 커밋 & 푸시
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet scraper/telegram_state.json; then
+          for f in scraper/telegram_state.json \
+                   scraper/output/listing_history.json \
+                   scraper/output/places_cache.json; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
+          # 스테이징 후에 판단한다. 이력 파일은 첫 실행에서 '추적되지 않은 새 파일'이라
+          # git diff(워킹트리)로는 변경이 안 보이고, 그대로면 영원히 커밋되지 않는다.
+          if git diff --cached --quiet; then
             echo "변경 사항 없음 - 커밋 생략"
             exit 0
           fi
-          git add scraper/telegram_state.json
-          git commit -m "chore: update telegram rotation state ($(date -u +%Y-%m-%d))"
+          git commit -m "chore: update rotation state & listing history ($(date -u +%Y-%m-%d))"
           git push

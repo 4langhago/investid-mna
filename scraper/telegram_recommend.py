@@ -46,7 +46,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import foreign_eligibility as fe  # noqa: E402
 import legal_check as lc  # noqa: E402
+import listing_history as lh  # noqa: E402
 import operability as op  # noqa: E402
+import places_check as pc  # noqa: E402
 from korean_brief import build_korean_brief, build_korean_detail  # noqa: E402
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -143,6 +145,17 @@ def load_community_listings():
         return [], None
     return (export_var(COMMUNITY_JS, "COMMUNITY_LISTINGS"),
             export_var(COMMUNITY_JS, "COMMUNITY_LISTINGS_UPDATED_AT"))
+
+
+def load_brokers():
+    """한인 중개·컨설팅 업체 글 목록(scrape_indoweb.py 가 생성). 없으면 빈 목록."""
+    path = Path(__file__).resolve().parent / "output" / "korean_brokers.json"
+    if not path.exists():
+        return []
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (ValueError, OSError):
+        return []
 
 
 def data_age_hours(updated_at):
@@ -262,6 +275,32 @@ def select_candidates(listings, check_url=False, min_price=None,
                               fe.rank_key(fe.classify(x)[0]),
                               price_value(x) or float("inf")))
     return valid
+
+
+def pick_verified_batch(candidates, cursor, size, cache):
+    """후보를 뽑되, 구글 Places 로 '영구 폐업'이 확인된 매물은 버리고 다음 후보로 채운다.
+
+    Places 조회는 유료라 발송 후보에만 건다. 전체 후보를 조회하면 매일 수백 건이 되고,
+    어차피 발송되지 않을 매물에 요금을 쓰게 된다.
+    """
+    picked, n = [], len(candidates)
+    if n == 0 or size <= 0:
+        return [], cursor, []
+    dropped = []
+    i = 0
+    # 후보를 한 바퀴 이상 돌지 않는다(전부 폐업이면 그냥 적게 보낸다).
+    while len(picked) < size and i < n:
+        item = candidates[(cursor + i) % n]
+        i += 1
+        place = pc.search(item, cache=cache) if pc.enabled() else None
+        if place:
+            item["_place"] = place
+            pts, why = pc.verdict(place)
+            if pts <= -99:
+                dropped.append((item, why))
+                continue
+        picked.append(item)
+    return picked, (cursor + i) % n, dropped
 
 
 def load_state():
@@ -485,8 +524,19 @@ def format_item(item, rank, total, peers):
             lines.append(f"— {section} —")
             lines.extend(f"• {md_safe(r)}" for r in rows)
 
+    # 구글 Places 실측 - 매도인 주장과 독립된 유일한 검증 수단이라 판정보다 앞에 둔다.
+    place = item.get("_place")
+    if place:
+        lines.append("\n🌐 *구글 실측* (매도인 주장이 아닌 구글 등록 정보)")
+        lines.extend(f"• {md_safe(x)}" if not x.startswith("http") else x
+                     for x in pc.format_lines(place))
+
     # 운영 가능성 판정 - '살 수 있는가'와 별개로 '굴릴 수 있는가'를 본다.
     op_status, op_score, op_reasons, op_todos = op.classify(item)
+    place_pts, place_why = pc.verdict(place)
+    if place_why and place_pts > 0:
+        op_score += place_pts
+        op_reasons = op_reasons + [place_why]
     op_mark = {op.OPERABLE: "🟩", op.UNCERTAIN: "🟨"}.get(op_status, "🟥")
     lines.append(f"\n{op_mark} *운영 가능성: {op_status}* (신호 점수 {op_score})")
     lines.extend(f"• {md_safe(r)}" for r in op_reasons)
@@ -508,6 +558,11 @@ def format_item(item, rank, total, peers):
 
     lines.append("\n🛠 *인수 후 운영 개시까지* (이 순서로 진행)")
     lines.extend(f"• {md_safe(x)}" for x in lc.operating_playbook(item))
+
+    hist = item.get("_historyNotes") or []
+    if hist:
+        lines.append("\n📊 *매물 추적* (우리 수집 이력 기준)")
+        lines.extend(f"• {md_safe(x)}" for x in hist)
 
     outlook = build_outlook(item, peers)
     if outlook:
@@ -567,6 +622,17 @@ def build_messages(community, business, property_items, updated_at, peers):
                 f"함께 붙였습니다._\n"
                 f"_모든 수치는 매도인 게시 정보에서 추출한 것이며 검증된 값이 아닙니다. "
                 f"법률 자문이 아니고, 계약 전 현장 실사와 공증인(notaris) 확인이 필요합니다._"]
+
+    # 공개 게시판에 뜨는 매물은 일부다. 실제 물건을 들고 있는 한인 중개·컨설팅 채널을
+    # 함께 안내해, 직접 문의라는 다음 행동으로 이어지게 한다.
+    brokers = load_brokers()
+    if brokers:
+        lines = ["*■ 한인 중개·컨설팅 채널* (게시판에 안 뜨는 매물 문의처)"]
+        for b in brokers[:4]:
+            lines.append(f"• {md_safe(b['title'])}\n  {b['sourceUrl']}")
+        lines.append("_매물이 공개 게시판에 다 올라오지는 않습니다. "
+                     "위 업체에 조건(업종·예산·지역)을 직접 제시하면 비공개 물건을 받습니다._")
+        messages.append("\n".join(lines))
 
     rank = 0
     for label, group in (("■ 한인 커뮤니티 매물 (한국어 협상 가능)", community),
@@ -676,15 +742,47 @@ def main():
         print("!! 확인되지 않은 매물을 추천으로 내보내지 않는 것이 의도된 동작임")
         sys.exit(1)
 
+    # 매물 이력 갱신. 검증 통과 여부와 무관하게 '수집된 전체'를 기준으로 기록해야
+    # 사라진 매물(팔림)과 가격 인하를 놓치지 않는다.
+    history = lh.load()
+    new_n, drop_n, gone_n = lh.update(history, listings + biz_all + comm_all)
+    lh.save(history)
+    print(f"[이력] 신규 {new_n}건 · 가격 인하 {drop_n}건 · 사라짐 {gone_n}건 "
+          f"(누적 {len(history)}건 추적)")
+
     state = load_state()
+    place_cache = pc._load_cache() if pc.enabled() else {}
+    print(f"[구글 Places] {'사용' if pc.enabled() else '비활성(GOOGLE_PLACES_API_KEY 없음)'}")
+
     # 슬롯 배분: 한인 커뮤니티 → 사업체 인수 → 남는 자리를 부동산으로.
-    comm_picked, comm_next = pick_batch(comm_candidates, state.get("commCursor", 0),
-                                        size=min(COMMUNITY_SLOTS, len(comm_candidates)))
-    biz_picked, biz_next = pick_batch(biz_candidates, state.get("bizCursor", 0),
-                                      size=min(BUSINESS_SLOTS, len(biz_candidates)))
-    picked, next_cursor = pick_batch(
+    # 한인 커뮤니티는 좋은 매물이 며칠 안에 빠진다. 로테이션보다 '새 글'이 우선이며,
+    # 새 글이 없을 때만 기존 후보를 순환해 보낸다.
+    seen_comm = set(state.get("seenCommunityIds") or [])
+    fresh_comm = [x for x in comm_candidates if x.get("id") not in seen_comm]
+    fresh_comm.sort(key=lambda x: str(x.get("postedAt") or ""), reverse=True)
+    if seen_comm and fresh_comm:
+        print(f"[신규] 한인 커뮤니티 새 매물 {len(fresh_comm)}건 - 우선 발송")
+
+    comm_picked, comm_next, comm_drop = pick_verified_batch(
+        fresh_comm or comm_candidates,
+        0 if fresh_comm else state.get("commCursor", 0),
+        min(COMMUNITY_SLOTS, len(fresh_comm or comm_candidates)), place_cache)
+    if fresh_comm:
+        comm_next = state.get("commCursor", 0)  # 새 글을 보냈으면 순환 위치는 그대로 둔다
+    biz_picked, biz_next, biz_drop = pick_verified_batch(
+        biz_candidates, state.get("bizCursor", 0),
+        min(BUSINESS_SLOTS, len(biz_candidates)), place_cache)
+    picked, next_cursor, prop_drop = pick_verified_batch(
         candidates, state.get("cursor", 0),
-        size=max(0, BATCH_SIZE - len(comm_picked) - len(biz_picked)))
+        max(0, BATCH_SIZE - len(comm_picked) - len(biz_picked)), place_cache)
+
+    for x in comm_picked + biz_picked + picked:
+        x["_historyNotes"] = lh.notes(history, x)
+
+    for item, why in comm_drop + biz_drop + prop_drop:
+        print(f"  !! 구글 확인으로 제외: {item.get('title')} - {why}")
+    if pc.enabled():
+        pc._save_cache(place_cache)
     # 비교군은 검증을 통과한 전체 후보. 분석 수치는 여기서만 계산한다.
     messages = build_messages(comm_picked, biz_picked, picked, updated_at,
                               peers=comm_candidates + biz_candidates + candidates)
@@ -707,6 +805,9 @@ def main():
     state["lastRunAt"] = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
     # 세 섹션을 모두 기록한다. 일부만 남기면 실제 발송분과 기록이 어긋난다.
     state["lastSentCommunityIds"] = [x["id"] for x in comm_picked]
+    # 발송한 커뮤니티 매물은 '본 것'으로 기록해 다음 실행에서 신규만 골라낼 수 있게 한다.
+    state["seenCommunityIds"] = sorted(
+        set(state.get("seenCommunityIds") or []) | {x["id"] for x in comm_candidates})
     state["lastSentBusinessIds"] = [x["id"] for x in biz_picked]
     state["lastSentPropertyIds"] = [x["id"] for x in picked]
     state["lastSentIds"] = [x["id"] for x in comm_picked + biz_picked + picked]

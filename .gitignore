@@ -1,5 +1,11 @@
 .playwright-mcp/
 scraper/output/
+# 실행 간에 유지돼야 의미가 있는 파일만 예외로 추적한다.
+# (매물 이력 = 가격 변동·체류 기간 추적, Places 캐시 = 중복 과금 방지)
+!scraper/output/
+scraper/output/*
+!scraper/output/listing_history.json
+!scraper/output/places_cache.json
 .omc/
 docs/
 MNA1.txt
