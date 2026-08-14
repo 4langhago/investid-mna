@@ -10,6 +10,8 @@ foreign_eligibility 가 '외국인이 명의를 가질 수 있는 구조인가'(
 없거나(브로커 낚시글) 이미 팔린 글이다. 그래서 그런 글은 '부적합'으로 떨어뜨린다.
 
 한국어(한인 커뮤니티)와 인도네시아어(99.co/OLX) 매물을 같은 규칙으로 본다.
+다만 사업체 인수와 부동산 매매는 물어야 할 것이 달라서 판정 경로를 나눈다.
+사업체는 '영업 실체가 있는가', 부동산은 '실물을 특정하고 거래를 검토할 수 있는가'를 본다.
 """
 import re
 from datetime import datetime, timezone
@@ -137,19 +139,24 @@ def classify(item):
     if not item.get("whatsapp") and not item.get("sourceUrl"):
         return UNFIT, score, ["연락 경로(원문 링크·연락처)가 없어 인수 절차를 시작할 수 없음"], []
 
-    if _is_business(item):
-        if not SUBSTANCE_RE.search(text):
-            return (UNFIT, score,
-                    ["영업 실체 신호(영업중 여부·매출·업력·직원)가 하나도 없음 - "
-                     "실재 여부를 확인할 수 없는 글"], [])
-        if not item.get("priceNum"):
-            todos.append("인수가(권리금 포함) 미표기 - 매도인에게 총액과 포함 범위 확인")
-        if not re.search(r"omset|omzet|laba|profit|pendapatan|매출|순익|수익", text, re.I):
-            todos.append("매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구")
-        todos.append("영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인")
-    else:
-        if not item.get("area"):
-            todos.append("면적 미표기 - 실측 면적과 증서상 면적 대조 필요")
+    if not _is_business(item):
+        # 부동산 매물에 '영업 실체' 잣대를 그대로 대면 안 된다.
+        # 루코 매매 글에 매출·직원·업력이 적혀 있을 이유가 없어서, 위의 POSITIVE 점수는
+        # 부동산에서 거의 0으로 나온다. 실제로 이 규칙을 공용으로 쓰던 동안
+        # 99.co 매물 153건 중 143건이 '부적합'으로 떨어졌다(2026-08-14 실측).
+        # 부동산에서 물어야 할 것은 '영업 중인가'가 아니라
+        # '실물을 특정하고 거래를 검토할 수 있는 정보가 있는가'다.
+        return _classify_property(item, score, reasons, todos)
+
+    if not SUBSTANCE_RE.search(text):
+        return (UNFIT, score,
+                ["영업 실체 신호(영업중 여부·매출·업력·직원)가 하나도 없음 - "
+                 "실재 여부를 확인할 수 없는 글"], [])
+    if not item.get("priceNum"):
+        todos.append("인수가(권리금 포함) 미표기 - 매도인에게 총액과 포함 범위 확인")
+    if not re.search(r"omset|omzet|laba|profit|pendapatan|매출|순익|수익", text, re.I):
+        todos.append("매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구")
+    todos.append("영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인")
 
     if score >= 6:
         status = OPERABLE
@@ -158,6 +165,50 @@ def classify(item):
     else:
         status = UNFIT
         reasons.append("운영 실체를 뒷받침하는 정보가 너무 적음")
+
+    return status, score, reasons, todos
+
+
+# 부동산 매물의 '검토 가능성' 신호. (필드 판정 함수, 점수, 한글 설명)
+PROPERTY_SIGNALS = [
+    (lambda i: bool(i.get("priceNum")), 3, "매매가가 명시됨"),
+    (lambda i: bool(i.get("area")), 2, "면적이 명시됨"),
+    (lambda i: bool(i.get("lat") and i.get("lng")), 2, "좌표가 있어 실물 위치를 특정할 수 있음"),
+    (lambda i: bool(i.get("address")), 1, "주소가 기재됨"),
+    (lambda i: bool(i.get("floors")), 1, "층수가 기재됨"),
+]
+
+_CERT_RE = re.compile(r"\bshm\b|\bhgb\b|hak (?:milik|pakai|guna)|shmsrs|sertifikat|증서|권리 형태",
+                      re.I)
+
+
+def _classify_property(item, score, reasons, todos):
+    """부동산 매물 판정. 영업 실체 대신 '실물 특정 + 거래 검토 가능성'을 본다."""
+    for test, pts, why in PROPERTY_SIGNALS:
+        if test(item):
+            score += pts
+            reasons.append(why)
+
+    text = _text(item)
+    if _CERT_RE.search(text):
+        score += 2
+        reasons.append("권리 형태(증서)가 표기됨")
+    else:
+        todos.append("증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구")
+
+    if not item.get("area"):
+        todos.append("면적 미표기 - 실측 면적과 증서상 면적 대조 필요")
+    if not item.get("priceNum"):
+        todos.append("매매가 미표기 - 원문·매도인에게 호가 확인")
+    todos.append("BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회")
+
+    if score >= 6:
+        status = OPERABLE
+    elif score >= 3:
+        status = UNCERTAIN
+    else:
+        status = UNFIT
+        reasons.append("매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음")
 
     return status, score, reasons, todos
 
