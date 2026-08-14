@@ -1,7 +1,220 @@
 // 자동 생성 파일 — scraper/scrape_olx.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-08-14T02:16:24+00:00
-const OLX_LISTINGS_UPDATED_AT = "2026-08-14T02:16:24+00:00";
+// 갱신 시각: 2026-08-14T20:48:12+07:00
+const OLX_LISTINGS_UPDATED_AT = "2026-08-14T20:48:12+07:00";
 const OLX_LISTINGS = [
+  {
+    "id": "olx-939039125",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "LT 473 Pandega Marta Ruang Usaha Aktif Dekat Jl Kaliurang, Ringroad, UGM, UNY, UPN, AMIKOM, FE UII, Pakuwon Mall, Terminal Condongcatur",
+    "category": "숙박",
+    "location": "Sleman Kab.",
+    "locationKo": "Sleman Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 9.000.000.000",
+    "priceNum": 9000000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Tanah Bangunan Ruang Usaha di Jalan Pandega Marta Sarimulyo Manggung, Caturtunggal, Depok, Sleman, Yogyakarta - Akses Jalan Lebar - Dekat Ringroad Utara, Pogung, Jl Kaliurang, Monjali - Dekat Apotek Kentungan, RS JIH - Dekat ARTOTEL, Hartono/Pakuwon Mall, Superindo, Mirota Pasaraya - Dekat Terminal ...",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/lt-473-pandega-marta-ruang-usaha-aktif-dekat-jl-kaliurang-ringroad-ugm-uny-upn-a-iid-939039125",
+    "postedAt": "2026-08-14T17:25:56+07:00",
+    "lat": -7.801,
+    "lng": 110.316,
+    "summaryKo": [
+      "업종/용도: 약국"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 9.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(0일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-944258262",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Jual Tempat Usaha Berjalan Raya Jatipadang Pasar Minggu",
+    "category": "기타 사업",
+    "location": "Jakarta Selatan",
+    "locationKo": "자카르타 남부",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 26.000.000.000",
+    "priceNum": 26000000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Luas Tanah : 1095 m2 Luas Bangunan : 500 m2 Lantai 1: 1 Area Bengkel mobil 1 Area Indomaret 1 Area Food Court Area Parkir Luas Lantai 2: Listrik : Bengkel 6600, Indomaret 22000 Jalan Masuk : 2 mobil Sertifikat : SHM On Hand Food Court komdisi berjalan full Bengkel kondisi berjalan Indomaret kondisi ...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/jual-tempat-usaha-berjalan-raya-jatipadang-pasar-minggu-iid-944258262",
+    "postedAt": "2026-08-14T13:42:54+07:00",
+    "lat": -6.289,
+    "lng": 106.839,
+    "summaryKo": [
+      "업종/용도: 정비소",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 1095m²",
+      "건물 면적 500m²",
+      "2층",
+      "주차 공간 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(0일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-946585668",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Take over Toko Stasiun Citayam",
+    "category": "소매점",
+    "location": "Depok Kota",
+    "locationKo": "데포",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 60.000.000",
+    "priceNum": 60000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Take over Toko Foto Copy Stasiun.",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/take-over-toko-stasiun-citayam-iid-946585668",
+    "postedAt": "2026-08-14T12:07:38+07:00",
+    "lat": -6.443,
+    "lng": 106.748,
+    "summaryKo": [
+      "업종/용도: 소매점"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 60백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(0일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
+  },
+  {
+    "id": "olx-940942012",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Over Usaha / Takeover J&T Cargo dan Lion Parcel",
+    "category": "온라인 사업",
+    "location": "Bekasi Kota",
+    "locationKo": "브카시",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 65.000.000",
+    "priceNum": 65000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Over Usaha / Takeover J&T Cargo dan Lion Parcel di Bekasi Selatan Penghasilan tetap tiap bulan Usaha pengiriman dalam dan luar negeri barang2 (volume besar seperti motor , tempat tidur dll) dan paket kecil . Auto Pilot dan sudah running dari tahun 2022. Daerah Ramai dan sudah banyak pelanggan tetap....",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/over-usaha-takeover-j-t-cargo-dan-lion-parcel-iid-940942012",
+    "postedAt": "2026-08-14T10:43:51+07:00",
+    "lat": -6.258,
+    "lng": 106.977,
+    "summaryKo": [
+      "업종/용도: 온라인 사업",
+      "고정 고객 보유",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 65백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "고정 고객 기반이 언급됨",
+      "최근 게시(0일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
+  },
   {
     "id": "olx-947459497",
     "type": "bisnis",
@@ -33,7 +246,26 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/over-alih-usaha-kuliner-warung-makan-mie-ayam-bakso-iid-947459497",
     "postedAt": "2026-08-13T22:36:16+07:00",
     "lat": -5.381,
-    "lng": 105.295
+    "lng": 105.295,
+    "summaryKo": [
+      "업종/용도: 하숙·원룸 임대 · 음식점 · 카페",
+      "가격 협의 가능",
+      "주차 공간 있음",
+      "주변에 대학·학교·시장·몰·역·톨게이트 등 집객 시설"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(1일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947454665",
@@ -66,40 +298,27 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-warkop-iid-947454665",
     "postedAt": "2026-08-13T21:16:03+07:00",
     "lat": -6.49,
-    "lng": 106.83
-  },
-  {
-    "id": "olx-939039125",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "LT 473 Pandega Marta Ruang Usaha Aktif Dekat Jl Kaliurang, Ringroad, UGM, UNY, UPN, AMIKOM, FE UII, Pakuwon Mall, Terminal Condongcatur",
-    "category": "숙박",
-    "location": "Sleman Kab.",
-    "locationKo": "Sleman Kab.",
-    "address": null,
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 9.000.000.000",
-    "priceNum": 9000000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Tanah Bangunan Ruang Usaha di Jalan Pandega Marta Sarimulyo Manggung, Caturtunggal, Depok, Sleman, Yogyakarta - Akses Jalan Lebar - Dekat Ringroad Utara, Pogung, Jl Kaliurang, Monjali - Dekat Apotek Kentungan, RS JIH - Dekat ARTOTEL, Hartono/Pakuwon Mall, Superindo, Mirota Pasaraya - Dekat Terminal ...",
-    "facilities": [
-      "운영 중 사업체",
-      "OLX 실시간"
+    "lng": 106.83,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
     ],
-    "propertyIncluded": false,
-    "whatsapp": null,
-    "c2c": true,
-    "images": "🏪",
-    "badge": "완전인수",
-    "source": "olx.co.id",
-    "sourceUrl": "https://www.olx.co.id/item/lt-473-pandega-marta-ruang-usaha-aktif-dekat-jl-kaliurang-ringroad-ugm-uny-upn-a-iid-939039125",
-    "postedAt": "2026-08-13T20:07:00+07:00",
-    "lat": -7.801,
-    "lng": 110.316
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 28백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(1일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947446396",
@@ -132,7 +351,30 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/dibutuhkan-investor-renovasi-2-usaha-billiard-masih-berjalan-iid-947446396",
     "postedAt": "2026-08-13T18:09:16+07:00",
     "lat": -6.018,
-    "lng": 106.055
+    "lng": 106.055,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "현재 영업 중",
+      "고정 고객 보유"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 250백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "고정 고객 기반이 언급됨",
+      "최근 게시(1일 전)"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-944058514",
@@ -165,7 +407,36 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/turun-harga-take-over-salon-siap-jalan-iid-944058514",
     "postedAt": "2026-08-13T16:47:45+07:00",
     "lat": -6.731,
-    "lng": 108.551
+    "lng": 108.551,
+    "summaryKo": [
+      "업종/용도: 미용실·이발소 · 미용실·살롱",
+      "2층",
+      "즉시 운영 가능",
+      "요지 입지(매도인 주장)",
+      "가격 인하됨",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 119백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(1일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947448913",
@@ -198,7 +469,32 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-spa-yang-masih-berjalan-iid-947448913",
     "postedAt": "2026-08-13T14:26:26+07:00",
     "lat": 1.142,
-    "lng": 104.011
+    "lng": 104.011,
+    "summaryKo": [
+      "업종/용도: 미용실·살롱",
+      "요지 입지(매도인 주장)",
+      "직원 인계 대상 있음",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 100백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "인계 대상 직원이 있음",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(1일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-944651438",
@@ -231,7 +527,28 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-laundry-iid-944651438",
     "postedAt": "2026-08-13T13:11:19+07:00",
     "lat": -6.186,
-    "lng": 106.682
+    "lng": 106.682,
+    "summaryKo": [
+      "업종/용도: 세탁소 · 미용실·살롱"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 450백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(1일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-944277410",
@@ -264,7 +581,33 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/dijual-klinik-sudah-berjalan-dan-sudah-ada-omset-iid-944277410",
     "postedAt": "2026-08-13T09:26:26+07:00",
     "lat": -6.239,
-    "lng": 106.972
+    "lng": 106.972,
+    "summaryKo": [
+      "업종/용도: 클리닉 · 미용실·살롱",
+      "3층",
+      "현재 영업 중",
+      "코너 필지",
+      "설비 일체 포함",
+      "주차 공간 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 550백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(1일 전)"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947436409",
@@ -297,7 +640,30 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-warung-kuliner-mie-aceh-iid-947436409",
     "postedAt": "2026-08-13T01:48:28+07:00",
     "lat": -6.205,
-    "lng": 106.705
+    "lng": 106.705,
+    "summaryKo": [
+      "업종/용도: 음식점 · 카페",
+      "침실 2개",
+      "욕실 1개",
+      "가격 협의 가능",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(2일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-946392959",
@@ -331,7 +697,29 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/jual-ruko-jalan-utama-malang-kawasan-bisnis-dan-perkantoran-iid-946392959",
     "postedAt": "2026-08-12T14:39:52+07:00",
     "lat": -7.957,
-    "lng": 112.644
+    "lng": 112.644,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 3.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(2일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-943787487",
@@ -364,7 +752,29 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/dijual-ruang-usaha-resto-aktif-full-furnished-plus-manajemen-di-jl-slamet-riyadi-iid-943787487",
     "postedAt": "2026-08-12T14:22:32+07:00",
     "lat": -7.556,
-    "lng": 110.744
+    "lng": 110.744,
+    "summaryKo": [
+      "업종/용도: 음식점 · 카페",
+      "현재 영업 중",
+      "가구·집기 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 8.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(2일 전)"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-941713634",
@@ -398,7 +808,32 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/rumah-sayap-cikutra-jual-cepat-ada-usaha-yang-berjalan-harga-negotible-iid-941713634",
     "postedAt": "2026-08-12T13:07:30+07:00",
     "lat": -6.904,
-    "lng": 107.624
+    "lng": 107.624,
+    "summaryKo": [
+      "업종/용도: 창고 · 카페 · 음식점",
+      "토지 면적 419m²",
+      "건물 면적 100m²",
+      "침실 6개",
+      "1층",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(2일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947419183",
@@ -431,7 +866,27 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/disewakan-take-over-murah-ruang-usaha-pinggir-jalan-alam-sutera-iid-947419183",
     "postedAt": "2026-08-12T12:00:13+07:00",
     "lat": -6.223,
-    "lng": 106.66
+    "lng": 106.66,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "요지 입지(매도인 주장)",
+      "간선도로변",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요",
+      "주차 공간 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 5.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "임대 매물 - 인수(양수) 대상이 아님"
+    ],
+    "operabilityTodos": [],
+    "koreanEligible": false
   },
   {
     "id": "olx-947417983",
@@ -464,7 +919,27 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-jons-barbershop-harapan-mulya-tarumajaya-bekasi-iid-947417983",
     "postedAt": "2026-08-12T11:28:42+07:00",
     "lat": -6.119,
-    "lng": 106.994
+    "lng": 106.994,
+    "summaryKo": [
+      "업종/용도: 미용실·이발소 · 카페 · 음식점",
+      "2층",
+      "현재 영업 중",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 75백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(2일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947395819",
@@ -498,7 +973,33 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/di-jual-rumah-dan-usaha-berjalan-iid-947395819",
     "postedAt": "2026-08-12T10:27:20+07:00",
     "lat": -6.117,
-    "lng": 106.906
+    "lng": 106.906,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "매각 사유: 매도인 이주(원문 기재)",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 7.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(2일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "상세 내용을 공개하지 않고 연락만 유도함",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-942855349",
@@ -531,7 +1032,22 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/sabana-fried-chicken-duren-sawit-di-jual-atau-take-over-iid-942855349",
     "postedAt": "2026-08-12T07:35:19+07:00",
     "lat": -6.232,
-    "lng": 106.915
+    "lng": 106.915,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "현재 영업 중",
+      "요지 입지(매도인 주장)",
+      "간선도로변"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 22백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "프랜차이즈 가맹·투자자 모집 - 기존 사업체 인수가 아님"
+    ],
+    "operabilityTodos": [],
+    "koreanEligible": false
   },
   {
     "id": "olx-947403470",
@@ -564,7 +1080,25 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/warkop-take-over-iid-947403470",
     "postedAt": "2026-08-11T18:29:49+07:00",
     "lat": -6.25,
-    "lng": 106.82
+    "lng": 106.82,
+    "summaryKo": [
+      "업종/용도: 하숙·원룸 임대",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 15백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(3일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947403600",
@@ -597,7 +1131,32 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-franchise-bingxue-iid-947403600",
     "postedAt": "2026-08-11T18:08:31+07:00",
     "lat": -1.238,
-    "lng": 116.854
+    "lng": 116.854,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 195백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(3일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "상세 내용을 공개하지 않고 연락만 유도함",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947389074",
@@ -630,7 +1189,27 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/over-alih-usaha-laundry-tinggal-lanjutkan-iid-947389074",
     "postedAt": "2026-08-11T17:15:56+07:00",
     "lat": -6.348,
-    "lng": 107.763
+    "lng": 107.763,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "즉시 운영 가능",
+      "가격 협의 가능",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 59백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(3일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947397623",
@@ -663,7 +1242,24 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-salon-aktif-berjalan-iid-947397623",
     "postedAt": "2026-08-11T14:26:22+07:00",
     "lat": -7.349,
-    "lng": 108.225
+    "lng": 108.225,
+    "summaryKo": [
+      "업종/용도: 미용실·이발소 · 미용실·살롱",
+      "매각 사유: 매도인 이주(원문 기재)"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 80백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(3일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947387947",
@@ -696,7 +1292,23 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-warung-masih-sisa-6-bulan-lagi-iid-947387947",
     "postedAt": "2026-08-11T08:43:48+07:00",
     "lat": -6.308,
-    "lng": 106.682
+    "lng": 106.682,
+    "summaryKo": [
+      "업종/용도: 음식점 · 카페"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(4일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-917899483",
@@ -729,7 +1341,31 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/jual-cepat-bisnis-sekolah-aktif-3lt-sma-smk-smp-parung-kemang-bogor-iid-917899483",
     "postedAt": "2026-08-11T04:58:51+07:00",
     "lat": -6.268,
-    "lng": 106.783
+    "lng": 106.783,
+    "summaryKo": [
+      "업종/용도: 숙박",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 2,700m²",
+      "요지 입지(매도인 주장)",
+      "간선도로변"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(4일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-946364102",
@@ -762,7 +1398,29 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/ruko-lontar-serang-banten-take-over-beserta-usaha-bannya-iid-946364102",
     "postedAt": "2026-08-11T01:16:56+07:00",
     "lat": -5.971,
-    "lng": 106.284
+    "lng": 106.284,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "침실 3개",
+      "욕실 3개"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 2.7십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(4일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947344091",
@@ -795,7 +1453,24 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/takeover-laundry-iid-947344091",
     "postedAt": "2026-08-10T16:34:52+07:00",
     "lat": -6.377,
-    "lng": 106.776
+    "lng": 106.776,
+    "summaryKo": [
+      "업종/용도: 세탁소 · 음식점 · 숙박업 · 카페"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(4일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947374627",
@@ -828,7 +1503,32 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-laundry-premium-cilegon-langsung-profit-iid-947374627",
     "postedAt": "2026-08-10T15:16:34+07:00",
     "lat": -6.018,
-    "lng": 106.055
+    "lng": 106.055,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "월매출 약 Rp 25 (매도인 제시값 · 장부 확인 필요)",
+      "순이익 약 Rp 8 (매도인 제시값 · 장부 확인 필요)",
+      "현재 영업 중",
+      "요지 입지(매도인 주장)",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 268백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "최근 게시(4일 전)"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947374616",
@@ -861,7 +1561,28 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-konter-all-in-iid-947374616",
     "postedAt": "2026-08-10T15:16:06+07:00",
     "lat": -6.258,
-    "lng": 106.977
+    "lng": 106.977,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "요지 입지(매도인 주장)",
+      "간선도로변",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 25백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(4일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947370438",
@@ -894,7 +1615,33 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/dijual-ruang-usaha-aktif-di-poros-jalan-puntodewo-malang-iid-947370438",
     "postedAt": "2026-08-10T12:58:20+07:00",
     "lat": -7.991,
-    "lng": 112.643
+    "lng": 112.643,
+    "summaryKo": [
+      "업종/용도: 미용실·이발소 · 미용실·살롱",
+      "토지 면적 120m²",
+      "2층",
+      "간선도로변",
+      "설비 일체 포함",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 3.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(4일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947369584",
@@ -927,7 +1674,33 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/dijual-ruang-usaha-aktif-di-poros-jalan-puntodewo-malang-iid-947369584",
     "postedAt": "2026-08-10T12:22:40+07:00",
     "lat": -7.991,
-    "lng": 112.643
+    "lng": 112.643,
+    "summaryKo": [
+      "업종/용도: 미용실·이발소 · 미용실·살롱",
+      "토지 면적 120m²",
+      "2층",
+      "간선도로변",
+      "설비 일체 포함",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 3.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(4일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947367442",
@@ -960,7 +1733,32 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/dijual-ruang-usaha-aktif-kawasan-ramai-di-puntodewo-blimbing-malang-iid-947367442",
     "postedAt": "2026-08-10T11:08:24+07:00",
     "lat": -7.984,
-    "lng": 112.645
+    "lng": 112.645,
+    "summaryKo": [
+      "업종/용도: 미용실·이발소 · 미용실·살롱",
+      "토지 면적 120m²",
+      "간선도로변",
+      "설비 일체 포함",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 3.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(4일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-938001791",
@@ -993,7 +1791,27 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/lahan-usaha-aktif-2599-m2-harga-10-juta-permeter-di-taman-sidoarjo-iid-938001791",
     "postedAt": "2026-08-10T09:04:03+07:00",
     "lat": -7.363,
-    "lng": 112.64
+    "lng": 112.64,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "간선도로변"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(4일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-941977575",
@@ -1027,7 +1845,28 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/dijual-tanah-usaha-3-200-m-di-sunter-kemayoran-raya-bonus-bengkel-cat-mobil-akti-iid-941977575",
     "postedAt": "2026-08-10T03:12:20+07:00",
     "lat": -6.159,
-    "lng": 106.87
+    "lng": 106.87,
+    "summaryKo": [
+      "업종/용도: 정비소 · 공장·제조",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(5일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-941039689",
@@ -1060,7 +1899,29 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-laundry-iid-941039689",
     "postedAt": "2026-08-10T02:11:08+07:00",
     "lat": 0.524,
-    "lng": 101.399
+    "lng": 101.399,
+    "summaryKo": [
+      "업종/용도: 세탁소 · 미용실·살롱",
+      "매각 사유 기재 있음 - 원문 확인 필요",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 80백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(5일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-936726403",
@@ -1093,7 +1954,30 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/over-usaha-laundry-iid-936726403",
     "postedAt": "2026-08-10T00:47:13+07:00",
     "lat": -6.399,
-    "lng": 106.962
+    "lng": 106.962,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "직원 인계 대상 있음",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 35백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "인계 대상 직원이 있음",
+      "설비·집기 인계 범위가 언급됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(5일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "상세 내용을 공개하지 않고 연락만 유도함",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-931179452",
@@ -1126,7 +2010,25 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-pangkalan-gas-depot-air-iid-931179452",
     "postedAt": "2026-08-09T18:37:58+07:00",
     "lat": -6.675,
-    "lng": 107.219
+    "lng": 107.219,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "매각 사유: 매도인 이주(원문 기재)"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "LPG·연료 소매 유통은 외국인 투자 제한 업종",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "고정 고객 기반이 언급됨",
+      "최근 게시(5일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-941977132",
@@ -1160,7 +2062,23 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/tempat-usaha-aktif-luas-1-3-ha-harga-40-milyar-15-menit-dari-gerbang-tol-bandar--iid-941977132",
     "postedAt": "2026-08-09T15:15:21+07:00",
     "lat": -7.607,
-    "lng": 112.095
+    "lng": 112.095,
+    "summaryKo": [
+      "업종/용도: 교육"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "임대 매물 - 인수(양수) 대상이 아님"
+    ],
+    "operabilityTodos": [],
+    "koreanEligible": false
   },
   {
     "id": "olx-947348817",
@@ -1193,40 +2111,32 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-laundry-tebet-iid-947348817",
     "postedAt": "2026-08-09T11:57:13+07:00",
     "lat": -6.231,
-    "lng": 106.847
-  },
-  {
-    "id": "olx-940942012",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Over Usaha / Takeover J&T Cargo dan Lion Parcel",
-    "category": "온라인 사업",
-    "location": "Bekasi Kota",
-    "locationKo": "브카시",
-    "address": null,
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 65.000.000",
-    "priceNum": 65000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Over Usaha / Takeover J&T Cargo dan Lion Parcel di Bekasi Selatan Penghasilan tetap tiap bulan Usaha pengiriman dalam dan luar negeri barang2 (volume besar seperti motor , tempat tidur dll) dan paket kecil . Auto Pilot dan sudah running dari tahun 2022. Daerah Ramai dan sudah banyak pelanggan tetap....",
-    "facilities": [
-      "운영 중 사업체",
-      "OLX 실시간"
+    "lng": 106.847,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "월매출 약 Rp 10 (매도인 제시값 · 장부 확인 필요)",
+      "요지 입지(매도인 주장)",
+      "직원 인계 대상 있음",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
     ],
-    "propertyIncluded": false,
-    "whatsapp": null,
-    "c2c": true,
-    "images": "🏪",
-    "badge": "완전인수",
-    "source": "olx.co.id",
-    "sourceUrl": "https://www.olx.co.id/item/over-usaha-takeover-j-t-cargo-dan-lion-parcel-iid-940942012",
-    "postedAt": "2026-08-09T05:46:27+07:00",
-    "lat": -6.258,
-    "lng": 106.977
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 53백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "인계 대상 직원이 있음",
+      "설비·집기 인계 범위가 언급됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(5일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-942299551",
@@ -1260,7 +2170,32 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/jual-rumah-plus-cafe-di-menteng-usaha-sudah-berjalan-iid-942299551",
     "postedAt": "2026-08-08T20:27:11+07:00",
     "lat": -6.201,
-    "lng": 106.841
+    "lng": 106.841,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "침실 3개",
+      "욕실 3개",
+      "전기 용량 41,500W급",
+      "현재 영업 중",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(6일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947059974",
@@ -1293,7 +2228,25 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/takeover-laundry-iid-947059974",
     "postedAt": "2026-08-08T18:59:06+07:00",
     "lat": -6.148,
-    "lng": 106.735
+    "lng": 106.735,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "가격 협의 가능"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 20백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(6일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-924062484",
@@ -1326,7 +2279,25 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/over-oper-usaha-jual-segera-nego-depot-air-isi-ulang-dan-kelontong-iid-924062484",
     "postedAt": "2026-08-08T14:39:51+07:00",
     "lat": -6.31,
-    "lng": 106.953
+    "lng": 106.953,
+    "summaryKo": [
+      "업종/용도: 소매점·미니마트",
+      "가격 협의 가능"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "생필품 소매업은 외국인 투자 유보 업종",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(6일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-946300058",
@@ -1360,7 +2331,33 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/tempat-usaha-aktif-luas-2000-m2-harga-7-milyar-3-menit-dari-gerbang-tol-kejapana-iid-946300058",
     "postedAt": "2026-08-08T14:37:36+07:00",
     "lat": -7.563,
-    "lng": 112.688
+    "lng": 112.688,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 2000m²",
+      "건물 면적 250m²",
+      "간선도로변",
+      "건축허가(PBG/IMB) 언급 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 7.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(6일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-940266640",
@@ -1393,7 +2390,19 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-frandchise-iid-940266640",
     "postedAt": "2026-08-08T10:23:21+07:00",
     "lat": -6.347,
-    "lng": 106.741
+    "lng": 106.741,
+    "summaryKo": [
+      "업종/용도: 기타 사업"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 25백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "임대 매물 - 인수(양수) 대상이 아님"
+    ],
+    "operabilityTodos": [],
+    "koreanEligible": false
   },
   {
     "id": "olx-947323215",
@@ -1426,7 +2435,33 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-bengkel-salon-mobil-lokasi-strategis-di-jakarta-utara-iid-947323215",
     "postedAt": "2026-08-08T09:26:53+07:00",
     "lat": -6.132,
-    "lng": 106.871
+    "lng": 106.871,
+    "summaryKo": [
+      "업종/용도: 정비소 · 미용실·이발소 · 미용실·살롱",
+      "요지 입지(매도인 주장)",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 120백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(6일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947322884",
@@ -1459,7 +2494,27 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-salon-iid-947322884",
     "postedAt": "2026-08-08T08:50:01+07:00",
     "lat": -6.16,
-    "lng": 106.847
+    "lng": 106.847,
+    "summaryKo": [
+      "업종/용도: 미용실·이발소 · 미용실·살롱"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 120백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(6일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-946983973",
@@ -1492,7 +2547,28 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/kios-strategis-perempatan-lampu-merah-jambu-dua-over-sewa-termasuk-usaha-warteg--iid-946983973",
     "postedAt": "2026-08-08T08:25:50+07:00",
     "lat": -6.563,
-    "lng": 106.763
+    "lng": 106.763,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "현재 영업 중",
+      "요지 입지(매도인 주장)",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(7일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-946960599",
@@ -1525,7 +2601,28 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/over-sewa-sekaligus-bisa-lanjut-usaha-warteg-franchise-kekinian-lokasi-strategis-iid-946960599",
     "postedAt": "2026-08-08T08:24:23+07:00",
     "lat": -6.593,
-    "lng": 106.786
+    "lng": 106.786,
+    "summaryKo": [
+      "업종/용도: 음식점 · 카페",
+      "즉시 운영 가능",
+      "요지 입지(매도인 주장)",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(7일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-946960645",
@@ -1558,7 +2655,28 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/kios-strategis-perempatan-lampu-merah-jambu-dua-over-sewa-termasuk-usaha-warteg--iid-946960645",
     "postedAt": "2026-08-08T08:24:14+07:00",
     "lat": -6.568,
-    "lng": 106.809
+    "lng": 106.809,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "현재 영업 중",
+      "요지 입지(매도인 주장)",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(7일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-946988941",
@@ -1591,7 +2709,28 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-warteg-bisnis-sudah-jalan-dan-menghasilkan-lokasi-strategis-iid-946988941",
     "postedAt": "2026-08-08T08:23:55+07:00",
     "lat": -6.485,
-    "lng": 106.838
+    "lng": 106.838,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "현재 영업 중",
+      "요지 입지(매도인 주장)",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(7일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947317166",
@@ -1625,7 +2764,36 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/s756-rumah-bonus-usaha-berjalan-murah-di-mustika-jaya-bekasi-timur-iid-947317166",
     "postedAt": "2026-08-07T21:23:08+07:00",
     "lat": -6.297,
-    "lng": 107.026
+    "lng": 107.026,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 144m²",
+      "건물 면적 288m²",
+      "침실 5개",
+      "욕실 4개",
+      "2층",
+      "가격 협의 가능",
+      "건축허가(PBG/IMB) 언급 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 2.3십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(7일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947311948",
@@ -1658,7 +2826,23 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/nyari-take-over-laundry-iid-947311948",
     "postedAt": "2026-08-07T16:37:44+07:00",
     "lat": -6.191,
-    "lng": 106.742
+    "lng": 106.742,
+    "summaryKo": [
+      "업종/용도: 세탁소"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 30백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "최근 게시(7일 전)"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947311771",
@@ -1691,7 +2875,32 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-cafe-siap-operasional-di-pererenan-bali-iid-947311771",
     "postedAt": "2026-08-07T16:31:33+07:00",
     "lat": -8.64,
-    "lng": 115.13
+    "lng": 115.13,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "전기 용량 7,700W급",
+      "즉시 운영 가능",
+      "가구·집기 포함",
+      "주차 공간 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 250백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(7일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947310833",
@@ -1724,7 +2933,23 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/oper-usaha-frozen-food-iid-947310833",
     "postedAt": "2026-08-07T15:55:39+07:00",
     "lat": -6.397,
-    "lng": 106.8
+    "lng": 106.8,
+    "summaryKo": [
+      "업종/용도: 기타 사업"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 38백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(7일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-946549413",
@@ -1757,7 +2982,30 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-jual-usaha-tempat-cuci-mobil-iid-946549413",
     "postedAt": "2026-08-07T15:51:59+07:00",
     "lat": -6.186,
-    "lng": 106.682
+    "lng": 106.682,
+    "summaryKo": [
+      "업종/용도: 세차장 · 미용실·살롱",
+      "현재 영업 중",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 830백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(7일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947309267",
@@ -1790,7 +3038,28 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-laundry-dan-6-kamar-kos2an-iid-947309267",
     "postedAt": "2026-08-07T15:01:36+07:00",
     "lat": 3.607,
-    "lng": 98.701
+    "lng": 98.701,
+    "summaryKo": [
+      "업종/용도: 세탁소"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 135백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(7일 전)"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947306353",
@@ -1823,7 +3092,29 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/lelang-take-over-usaha-laundry-iid-947306353",
     "postedAt": "2026-08-07T13:30:53+07:00",
     "lat": -7.272,
-    "lng": 112.783
+    "lng": 112.783,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 250백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(7일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947305469",
@@ -1856,7 +3147,32 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/dijual-ruang-usaha-aktif-kawasan-ramai-di-jl-puntodewo-malang-iid-947305469",
     "postedAt": "2026-08-07T13:03:54+07:00",
     "lat": -7.991,
-    "lng": 112.643
+    "lng": 112.643,
+    "summaryKo": [
+      "업종/용도: 미용실·이발소 · 미용실·살롱",
+      "토지 면적 120m²",
+      "간선도로변",
+      "설비 일체 포함",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 3.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(7일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947005642",
@@ -1889,7 +3205,29 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-laundry-kiloan-bukit-duri-iid-947005642",
     "postedAt": "2026-08-07T11:12:46+07:00",
     "lat": -6.231,
-    "lng": 106.847
+    "lng": 106.847,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "월매출 약 Rp 13백만 (매도인 제시값 · 장부 확인 필요)",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 53백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(7일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947300453",
@@ -1922,7 +3260,32 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-perum-kemala-dandelion-spesifikasi-rumah-luas-tanah-72-luas-bangunan-3-iid-947300453",
     "postedAt": "2026-08-07T10:00:01+07:00",
     "lat": -6.147,
-    "lng": 107.024
+    "lng": 107.024,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "침실 1개",
+      "욕실 1개",
+      "1층",
+      "가구·집기 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 110백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(7일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947283277",
@@ -1955,7 +3318,27 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/over-cepat-usaha-barbershop-premium-iid-947283277",
     "postedAt": "2026-08-06T13:57:39+07:00",
     "lat": -6.399,
-    "lng": 106.741
+    "lng": 106.741,
+    "summaryKo": [
+      "업종/용도: 미용실·이발소 · 카페 · 음식점",
+      "토지 면적 130m²",
+      "2층",
+      "요지 입지(매도인 주장)",
+      "간선도로변"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 97백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(8일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-942477309",
@@ -1989,7 +3372,30 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/dijual-rumah-kost-usaha-laundry-aktif-di-kelapa-dua-tangerang-9-kamar-lokasi-str-iid-942477309",
     "postedAt": "2026-08-05T16:11:55+07:00",
     "lat": -6.239,
-    "lng": 106.622
+    "lng": 106.622,
+    "summaryKo": [
+      "업종/용도: 세탁소 · 하숙·원룸 임대",
+      "요지 입지(매도인 주장)",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 2.3십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(9일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947253446",
@@ -2022,7 +3428,25 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/disewakan-take-over-usaha-billiard-all-in-cuma-500jt-iid-947253446",
     "postedAt": "2026-08-05T14:56:15+07:00",
     "lat": -6.247,
-    "lng": 106.761
+    "lng": 106.761,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "2층",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 550백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "임대 매물 - 인수(양수) 대상이 아님"
+    ],
+    "operabilityTodos": [],
+    "koreanEligible": false
   },
   {
     "id": "olx-945579826",
@@ -2055,7 +3479,30 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/di-jual-oper-usaha-toko-baut-dan-alat-teknik-iid-945579826",
     "postedAt": "2026-08-05T13:32:29+07:00",
     "lat": -6.235,
-    "lng": 106.57
+    "lng": 106.57,
+    "summaryKo": [
+      "업종/용도: 공장·제조 · 유통·대리점",
+      "가격 협의 가능",
+      "거래처(공급업체) 인계 언급"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 100백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "최근 게시(9일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947225036",
@@ -2088,7 +3535,26 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-kios-sembako-iid-947225036",
     "postedAt": "2026-08-04T12:33:06+07:00",
     "lat": -6.151,
-    "lng": 106.152
+    "lng": 106.152,
+    "summaryKo": [
+      "업종/용도: 소매점·미니마트",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "생필품 소매업은 외국인 투자 유보 업종",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(10일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-931443415",
@@ -2122,7 +3588,30 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/tempat-usaha-aktif-1-ha-harga-8-milyar-di-dradahblumbang-lamongan-iid-931443415",
     "postedAt": "2026-08-04T12:21:16+07:00",
     "lat": -7.18,
-    "lng": 112.198
+    "lng": 112.198,
+    "summaryKo": [
+      "업종/용도: 창고",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 10,100m²"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 8.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(10일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947093099",
@@ -2155,7 +3644,28 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-ps-4-game-station-iid-947093099",
     "postedAt": "2026-08-04T04:59:27+07:00",
     "lat": -6.408,
-    "lng": 106.764
+    "lng": 106.764,
+    "summaryKo": [
+      "업종/용도: 교육",
+      "월매출 약 Rp 400 (매도인 제시값 · 장부 확인 필요)",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 62백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(11일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947095540",
@@ -2188,7 +3698,28 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-laundry-iid-947095540",
     "postedAt": "2026-08-04T04:47:18+07:00",
     "lat": -6.148,
-    "lng": 106.735
+    "lng": 106.735,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "월매출 약 Rp 20 (매도인 제시값 · 장부 확인 필요)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 160백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "최근 게시(11일 전)"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947216297",
@@ -2222,7 +3753,31 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/di-jual-sgera-rumah-dan-tempat-usaha-aktif-workshop-daerah-luwinanggung-cibubur-iid-947216297",
     "postedAt": "2026-08-04T02:09:41+07:00",
     "lat": -6.406,
-    "lng": 106.909
+    "lng": 106.909,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "토지 면적 2,806m²",
+      "건물 면적 300m²",
+      "욕실 4개",
+      "전기 용량 5,500W급"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(11일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-945114759",
@@ -2255,7 +3810,28 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-menjual-franchise-minuman-teh-kotjok-mall-koja-iid-945114759",
     "postedAt": "2026-08-03T23:04:07+07:00",
     "lat": -6.117,
-    "lng": 106.906
+    "lng": 106.906,
+    "summaryKo": [
+      "업종/용도: 교육",
+      "현재 영업 중",
+      "요지 입지(매도인 주장)",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 99백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(11일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947208029",
@@ -2288,7 +3864,23 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-laundry-jejalen-tambun-utara-iid-947208029",
     "postedAt": "2026-08-03T17:17:42+07:00",
     "lat": -6.178,
-    "lng": 107.065
+    "lng": 107.065,
+    "summaryKo": [
+      "업종/용도: 세탁소"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 25백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(11일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-946959012",
@@ -2321,7 +3913,28 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-laundry-tinggal-jalanin-iid-946959012",
     "postedAt": "2026-08-03T16:14:45+07:00",
     "lat": -6.738,
-    "lng": 106.876
+    "lng": 106.876,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "가격 협의 가능"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 200백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(11일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947205280",
@@ -2354,7 +3967,30 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-barber-shop-iid-947205280",
     "postedAt": "2026-08-03T15:33:02+07:00",
     "lat": -6.427,
-    "lng": 106.8
+    "lng": 106.8,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "요지 입지(매도인 주장)",
+      "매도인 급매",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 70백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(11일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-943762633",
@@ -2387,7 +4023,29 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/oper-alih-usaha-warkop-dan-rental-ps-iid-943762633",
     "postedAt": "2026-08-03T12:44:53+07:00",
     "lat": -6.27,
-    "lng": 106.929
+    "lng": 106.929,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "간선도로변",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요",
+      "유동인구·배후세대가 많은 곳(매도인 주장)",
+      "재고·비품 인계 포함"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 75백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(11일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-946463892",
@@ -2420,7 +4078,26 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-laundry-iid-946463892",
     "postedAt": "2026-08-02T15:12:57+07:00",
     "lat": -6.436,
-    "lng": 106.835
+    "lng": 106.835,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "직원 인계 대상 있음"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 39백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "인계 대상 직원이 있음",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(12일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-941821232",
@@ -2453,7 +4130,27 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/lahan-usaha-aktif-1206-m2-harga-3-5-milyar-30-menit-dari-gerbang-tol-gedeg-mojok-iid-941821232",
     "postedAt": "2026-08-02T14:45:03+07:00",
     "lat": -7.504,
-    "lng": 112.402
+    "lng": 112.402,
+    "summaryKo": [
+      "업종/용도: 농장·축산"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 3.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(12일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-943614495",
@@ -2487,7 +4184,32 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/rumah-usaha-aktif-lokasi-strategis-di-poros-raya-tidar-malang-iid-943614495",
     "postedAt": "2026-08-02T10:35:06+07:00",
     "lat": -7.966,
-    "lng": 112.609
+    "lng": 112.609,
+    "summaryKo": [
+      "업종/용도: 미용실·살롱",
+      "권리 형태: SHM(소유권)",
+      "욕실 3개",
+      "300층",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 8.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(12일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-946449660",
@@ -2520,7 +4242,24 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-laundry-daerah-depok-iid-946449660",
     "postedAt": "2026-08-01T17:42:41+07:00",
     "lat": -6.364,
-    "lng": 106.859
+    "lng": 106.859,
+    "summaryKo": [
+      "업종/용도: 세탁소"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 25백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(13일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-945054009",
@@ -2553,7 +4292,31 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/usaha-aktif-alfamart-perijinan-aktif-di-sragen-investasi-menguntungkan-iid-945054009",
     "postedAt": "2026-08-01T15:46:41+07:00",
     "lat": -7.443,
-    "lng": 111.022
+    "lng": 111.022,
+    "summaryKo": [
+      "업종/용도: 미용실·살롱",
+      "권리 형태: SHM(소유권)",
+      "욕실 1개",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 4.2십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(13일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-943345723",
@@ -2586,7 +4349,31 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/takeover-usaha-agen-logistik-sicepat-anteraja-lion-parcel-pos-ind-dll-iid-943345723",
     "postedAt": "2026-08-01T13:49:13+07:00",
     "lat": -6.198,
-    "lng": 106.599
+    "lng": 106.599,
+    "summaryKo": [
+      "업종/용도: 유통·대리점",
+      "고정 고객 보유",
+      "즉시 운영 가능",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 140백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "고정 고객 기반이 언급됨",
+      "최근 게시(13일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-943345642",
@@ -2619,7 +4406,31 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/takeover-agen-anteraja-iid-943345642",
     "postedAt": "2026-08-01T13:48:46+07:00",
     "lat": -6.198,
-    "lng": 106.599
+    "lng": 106.599,
+    "summaryKo": [
+      "업종/용도: 유통·대리점",
+      "고정 고객 보유",
+      "즉시 운영 가능",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 160백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "고정 고객 기반이 언급됨",
+      "최근 게시(13일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-937806923",
@@ -2652,7 +4463,29 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-5-expedisi-aktif-dijamin-untung-melimpah-iid-937806923",
     "postedAt": "2026-08-01T13:48:35+07:00",
     "lat": -6.198,
-    "lng": 106.599
+    "lng": 106.599,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "법인·인허가 관련 언급 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 450백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "사업자 등록·인허가 관련 언급이 있음",
+      "최근 게시(13일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-939197639",
@@ -2685,7 +4518,28 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-laundry-iid-939197639",
     "postedAt": "2026-08-01T13:22:18+07:00",
     "lat": -6.257,
-    "lng": 106.523
+    "lng": 106.523,
+    "summaryKo": [
+      "업종/용도: 세탁소"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 150백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(13일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947155210",
@@ -2718,7 +4572,28 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/alih-usaha-laundry-iid-947155210",
     "postedAt": "2026-08-01T10:48:03+07:00",
     "lat": 5.584,
-    "lng": 95.346
+    "lng": 95.346,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "현재 영업 중",
+      "가격 협의 가능",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 50백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(13일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-942093547",
@@ -2751,7 +4626,22 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-franchise-roti-kupi-take-over-sewa-ruko-iid-942093547",
     "postedAt": "2026-08-01T10:27:37+07:00",
     "lat": -6.258,
-    "lng": 106.658
+    "lng": 106.658,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "가격 협의 가능",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 29백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "프랜차이즈 가맹·투자자 모집 - 기존 사업체 인수가 아님"
+    ],
+    "operabilityTodos": [],
+    "koreanEligible": false
   },
   {
     "id": "olx-927610802",
@@ -2784,7 +4674,30 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/dijual-untuk-take-over-usaha-yang-sudah-berjalan-16-tahun-iid-927610802",
     "postedAt": "2026-08-01T09:32:01+07:00",
     "lat": -6.153,
-    "lng": 106.832
+    "lng": 106.832,
+    "summaryKo": [
+      "업종/용도: 소매점",
+      "현재 영업 중",
+      "직원 인계 대상 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 950백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "인계 대상 직원이 있음",
+      "최근 게시(13일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947079370",
@@ -2818,7 +4731,31 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/dijual-borongan-rumah-usaha-hunian-premium-di-joyo-agung-malang-2-usaha-aktif-ru-iid-947079370",
     "postedAt": "2026-08-01T06:12:03+07:00",
     "lat": -7.938,
-    "lng": 112.588
+    "lng": 112.588,
+    "summaryKo": [
+      "업종/용도: 숙박업 · 카페 · 음식점",
+      "현재 영업 중",
+      "요지 입지(매도인 주장)",
+      "재고·비품 인계 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 2.9십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(14일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947150020",
@@ -2852,7 +4789,37 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/dijual-buc-rumah-ada-usaha-cafe-aktif-tinggal-meneruskan-hasil-sukodono-graha-as-iid-947150020",
     "postedAt": "2026-08-01T04:23:19+07:00",
     "lat": -7.409,
-    "lng": 112.671
+    "lng": 112.671,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 180m²",
+      "침실 7개",
+      "욕실 3개",
+      "3층",
+      "전기 용량 10,600W급",
+      "코너 필지",
+      "매도인 급매",
+      "건축허가(PBG/IMB) 언급 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 3.3십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(14일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947055378",
@@ -2885,7 +4852,26 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/takeover-warteg-siap-jalan-full-peralatan-lokasi-strategis-iid-947055378",
     "postedAt": "2026-07-31T17:24:25+07:00",
     "lat": -6.307,
-    "lng": 106.717
+    "lng": 106.717,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "요지 입지(매도인 주장)",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(14일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-940990780",
@@ -2918,7 +4904,25 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/oper-usaha-produktif-iid-940990780",
     "postedAt": "2026-07-31T01:45:24+07:00",
     "lat": -6.337,
-    "lng": 106.854
+    "lng": 106.854,
+    "summaryKo": [
+      "업종/용도: 공장·제조",
+      "현재 영업 중"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 30백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(15일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-944251247",
@@ -2951,7 +4955,27 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-agen-ekspedisi-iid-944251247",
     "postedAt": "2026-07-30T17:18:21+07:00",
     "lat": -6.16,
-    "lng": 106.847
+    "lng": 106.847,
+    "summaryKo": [
+      "업종/용도: 유통·대리점"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 100백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(15일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-946099432",
@@ -2985,7 +5009,31 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/tempat-usaha-aktif-luas-900-m2-harga-7-5-milyar-di-nol-jalan-raya-lingkar-timur--iid-946099432",
     "postedAt": "2026-07-30T16:55:38+07:00",
     "lat": -7.46,
-    "lng": 112.736
+    "lng": 112.736,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "토지 면적 900m²",
+      "건물 면적 900m²",
+      "간선도로변"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 7.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(15일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947117819",
@@ -3018,7 +5066,28 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-fried-chicken-iid-947117819",
     "postedAt": "2026-07-30T16:41:35+07:00",
     "lat": -6.401,
-    "lng": 106.799
+    "lng": 106.799,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "직원 인계 대상 있음",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "인계 대상 직원이 있음",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(15일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947116275",
@@ -3051,7 +5120,24 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/over-alih-usaha-iid-947116275",
     "postedAt": "2026-07-30T15:53:52+07:00",
     "lat": -6.49,
-    "lng": 106.83
+    "lng": 106.83,
+    "summaryKo": [
+      "업종/용도: 소매점",
+      "간선도로변"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 55백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(15일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947112302",
@@ -3084,7 +5170,27 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-cafe-mewa-dan-cantik-kelapagading-moi-ruko-iid-947112302",
     "postedAt": "2026-07-30T13:24:01+07:00",
     "lat": -6.16,
-    "lng": 106.905
+    "lng": 106.905,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 530백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(15일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947007609",
@@ -3117,7 +5223,83 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-hand-over-laundry-jakarta-barat-murah-iid-947007609",
     "postedAt": "2026-07-30T11:07:23+07:00",
     "lat": -6.19,
-    "lng": 106.797
+    "lng": 106.797,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "월매출 약 Rp 15백만 (매도인 제시값 · 장부 확인 필요)"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 65백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "최근 게시(15일 전)"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
+  },
+  {
+    "id": "olx-944994407",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Strategis Jual Ruko 3 Lantai Unfurnished di Jalan Pluit Sakti Pluit Jakarta Utara Cocok Untuk Usaha Akses ke Pusat Kuliner & Bisnis Muara Karang & Tol",
+    "category": "카페 & 레스토랑",
+    "location": "Jakarta Utara",
+    "locationKo": "자카르타 북부",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 5.000.000.000",
+    "priceNum": 5000000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "DIJUAL RUKO 3 LANTAI – LOKASI STRATEGIS Kesempatan emas untuk Anda yang sedang mencari properti usaha di lokasi premium! siap pakai di kawasan Jalan Pluit Sakti Blok C. Properti ini sangat cocok untuk berbagai jenis usaha maupun kantor karena berada di area yang ramai dan strategis. Spesifikasi: * B...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/strategis-jual-ruko-3-lantai-unfurnished-di-jalan-pluit-sakti-pluit-jakarta-utar-iid-944994407",
+    "postedAt": "2026-07-30T02:01:33+07:00",
+    "lat": -6.122,
+    "lng": 106.789,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "3층",
+      "즉시 운영 가능",
+      "요지 입지(매도인 주장)",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 5.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(16일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-945376128",
@@ -3151,7 +5333,35 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/dijual-cepat-murah-ruko-4-lantai-bebas-banjir-strategis-usaha-berjalan-di-lippo--iid-945376128",
     "postedAt": "2026-07-29T20:36:26+07:00",
     "lat": -6.245,
-    "lng": 106.616
+    "lng": 106.616,
+    "summaryKo": [
+      "업종/용도: 세탁소 · 하숙·원룸 임대 · 카페 · 음식점",
+      "4층",
+      "침수 이력 없음(매도인 주장)",
+      "현재 영업 중",
+      "고정 고객 보유",
+      "요지 입지(매도인 주장)",
+      "가격 인하됨"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 4.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "고정 고객 기반이 언급됨",
+      "최근 게시(16일 전)"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947099252",
@@ -3184,7 +5394,32 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-padel-legok-kadusirung-tangerang-iid-947099252",
     "postedAt": "2026-07-29T20:05:57+07:00",
     "lat": -6.319,
-    "lng": 106.602
+    "lng": 106.602,
+    "summaryKo": [
+      "업종/용도: 공장·제조",
+      "토지 면적 3,000m²",
+      "요지 입지(매도인 주장)",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 7.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(16일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947097497",
@@ -3217,7 +5452,31 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/jual-rumah-kos-take-over-karena-mau-pindah-keluar-negeri-iid-947097497",
     "postedAt": "2026-07-29T18:38:51+07:00",
     "lat": -6.334,
-    "lng": 107.293
+    "lng": 107.293,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "침실 5개",
+      "욕실 6개",
+      "가구·집기 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 300백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(16일 전)"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-946075113",
@@ -3250,7 +5509,34 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/ruang-usaha-cafe-mewah-aktif-di-tulungrejo-bumiaji-batu-iid-946075113",
     "postedAt": "2026-07-29T16:42:33+07:00",
     "lat": -7.795,
-    "lng": 112.512
+    "lng": 112.512,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 1,210m²",
+      "건물 면적 1,347m²",
+      "3층",
+      "전기 용량 33,000W급",
+      "주차 공간 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "사업자 등록·인허가 관련 언급이 있음",
+      "최근 게시(16일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947089340",
@@ -3283,7 +5569,27 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/ruko-siap-usaha-take-over-full-interior-open-area-cocok-cafe-coffee-shop-di-sepa-iid-947089340",
     "postedAt": "2026-07-29T13:39:16+07:00",
     "lat": -0.069,
-    "lng": 109.342
+    "lng": 109.342,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 6.8십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(16일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947072911",
@@ -3316,7 +5622,76 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-parfum-refill-di-condongcatur-yogyakarta-iid-947072911",
     "postedAt": "2026-07-29T12:23:33+07:00",
     "lat": -7.717,
-    "lng": 110.396
+    "lng": 110.396,
+    "summaryKo": [
+      "업종/용도: 하숙·원룸 임대",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 55백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "최근 게시(16일 전)"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
+  },
+  {
+    "id": "olx-947077968",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Over lapak pecel lele ayam penyet",
+    "category": "기타 사업",
+    "location": "Tangerang Kota",
+    "locationKo": "탕그랑",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 15.000.000",
+    "priceNum": 15000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Take over lapak pecel lele dan ayam penyet.. perlengkapan semua sudah ada tinggal lanjutin jualan aja sisa sewa masih 3 bulan lagi sewa per 6 bulan 9jt Lokasi di jalan proklamasi cimone Tangerang kota di samping KUA Minat serius langsung wa aja",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/over-lapak-pecel-lele-ayam-penyet-iid-947077968",
+    "postedAt": "2026-07-29T01:36:49+07:00",
+    "lat": -6.18,
+    "lng": 106.62,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 15백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(17일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-946942016",
@@ -3349,7 +5724,24 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-laundry-iid-946942016",
     "postedAt": "2026-07-28T23:47:45+07:00",
     "lat": -6.326,
-    "lng": 106.856
+    "lng": 106.856,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "현재 영업 중"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 80백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(17일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947062089",
@@ -3383,7 +5775,34 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/forsale-tempat-usaha-aktif-strategis-gununganyar-surabaya-kota-ajs-03-iid-947062089",
     "postedAt": "2026-07-28T12:42:03+07:00",
     "lat": -7.338,
-    "lng": 112.768
+    "lng": 112.768,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 400m²",
+      "욕실 6개",
+      "요지 입지(매도인 주장)",
+      "간선도로변"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 4.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "사업자 등록·인허가 관련 언급이 있음",
+      "최근 게시(17일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-946785298",
@@ -3416,7 +5835,28 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-cafe-aktif-iid-946785298",
     "postedAt": "2026-07-28T10:54:16+07:00",
     "lat": -6.308,
-    "lng": 106.682
+    "lng": 106.682,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "간선도로변",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 75백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(17일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947050186",
@@ -3449,7 +5889,26 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-gas-3kg-iid-947050186",
     "postedAt": "2026-07-27T21:25:53+07:00",
     "lat": -6.375,
-    "lng": 106.823
+    "lng": 106.823,
+    "summaryKo": [
+      "업종/용도: 유통·대리점",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 65백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(18일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-947048136",
@@ -3482,7 +5941,30 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-bisnis-klinik-salon-kecantikan-spa-iid-947048136",
     "postedAt": "2026-07-27T19:42:18+07:00",
     "lat": -6.243,
-    "lng": 106.619
+    "lng": 106.619,
+    "summaryKo": [
+      "업종/용도: 미용실·이발소 · 클리닉 · 미용실·살롱",
+      "설비 일체 포함",
+      "주변에 대학·학교·시장·몰·역·톨게이트 등 집객 시설"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 100백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(18일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-947042916",
@@ -3515,7 +5997,148 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-salon-di-serang-iid-947042916",
     "postedAt": "2026-07-27T15:36:24+07:00",
     "lat": -6.125,
-    "lng": 106.14
+    "lng": 106.14,
+    "summaryKo": [
+      "업종/용도: 미용실·이발소 · 미용실·살롱",
+      "직원 인계 대상 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 600백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "인계 대상 직원이 있음",
+      "최근 게시(18일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-945534540",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Rumah Usaha Aktif Strategis Harga Miring di Kepanjen Malang",
+    "category": "카페 & 레스토랑",
+    "location": "Malang Kab.",
+    "locationKo": "Malang Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 6.500.000.000",
+    "priceNum": 6500000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Jual Murah & Turun Harga Dijual Rumah Usaha, Toko, Ruang Usaha Aktif di Kepanjen Kota, Kabupaten Malang Parkiran luas Ruang atas bisa untuk kafe indoor dan outdoor Luas tanah 884 m² Lebar depan 12m, belakang 16m Luas bangunan 700 m² Ada ruang untuk mess Kamar mandi 3 Listrik 10.000 Watt Air PDAM Had...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/rumah-usaha-aktif-strategis-harga-miring-di-kepanjen-malang-iid-945534540",
+    "postedAt": "2026-07-26T15:43:08+07:00",
+    "lat": -8.131,
+    "lng": 112.569,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "토지 면적 884m²",
+      "건물 면적 700m²",
+      "욕실 3개",
+      "전기 용량 10,000W급",
+      "요지 입지(매도인 주장)",
+      "가격 인하됨",
+      "주차 공간 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 6.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(19일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-947019577",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Dijual Rumah + Usaha Kos Aktif | Passive Income ± Rp200 Juta/Tahun",
+    "category": "세탁",
+    "location": "Jakarta Selatan",
+    "locationKo": "자카르타 남부",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 5.300.000.000",
+    "priceNum": 5300000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "DIJUAL – RUMAH PRODUKTIF + USAHA KOS AKTIF Passive Income Rp236 Juta/Tahun Langsung Owner Investasi properti yang langsung menghasilkan sejak hari pertama Rumah 2 lantai posisi hook di kawasan premium Menteng Atas, Setiabudi – Jakarta Selatan, dilengkapi usaha kos yang telah berjalan dengan pendapat...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/dijual-rumah-usaha-kos-aktif-passive-income-rp200-juta-tahun-iid-947019577",
+    "postedAt": "2026-07-26T14:59:29+07:00",
+    "lat": -6.219,
+    "lng": 106.832,
+    "summaryKo": [
+      "업종/용도: 세탁",
+      "2층",
+      "코너 필지"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 5.3십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(19일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-941724613",
@@ -3548,7 +6171,20 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/murah-take-over-kemitraan-warteg-kharisma-bahari-iid-941724613",
     "postedAt": "2026-07-26T12:42:19+07:00",
     "lat": -8.094,
-    "lng": 113.144
+    "lng": 113.144,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "직원 인계 대상 있음"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
+    "foreignSteps": [],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "프랜차이즈 가맹·투자자 모집 - 기존 사업체 인수가 아님"
+    ],
+    "operabilityTodos": [],
+    "koreanEligible": false
   },
   {
     "id": "olx-946840940",
@@ -3581,7 +6217,23 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-salon-iid-946840940",
     "postedAt": "2026-07-26T05:50:42+07:00",
     "lat": -6.148,
-    "lng": 106.735
+    "lng": 106.735,
+    "summaryKo": [
+      "업종/용도: 미용실·이발소 · 미용실·살롱"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 21백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(20일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-946995741",
@@ -3614,7 +6266,29 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/dijual-usaha-percetakan-masih-berjalan-berikut-kelengkapan-dan-client-iid-946995741",
     "postedAt": "2026-07-25T12:57:01+07:00",
     "lat": -6.355,
-    "lng": 106.873
+    "lng": 106.873,
+    "summaryKo": [
+      "업종/용도: 인쇄업",
+      "매각 사유 기재 있음 - 원문 확인 필요",
+      "현재 영업 중"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(20일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-943426071",
@@ -3647,7 +6321,31 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-gaplek-pakan-ternak-iid-943426071",
     "postedAt": "2026-07-25T09:55:49+07:00",
     "lat": -6.968,
-    "lng": 106.806
+    "lng": 106.806,
+    "summaryKo": [
+      "업종/용도: 축산 · 공장·제조",
+      "권리 형태: AJB(매매증서)",
+      "토지 면적 300m²",
+      "건물 면적 150m²",
+      "가격 협의 가능"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 1.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "최근 게시(20일 전)"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-946960572",
@@ -3680,7 +6378,27 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-sekaligus-sisa-sewa-warteg-super-strategi-di-perempatan-lampu-me-iid-946960572",
     "postedAt": "2026-07-25T08:59:17+07:00",
     "lat": -6.569,
-    "lng": 106.808
+    "lng": 106.808,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "현재 영업 중",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(20일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-946984006",
@@ -3713,7 +6431,145 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-warteg-lokasi-strategis-depan-jambu-dua-bogor-bisnis-sudah-jalan-iid-946984006",
     "postedAt": "2026-07-24T22:03:35+07:00",
     "lat": -6.617,
-    "lng": 106.82
+    "lng": 106.82,
+    "summaryKo": [
+      "업종/용도: 음식점 · 카페",
+      "즉시 운영 가능",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(21일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
+  },
+  {
+    "id": "olx-942357079",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Rumah 4 Lantai Rumah Induk + Usaha Laundry Aktif di Pondok Kelapa – SHM, Lokasi Pinggir Jalan S689",
+    "category": "카페 & 레스토랑",
+    "location": "Jakarta Timur",
+    "locationKo": "자카르타 동부",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 2.800.000.000",
+    "priceNum": 2800000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Rumah 4 lantai lokasi pinggir jalan bisa untuk usaha di Pondok Kelapa Duren Sawit Jakarta Timur HARGA 2,7 M NEGO SHM, IMB LT 101 m2 LB 180 m2 KT 3 KM 5 Listrik 6600 Hadap utara Bangunan 2017 Lantai dasar : usaha laundry dan kamar mandi Lantai 2 : ruang tamu dan satu kamar makan ,1 kamar mandi Lantai...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/rumah-4-lantai-rumah-induk-usaha-laundry-aktif-di-pondok-kelapa-shm-lokasi-pingg-iid-942357079",
+    "postedAt": "2026-07-24T09:24:15+07:00",
+    "lat": -6.239,
+    "lng": 106.934,
+    "summaryKo": [
+      "업종/용도: 세탁소 · 카페 · 음식점",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 101m²",
+      "건물 면적 180m²",
+      "침실 3개",
+      "욕실 5개",
+      "4층",
+      "간선도로변",
+      "가격 협의 가능",
+      "건축허가(PBG/IMB) 언급 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 2.8십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(21일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-945935693",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Lahan usaha aktif luas 72 m2 harga 1,2 Milyar di Kolonel Sugiono, Waru, Sidoarjo",
+    "category": "카페 & 레스토랑",
+    "location": "Sidoarjo  Kab.",
+    "locationKo": "Sidoarjo  Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 1.200.000.000",
+    "priceNum": 1200000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Lahan usaha aktif luas 72 m2 harga 1,2 Milyar di Kolonel Sugiono, Waru, Sidoarjo Lokasi : Jalan Kolonel Sugiono Kecamatan : Waru Kabupaten : Sidoarjo Selling point lahan usaha aktif ini antara lain : Luas tanah : 71,5 m2 (Ukuran : 5,5 meter x 13 meter) Luas bangunan : 143 m2 Bangunan : 2 lantai Leba...",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/lahan-usaha-aktif-luas-72-m2-harga-1-2-milyar-di-kolonel-sugiono-waru-sidoarjo-iid-945935693",
+    "postedAt": "2026-07-24T08:02:29+07:00",
+    "lat": -7.354,
+    "lng": 112.742,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "토지 면적 71.5m²",
+      "건물 면적 143m²",
+      "2층"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 1.2십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(22일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-944302346",
@@ -3746,7 +6602,200 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-rumah-strategis-dekat-gdc-sekolah-dan-alun2-kota-depok-iid-944302346",
     "postedAt": "2026-07-23T17:29:52+07:00",
     "lat": -6.437,
-    "lng": 106.835
+    "lng": 106.835,
+    "summaryKo": [
+      "업종/용도: 교육",
+      "침수 이력 없음(매도인 주장)",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 600백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(22일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-945794612",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Ruang Usaha Aktif dan Gudang plus Rumah Mewah Sangat Strategis",
+    "category": "소매점",
+    "location": "Karanganyar Kab.",
+    "locationKo": "Karanganyar Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 49.600.000.000",
+    "priceNum": 49600000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Ruang Usaha Aktif, ada Gudang dan Hunian Rumah Mewah Kokoh Strategis Akses Jalan Raya Kode MA: TF 019206 Type Listing: Jual Cepat Type Property: Ruang Usaha Aktif, ada Gudang dan Hunian Rumah Mewah Lokasi: Colomadu Karanganyar Spesifikasi: Luas Tanah: ±2760m² Luas Bangunan: ±1000m² Lebar Depan: ±40m...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/ruang-usaha-aktif-dan-gudang-plus-rumah-mewah-sangat-strategis-iid-945794612",
+    "postedAt": "2026-07-23T15:47:07+07:00",
+    "lat": -7.542,
+    "lng": 110.768,
+    "summaryKo": [
+      "업종/용도: 창고",
+      "요지 입지(매도인 주장)",
+      "간선도로변"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(22일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-932735086",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Ruang usaha aktif baby shop bisa plus isinya tinggal meneruskan",
+    "category": "피트니스",
+    "location": "Karanganyar Kab.",
+    "locationKo": "Karanganyar Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 2.000.000.000",
+    "priceNum": 2000000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Hot List ! Kode : RA 014232 Type listing : Jual cepat ruko baby shop aktif tinggal melanjutkan Type property : Ruang usaha Lokasi : jaten karanganyar kota Spesifikasi: Luas tanah: 168 m² Luas bangunan: 132 m² Lebar : 11 Hadap : timur Kamar tidur : 2 Kamar mandi : 2 Sertifikat : SHM, IMB Listrik: 2x1...",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/ruang-usaha-aktif-baby-shop-bisa-plus-isinya-tinggal-meneruskan-iid-932735086",
+    "postedAt": "2026-07-23T15:27:46+07:00",
+    "lat": -7.545,
+    "lng": 110.885,
+    "summaryKo": [
+      "업종/용도: 피트니스",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 168m²",
+      "건물 면적 132m²",
+      "침실 2개",
+      "욕실 2개",
+      "건축허가(PBG/IMB) 언급 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 2.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(22일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-946936223",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Gedung+usaha laundry aktif 150M2 harga 3,5milyard SIAP JALAN",
+    "category": "세탁",
+    "location": "Kab. Badung",
+    "locationKo": "Kab. Badung",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 3.500.000.000",
+    "priceNum": 3500000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "01 DIJUAL – GEDUNG + USAHA LAUNDRY (READY OPERASIONAL) lokasi strategis dan Siap langsung digunakan untuk operasional, Cocok untuk yang ingin langsung menjalankan bisnis laundry tanpa perlu investasi peralatan dari awal, atau sebagai aset investasi komersial lainnya di lokasi yang berkembang. Spesif...",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/gedung-usaha-laundry-aktif-150m2-harga-3-5milyard-siap-jalan-iid-946936223",
+    "postedAt": "2026-07-23T00:48:37+07:00",
+    "lat": -8.687,
+    "lng": 115.187,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 3.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(23일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-946915049",
@@ -3779,7 +6828,29 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/gedung-laundry-operasional-jalan-utama-3-5m-take-over-langsung-cuan-iid-946915049",
     "postedAt": "2026-07-22T21:30:00+07:00",
     "lat": -8.698,
-    "lng": 115.248
+    "lng": 115.248,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 3.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(23일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-945430273",
@@ -3812,7 +6883,130 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-franchise-take-over-usaha-iid-945430273",
     "postedAt": "2026-07-22T17:40:14+07:00",
     "lat": -6.436,
-    "lng": 106.835
+    "lng": 106.835,
+    "summaryKo": [
+      "업종/용도: 기타 사업"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 12백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(23일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
+  },
+  {
+    "id": "olx-944951686",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Tempat usaha aktif luas 4000 m2 harga 20 Milyar di 8 menit dari gerbang tol Nganjuk",
+    "category": "뷰티 & 살롱",
+    "location": "Nganjuk Kab.",
+    "locationKo": "Nganjuk Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 20.000.000.000",
+    "priceNum": 20000000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Tempat usaha aktif luas 4000 m2 harga 20 Milyar di 8 menit dari gerbang tol Nganjuk Tempat usaha ini komplit, ada garasi bus, bengkel mobil, cuci mobil, dan toko penjualan spare part mobil. Tempat usaha ini mempunyai luas tanah 4000 m2. Tempat usaha ini masih aktif. Tempat usaha ini terdiri dari tem...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/tempat-usaha-aktif-luas-4000-m2-harga-20-milyar-di-8-menit-dari-gerbang-tol-ngan-iid-944951686",
+    "postedAt": "2026-07-22T08:01:59+07:00",
+    "lat": -7.599,
+    "lng": 111.911,
+    "summaryKo": [
+      "업종/용도: 정비소 · 세차장 · 미용실·살롱",
+      "토지 면적 4000m²",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(24일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-946904249",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Take Over Usaha",
+    "category": "카페 & 레스토랑",
+    "location": "Jakarta Selatan",
+    "locationKo": "자카르타 남부",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 45.000.000",
+    "priceNum": 45000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Take Over Usaha Warung Pudding Kesempatan memiliki usaha tanpa harus dari 0 karena sudah dikenal di wilayah Jagakarsa dan sudah pernah diliput oleh stasiun TV swasta. Sudah termasuk: • Seluruh akun socmed • Resep asli pudding • Dekorasi toko • Meja kasir • Meja dan kursi • Chiller Midea • Freezer Mi...",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-iid-946904249",
+    "postedAt": "2026-07-21T17:16:53+07:00",
+    "lat": -6.334,
+    "lng": 106.823,
+    "summaryKo": [
+      "업종/용도: 음식점 · 카페",
+      "레시피·운영 교육 인계 포함"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(24일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-946893734",
@@ -3845,7 +7039,30 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-laundry-over-kontrak-ruko-2-lantai-daerah-cibaligo-cimindi-iid-946893734",
     "postedAt": "2026-07-21T12:20:28+07:00",
     "lat": -6.905,
-    "lng": 107.532
+    "lng": 107.532,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "2층",
+      "간선도로변",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요",
+      "주변에 대학·학교·시장·몰·역·톨게이트 등 집객 시설",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 12백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "최근 게시(24일 전)"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-946874423",
@@ -3879,7 +7096,29 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/jual-tempat-usaha-berjalan-raya-pasar-minggu-iid-946874423",
     "postedAt": "2026-07-20T17:13:01+07:00",
     "lat": -6.289,
-    "lng": 106.839
+    "lng": 106.839,
+    "summaryKo": [
+      "업종/용도: 정비소",
+      "권리 형태: SHM(소유권)",
+      "주차 공간 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(25일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-767013947",
@@ -3912,7 +7151,128 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/paketan-laundry-pemula-take-over-laundry-iid-767013947",
     "postedAt": "2026-07-19T10:26:07+07:00",
     "lat": -6.148,
-    "lng": 106.735
+    "lng": 106.735,
+    "summaryKo": [
+      "업종/용도: 세탁소 · 미용실·살롱"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 25백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "최근 게시(26일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
+  },
+  {
+    "id": "olx-945969876",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "DI JUAL PABRIK PRODUKTIF AIR MINUM, GUDANG PRODUKTIF DAN RUMAH USAHA AKTIF",
+    "category": "피트니스",
+    "location": "Manado Kota",
+    "locationKo": "Manado Kota",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 8.550.000.000",
+    "priceNum": 8550000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Di Jual Pabrik usaha Air Minum Beli rumah dapat Usaha Rumah Gudang dan Usaha aktif. Document : - Sertifikat Hak Milik (SHM) - Surat Ijin Mendirikan Bangunan (IMB) Deskripsi Usaha : - Agent AHS AQUA (3000 galon/Agent Kelas Diamond) - Pangkalan gas LPG Bersubsidi, Agent gas LPG Non subsidi - Customer ...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/di-jual-pabrik-produktif-air-minum-gudang-produktif-dan-rumah-usaha-aktif-iid-945969876",
+    "postedAt": "2026-07-17T17:06:35+07:00",
+    "lat": 1.446,
+    "lng": 124.83,
+    "summaryKo": [
+      "업종/용도: 공장·제조 · 창고",
+      "권리 형태: SHM(소유권)",
+      "건축허가(PBG/IMB) 언급 있음"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "LPG·연료 소매 유통은 외국인 투자 제한 업종",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(28일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
+  },
+  {
+    "id": "olx-940016522",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "DI JUAL PABRIK USAHA AIR MINUM, RUMAH PRODUKTIF GUDANG USAHA AKTIF MANADO",
+    "category": "피트니스",
+    "location": "Manado Kota",
+    "locationKo": "Manado Kota",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 8.500.000.000",
+    "priceNum": 8500000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Di Jual Pabrik usaha Air Minum Beli rumah dapat Usaha Rumah Gudang dan Usaha aktif. Document : - Sertifikat Hak Milik (SHM) - Surat Ijin Mendirikan Bangunan (IMB) Deskripsi Usaha : - Agent AHS AQUA (3000 galon/Agent Kelas Diamond) - Pangkalan gas LPG Bersubsidi, Agent gas LPG Non subsidi - Customer ...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/di-jual-pabrik-usaha-air-minum-rumah-produktif-gudang-usaha-aktif-manado-iid-940016522",
+    "postedAt": "2026-07-17T16:46:21+07:00",
+    "lat": 1.446,
+    "lng": 124.83,
+    "summaryKo": [
+      "업종/용도: 공장·제조 · 창고",
+      "권리 형태: SHM(소유권)",
+      "건축허가(PBG/IMB) 언급 있음"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "LPG·연료 소매 유통은 외국인 투자 제한 업종",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(28일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-946798620",
@@ -3945,7 +7305,27 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-toko-strategis-mgk-dapat-stok-siap-pakai-omzet-stabil-iid-946798620",
     "postedAt": "2026-07-17T01:27:24+07:00",
     "lat": -6.16,
-    "lng": 106.847
+    "lng": 106.847,
+    "summaryKo": [
+      "업종/용도: 소매점",
+      "월매출 약 Rp 15백만 (매도인 제시값 · 장부 확인 필요)",
+      "즉시 운영 가능",
+      "요지 입지(매도인 주장)",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 16백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "최근 게시(29일 전)"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-930874878",
@@ -3978,7 +7358,195 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/di-jual-take-over-pabrik-kopi-di-pandaan-pasuruan-iid-930874878",
     "postedAt": "2026-07-16T14:07:04+07:00",
     "lat": -7.65,
-    "lng": 112.705
+    "lng": 112.705,
+    "summaryKo": [
+      "업종/용도: 공장·제조 · 카페 · 음식점",
+      "토지 면적 101,544m²"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(29일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-942478731",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Tempat usaha aktif 1,2 HA harga 25 Milyar, 25 menit dari gerbang tol Nganjuk",
+    "category": "뷰티 & 살롱",
+    "location": "Nganjuk Kab.",
+    "locationKo": "Nganjuk Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 25.000.000.000",
+    "priceNum": 25000000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Tempat usaha aktif luas 1,2 HA harga 25 Milyar, 25 menit dari gerbang tol Nganjuk Lokasi : Jalan Baron-Lengkong Kecamatan : Baron Kabupaten : Nganjuk Pabrik roti ini masih aktif. Pabrik roti ini mempunyai luas tanah 1,2 HA. Pabrik roti ini mempunyai luas bangunan 2500 m2. Sertifikat pabrik roti ini ...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/tempat-usaha-aktif-1-2-ha-harga-25-milyar-25-menit-dari-gerbang-tol-nganjuk-iid-942478731",
+    "postedAt": "2026-07-15T22:25:23+07:00",
+    "lat": -7.603,
+    "lng": 112.05,
+    "summaryKo": [
+      "업종/용도: 공장·제조 · 미용실·살롱",
+      "건물 면적 2500m²"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(30일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-943636852",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "JUAL CEPAT BISNIS SEKOLAH AKTIF FULL SISTEM PARUNG KEMANG BOGOR SERPONG DEPOK",
+    "category": "숙박",
+    "location": "Jakarta Selatan",
+    "locationKo": "자카르타 남부",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 21.000.000.000",
+    "priceNum": 21000000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "DIJUAL CEPAT MURAH / TAKE OVER SEKOLAH AKTIF SMP-SMK KEMANG PARUNG BOGOR LOKASI DI PINGGIR JALAN RAYA KEMANG PARUNG LOKASI BAGUS STRATEGIS 2 MNT JALAN UTAMA PARUNG 10 MNT PASAR PARUNG BOGOR Lt. 2.700m bangunan ber lantai 3, sertifikat tanah SHM atas nama pribadi, ijin sekolah SMP SMK, lokasi dekat p...",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/jual-cepat-bisnis-sekolah-aktif-full-sistem-parung-kemang-bogor-serpong-depok-iid-943636852",
+    "postedAt": "2026-07-15T16:10:24+07:00",
+    "lat": -6.265,
+    "lng": 106.782,
+    "summaryKo": [
+      "업종/용도: 숙박",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 2,700m²",
+      "요지 입지(매도인 주장)",
+      "간선도로변"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-946670687",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "[BU] Dijual Rumah Tinggal beserta usaha aktif, di bawah harga pasaran",
+    "category": "기타 사업",
+    "location": "Karawang Kab.",
+    "locationKo": "Karawang Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 2.500.000.000",
+    "priceNum": 2500000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Dijual rumah tinggal beserta usaha (aktif, berjalan dengan potensi pendapatan perbulan 5-20jt) Spesifikasi Rumah: Kamar Tidur 4 Kamar Mandi 4 Ruang Kelas : 2 (dinding semi permanen /Gipsum) Arena bermain : Ada Perosotan, Ayunan 2, dan jungkat jungkit. Lokasi belakang SMA 4 Karawang. Dekat dengan Fas...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/bu-dijual-rumah-tinggal-beserta-usaha-aktif-di-bawah-harga-pasaran-iid-946670687",
+    "postedAt": "2026-07-15T10:38:17+07:00",
+    "lat": -6.301,
+    "lng": 107.296,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "침실 4개",
+      "욕실 4개",
+      "매도인 급매"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 2.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-943537276",
@@ -4011,7 +7579,84 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-laundry-iid-943537276",
     "postedAt": "2026-07-15T10:06:33+07:00",
     "lat": -2.948,
-    "lng": 104.693
+    "lng": 104.693,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "요지 입지(매도인 주장)",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 50백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨",
+      "임차 잔여 기간이 명시됨"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
+  },
+  {
+    "id": "olx-944595042",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Ruko Gandeng Tigaraksa + Take Over kepemilikkan dengan Usaha  Les Anak",
+    "category": "교육",
+    "location": "Tangerang Kab.",
+    "locationKo": "Tangerang Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 2.400.000.000",
+    "priceNum": 2400000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Berapa 2 ruko gandeng Spec /unit Luas tanah : 65m2 dan 78m2 Dimensi tanah : 5x15 dan 5x17.5 Luas bangunan : 5x20 dan 5x20 Lantai : 2 Air : pam PLN: token 2200watt masing2 Hadap : barat Surat : HGB Harga jual : 2.4M Nego ? Ya Kondisi skrg : masih dipakai untuk les lesan. Dan bisnis siap jalan Jual be...",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/ruko-gandeng-tigaraksa-take-over-kepemilikkan-dengan-usaha-les-anak-iid-944595042",
+    "postedAt": "2026-07-14T20:51:12+07:00",
+    "lat": -6.263,
+    "lng": 106.466,
+    "summaryKo": [
+      "업종/용도: 교육",
+      "권리 형태: HGB(건물사용권)",
+      "토지 면적 65m²",
+      "20층",
+      "전기 용량 2200W급",
+      "가격 협의 가능"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 2.4십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-946731630",
@@ -4045,7 +7690,33 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/jual-ruko-dan-usaha-berjalan-rm-padang-iid-946731630",
     "postedAt": "2026-07-14T10:38:03+07:00",
     "lat": -6.363,
-    "lng": 107.042
+    "lng": 107.042,
+    "summaryKo": [
+      "업종/용도: 음식점 · 공장·제조",
+      "토지 면적 46m²",
+      "건물 면적 54m²",
+      "1.5층",
+      "요지 입지(매도인 주장)",
+      "직원 인계 대상 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 1.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "인계 대상 직원이 있음"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-946408613",
@@ -4078,7 +7749,250 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-brand-laundry-depok-omzet-50-jt-bulan-autopilot-iid-946408613",
     "postedAt": "2026-07-14T06:08:40+07:00",
     "lat": -6.49,
-    "lng": 106.83
+    "lng": 106.83,
+    "summaryKo": [
+      "업종/용도: 세탁소",
+      "월매출 약 Rp 50백만 (매도인 제시값 · 장부 확인 필요)",
+      "현재 영업 중",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 595백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "설비·집기 인계 범위가 언급됨"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-946713741",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Dijual Rumah Plus Toko Full Furnish Usaha Aktif Lokasi Purwokerto Barat",
+    "category": "소매점",
+    "location": "Banyumas Kab.",
+    "locationKo": "Banyumas Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 1.700.000.000",
+    "priceNum": 1700000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "plus isi (minimarket, sembako, baby shop) Luas Tanah: 167m² Luas Bangunan : 120m² Lebar Muka : 11meter Panjang : 16 meter Akses kendaraan : Mobil dan sepeda motor Hadap : Barat Fasilitas Lainnya : Jumlah kamar 1 Kamar mandi: 2 Ruang tamu Ruang keluarga Dapur : 1 Ruang kantor (7,5m) Air : PDAM Listri...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/dijual-rumah-plus-toko-full-furnish-usaha-aktif-lokasi-purwokerto-barat-iid-946713741",
+    "postedAt": "2026-07-13T14:16:09+07:00",
+    "lat": -7.423,
+    "lng": 109.217,
+    "summaryKo": [
+      "업종/용도: 소매점·미니마트",
+      "토지 면적 167m²",
+      "건물 면적 120m²",
+      "욕실 2개",
+      "가구·집기 포함"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "생필품 소매업은 외국인 투자 유보 업종",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
+  },
+  {
+    "id": "olx-932881436",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Jual Kios Ruang Usaha di Sky House Alam Sutera take over bisa",
+    "category": "카페 & 레스토랑",
+    "location": "Tangerang Kota",
+    "locationKo": "탕그랑",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 1.500.000.000",
+    "priceNum": 1500000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Dijual Cash / Takeover Unit Kios Tempat Usaha Shophouse Skyhouse Alam Sutera, Tangerang Selatan. Lokasi Ok Strategis seberang Mal Aeo Alam Sutera, dekat IKEAm, dekat Tol Alam Sutera dll. Luas Tanah = 53 M2 Luas bangunan = 50 M2 - Unit saat ini digunakan untuk coffee shop. - Unit sudah di renovasi fu...",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/jual-kios-ruang-usaha-di-sky-house-alam-sutera-take-over-bisa-iid-932881436",
+    "postedAt": "2026-07-13T13:33:48+07:00",
+    "lat": -6.22,
+    "lng": 106.661,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "요지 입지(매도인 주장)",
+      "주변에 대학·학교·시장·몰·역·톨게이트 등 집객 시설"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 1.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-944520966",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Tempat Usaha Showroom Mubil + Cafe Aktif Pinggir Jalan Tunggul Wulung",
+    "category": "카페 & 레스토랑",
+    "location": "Malang Kota",
+    "locationKo": "Malang Kota",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 6.500.000.000",
+    "priceNum": 6500000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Dijual Cepat Tempat Usaha Showrom mubil Dan Cafe Aktif Lokasi Strategis Padat penduduk Alamat Property : Pinggir Jalan Tasik Madu Tunggul wulung HARGA 7 MILLIYAR NEGO LANGSUNG PEMILIK Spesifikasi : • Luas Tanah 1.200m • ⁠Luas Bangunan 400m • ⁠Kamar Tidur 2 • ⁠Kamar mandi 3 • Musolla • Dapur • Sertif...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/tempat-usaha-showroom-mubil-cafe-aktif-pinggir-jalan-tunggul-wulung-iid-944520966",
+    "postedAt": "2026-07-12T03:42:22+07:00",
+    "lat": -7.943,
+    "lng": 112.61,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "토지 면적 1,200m²",
+      "건물 면적 400m²",
+      "침실 2개",
+      "욕실 3개",
+      "요지 입지(매도인 주장)",
+      "간선도로변",
+      "가격 협의 가능",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 6.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-946564635",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Disewakan Space / take over usaha",
+    "category": "카페 & 레스토랑",
+    "location": "Bandung Kota",
+    "locationKo": "반둥",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 100.000.000",
+    "priceNum": 100000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Take over cafe sudah berjalan 1 tahun lebih Masih tersisa 3 tahun lebih Disewakan space Luas tanah Luas bngunan 250 Listrik brp watt 4400+1500 Air shareing Peruntukan office atau public area Bs renovasi ga ( bs)",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/disewakan-space-take-over-usaha-iid-946564635",
+    "postedAt": "2026-07-12T00:48:51+07:00",
+    "lat": -6.891,
+    "lng": 107.615,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "현재 영업 중"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 100백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "임대 매물 - 인수(양수) 대상이 아님"
+    ],
+    "operabilityTodos": [],
+    "koreanEligible": false
   },
   {
     "id": "olx-946675781",
@@ -4111,7 +8025,430 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-cafe-beverage-outlet-siap-pakai-iid-946675781",
     "postedAt": "2026-07-11T15:59:39+07:00",
     "lat": -7.302,
-    "lng": 112.668
+    "lng": 112.668,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "즉시 운영 가능",
+      "가격 협의 가능"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 100백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-945640106",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Jual cepat - Bangunan usaha aktif 3 lantai di Medokan Asri Rungkut - depan UPN",
+    "category": "기타 사업",
+    "location": "Surabaya Kota",
+    "locationKo": "수라바야",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 9.800.000.000",
+    "priceNum": 9800000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Jual cepat - Bangunan usaha aktif 3 lantai di Medokan Asri Rungkut - depan UPN Bangunan baru tahun 2024, konsep co-tenant Seberang UPN, dekat ribuan perumahan Rungkut Dimensi 14 x 30; 3 lantai Luas tanah 420 sqm Luas bangunan 829 sqm Kamar mandi 6 (2 tiap lantai) Konsep co-tenant dan ada multifuncti...",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/jual-cepat-bangunan-usaha-aktif-3-lantai-di-medokan-asri-rungkut-depan-upn-iid-945640106",
+    "postedAt": "2026-07-11T14:50:13+07:00",
+    "lat": -7.322,
+    "lng": 112.781,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "욕실 6개",
+      "3층"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 9.8십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-944711064",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "TEMPAT USAHA CAFE AKTIF LOKASI HERITAGE KAYUTANGAN TENGAH KOTA MALANG",
+    "category": "카페 & 레스토랑",
+    "location": "Malang Kota",
+    "locationKo": "Malang Kota",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 7.500.000.000",
+    "priceNum": 7500000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "DI JUAL CAFE AKTIF ( VOLENDAM ) LOKASI DI KAYUTANGAN HERITAGE KOTA MALANG Detail Cafe - Luas tanah 212 m² - Luas bangunan 170 m² - Bangunan 2 lantai - Listrik 5500 watt - Genzet ada - Air sumur & PDAM LEGALITAS SHGB ,SIUP LENGAKAP Kawasan Dekat Dengan Fasilitas Umum Antara lain - Balai Kota - Stasiu...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/tempat-usaha-cafe-aktif-lokasi-heritage-kayutangan-tengah-kota-malang-iid-944711064",
+    "postedAt": "2026-07-11T14:39:54+07:00",
+    "lat": -7.978,
+    "lng": 112.629,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "권리 형태: HGB(건물사용권)",
+      "토지 면적 212m²",
+      "건물 면적 170m²",
+      "2층",
+      "전기 용량 5500W급",
+      "사업자 등록번호(NIB/SIUP/NPWP) 언급 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 7.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "사업자 등록·인허가 관련 언급이 있음"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-946502517",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Tempat usaha aktif luas 60 m2 harga 400 juta, nol jalan raya Kalanganyar, Sedati, Kabupaten Sidoarjo",
+    "category": "카페 & 레스토랑",
+    "location": "Sidoarjo  Kab.",
+    "locationKo": "Sidoarjo  Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 400.000.000",
+    "priceNum": 400000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Tempat usaha aktif luas 60 m2 harga 400 juta, nol jalan raya Kalanganyar, Kecamatan Sedati, Kabupaten Sidoarjo Lokasi : Jalan Raya Kalanganyar Desa : Kalanganyar Kecamatan : Sedati Kabupaten : Sidoarjo Selling point tempat usaha aktif antara lain : Luas tanah : 60 m2 (Ukuran : 5 meter x 12 meter) Lu...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/tempat-usaha-aktif-luas-60-m2-harga-400-juta-nol-jalan-raya-kalanganyar-sedati-k-iid-946502517",
+    "postedAt": "2026-07-08T12:59:56+07:00",
+    "lat": -7.404,
+    "lng": 112.799,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "토지 면적 60m²",
+      "간선도로변"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 400백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-942503034",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "pabrik biji plastik beserta mesin usaha masih aktif  Lokasi Waru, Sidoarjo",
+    "category": "제조",
+    "location": "Sidoarjo  Kab.",
+    "locationKo": "Sidoarjo  Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 170.000.000.000",
+    "priceNum": 170000000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Dijual pabrik biji plastik beserta mesin usaha masih aktif Lokasi Waru, Sidoarjo LT 7.200m2 Hadap Selatan Daya listrik 1.100.000 watt PDAM Hadap Selatan SHM Ada ijin usaha dan IMB Harga Jual Rp 170M nego",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/pabrik-biji-plastik-beserta-mesin-usaha-masih-aktif-lokasi-waru-sidoarjo-iid-942503034",
+    "postedAt": "2026-07-08T09:37:10+07:00",
+    "lat": -7.35,
+    "lng": 112.767,
+    "summaryKo": [
+      "업종/용도: 공장·제조",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 7,200m²",
+      "전기 용량 1,100,000W급",
+      "가격 협의 가능",
+      "건축허가(PBG/IMB) 언급 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-945560514",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Ruang Usaha Aktif Cafe Mewah Dengan View Cantik di Bumiaji Batu",
+    "category": "카페 & 레스토랑",
+    "location": "Batu Kota",
+    "locationKo": "Batu Kota",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 25.000.000.000",
+    "priceNum": 25000000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Dijual CAFE Mewah Aktif di Tulungrejo, Bumiaji, Batu Luas tanah 1.210 m² (507 m² + 703 m²) Luas bangunan 1.347 m² Bangunan 3 lantai Hadap barat Listrik 33.000 watt Air HIPAM Legalitas 2 SHM Parkiran luas Kondisi furnish Masih beroperasi / aktif berjalan Fasilitas & barang yang ditinggal: kitchen set...",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/ruang-usaha-aktif-cafe-mewah-dengan-view-cantik-di-bumiaji-batu-iid-945560514",
+    "postedAt": "2026-07-08T02:15:46+07:00",
+    "lat": -7.883,
+    "lng": 112.533,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 1,210m²",
+      "건물 면적 1,347m²",
+      "3층",
+      "전기 용량 33,000W급",
+      "주차 공간 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "사업자 등록·인허가 관련 언급이 있음"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-944422288",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Dijual Ruang Usaha Resto Aktif di Jantung Kota Kartasura!",
+    "category": "카페 & 레스토랑",
+    "location": "Sukoharjo Kab.",
+    "locationKo": "Sukoharjo Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 8.500.000.000",
+    "priceNum": 8500000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Investasi Strategis! Ruang Usaha Resto Aktif di Jantung Kartasura IW 0326-1875 Jl. Slamet Riyadi, Kartasura Kesempatan emas memiliki aset properti produktif di lokasi yang tidak pernah sepi! Kami menawarkan sebuah ruang usaha berupa restoran yang masih aktif beroperasi, lengkap dengan seluruh manaje...",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/dijual-ruang-usaha-resto-aktif-di-jantung-kota-kartasura-iid-944422288",
+    "postedAt": "2026-07-07T17:26:13+07:00",
+    "lat": -7.553,
+    "lng": 110.737,
+    "summaryKo": [
+      "업종/용도: 음식점 · 카페",
+      "요지 입지(매도인 주장)",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 8.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "설비·집기 인계 범위가 언급됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-945538699",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Dijual Tempat Usaha Aktif Strategis Lokasi Ramai Jatiasih Bekasi Luas Tanah 102 Luas Bangunan 50 2 Kamar Tidur 2 Kamar Mandi Shm",
+    "category": "기타 사업",
+    "location": "Bekasi Kota",
+    "locationKo": "브카시",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 2.300.000.000",
+    "priceNum": 2300000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Deskripsi Unit : - Dijual tempat usaha masih aktif, strategis, lokasi ramai Di Jatiasih - Bekasi - Luas Tanah : 102 - Luas Bangunan : 50 - Kamar Tidur : 2 - Kamar Mandi : 2 ID Iklan = 844",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/dijual-tempat-usaha-aktif-strategis-lokasi-ramai-jatiasih-bekasi-luas-tanah-102--iid-945538699",
+    "postedAt": "2026-07-06T22:12:47+07:00",
+    "lat": -6.31,
+    "lng": 106.953,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "권리 형태: SHM(소유권)",
+      "침실 2개",
+      "욕실 2개",
+      "요지 입지(매도인 주장)",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 2.3십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-916214922",
@@ -4144,7 +8481,23 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/take-over-sekolah-di-perumahan-dasana-indah-bojong-nangka-tangerang-iid-916214922",
     "postedAt": "2026-07-06T10:55:34+07:00",
     "lat": -6.258,
-    "lng": 106.579
+    "lng": 106.579,
+    "summaryKo": [
+      "업종/용도: 교육",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "육상 여객운송은 외국인 투자 제한 업종",
+    "foreignSteps": [],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "olx-943355887",
@@ -4178,7 +8531,268 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/rumah-tempat-usaha-masih-berjalan-di-lokasi-strategis-mainroad-antapani-iid-943355887",
     "postedAt": "2026-07-06T06:55:49+07:00",
     "lat": -6.913,
-    "lng": 107.659
+    "lng": 107.659,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "침실 3개",
+      "욕실 3개",
+      "전기 용량 5500W급",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 2.9십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-946510723",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Dijual Ruang Usaha Aktif Pasar Besar, Kota Malang",
+    "category": "카페 & 레스토랑",
+    "location": "Malang Kota",
+    "locationKo": "Malang Kota",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 4.000.000.000",
+    "priceNum": 4000000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Dijual Ruang Usaha Aktif Pasar Besar, Kota Malang Harga Jual : 4 M (Nego) LT 112 m² LB +/- 220 m² Lebar Depan 4,5 Panjang Ke Belakang 25 2 Lantai Legalitas : HGB Listrik : 2200 Watt Air PDAM Hadap Timur Point Selling √ Dekat Pasar Besar Malang √ Dekat Kuliner √ Dekat pusat perbelanjaan √ Pusat Kota ...",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/dijual-ruang-usaha-aktif-pasar-besar-kota-malang-iid-946510723",
+    "postedAt": "2026-07-04T13:18:17+07:00",
+    "lat": -7.986,
+    "lng": 112.633,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "권리 형태: HGB(건물사용권)",
+      "토지 면적 112m²",
+      "2층",
+      "전기 용량 2200W급",
+      "가격 협의 가능",
+      "주변에 대학·학교·시장·몰·역·톨게이트 등 집객 시설"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 4.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "사업자 등록·인허가 관련 언급이 있음"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-946510661",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Dijual Ruang Usaha Aktif Pasar Besar, Kota Malang",
+    "category": "카페 & 레스토랑",
+    "location": "Malang Kota",
+    "locationKo": "Malang Kota",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 4.000.000.000",
+    "priceNum": 4000000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Dijual Ruang Usaha Aktif Pasar Besar, Kota Malang Harga Jual : 4 M (Nego) LT 112 m² LB +/- 220 m² Lebar Depan 4,5 Panjang Ke Belakang 25 2 Lantai Legalitas : HGB Listrik : 2200 Watt Air PDAM Hadap Timur Point Selling √ Dekat Pasar Besar Malang √ Dekat Kuliner √ Dekat pusat perbelanjaan √ Pusat Kota ...",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/dijual-ruang-usaha-aktif-pasar-besar-kota-malang-iid-946510661",
+    "postedAt": "2026-07-04T13:15:38+07:00",
+    "lat": -7.986,
+    "lng": 112.633,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "권리 형태: HGB(건물사용권)",
+      "토지 면적 112m²",
+      "2층",
+      "전기 용량 2200W급",
+      "가격 협의 가능",
+      "주변에 대학·학교·시장·몰·역·톨게이트 등 집객 시설"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 4.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "사업자 등록·인허가 관련 언급이 있음"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-946509797",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Dijual Ruang Usaha Aktif Pasar Besar, Kota Malang",
+    "category": "카페 & 레스토랑",
+    "location": "Malang Kota",
+    "locationKo": "Malang Kota",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 4.000.000.000",
+    "priceNum": 4000000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Dijual Ruang Usaha Aktif Pasar Besar, Kota Malang Harga Jual : 4 M (Nego) LT 112 m² LB +/- 220 m² Lebar Depan 4,5 Panjang Ke Belakang 25 2 Lantai Legalitas : HGB Listrik : 2200 Watt Air PDAM Hadap Timur Point Selling √ Dekat Pasar Besar Malang √ Dekat Kuliner √ Dekat pusat perbelanjaan √ Pusat Kota ...",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/dijual-ruang-usaha-aktif-pasar-besar-kota-malang-iid-946509797",
+    "postedAt": "2026-07-04T12:41:14+07:00",
+    "lat": -7.986,
+    "lng": 112.633,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "권리 형태: HGB(건물사용권)",
+      "토지 면적 112m²",
+      "2층",
+      "전기 용량 2200W급",
+      "가격 협의 가능",
+      "주변에 대학·학교·시장·몰·역·톨게이트 등 집객 시설"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 4.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "사업자 등록·인허가 관련 언급이 있음"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-941215264",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Dijual Rumah Usaha, Toko, Ruang Usaha Aktif di Kepanjen Kota, Kabupaten Malang",
+    "category": "카페 & 레스토랑",
+    "location": "Malang Kab.",
+    "locationKo": "Malang Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 5.900.000.000",
+    "priceNum": 5900000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Turun Harga Dijual Rumah Usaha, Toko, Ruang Usaha Aktif di Kepanjen Kota, Kabupaten Malang Parkiran luas Ruang atas bisa untuk kafe indoor dan outdoor Luas Tanah 884 m² Lebar Depan 12 m, Belakang 16 m Luas Bangunan 700 m² Ada Ruang untuk Mess Kamar Mandi 3 Listrik 10.000 Watt Air PDAM Hadap Selatan ...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/dijual-rumah-usaha-toko-ruang-usaha-aktif-di-kepanjen-kota-kabupaten-malang-iid-941215264",
+    "postedAt": "2026-07-01T23:20:05+07:00",
+    "lat": -8.131,
+    "lng": 112.569,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "토지 면적 884m²",
+      "건물 면적 700m²",
+      "욕실 3개",
+      "전기 용량 10,000W급",
+      "가격 인하됨",
+      "주차 공간 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 5.9십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "olx-946451560",
@@ -4212,40 +8826,30 @@ const OLX_LISTINGS = [
     "sourceUrl": "https://www.olx.co.id/item/rumah-hook-dan-usaha-berjalan-iid-946451560",
     "postedAt": "2026-07-01T22:34:23+07:00",
     "lat": -6.247,
-    "lng": 106.761
-  },
-  {
-    "id": "olx-944258262",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Jual Tempat Usaha Berjalan Raya Jatipadang Pasar Minggu",
-    "category": "기타 사업",
-    "location": "Jakarta Selatan",
-    "locationKo": "자카르타 남부",
-    "address": null,
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 26.000.000.000",
-    "priceNum": 26000000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Luas Tanah : 1095 m2 Luas Bangunan : 500 m2 Lantai 1: 1 Area Bengkel mobil 1 Area Indomaret 1 Area Food Court Area Parkir Luas Lantai 2: Listrik : Bengkel 6600, Indomaret 22000 Jalan Masuk : 2 mobil Sertifikat : SHM On Hand Food Court komdisi berjalan full Bengkel kondisi berjalan Indomaret kondisi ...",
-    "facilities": [
-      "부동산 포함 매각",
-      "운영 중 사업체",
-      "OLX 실시간"
+    "lng": 106.761,
+    "summaryKo": [
+      "업종/용도: 하숙·원룸 임대 · 카페 · 음식점",
+      "권리 형태: SHM(소유권)",
+      "1층",
+      "코너 필지",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
     ],
-    "propertyIncluded": true,
-    "whatsapp": null,
-    "c2c": true,
-    "images": "🏪",
-    "badge": "부동산+사업체",
-    "source": "olx.co.id",
-    "sourceUrl": "https://www.olx.co.id/item/jual-tempat-usaha-berjalan-raya-jatipadang-pasar-minggu-iid-944258262",
-    "postedAt": "2026-07-01T12:16:32+07:00",
-    "lat": -6.289,
-    "lng": 106.839
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 6.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   }
 ];
