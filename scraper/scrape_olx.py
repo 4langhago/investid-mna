@@ -31,6 +31,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import enrich  # noqa: E402  한인 인수·운영 가능 판정
 from scrape_business import CATEGORY_RULES, TAKEOVER_RE  # 판정·분류 규칙 공유
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -44,6 +45,7 @@ API = "https://api.olx.co.id/relevance/v4/search"
 USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
               "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
 REQUEST_DELAY_SEC = 1.5   # 안전장치: 완화 금지
+RETRY_BACKOFF_SEC = 5     # 네트워크 오류 재시도 전 대기
 PAGE_SIZE = 40
 MAX_PAGES = 5
 
@@ -91,8 +93,18 @@ def api_search(query, page):
         {"query": query, "page": page, "size": PAGE_SIZE})
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT,
                                                "Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=30) as res:
-        return json.loads(res.read().decode("utf-8", errors="replace"))
+    # DNS·연결 순간 장애(getaddrinfo failed 등)로 검색어 하나가 통째로 날아가지 않도록
+    # 네트워크 오류에 한해 1회 재시도한다. HTTP 오류(429/403)는 재시도하지 않는다.
+    for attempt in range(2):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as res:
+                return json.loads(res.read().decode("utf-8", errors="replace"))
+        except urllib.error.HTTPError:
+            raise
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError):
+            if attempt == 1:
+                raise
+            time.sleep(RETRY_BACKOFF_SEC)
 
 
 def slugify(text):
@@ -213,8 +225,10 @@ def collect(max_age_days):
                 break
             for ad in batch:
                 ads[ad["ad_id"]] = ad
-            meta = data.get("metadata") or {}
-            if page + 1 >= (meta.get("total_pages") or 1):
+            # metadata.total_pages 는 신뢰하지 않는다 — size 와 무관하게 항상 1을 준다
+            # (2026-08-14 실측: total_ads 93건인데 total_pages=1, page 1·2 에 53건이 더 있었다).
+            # 마지막 페이지 판정은 실제 수신 건수로 한다.
+            if len(batch) < PAGE_SIZE:
                 break
             time.sleep(REQUEST_DELAY_SEC)
         print(f"[수집] '{query}' 누적 유니크 {len(ads)}건")
@@ -234,6 +248,11 @@ def collect(max_age_days):
 
 def write_outputs(items):
     now = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
+    # 저장 직전에 한인 인수·운영 가능 판정을 붙인다(사이트 필터가 이 필드를 쓴다).
+    enrich.annotate_all(items)
+    print("[판정]")
+    for line in enrich.summarize(items):
+        print(line)
     body = json.dumps(items, ensure_ascii=False, indent=2)
     OUTPUT_JS.write_text(
         "// 자동 생성 파일 — scraper/scrape_olx.py 가 갱신합니다. 직접 수정 금지.\n"
