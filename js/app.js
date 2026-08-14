@@ -7,7 +7,8 @@ const state = {
     location: '전체 지역',
     category: 'all',
     businessType: '전체 업종',
-    maxPrice: 25000000000
+    maxPrice: 25000000000,
+    koreanOnly: false
   },
   sort: 'latest',
   listings: [],
@@ -193,6 +194,11 @@ function bindEvents() {
     });
   });
 
+  $('koreanOnlyToggle').addEventListener('change', e => {
+    state.filter.koreanOnly = e.target.checked;
+    render();
+  });
+
   $('resetBtn').addEventListener('click', resetFilters);
 
   $('priceRange').addEventListener('input', e => {
@@ -246,7 +252,14 @@ function bindEvents() {
 // ===== FILTER & SORT =====
 function getFiltered() {
   let results = [...state.listings];
-  const { keyword, location, category, businessType, maxPrice } = state.filter;
+  const { keyword, location, category, businessType, maxPrice, koreanOnly } = state.filter;
+
+  // 한인 인수 가능 매물만: 스크래퍼가 붙인 koreanEligible 판정을 그대로 쓴다.
+  // 판정 필드가 없는 구(舊) 매물(수동 등록분)은 '판정 없음'이므로 숨긴다.
+  // 판정되지 않은 것을 가능으로 보여주면 필터의 의미가 없어진다.
+  if (koreanOnly) {
+    results = results.filter(l => l.koreanEligible === true);
+  }
 
   if (keyword) {
     results = results.filter(l =>
@@ -333,6 +346,22 @@ function escapeHtml(s) {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+// 외국인(한국인) 취득 판정 배지. 스크래퍼(enrich.py)가 붙인 값이 없으면 아무것도 표시하지 않는다.
+const FOREIGN_TAGS = {
+  '가능': { icon: '🟢', cls: 'foreign-ok' },
+  '조건부': { icon: '🟡', cls: 'foreign-cond' },
+  '불가': { icon: '🔴', cls: 'foreign-no' }
+};
+
+function foreignBadge(l) {
+  const tag = FOREIGN_TAGS[l.foreignStatus];
+  if (!tag) return '';
+  const opLabel = l.operability && l.operability !== '운영가능'
+    ? ` · 운영 ${escapeHtml(l.operability)}` : '';
+  return `<div class="foreign-tag ${tag.cls}" title="${escapeHtml(l.foreignReason || '')}">`
+    + `${tag.icon} 외국인 취득 ${escapeHtml(l.foreignStatus)}${opLabel}</div>`;
+}
+
 function renderCard(l) {
   const badgeClass = l.c2c ? 'badge-c2c' : {
     akuisisi: 'badge-akuisisi',
@@ -348,6 +377,7 @@ function renderCard(l) {
   if (l.floors) stats.push(`<span class="stat-pill pill-floor">${l.floors}층</span>`);
 
   const locationLabel = l.locationKo || l.location;
+  const foreignTag = foreignBadge(l);
 
   return `
     <div class="card">
@@ -360,6 +390,7 @@ function renderCard(l) {
         <div class="card-category">${escapeHtml(l.category)}</div>
         <div class="card-title">${escapeHtml(l.title)}</div>
         <div class="card-location">📍 ${escapeHtml(locationLabel)}</div>
+        ${foreignTag}
         <div class="card-stats">${stats.join('') || '<span class="stat-pill pill-area">상세정보 보기</span>'}</div>
         <div class="card-price">${escapeHtml(l.price || '가격 문의 · 원문 확인')}</div>
         <div class="card-footer">
@@ -373,6 +404,56 @@ function renderCard(l) {
         </div>
       </div>
     </div>`;
+}
+
+// ===== MODAL: 한글 요약 & 인수 스크리닝 =====
+// 두 블록 모두 scraper/enrich.py 가 붙인 필드에만 의존한다.
+// 판정이 없는 매물(수동 등록분)에서는 영역 자체를 숨긴다 — 빈 제목만 남으면
+// 판정을 했는데 결과가 없는 것처럼 읽히기 때문이다.
+function renderSummaryKo(l) {
+  const box = $('modalSummaryKo');
+  if (!box) return;
+  const lines = l.summaryKo || [];
+  if (!lines.length) {
+    box.style.display = 'none';
+    box.innerHTML = '';
+    return;
+  }
+  box.style.display = 'block';
+  box.innerHTML = '<h4>한글 요약 <span class="note">원문에서 뽑은 항목만 · 기계 번역 아님</span></h4>'
+    + '<ul>' + lines.map(t => `<li>${escapeHtml(t)}</li>`).join('') + '</ul>';
+}
+
+function renderScreening(l) {
+  const box = $('foreignScreening');
+  if (!box) return;
+  if (!l.foreignStatus) {
+    box.style.display = 'none';
+    box.innerHTML = '';
+    return;
+  }
+
+  const tag = FOREIGN_TAGS[l.foreignStatus] || { icon: '⚪', cls: '' };
+  const blocks = [
+    `<div class="screening-verdict ${tag.cls}">${tag.icon} 외국인 취득 ${escapeHtml(l.foreignStatus)}`
+    + `<span class="note">${escapeHtml(l.foreignReason || '')}</span></div>`
+  ];
+
+  if (l.operability) {
+    blocks.push(`<div class="screening-verdict">🏪 운영 실체 ${escapeHtml(l.operability)}`
+      + `<span class="note">${escapeHtml((l.operabilityReasons || []).join(' · '))}</span></div>`);
+  }
+
+  const list = (title, items) => (items && items.length)
+    ? `<h4>${title}</h4><ul>${items.map(t => `<li>${escapeHtml(t)}</li>`).join('')}</ul>`
+    : '';
+  blocks.push(list('필요한 절차', l.foreignSteps));
+  blocks.push(list('계약 전 확인 항목', l.operabilityTodos));
+  blocks.push('<p class="note">공개 데이터 기반 1차 스크리닝입니다. '
+    + '계약 전 공증인(notaris)·BKPM 확인이 필요합니다.</p>');
+
+  box.style.display = 'block';
+  box.innerHTML = blocks.join('');
 }
 
 // ===== MODAL =====
@@ -448,6 +529,9 @@ function openModal(id) {
     foreignWarning.style.display = 'none';
   }
 
+  renderSummaryKo(l);
+  renderScreening(l);
+
   $('modalLocationText').textContent = `📍 ${l.locationKo || l.location}${l.lat ? ` (${l.lat}, ${l.lng})` : ''}`;
 
   // 모달 미니맵
@@ -494,8 +578,11 @@ function resetFilters() {
     location: '전체 지역',
     category: 'all',
     businessType: '전체 업종',
-    maxPrice: 25000000000
+    maxPrice: 25000000000,
+    koreanOnly: false
   };
+  const koreanOnlyToggle = $('koreanOnlyToggle');
+  if (koreanOnlyToggle) koreanOnlyToggle.checked = false;
   searchInput.value = '';
   locationSelect.value = '전체 지역';
   $('sidebarLocation').value = '전체 지역';

@@ -127,6 +127,19 @@
     </div>
 
     <div class="filter-group">
+      <label>한인 인수 조건</label>
+      <label class="korean-only-toggle" for="koreanOnlyToggle">
+        <input type="checkbox" id="koreanOnlyToggle">
+        <span>한인 인수 가능 매물만</span>
+      </label>
+      <div class="filter-hint">
+        외국인 취득이 제도상 불가하거나(Girik·유보 업종 등)
+        영업 실체를 확인할 수 없는 매물을 숨깁니다.
+        법률 자문이 아닌 1차 스크리닝입니다.
+      </div>
+    </div>
+
+    <div class="filter-group">
       <button class="btn-reset" id="resetBtn">필터 초기화</button>
     </div>
   </aside>
@@ -236,6 +249,8 @@
         <div class="modal-emoji" id="modalEmoji"></div>
         <div class="modal-price" id="modalPrice"></div>
         <div class="modal-stats" id="modalStats"></div>
+        <!-- 인니어 원문에서 정형 항목만 뽑은 한글 요약(기계 번역이 아님) -->
+        <div class="modal-summary-ko" id="modalSummaryKo"></div>
         <p class="modal-desc" id="modalDesc"></p>
         <div class="modal-facilities">
           <h4>포함 사항 / 특징</h4>
@@ -251,6 +266,8 @@
       <!-- 외국인 안내 탭 -->
       <div class="tab-content" id="tab-foreign">
         <div class="foreign-warning" id="foreignWarning"></div>
+        <!-- 수집 시 자동 판정(scraper/enrich.py)이 있는 매물에만 표시된다 -->
+        <div class="foreign-screening" id="foreignScreening"></div>
         <div class="foreign-info-mini">
           <p><strong>PT PMA 법인:</strong> 외국인 투자 시 PT PMA 설립 권장. 최소 자본금 약 10억 루피아.</p>
           <p><strong>공증인(Notaris):</strong> 모든 거래 계약 시 공증인 동반 필수.</p>

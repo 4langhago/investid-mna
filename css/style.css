@@ -751,6 +751,84 @@ header {
   margin-bottom: 16px;
 }
 
+/* ===== 한인 인수 가능 판정 (scraper/enrich.py) ===== */
+.korean-only-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-900);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.korean-only-toggle input { width: 16px; height: 16px; cursor: pointer; accent-color: var(--red); }
+
+.filter-hint {
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--gray-400);
+}
+
+.foreign-tag {
+  display: inline-block;
+  margin: 4px 0 2px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.foreign-tag.foreign-ok { background: #ecfdf5; color: #065f46; border-color: #a7f3d0; }
+.foreign-tag.foreign-cond { background: #fffbeb; color: #92400e; border-color: #fde68a; }
+.foreign-tag.foreign-no { background: #fef2f2; color: #991b1b; border-color: #fecaca; }
+
+.modal-summary-ko,
+.foreign-screening { margin-bottom: 16px; }
+
+.modal-summary-ko h4,
+.foreign-screening h4 {
+  font-size: 13px;
+  margin: 14px 0 6px;
+  color: var(--gray-900);
+}
+
+.modal-summary-ko ul,
+.foreign-screening ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--gray-700, #374151);
+}
+
+.screening-verdict {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--gray-100, #f3f4f6);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.screening-verdict.foreign-ok { background: #ecfdf5; color: #065f46; }
+.screening-verdict.foreign-cond { background: #fffbeb; color: #92400e; }
+.screening-verdict.foreign-no { background: #fef2f2; color: #991b1b; }
+
+.screening-verdict .note { display: block; margin-top: 3px; }
+
+.modal-summary-ko .note,
+.foreign-screening .note {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--gray-400);
+  line-height: 1.5;
+}
+
 /* ===== FOOTER ===== */
 footer {
   background: var(--gray-900);

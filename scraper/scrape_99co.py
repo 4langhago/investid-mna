@@ -24,6 +24,9 @@ if hasattr(sys.stdout, "reconfigure"):
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import enrich  # noqa: E402  한인 인수·운영 가능 판정
+
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_JS = ROOT / "js" / "live_data.js"
 OUTPUT_JSON = Path(__file__).resolve().parent / "output" / "live_listings.json"
@@ -183,6 +186,11 @@ def scrape(targets):
 
 def write_outputs(listings):
     now = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
+    # 저장 직전에 한인 인수·운영 가능 판정을 붙인다(사이트 필터가 이 필드를 쓴다).
+    enrich.annotate_all(listings)
+    print("[판정]")
+    for line in enrich.summarize(listings):
+        print(line)
     OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_JSON.write_text(json.dumps(
         {"updatedAt": now, "count": len(listings), "listings": listings},
