@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_business.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-08-15T01:28:48+00:00
-const BUSINESS_LISTINGS_UPDATED_AT = "2026-08-15T01:28:48+00:00";
+// 갱신 시각: 2026-08-15T14:06:32+07:00
+const BUSINESS_LISTINGS_UPDATED_AT = "2026-08-15T14:06:32+07:00";
 const BUSINESS_LISTINGS = [
   {
     "id": "biz-10932",
@@ -32,7 +32,34 @@ const BUSINESS_LISTINGS = [
     "sourceUrl": "https://www.tempat-usaha.com/10932/jual-take-over-bisnis-online-profit-perkakas-rumah-tangga-sudah-berjalan-di-jakarta/",
     "postedAt": "2026-06-25T23:37:00",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 온라인 판매업",
+      "월매출 약 Rp 180백만 (매도인 제시값 · 장부 확인 필요)",
+      "월이익 약 Rp 35백만 (매도인 제시값 · 장부 확인 필요)",
+      "직원 1-2명",
+      "현재 영업 중",
+      "직원 인계 대상 있음",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 650백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "인계 대상 직원이 있음",
+      "설비·집기 인계 범위가 언급됨"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "biz-10844",
@@ -64,7 +91,30 @@ const BUSINESS_LISTINGS = [
     "sourceUrl": "https://www.tempat-usaha.com/10844/murah-take-over-usaha-dijual-peternakan-ayam-petelur-sekitar-60-ribu-ekor-di-desa-kemiri-tangerang/",
     "postedAt": "2026-05-08T14:42:00",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 양계장 · 축산 · 농장·축산",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 32,000m²",
+      "전기 용량 50,000W급",
+      "매각 사유: 후계자 없음(원문 기재)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "biz-10862",
@@ -96,7 +146,29 @@ const BUSINESS_LISTINGS = [
     "sourceUrl": "https://www.tempat-usaha.com/10862/dijual-cepat-2-9-m-nego-rumah-kost-dengan-11-kamar-di-ciputat-timur-5-menit-ke-kampus-uin-kondisi-kamar-full-semua-terisi-potensi-income-200-juta-250-juta-per-tahun/",
     "postedAt": "2026-04-29T16:11:48",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 하숙·원룸 임대",
+      "토지 면적 165m²",
+      "건물 면적 165m²",
+      "가격 협의 가능"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 2.9십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "biz-10730",
@@ -128,7 +200,34 @@ const BUSINESS_LISTINGS = [
     "sourceUrl": "https://www.tempat-usaha.com/10730/take-over-usaha-korean-salon-lokasi-pik-jakarta-utara-kawasan-strategis-rukan-exclusive-dekat-golf-course-lengkap-dengan-peralatan-dan-karyawan-terlatih/",
     "postedAt": "2026-02-03T11:24:08",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 미용실·이발소 · 미용실·살롱",
+      "토지 면적 100m²",
+      "건물 면적 100m²",
+      "요지 입지(매도인 주장)",
+      "직원 인계 대상 있음",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 650백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "인계 대상 직원이 있음",
+      "설비·집기 인계 범위가 언급됨"
+    ],
+    "operabilityTodos": [
+      "게시 후 193일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "biz-10744",
@@ -160,7 +259,34 @@ const BUSINESS_LISTINGS = [
     "sourceUrl": "https://www.tempat-usaha.com/10744/take-over-usaha-korean-salon-lokasi-kawasan-strategis-greenlake-city-boulevard-tangerang-lengkap-semua-peralatan-karyawan-dan-sistem/",
     "postedAt": "2026-01-10T19:56:00",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 미용실·이발소 · 미용실·살롱",
+      "토지 면적 100m²",
+      "건물 면적 100m²",
+      "요지 입지(매도인 주장)",
+      "직원 인계 대상 있음",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 400백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "인계 대상 직원이 있음",
+      "설비·집기 인계 범위가 언급됨"
+    ],
+    "operabilityTodos": [
+      "게시 후 216일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "biz-10737",
@@ -192,7 +318,31 @@ const BUSINESS_LISTINGS = [
     "sourceUrl": "https://www.tempat-usaha.com/10737/take-over-usaha-coffee-shop-di-rawa-lumbu-bekasi-masih-beroperasi/",
     "postedAt": "2026-01-05T16:54:00",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "임차 조건 포함 - 계약 잔여기간 확인 필요"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 210백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "임차 잔여 기간이 명시됨",
+      "운영 실체를 뒷받침하는 정보가 너무 적음"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "게시 후 222일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
   },
   {
     "id": "biz-10678",
@@ -224,7 +374,34 @@ const BUSINESS_LISTINGS = [
     "sourceUrl": "https://www.tempat-usaha.com/10678/take-over-usaha-korean-salon-4-cabang-lokasi-gading-serpong-green-lake-city-pantai-indah-kapuk-citra-garden-city-6/",
     "postedAt": "2025-11-04T02:06:00",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 미용실·이발소 · 미용실·살롱",
+      "토지 면적 400m²",
+      "건물 면적 400m²",
+      "가격 협의 가능",
+      "직원 인계 대상 있음",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 2.4십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "인계 대상 직원이 있음",
+      "설비·집기 인계 범위가 언급됨"
+    ],
+    "operabilityTodos": [
+      "게시 후 284일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "biz-10490",
@@ -256,6 +433,19 @@ const BUSINESS_LISTINGS = [
     "sourceUrl": "https://www.tempat-usaha.com/10490/take-over-warteg-24-jam-di-graha-raya-tangerang-lokasi-ramai/",
     "postedAt": "2025-05-08T19:26:00",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
+    "foreignSteps": [],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "게시 후 463일 경과 - 거래 종료 가능성이 높아 추천 대상에서 제외"
+    ],
+    "operabilityTodos": [],
+    "koreanEligible": false
   }
 ];
