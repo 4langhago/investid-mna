@@ -1,7 +1,240 @@
 // 자동 생성 파일 — scraper/scrape_olx.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-08-14T20:48:12+07:00
-const OLX_LISTINGS_UPDATED_AT = "2026-08-14T20:48:12+07:00";
+// 갱신 시각: 2026-08-15T01:28:20+00:00
+const OLX_LISTINGS_UPDATED_AT = "2026-08-15T01:28:20+00:00";
 const OLX_LISTINGS = [
+  {
+    "id": "olx-945376128",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "DIJUAL CEPAT MURAH RUKO 4 lantai BEBAS BANJIR, STRATEGIS + USAHA BERJALAN di Lippo Karawaci, Dekat Hypermart,UPH,SPH,SDH,Supermall Karawaci,MAXBOXX,SILOAM Hospital, Tangerang, Banten",
+    "category": "카페 & 레스토랑",
+    "location": "Tangerang Kab.",
+    "locationKo": "Tangerang Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 4.500.000.000",
+    "priceNum": 4500000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "TURUN HARGA.DIJUAL RUKO dengan lokasi strategis di Lippo karawaci, cocok untuk investasi properti dan usaha dengan HARGA TERBAIK. TURUN HARGA.DIJUAL RUKO beserta dengan usaha LAUNDRY + KOST VIP yang sudah berjalan dengan pelanggan tetap. Potensi pendapatan stabil dengan keuntungan besar yang mengunt...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/dijual-cepat-murah-ruko-4-lantai-bebas-banjir-strategis-usaha-berjalan-di-lippo--iid-945376128",
+    "postedAt": "2026-08-15T02:54:25+07:00",
+    "lat": -6.23,
+    "lng": 106.617,
+    "summaryKo": [
+      "업종/용도: 세탁소 · 하숙·원룸 임대 · 카페 · 음식점",
+      "4층",
+      "침수 이력 없음(매도인 주장)",
+      "현재 영업 중",
+      "고정 고객 보유",
+      "요지 입지(매도인 주장)",
+      "가격 인하됨"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 4.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "고정 고객 기반이 언급됨",
+      "최근 게시(0일 전)"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-946449860",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Ruang Usaha Ideal Untuk Bisnis Kuliner Di Jl Kaliurang Km 10",
+    "category": "카페 & 레스토랑",
+    "location": "Sleman Kab.",
+    "locationKo": "Sleman Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 1.500.000.000",
+    "priceNum": 1500000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "AB001 Ruang usaha siap pakai dengan konsep etnik Jawa yang kuat, berlokasi strategis di Jl. Kaliurang, Palgading, Sinduharjo, Ngaglik, Sleman. Lokasi ini berada di kawasan bisnis aktif yang sudah ramai dengan usaha kuliner terkenal serta dikelilingi pemukiman padat, sehingga memiliki potensi traffic...",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/ruang-usaha-ideal-untuk-bisnis-kuliner-di-jl-kaliurang-km-10-iid-946449860",
+    "postedAt": "2026-08-15T01:46:17+07:00",
+    "lat": -7.719,
+    "lng": 110.41,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "욕실 10개",
+      "즉시 운영 가능",
+      "요지 입지(매도인 주장)",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 1.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(0일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-941215264",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Dijual Rumah Usaha, Toko, Ruang Usaha Aktif di Kepanjen Kota, Kabupaten Malang",
+    "category": "카페 & 레스토랑",
+    "location": "Malang Kab.",
+    "locationKo": "Malang Kab.",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 5.900.000.000",
+    "priceNum": 5900000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Turun Harga Dijual Rumah Usaha, Toko, Ruang Usaha Aktif di Kepanjen Kota, Kabupaten Malang Parkiran luas Ruang atas bisa untuk kafe indoor dan outdoor Luas Tanah 884 m² Lebar Depan 12 m, Belakang 16 m Luas Bangunan 700 m² Ada Ruang untuk Mess Kamar Mandi 3 Listrik 10.000 Watt Air PDAM Hadap Selatan ...",
+    "facilities": [
+      "부동산 포함 매각",
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": true,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "부동산+사업체",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/dijual-rumah-usaha-toko-ruang-usaha-aktif-di-kepanjen-kota-kabupaten-malang-iid-941215264",
+    "postedAt": "2026-08-15T01:44:20+07:00",
+    "lat": -8.131,
+    "lng": 112.569,
+    "summaryKo": [
+      "업종/용도: 카페 · 음식점",
+      "토지 면적 884m²",
+      "건물 면적 700m²",
+      "욕실 3개",
+      "전기 용량 10,000W급",
+      "가격 인하됨",
+      "주차 공간 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 5.9십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
+      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(0일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "olx-946798620",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Take Over Toko Strategis Dapat stok, Siap Pakai & Omzet Stabil",
+    "category": "소매점",
+    "location": "Jakarta Pusat",
+    "locationKo": "자카르타 중부",
+    "address": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 14.500.000",
+    "priceNum": 14500000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Dijamin amanah. Take over usaha toko di Jak pus, posisi sangat strategis tepat di depan eskalator dengan traffic pengunjung yang tinggi. Usaha sudah jalan, stabil dengan omzet +-15juta/bulan, jika ramai bisa dapat lebih dan siap lanjut operasional. Alasan take over karena pindah ke luar kota. Fasili...",
+    "facilities": [
+      "운영 중 사업체",
+      "OLX 실시간"
+    ],
+    "propertyIncluded": false,
+    "whatsapp": null,
+    "c2c": true,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "olx.co.id",
+    "sourceUrl": "https://www.olx.co.id/item/take-over-toko-strategis-dapat-stok-siap-pakai-omzet-stabil-iid-946798620",
+    "postedAt": "2026-08-15T00:47:25+07:00",
+    "lat": -6.167,
+    "lng": 106.834,
+    "summaryKo": [
+      "업종/용도: 소매점",
+      "월매출 약 Rp 15백만 (매도인 제시값 · 장부 확인 필요)",
+      "즉시 운영 가능",
+      "요지 입지(매도인 주장)",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "인수가 Rp 14백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignSteps": [],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "매출·수익 수치가 제시됨",
+      "최근 게시(0일 전)"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
+  },
   {
     "id": "olx-939039125",
     "type": "bisnis",
@@ -47,7 +280,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(0일 전)"
+      "최근 게시(1일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -106,7 +339,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(0일 전)"
+      "최근 게시(1일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -155,7 +388,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(0일 전)"
+      "최근 게시(1일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -207,7 +440,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "고정 고객 기반이 언급됨",
-      "최근 게시(0일 전)"
+      "최근 게시(1일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -369,7 +602,7 @@ const OLX_LISTINGS = [
       "현재 영업 중이라고 명시됨",
       "매출·수익 수치가 제시됨",
       "고정 고객 기반이 언급됨",
-      "최근 게시(1일 전)"
+      "최근 게시(2일 전)"
     ],
     "operabilityTodos": [
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
@@ -429,7 +662,7 @@ const OLX_LISTINGS = [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(1일 전)"
+      "최근 게시(2일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -488,7 +721,7 @@ const OLX_LISTINGS = [
       "현재 영업 중이라고 명시됨",
       "인계 대상 직원이 있음",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(1일 전)"
+      "최근 게시(2일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -542,7 +775,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(1일 전)"
+      "최근 게시(2일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -602,7 +835,7 @@ const OLX_LISTINGS = [
       "현재 영업 중이라고 명시됨",
       "매출·수익 수치가 제시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(1일 전)"
+      "최근 게시(2일 전)"
     ],
     "operabilityTodos": [
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
@@ -713,7 +946,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(2일 전)"
+      "최근 게시(3일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -769,7 +1002,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(2일 전)"
+      "최근 게시(3일 전)"
     ],
     "operabilityTodos": [
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
@@ -827,7 +1060,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(2일 전)"
+      "최근 게시(3일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -933,7 +1166,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(2일 전)"
+      "최근 게시(3일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -991,7 +1224,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(2일 전)"
+      "최근 게시(3일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -1092,7 +1325,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(3일 전)"
+      "최근 게시(4일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -1148,7 +1381,7 @@ const OLX_LISTINGS = [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(3일 전)"
+      "최근 게시(4일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -1203,7 +1436,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(3일 전)"
+      "최근 게시(4일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -1253,7 +1486,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(3일 전)"
+      "최근 게시(4일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -1464,7 +1697,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(4일 전)"
+      "최근 게시(5일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -1523,7 +1756,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "매출·수익 수치가 제시됨",
-      "최근 게시(4일 전)"
+      "최근 게시(5일 전)"
     ],
     "operabilityTodos": [
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
@@ -1575,7 +1808,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(4일 전)"
+      "최근 게시(5일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -1635,7 +1868,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(4일 전)"
+      "최근 게시(5일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -1694,7 +1927,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(4일 전)"
+      "최근 게시(5일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -1752,7 +1985,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(4일 전)"
+      "최근 게시(5일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -1805,7 +2038,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(4일 전)"
+      "최근 게시(5일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -2022,7 +2255,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "고정 고객 기반이 언급됨",
-      "최근 게시(5일 전)"
+      "최근 게시(6일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -2130,72 +2363,13 @@ const OLX_LISTINGS = [
       "인계 대상 직원이 있음",
       "설비·집기 인계 범위가 언급됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(5일 전)"
+      "최근 게시(6일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
     "koreanEligible": false
-  },
-  {
-    "id": "olx-942299551",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Jual Rumah Plus Cafe Di Menteng, Usaha Sudah Berjalan",
-    "category": "카페 & 레스토랑",
-    "location": "Jakarta Pusat",
-    "locationKo": "자카르타 중부",
-    "address": null,
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 81.000.000.000",
-    "priceNum": 81000000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "\"Rumah Mewah + Usaha Cafe di Menteng! Jl. Surabaya, Menteng, Jakarta Pusat - Luas 819m², 1 kamar utama, 3 KT, 3 KM - Kamar pembantu, dapur, kolam renang - Ruang security, listrik 41.500 watt - Usaha cafe existing, potensi income tinggi - Lokasi strategis, akses mudah - Usaha Masih Berjalan - Cocok U...",
-    "facilities": [
-      "부동산 포함 매각",
-      "운영 중 사업체",
-      "OLX 실시간"
-    ],
-    "propertyIncluded": true,
-    "whatsapp": null,
-    "c2c": true,
-    "images": "🏪",
-    "badge": "부동산+사업체",
-    "source": "olx.co.id",
-    "sourceUrl": "https://www.olx.co.id/item/jual-rumah-plus-cafe-di-menteng-usaha-sudah-berjalan-iid-942299551",
-    "postedAt": "2026-08-08T20:27:11+07:00",
-    "lat": -6.201,
-    "lng": 106.841,
-    "summaryKo": [
-      "업종/용도: 카페 · 음식점",
-      "침실 3개",
-      "욕실 3개",
-      "전기 용량 41,500W급",
-      "현재 영업 중",
-      "요지 입지(매도인 주장)"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
-    "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
-    ],
-    "operability": "확인필요",
-    "operabilityReasons": [
-      "현재 영업 중이라고 명시됨",
-      "최근 게시(6일 전)"
-    ],
-    "operabilityTodos": [
-      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": true
   },
   {
     "id": "olx-947059974",
@@ -2240,7 +2414,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(6일 전)"
+      "최근 게시(7일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -2291,7 +2465,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(6일 전)"
+      "최근 게시(7일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -2351,7 +2525,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(6일 전)"
+      "최근 게시(7일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -2454,7 +2628,7 @@ const OLX_LISTINGS = [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(6일 전)"
+      "최근 게시(7일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -2508,7 +2682,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(6일 전)"
+      "최근 게시(7일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -2837,7 +3011,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "매출·수익 수치가 제시됨",
-      "최근 게시(7일 전)"
+      "최근 게시(8일 전)"
     ],
     "operabilityTodos": [
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
@@ -2894,7 +3068,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(7일 전)"
+      "최근 게시(8일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -2943,7 +3117,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(7일 전)"
+      "최근 게시(8일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -2999,7 +3173,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(7일 전)"
+      "최근 게시(8일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -3054,7 +3228,7 @@ const OLX_LISTINGS = [
       "현재 영업 중이라고 명시됨",
       "매출·수익 수치가 제시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(7일 전)"
+      "최근 게시(8일 전)"
     ],
     "operabilityTodos": [
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
@@ -3108,7 +3282,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(7일 전)"
+      "최근 게시(8일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -3166,7 +3340,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(7일 전)"
+      "최근 게시(8일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -3221,7 +3395,7 @@ const OLX_LISTINGS = [
       "매출·수익 수치가 제시됨",
       "설비·집기 인계 범위가 언급됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(7일 전)"
+      "최근 게시(8일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -3279,7 +3453,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(7일 전)"
+      "최근 게시(8일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -3332,7 +3506,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(8일 전)"
+      "최근 게시(9일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -3389,7 +3563,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(9일 전)"
+      "최근 게시(10일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -3496,7 +3670,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "매출·수익 수치가 제시됨",
-      "최근 게시(9일 전)"
+      "최근 게시(10일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -3547,7 +3721,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(10일 전)"
+      "최근 게시(11일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -3605,7 +3779,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(10일 전)"
+      "최근 게시(11일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -3874,7 +4048,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(11일 전)"
+      "최근 게시(12일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -3928,7 +4102,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(11일 전)"
+      "최근 게시(12일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -3983,7 +4157,7 @@ const OLX_LISTINGS = [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(11일 전)"
+      "최근 게시(12일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -4038,7 +4212,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(11일 전)"
+      "최근 게시(12일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -4091,7 +4265,7 @@ const OLX_LISTINGS = [
       "현재 영업 중이라고 명시됨",
       "인계 대상 직원이 있음",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(12일 전)"
+      "최근 게시(13일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -4144,7 +4318,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(12일 전)"
+      "최근 게시(13일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -4203,7 +4377,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(12일 전)"
+      "최근 게시(13일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -4253,7 +4427,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(13일 전)"
+      "최근 게시(14일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -4310,7 +4484,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(13일 전)"
+      "최근 게시(14일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -4367,7 +4541,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "고정 고객 기반이 언급됨",
-      "최근 게시(13일 전)"
+      "최근 게시(14일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -4424,7 +4598,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "고정 고객 기반이 언급됨",
-      "최근 게시(13일 전)"
+      "최근 게시(14일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -4479,7 +4653,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "사업자 등록·인허가 관련 언급이 있음",
-      "최근 게시(13일 전)"
+      "최근 게시(14일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -4533,7 +4707,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(13일 전)"
+      "최근 게시(14일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -4586,7 +4760,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(13일 전)"
+      "최근 게시(14일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -4691,7 +4865,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "인계 대상 직원이 있음",
-      "최근 게시(13일 전)"
+      "최근 게시(14일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -4865,7 +5039,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(14일 전)"
+      "최근 게시(15일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -4969,7 +5143,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(15일 전)"
+      "최근 게시(16일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -5027,7 +5201,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(15일 전)"
+      "최근 게시(16일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -5080,7 +5254,7 @@ const OLX_LISTINGS = [
       "현재 영업 중이라고 명시됨",
       "인계 대상 직원이 있음",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(15일 전)"
+      "최근 게시(16일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -5131,7 +5305,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(15일 전)"
+      "최근 게시(16일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -5184,7 +5358,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(15일 전)"
+      "최근 게시(16일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -5235,7 +5409,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "매출·수익 수치가 제시됨",
-      "최근 게시(15일 전)"
+      "최근 게시(16일 전)"
     ],
     "operabilityTodos": [
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
@@ -5302,68 +5476,6 @@ const OLX_LISTINGS = [
     "koreanEligible": true
   },
   {
-    "id": "olx-945376128",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "DIJUAL CEPAT MURAH RUKO 4 lantai BEBAS BANJIR, STRATEGIS + USAHA BERJALAN di Lippo Karawaci, Dekat Hypermart,UPH,SPH,SDH,Supermall Karawaci,MAXBOXX,SILOAM Hospital, Tangerang, Banten",
-    "category": "카페 & 레스토랑",
-    "location": "Tangerang Kota",
-    "locationKo": "탕그랑",
-    "address": null,
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 4.500.000.000",
-    "priceNum": 4500000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "TURUN HARGA.DIJUAL RUKO dengan lokasi strategis di Lippo karawaci, cocok untuk investasi properti dan usaha dengan HARGA TERBAIK. TURUN HARGA.DIJUAL RUKO beserta dengan usaha LAUNDRY + KOST VIP yang sudah berjalan dengan pelanggan tetap. Potensi pendapatan stabil dengan keuntungan besar yang mengunt...",
-    "facilities": [
-      "부동산 포함 매각",
-      "운영 중 사업체",
-      "OLX 실시간"
-    ],
-    "propertyIncluded": true,
-    "whatsapp": null,
-    "c2c": true,
-    "images": "🏪",
-    "badge": "부동산+사업체",
-    "source": "olx.co.id",
-    "sourceUrl": "https://www.olx.co.id/item/dijual-cepat-murah-ruko-4-lantai-bebas-banjir-strategis-usaha-berjalan-di-lippo--iid-945376128",
-    "postedAt": "2026-07-29T20:36:26+07:00",
-    "lat": -6.245,
-    "lng": 106.616,
-    "summaryKo": [
-      "업종/용도: 세탁소 · 하숙·원룸 임대 · 카페 · 음식점",
-      "4층",
-      "침수 이력 없음(매도인 주장)",
-      "현재 영업 중",
-      "고정 고객 보유",
-      "요지 입지(매도인 주장)",
-      "가격 인하됨"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
-    "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 4.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
-      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "현재 영업 중이라고 명시됨",
-      "매출·수익 수치가 제시됨",
-      "고정 고객 기반이 언급됨",
-      "최근 게시(16일 전)"
-    ],
-    "operabilityTodos": [
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": true
-  },
-  {
     "id": "olx-947099252",
     "type": "bisnis",
     "subtype": "akuisisi",
@@ -5412,7 +5524,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(16일 전)"
+      "최근 게시(17일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -5471,7 +5583,7 @@ const OLX_LISTINGS = [
       "현재 영업 중이라고 명시됨",
       "매출·수익 수치가 제시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(16일 전)"
+      "최근 게시(17일 전)"
     ],
     "operabilityTodos": [
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
@@ -5530,7 +5642,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "사업자 등록·인허가 관련 언급이 있음",
-      "최근 게시(16일 전)"
+      "최근 게시(17일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -5583,7 +5695,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(16일 전)"
+      "최근 게시(17일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -5634,7 +5746,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "매출·수익 수치가 제시됨",
-      "최근 게시(16일 전)"
+      "최근 게시(17일 전)"
     ],
     "operabilityTodos": [
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
@@ -5796,7 +5908,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "사업자 등록·인허가 관련 언급이 있음",
-      "최근 게시(17일 전)"
+      "최근 게시(18일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -5849,7 +5961,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(17일 전)"
+      "최근 게시(18일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -5958,7 +6070,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(18일 전)"
+      "최근 게시(19일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -6013,7 +6125,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "인계 대상 직원이 있음",
-      "최근 게시(18일 전)"
+      "최근 게시(19일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -6075,7 +6187,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(19일 전)"
+      "최근 게시(20일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -6132,7 +6244,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(19일 전)"
+      "최근 게시(20일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -6282,7 +6394,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(20일 전)"
+      "최근 게시(21일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -6340,7 +6452,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "매출·수익 수치가 제시됨",
-      "최근 게시(20일 전)"
+      "최근 게시(21일 전)"
     ],
     "operabilityTodos": [
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
@@ -6391,7 +6503,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(20일 전)"
+      "최근 게시(21일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -6507,7 +6619,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(21일 전)"
+      "최근 게시(22일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -6618,7 +6730,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(22일 전)"
+      "최근 게시(23일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -6674,7 +6786,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(22일 전)"
+      "최근 게시(23일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -6734,7 +6846,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(22일 전)"
+      "최근 게시(23일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -6893,7 +7005,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(23일 전)"
+      "최근 게시(24일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -7000,7 +7112,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(24일 전)"
+      "최근 게시(25일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -7055,7 +7167,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(24일 전)"
+      "최근 게시(25일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -7112,7 +7224,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(25일 전)"
+      "최근 게시(26일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -7162,7 +7274,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(26일 전)"
+      "최근 게시(27일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -7214,7 +7326,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(28일 전)"
+      "최근 게시(29일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -7266,63 +7378,10 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(28일 전)"
-    ],
-    "operabilityTodos": [
-      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": false
-  },
-  {
-    "id": "olx-946798620",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Take Over Toko Strategis MGK - Dapat stok, Siap Pakai & Omzet Stabil",
-    "category": "소매점",
-    "location": "Jakarta Pusat",
-    "locationKo": "자카르타 중부",
-    "address": null,
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 16.500.000",
-    "priceNum": 16500000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Dijamin amanah. Take over usaha toko di MGK, posisi sangat strategis tepat di depan ATM BCA dan pas di depan eskalator dengan traffic pengunjung yang tinggi. Usaha sudah jalan, stabil dengan omzet +-15juta/bulan, jika ramai bisa dapat lebih dan siap lanjut operasional. Alasan take over karena pindah...",
-    "facilities": [
-      "운영 중 사업체",
-      "OLX 실시간"
-    ],
-    "propertyIncluded": false,
-    "whatsapp": null,
-    "c2c": true,
-    "images": "🏪",
-    "badge": "완전인수",
-    "source": "olx.co.id",
-    "sourceUrl": "https://www.olx.co.id/item/take-over-toko-strategis-mgk-dapat-stok-siap-pakai-omzet-stabil-iid-946798620",
-    "postedAt": "2026-07-17T01:27:24+07:00",
-    "lat": -6.16,
-    "lng": 106.847,
-    "summaryKo": [
-      "업종/용도: 소매점",
-      "월매출 약 Rp 15백만 (매도인 제시값 · 장부 확인 필요)",
-      "즉시 운영 가능",
-      "요지 입지(매도인 주장)",
-      "유동인구·배후세대가 많은 곳(매도인 주장)"
-    ],
-    "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 16백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
-    "foreignSteps": [],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "현재 영업 중이라고 명시됨",
-      "매출·수익 수치가 제시됨",
       "최근 게시(29일 전)"
     ],
     "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
     "koreanEligible": false
@@ -7372,7 +7431,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(29일 전)"
+      "최근 게시(30일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -7426,8 +7485,7 @@ const OLX_LISTINGS = [
     ],
     "operability": "확인필요",
     "operabilityReasons": [
-      "현재 영업 중이라고 명시됨",
-      "최근 게시(30일 전)"
+      "현재 영업 중이라고 명시됨"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -7549,59 +7607,6 @@ const OLX_LISTINGS = [
     "koreanEligible": true
   },
   {
-    "id": "olx-943537276",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "TAKE OVER USAHA LAUNDRY",
-    "category": "세탁",
-    "location": "Palembang Kota",
-    "locationKo": "Palembang Kota",
-    "address": null,
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 50.000.000",
-    "priceNum": 50000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Take over usaha laundry Pelanggan sudah ada dan lokasi strategis dekat jalan besar Take over karena mau pindah luar kota, kondisi barang mulus belum setahun Sudah termasuk - sewa tempat - mesin cuci front loading LG dan pengering Diamente - mesin cuci top loading LG - set meja dan lemari laundry - s...",
-    "facilities": [
-      "운영 중 사업체",
-      "OLX 실시간"
-    ],
-    "propertyIncluded": false,
-    "whatsapp": null,
-    "c2c": true,
-    "images": "🏪",
-    "badge": "완전인수",
-    "source": "olx.co.id",
-    "sourceUrl": "https://www.olx.co.id/item/take-over-usaha-laundry-iid-943537276",
-    "postedAt": "2026-07-15T10:06:33+07:00",
-    "lat": -2.948,
-    "lng": 104.693,
-    "summaryKo": [
-      "업종/용도: 세탁소",
-      "요지 입지(매도인 주장)",
-      "임차 조건 포함 - 계약 잔여기간 확인 필요"
-    ],
-    "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 50백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
-    "foreignSteps": [],
-    "operability": "확인필요",
-    "operabilityReasons": [
-      "현재 영업 중이라고 명시됨",
-      "설비·집기 인계 범위가 언급됨",
-      "임차 잔여 기간이 명시됨"
-    ],
-    "operabilityTodos": [
-      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
-      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": false
-  },
-  {
     "id": "olx-944595042",
     "type": "bisnis",
     "subtype": "akuisisi",
@@ -7714,62 +7719,6 @@ const OLX_LISTINGS = [
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "olx-946408613",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "TAKE OVER BRAND LAUNDRY DEPOK | OMZET 50 JT/BULAN | AUTOPILOT",
-    "category": "세탁",
-    "location": "Bogor Kab.",
-    "locationKo": "Bogor Kab.",
-    "address": null,
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 595.000.000",
-    "priceNum": 595000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "TAKE OVER BRAND KLEAN LOKA LAUNDRY Bukan sekadar membeli mesin laundry. Anda membeli: - BRAND yang sudah dikenal pasar - Passive Income Business - Sistem bisnis yang sudah berjalan - Customer aktif lebih dari 1.500 - Bisnis yang dapat dijalankan secara autopilot - Digital asset lengkap KENAPA KLEAN ...",
-    "facilities": [
-      "운영 중 사업체",
-      "OLX 실시간"
-    ],
-    "propertyIncluded": false,
-    "whatsapp": null,
-    "c2c": true,
-    "images": "🏪",
-    "badge": "완전인수",
-    "source": "olx.co.id",
-    "sourceUrl": "https://www.olx.co.id/item/take-over-brand-laundry-depok-omzet-50-jt-bulan-autopilot-iid-946408613",
-    "postedAt": "2026-07-14T06:08:40+07:00",
-    "lat": -6.49,
-    "lng": 106.83,
-    "summaryKo": [
-      "업종/용도: 세탁소",
-      "월매출 약 Rp 50백만 (매도인 제시값 · 장부 확인 필요)",
-      "현재 영업 중",
-      "설비 일체 포함"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
-    "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 595백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "현재 영업 중이라고 명시됨",
-      "매출·수익 수치가 제시됨",
-      "설비·집기 인계 범위가 언급됨"
-    ],
-    "operabilityTodos": [
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
     "koreanEligible": true
@@ -8727,66 +8676,6 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "사업자 등록·인허가 관련 언급이 있음"
-    ],
-    "operabilityTodos": [
-      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "olx-941215264",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Dijual Rumah Usaha, Toko, Ruang Usaha Aktif di Kepanjen Kota, Kabupaten Malang",
-    "category": "카페 & 레스토랑",
-    "location": "Malang Kab.",
-    "locationKo": "Malang Kab.",
-    "address": null,
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 5.900.000.000",
-    "priceNum": 5900000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Turun Harga Dijual Rumah Usaha, Toko, Ruang Usaha Aktif di Kepanjen Kota, Kabupaten Malang Parkiran luas Ruang atas bisa untuk kafe indoor dan outdoor Luas Tanah 884 m² Lebar Depan 12 m, Belakang 16 m Luas Bangunan 700 m² Ada Ruang untuk Mess Kamar Mandi 3 Listrik 10.000 Watt Air PDAM Hadap Selatan ...",
-    "facilities": [
-      "부동산 포함 매각",
-      "운영 중 사업체",
-      "OLX 실시간"
-    ],
-    "propertyIncluded": true,
-    "whatsapp": null,
-    "c2c": true,
-    "images": "🏪",
-    "badge": "부동산+사업체",
-    "source": "olx.co.id",
-    "sourceUrl": "https://www.olx.co.id/item/dijual-rumah-usaha-toko-ruang-usaha-aktif-di-kepanjen-kota-kabupaten-malang-iid-941215264",
-    "postedAt": "2026-07-01T23:20:05+07:00",
-    "lat": -8.131,
-    "lng": 112.569,
-    "summaryKo": [
-      "업종/용도: 카페 · 음식점",
-      "토지 면적 884m²",
-      "건물 면적 700m²",
-      "욕실 3개",
-      "전기 용량 10,000W급",
-      "가격 인하됨",
-      "주차 공간 있음"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
-    "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 5.9십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
-      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
-    ],
-    "operability": "확인필요",
-    "operabilityReasons": [
-      "현재 영업 중이라고 명시됨"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
