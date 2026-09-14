@@ -54,6 +54,10 @@ POSITIVE = [
      2, "사업자 등록·인허가 관련 언급이 있음"),
     (r"pelanggan tetap|customer tetap|langganan|고정\s*(?:고객|거래처)|단골",
      1, "고정 고객 기반이 언급됨"),
+    # 공장·법인 매각 글은 매출·직원 대신 설비 가동과 거래처로 실체를 드러낸다.
+    (r"가동\s*(?:중|수준)|기존\s*(?:의\s*)?거래처|거래처\s*포함|클린룸|clean\s*room|"
+     r"법인\s*설립\s*[:：]?\s*\d{4}",
+     2, "공장 가동·거래처 등 제조 영업 기반이 언급됨"),
     (r"sisa kontrak|kontrak sampai|sewa sampai|masa sewa|임차\s*기간|계약\s*기간|잔여\s*기간",
      1, "임차 잔여 기간이 명시됨"),
 ]
@@ -71,7 +75,8 @@ SUBSTANCE_RE = re.compile(
     r"sudah berjalan|berjalan lancar|usaha aktif|masih (?:aktif|jalan)|omset|omzet|"
     r"laba bersih|net profit|keuntungan|pendapatan|sejak tahun|berdiri|sudah \d+ tahun|"
     r"karyawan|pegawai|pelanggan tetap|siap operasional|"
-    r"영업\s*중|운영\s*중|즉시\s*운영|매출|순익|수익|직원|년\s*(?:째|간)|단골|고정\s*고객",
+    r"영업\s*중|운영\s*중|즉시\s*운영|매출|순익|수익|직원|년\s*(?:째|간)|단골|고정\s*고객|"
+    r"가동\s*(?:중|수준)|거래처|클린룸|clean\s*room",
     re.I)
 
 STALE_DAYS = 180          # 이 기간을 넘긴 글은 거래 종료 가능성이 높다

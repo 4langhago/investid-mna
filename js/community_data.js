@@ -1,9 +1,187 @@
 // 자동 생성 파일 — scraper/scrape_indoweb.py 가 갱신합니다. 직접 수정 금지.
 // 제목/지역/게시일/가격/면적/사실 요약만 보관한다.
 // 글쓴이 이름·전화·이메일·메신저 ID 는 저장하지 않는다(MASK_RE 로 제거).
-// 갱신 시각: 2026-08-18T01:32:18+00:00
-const COMMUNITY_LISTINGS_UPDATED_AT = "2026-08-18T01:32:18+00:00";
+// 갱신 시각: 2026-09-14T22:27:53+07:00
+const COMMUNITY_LISTINGS_UPDATED_AT = "2026-09-14T22:27:53+07:00";
 const COMMUNITY_LISTINGS = [
+  {
+    "id": "iw-real_estate_mb-10428",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "법인 매각 (찌까랑 자바베카 1공단)",
+    "category": "한인 커뮤니티 매물 · 공장 (제조 클린룸)",
+    "dealType": "매매",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "찌까랑",
+    "address": "Kawasan Industri Jababeka #1, Cikarang",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \r\n 안녕하세요? \n하기와 같은 법인을 매각하려고 합니다.\n관심 있으신분 언제든지 연락주시고,\n직접 방문하셔서 확인해 보셔도 됩니다.\n(연락처 : [연락처 비공개])\n24년8월에 클린룸과 인테리아 공사가 완공되고\n현재까지 매우 깨끗하게 관리가 잘 되어 있습니다.\n■ 위치\n - 찌까랑 자바베카 1공단\n (삼성 SEIN법인과 500m 거리)\n■ 법인 설립 : 2023년 10월\n■ 공장 클린룸 및 공사 완공 : 2024년 8월\n■ 면적\n - 대지 : 1,681㎡\n - 건평 : 1,848㎡ (부대시설 270㎡ 제외)\n 1층 : 870㎡\n 2층 : 856㎡\n 3층 : 122㎡\n■ 클린룸 면적\n - 총 1,270㎡\n - Class 5,000\n - 소재 : 글라스울(불연성)\n ※실제 가동 수준 : Class 1,000~2,000\n■ 적합 사업군\n - 화장품, 의료기기, 식음료, 반도체 등 \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "0 IDR",
+    "priceNum": null,
+    "area": 1848.0,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: 1,848㎡"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1884198056_hHu3ZnSD_Company_General_Information_260907.jpg"
+    ],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10428&page=1",
+    "postedAt": "2026-09-07T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 공장·제조",
+      "법인·인허가 관련 언급 있음"
+    ],
+    "foreignStatus": "가능",
+    "foreignReason": "기존 법인 지분 인수 - 신규 PT PMA 설립 없이 외국인 인수 가능한 구조",
+    "foreignSteps": [
+      "인수가 미표기 - 지분가와 법인 부채 인수 범위를 함께 확인",
+      "AHU 법인 등기부로 현재 주주 구성과 PMA/PMDN 여부 확인",
+      "OSS 에서 법인의 KBLI 가 외국인 지분 100% 허용 업종인지 확인",
+      "PMDN 이면 지분 인수 시 PMA 전환 - 납입자본 Rp 25억·투자계획 요건 재충족 필요",
+      "세무(DJP)·임금·임차료 미납과 소송(SIPP) 등 법인에 딸린 채무 실사 필수"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "사업자 등록·인허가 관련 언급이 있음",
+      "공장 가동·거래처 등 제조 영업 기반이 언급됨",
+      "최근 게시(8일 전)"
+    ],
+    "operabilityTodos": [
+      "인수가(권리금 포함) 미표기 - 매도인에게 총액과 포함 범위 확인",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "iw-real_estate_mb-10427",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "금형(몰드)제조공장 매각",
+    "category": "한인 커뮤니티 매물 · 공장동 2동 및 유휴토지등",
+    "dealType": "매매,임대,재임대",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "지역 미상",
+    "address": "반뗀지역",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \n \r\n 안녕하십니까? \n한국컨설팅의 대표 서병환 입니다.\n인도네시아 제조업 금형(몰드) 사업체(공장등 부동산포함)을 매각 합니다. \n기존의 거래처 포함해서 매각하오니 관심이 있는 분들은 언제든지 연락 주시기 바랍니다.\n매매금액은 금형사업및 부동산 및 유효토지등 여러가지 사안별로 협의 가능합니다. \n현장 방문은 미팅 후 가능하며 실 구매자에 한해서 안내 가능합니다. \n감사합니다. \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "월간 - 1 USD (임대료 - 매매가 미표기)",
+    "priceNum": null,
+    "area": null,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: 전체 1헥타㎡, 1개"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=2639645728_Dfotxvyz_20260901_135649.png",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=2639645728_uYkwGyNS_KakaoTalk_20260901_123107289.png"
+    ],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10427&page=1",
+    "postedAt": "2026-09-01T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 공장·제조",
+      "가격 협의 가능"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 인수가가 공개되지 않아 규모 확인 필요",
+    "foreignSteps": [
+      "인수가 미표기 - 매도인에게 총액과 포함 범위(권리금·재고·설비) 확인",
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "공장 가동·거래처 등 제조 영업 기반이 언급됨",
+      "최근 게시(14일 전)"
+    ],
+    "operabilityTodos": [
+      "인수가(권리금 포함) 미표기 - 매도인에게 총액과 포함 범위 확인",
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "iw-real_estate_mb-10425",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "포차 매각",
+    "category": "한인 커뮤니티 매물 · 상가",
+    "dealType": "매매",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "지역 미상",
+    "address": "LIPPO CIKARANG",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \r\n 찌까랑에 위치한 포차 매각 원합니다.\n잔여 임대는 27년 4월 말 까지 입니다.(임대료 년 1억 플러스 마이너스)\n전체 2층이며, 1층 홀, 2층 룸1, 노래방 4개(금영, 태진, 현지 노래방 기계) 설치되어 있으며, 바로 영업할 수 있습니다.\n관심있는 분은 아래 번호로 [메신저 ID 비공개] WA 주세요.\n[연락처 비공개](Richard) \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "400,000,000 IDR",
+    "priceNum": 400000000.0,
+    "area": null,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: ㎡"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10425&page=1",
+    "postedAt": "2026-08-12T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "설비·집기 인계 포함"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "자산 양도 Rp 400백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
+    "foreignSteps": [
+      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
+    ],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "영업 실체 신호(영업중 여부·매출·업력·직원)가 하나도 없음 - 실재 여부를 확인할 수 없는 글"
+    ],
+    "operabilityTodos": [],
+    "koreanEligible": false
+  },
   {
     "id": "iw-real_estate_mb-10424",
     "type": "bisnis",
@@ -49,23 +227,20 @@ const COMMUNITY_LISTINGS = [
       "업종/용도: 카페 · 공장·제조 · 상가·점포",
       "인수 즉시 운영 가능"
     ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignStatus": "불가",
+    "foreignReason": "자산 양도 Rp 448백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
     "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 448백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
     ],
     "operability": "확인필요",
     "operabilityReasons": [
-      "현재 영업 중이라고 명시됨",
-      "최근 게시(7일 전)"
+      "현재 영업 중이라고 명시됨"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
-    "koreanEligible": true
+    "koreanEligible": false
   },
   {
     "id": "iw-real_estate_mb-10423",
@@ -115,24 +290,21 @@ const COMMUNITY_LISTINGS = [
       "인수 즉시 운영 가능",
       "직원 인계 대상 있음"
     ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignStatus": "불가",
+    "foreignReason": "자산 양도 Rp 800백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
     "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 800백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
     ],
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "인계 대상 직원이 있음",
-      "최근 게시(7일 전)"
+      "인계 대상 직원이 있음"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
-    "koreanEligible": true
+    "koreanEligible": false
   },
   {
     "id": "iw-biz_promo-32737",
@@ -188,11 +360,10 @@ const COMMUNITY_LISTINGS = [
       "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
       "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인"
     ],
-    "operability": "운영가능",
+    "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "사업자 등록·인허가 관련 언급이 있음",
-      "최근 게시(12일 전)"
+      "사업자 등록·인허가 관련 언급이 있음"
     ],
     "operabilityTodos": [
       "인수가(권리금 포함) 미표기 - 매도인에게 총액과 포함 범위 확인",
@@ -202,9 +373,72 @@ const COMMUNITY_LISTINGS = [
     "koreanEligible": true
   },
   {
+    "id": "iw-real_estate_mb-10420",
+    "type": "properti",
+    "subtype": "jual",
+    "title": "Subang Tanah",
+    "category": "한인 커뮤니티 매물 · No",
+    "dealType": "매매",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "지역 미상",
+    "address": "KP MEKARSARI RT RW GAMBARSARI PAGADEN SUBANG",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \n \n \r\n 수방 지역(SUBANG) 땅 판매합니다.\n1. 지역 : 수방(Subang) 톨에서 15~20분 거리\n2. 주소 : KP MEKARSARI RT RW GAMBARSARI PAGADEN SUBANG\n3. 크기 : 4,334m2\n4. 소유 : 회사 소유\n5. 예상금액 :3,000,000rp/m2 (가격 협상 가능)\n6. 기타 : 소유권(회사), 건축(IMB) 등 문제 없는 상태\n필요시 직접 협의 가능함.([연락처 비공개])\n이메일 : [이메일 비공개] \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "3,000,000,000 IDR",
+    "priceNum": 3000000000.0,
+    "area": 4334.0,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: 4334㎡"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1921855750_dXROKuCS_tanah_-2.jpeg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1921855750_0LnCDSJH_tanah_-13.JPG",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1921855750_DYxBVfej_Ukuran_Tanah_-3.jpeg"
+    ],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10420&page=1",
+    "postedAt": "2026-08-03T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 한인 커뮤니티 매물 · No",
+      "건축허가(PBG/IMB) 언급 있음",
+      "가격 협의 가능"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "주소가 기재됨"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
     "id": "iw-real_estate_mb-10419",
-    "type": "bisnis",
-    "subtype": "akuisisi",
+    "type": "properti",
+    "subtype": "jual",
     "title": "Majalengka 공장 매매",
     "category": "한인 커뮤니티 매물 · 공장",
     "dealType": "매매",
@@ -217,8 +451,8 @@ const COMMUNITY_LISTINGS = [
     "monthlyRevenue": null,
     "monthlyRevenueNum": null,
     "profit": null,
-    "price": "1 USD (≈ Rp 16,000)",
-    "priceNum": 16000.0,
+    "price": "1 USD (가격 미표기로 간주)",
+    "priceNum": null,
     "area": null,
     "floors": null,
     "established": null,
@@ -245,15 +479,24 @@ const COMMUNITY_LISTINGS = [
       "전기 용량 550W급",
       "법인·인허가 관련 언급 있음"
     ],
-    "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 16,000 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
-    "foreignSteps": [],
-    "operability": "부적합",
-    "operabilityReasons": [
-      "영업 실체 신호(영업중 여부·매출·업력·직원)가 하나도 없음 - 실재 여부를 확인할 수 없는 글"
+    "foreignStatus": "가능",
+    "foreignReason": "HGB 매물 - PT PMA 명의로 직접 취득 가능",
+    "foreignSteps": [
+      "PT PMA 설립 및 KBLI 등록",
+      "HGB 잔여 기간과 연장 이력 확인"
     ],
-    "operabilityTodos": [],
-    "koreanEligible": false
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "사업자 등록·인허가 관련 언급이 있음",
+      "주소가 기재됨",
+      "권리 형태(증서)가 표기됨"
+    ],
+    "operabilityTodos": [
+      "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
+      "매매가 미표기 - 원문·매도인에게 호가 확인",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
   },
   {
     "id": "iw-biz_promo-32732",
@@ -376,6 +619,121 @@ const COMMUNITY_LISTINGS = [
     "koreanEligible": true
   },
   {
+    "id": "iw-real_estate_mb-10412",
+    "type": "properti",
+    "subtype": "jual",
+    "title": "NAVAPARK BSD",
+    "category": "한인 커뮤니티 매물 · HOUSES AND COMMERCIAL",
+    "dealType": "매매",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "BSD",
+    "address": "NAVAPARK, BSD, TANGERANG",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \n \n \n \n \n \r\n 탕그랑 BSD에서 가장 품격 있는 프리미엄 타운십,\nNavaPark.\n자연, 프라이버시, 그리고 럭셔리 라이프를\n모두 갖춘 특별한 공간을 소개합니다.\n넓은 녹지와 아름다운 호수,\n고급 커뮤니티 시설,\n그리고 여유로운 분위기까지.\n특히 약 2.5헥타르 규모의 Country Club과\n약 10헥타르 규모의 Botanic Park는\nNavaPark만의 차별화된 프리미엄 라이프를 완성합니다.\n또한 NavaPark는\nAEON Mall BSD와 가까우며,\nSerbaraja Toll 접근이 편리하고\nBintaro와 Gading Serpong 이동도 우수한\nBSD 핵심 입지를 자랑합니다.\n현재 NavaPark에서는\n다양한 프리미엄 컬렉션을 만나보실 수 있습니다.\n✨ Layton\n총 105세대 중 단 7세대만 남았습니다.\n✨ Laurel\n총 75세대 중 마지막 1세대.\n✨ Botanic Villa\n총 14세대 중 마지막 1세대.\n✨ Island Villa\n약 8헥타르 규모의 독립된 공간 위\n단 35세대만을 위한 초프리미엄 컬렉션.\n✨ NavaPark Business Suites\nBSD 메인 블러바드 도로를 마주한 프리미엄 상업 공간.\n비즈니스와 프레스티지를 동시에 누릴 수 있는 특별한 위치.\n단순한 주거 공간이 아닌,\n삶과 비즈니스의 가치를 높여주는 프리미엄 타운십.\n왜 많은 사람들이 NavaPark를\nBSD 최고의 럭셔리 커뮤니티로 선택하는지\n직접 방문하시면 바로 느끼실 수 있습니다.\n방문 예약 및 프라이빗 투어 문의\nHo Vistha \nOfficial Sales of NavaPark\nWhatsapp : [연락처 비공개] \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "18,900,000,000 IDR",
+    "priceNum": 18900000000.0,
+    "area": null,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: ㎡"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=2660021313_yxkFj0mA_IMG_3709.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=2660021313_whAymHjD_IMG_3632.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=2660021313_BYunXQNS_IMG_3642.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=2660021313_ofJIGrFQ_IMG_3895.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=2660021313_n9Tao52r_IMG_4656.jpg"
+    ],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10412&page=1",
+    "postedAt": "2026-05-19T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 숙박업"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "주소가 기재됨"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "iw-real_estate_mb-10410",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "포차 매각",
+    "category": "한인 커뮤니티 매물 · 상가",
+    "dealType": "매매",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "지역 미상",
+    "address": "LIPPO CIKARANG",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \r\n 찌까랑에 위치한 포차 매각 원합니다.\n잔여 임대는 27년 4월까지 입니다.(임대료 년 1억 플러스 마이너스)\n전체 2층이며, 1층 홀, 2층 룸 및 노래방(금영, 태진, 현지 노래방 기계) 설치되어 있으며, 바로 영업할 수 있습니다.\n관심있는 분은 아래 번호로 [메신저 ID 비공개] 문자 주세요.\n[연락처 비공개](Richard) \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "25,000 USD (≈ Rp 400,000,000)",
+    "priceNum": 400000000.0,
+    "area": null,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: ㎡"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10410&page=1",
+    "postedAt": "2026-05-12T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "설비·집기 인계 포함"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "자산 양도 Rp 400백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
+    "foreignSteps": [
+      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
+    ],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "영업 실체 신호(영업중 여부·매출·업력·직원)가 하나도 없음 - 실재 여부를 확인할 수 없는 글"
+    ],
+    "operabilityTodos": [],
+    "koreanEligible": false
+  },
+  {
     "id": "iw-real_estate_mb-10409",
     "type": "bisnis",
     "subtype": "akuisisi",
@@ -430,9 +788,386 @@ const COMMUNITY_LISTINGS = [
     "koreanEligible": false
   },
   {
+    "id": "iw-real_estate_mb-10407",
+    "type": "properti",
+    "subtype": "jual",
+    "title": "SUBANG 공장 매물",
+    "category": "한인 커뮤니티 매물 · 봉제공장",
+    "dealType": "매매",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "지역 미상",
+    "address": "JL SUBANG-CIKAMURANG KM 12 DESA PADAASIH CIBOGO SUBANG",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \r\n *15년차 우본 공장 (헤비 가먼트) \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "400 USD (가격 미표기로 간주)",
+    "priceNum": null,
+    "area": 2.0,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: 토지 62,300M2 건물 12500M2 ㎡"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10407&page=1",
+    "postedAt": "2026-04-22T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 공장·제조"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "면적이 명시됨",
+      "주소가 기재됨"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "매매가 미표기 - 원문·매도인에게 호가 확인",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "iw-real_estate_mb-10404",
+    "type": "properti",
+    "subtype": "jual",
+    "title": "토지 및 건물",
+    "category": "한인 커뮤니티 매물 · 공장",
+    "dealType": "매매",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "지역 미상",
+    "address": "Jl.Padat Karya 89a, Curuk",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \r\n \n 공장 매각합니다.\n 대지 : 2,242M2\n 건평 : 959.5M2\n 허가 : IMB, NIB\n 전기 : 123,000VA (4KWH)\n 현재 MBT(무료급식생산)설비가 있으며 다른용도로 전용가능합니다.\n 컨테이너 40피트 진입가능합니다.\n 담당자 연락처 : [연락처 비공개]감사합니다.\n \n \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "12,000,000,000 IDR",
+    "priceNum": 12000000000.0,
+    "area": 2242.0,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: 2242㎡"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [
+      "https://indoweb.org/love/bbs/view_image.php?fn=https%3A%2F%2Findoweb.org%2Flove%2Fdata%2Feditor%2F2604%2F1728306827_1776328315.455.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?fn=https%3A%2F%2Findoweb.org%2Flove%2Fdata%2Feditor%2F2604%2F1728306827_1776328315.359.jpg"
+    ],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10404&page=1",
+    "postedAt": "2026-04-16T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 공장·제조",
+      "사업자 등록번호(NIB/SIUP/NPWP) 언급 있음",
+      "건축허가(PBG/IMB) 언급 있음",
+      "설비·집기 인계 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "설비·집기 인계 범위가 언급됨",
+      "사업자 등록·인허가 관련 언급이 있음",
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "주소가 기재됨"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "iw-real_estate_mb-10402",
+    "type": "properti",
+    "subtype": "jual",
+    "title": "SCBD 캐피탈 레지던스 아파트 매매/임대",
+    "category": "한인 커뮤니티 매물 · 아파트",
+    "dealType": "매매,임대",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "지역 미상",
+    "address": "SCBD 캐피탈 레지던스 아파트 매매/임대",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \n \n \n \n \n \n \n \n \r\n SCBD 중심에 위치한 프리미엄 아파트입니다.\n기존 3룸 구조를 2룸으로 전환하여 보다 넓고 쾌적한 공간을 제공합니다.\n해당 건물에서 유일한 유닛으로 희소성이 높은 매물입니다.\n렌트 : 월 $2,600\n매매 : (연락주세요) \n \n자세한 내용 및 문의는 언제든지 연락 부탁드립니다. \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "월간 - 2,600 USD (임대료 - 매매가 미표기)",
+    "priceNum": null,
+    "area": 178.0,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: 178㎡"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1735235766_GjBsb7zJ_KakaoTalk_20260407_170526905.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1735235766_C1v0uVxX_KakaoTalk_20260407_170526905_01.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1735235766_s2g3BzAX_KakaoTalk_20260407_170526905_02.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1735235766_THwVJ2jK_KakaoTalk_20260407_170526905_03.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1735235766_UoOqBtkw_KakaoTalk_20260407_170526905_04.jpg"
+    ],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10402&page=1",
+    "postedAt": "2026-04-07T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 한인 커뮤니티 매물 · 아파트"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignSteps": [
+      "표시가 Rp 0 - 관할 주(州) 최소 가격 기준 확인 필요",
+      "체류허가(KITAS/KITAP) 사본 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "면적이 명시됨",
+      "주소가 기재됨"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "매매가 미표기 - 원문·매도인에게 호가 확인",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "iw-real_estate_mb-10401",
+    "type": "properti",
+    "subtype": "jual",
+    "title": "찌까랑 오아시스 스튜디오 임대/매매",
+    "category": "한인 커뮤니티 매물 · 아파트",
+    "dealType": "매매,임대",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "찌까랑",
+    "address": "찌까랑 오아시스 스튜디오 임대/매매",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \n \r\n 찌까랑 초입에 위치한 오아시스 스튜디오 아파트를 임대 또는 매매합니다.\n해당 유닛은 4.5억 루피아에 구매한 매물로, 최근까지 안정적으로 월 임대 수익을 발생시키던 유닛입니다. 현재는 거리상의 이유로 인해 시세 대비 합리적인 가격에 매매 또는 임대를 진행하고 있습니다.\n희망 매매가격 : 2.1억 루피아 (네고 가능) \n최근 리뽀(Lippo)에서 단지를 인수하여 개발을 진행 중이며, 메이카르타(Meikarta)와 연결되는 도로 및 루꼬(상가) 건설이 진행 중으로 향후 가치 상승이 기대되는 지역입니다.\n✔ 위치: 찌까랑 초입 (접근성 우수)\n✔ 타입: 스튜디오\n✔ 상태: 바로 입주 / 임대 가능\n✔ 투자용 / 실거주 모두 적합\n실거주용으로도 부담 없고, 임대 수익을 원하는 투자자분들께도 좋은 기회입니다.\n관심 있으신 분은 편하게 문의 주세요. \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "월간 - 210,000,000 IDR (임대료 - 매매가 미표기)",
+    "priceNum": null,
+    "area": null,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: ㎡"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1735235766_PdU6Hpmu_oasis1.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1735235766_UIKd8sLJ_oasis2.jpg"
+    ],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10401&page=1",
+    "postedAt": "2026-04-07T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "가격 협의 가능"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignSteps": [
+      "표시가 Rp 0 - 관할 주(州) 최소 가격 기준 확인 필요",
+      "체류허가(KITAS/KITAP) 사본 필요"
+    ],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "주소가 기재됨",
+      "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
+      "매매가 미표기 - 원문·매도인에게 호가 확인",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": false
+  },
+  {
+    "id": "iw-real_estate_mb-10399",
+    "type": "properti",
+    "subtype": "jual",
+    "title": "오렌지 카운티 - 찌까랑(Cikarang) 글렌데일 원룸",
+    "category": "한인 커뮤니티 매물 · 아파트",
+    "dealType": "매매",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "찌까랑",
+    "address": "오렌지 카운티 - 찌까랑(Cikarang) 글렌데일(가구 완비)",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \n \n \n \n \n \n \n \r\n 사진을 클릭하시면 더 큰 사진으로 보실 수 있습니다.\n~~~~~~~~~~~~~\n소재지 : 오렌지카운티-찌까랑\n 글렌데일 54m2\n거실 1개 / 침실 1개 / 풀 퍼니쳐\n연락처로 직접 문의해 주세요. : [연락처 비공개]매매 가격은 절충 가능합니다. \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "999 IDR (가격 미표기로 간주)",
+    "priceNum": null,
+    "area": 54.0,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: 54㎡, 1개"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1736017530_3jVQ08Gw_0.ECB9A8EAB5AC.jpeg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1736017530_mxvTSLiq_1.EAB1B0EC8BA41.jpeg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1736017530_4vJ7VcUm_1.EAB1B0EC8BA42.jpeg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1736017530_hRkdJlgO_1.EAB1B0EC8BA43.jpeg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1736017530_7q9cONi8_1.EAB1B0EC8BA44.jpeg"
+    ],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10399&page=1",
+    "postedAt": "2026-03-25T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 한인 커뮤니티 매물 · 아파트"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignSteps": [
+      "표시가 Rp 0 - 관할 주(州) 최소 가격 기준 확인 필요",
+      "체류허가(KITAS/KITAP) 사본 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "면적이 명시됨",
+      "주소가 기재됨"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "매매가 미표기 - 원문·매도인에게 호가 확인",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "iw-real_estate_mb-10391",
+    "type": "properti",
+    "subtype": "jual",
+    "title": "펜트하우스 56 AH",
+    "category": "한인 커뮤니티 매물 · 아파트",
+    "dealType": "매매",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "지역 미상",
+    "address": "아마따푸라 펜트 하우스 타워 B 56AH (Sell Amatapura Penthouse Tower B 56AH)",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \n \n \n \n \n \n \n \n \n \r\n 아마따푸라 펜트 하우스 타워 B 56AH 판매\n리뽀 가라와치 아마따푸라 타워 B 펜트하우스 56 층 \n넓이: 216 M2, 방 5개, 화장실 3개.\n임페리얼 골프장 뷰. 나무 바닥, 넓은 응접실 \n수영장, 헬스장, 어린이 놀이터, 테니스 코트, 한국 슈퍼 마켓, 한국 은행 1층 소재\n판매 가격: Rp 1,700,000,000 (네고 가능)\n법인소유 - 필요에 따라 인테리어 필요\n세금: PPh 5% x 공시지가 - 판매자, BPHTB 2.5 % x 공시지가 - 구매자 부담\n부대 비용: 매매 계약서 및 세금 확인절차 비용 : 각각 50% 부담 \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "1,700,000,000 IDR",
+    "priceNum": 1700000000.0,
+    "area": 216.0,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: 216㎡, 5개"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1736026825_z8Wrs9Xk_1738354974_JB4YwoHG_56AH_ruangan_tamu_5_pandangan_dari_kamar_kecil.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1736026825_IiElxzvK_1738354974_yHXv0UDo_56AH_ruangan_tamu.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1736026825_tFTVrosI_1738354974_nQMp6hJ8_56AH_kamar_1.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1736026825_vfwWAk9L_1738354974_PZpe2NA1_56AH_ruangan_tamu_2.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=1736026825_eXwRvCPp_1738354974_TwvhYex0_56AH_kamar_2.jpg"
+    ],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10391&page=2",
+    "postedAt": "2026-01-26T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 소매점·미니마트",
+      "법인·인허가 관련 언급 있음",
+      "가격 협의 가능"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignSteps": [
+      "표시가 Rp 1.7십억 - 관할 주(州) 최소 가격 기준 확인 필요",
+      "체류허가(KITAS/KITAP) 사본 필요"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "사업자 등록·인허가 관련 언급이 있음",
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "주소가 기재됨"
+    ],
+    "operabilityTodos": [
+      "게시 후 232일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
     "id": "iw-real_estate_mb-10390",
-    "type": "bisnis",
-    "subtype": "akuisisi",
+    "type": "properti",
+    "subtype": "jual",
     "title": "토지매매",
     "category": "한인 커뮤니티 매물 · -",
     "dealType": "매매",
@@ -445,8 +1180,8 @@ const COMMUNITY_LISTINGS = [
     "monthlyRevenue": null,
     "monthlyRevenueNum": null,
     "profit": null,
-    "price": "2,250,000 IDR",
-    "priceNum": 2250000.0,
+    "price": "2,250,000 IDR (가격 미표기로 간주)",
+    "priceNum": null,
     "area": null,
     "floors": null,
     "established": null,
@@ -462,7 +1197,7 @@ const COMMUNITY_LISTINGS = [
     ],
     "badge": "커뮤니티 매물",
     "source": "indoweb.org",
-    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10390&page=1",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10390&page=2",
     "postedAt": "2026-01-21T00:00:00+00:00",
     "indexOnly": false,
     "lat": null,
@@ -472,20 +1207,31 @@ const COMMUNITY_LISTINGS = [
       "면적 6,290㎡",
       "법인·인허가 관련 언급 있음"
     ],
-    "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 2백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
-    "foreignSteps": [],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
     "operability": "부적합",
     "operabilityReasons": [
-      "영업 실체 신호(영업중 여부·매출·업력·직원)가 하나도 없음 - 실재 여부를 확인할 수 없는 글"
+      "사업자 등록·인허가 관련 언급이 있음",
+      "주소가 기재됨",
+      "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
-    "operabilityTodos": [],
+    "operabilityTodos": [
+      "게시 후 237일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
+      "매매가 미표기 - 원문·매도인에게 호가 확인",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
     "koreanEligible": false
   },
   {
     "id": "iw-real_estate_mb-10386",
-    "type": "bisnis",
-    "subtype": "akuisisi",
+    "type": "properti",
+    "subtype": "jual",
     "title": "사무실 매각 (양도)",
     "category": "한인 커뮤니티 매물 · 빌딩",
     "dealType": "매매",
@@ -529,23 +1275,29 @@ const COMMUNITY_LISTINGS = [
       "가격 협의 가능"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
     "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 1.7십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
     ],
     "operability": "부적합",
     "operabilityReasons": [
-      "영업 실체 신호(영업중 여부·매출·업력·직원)가 하나도 없음 - 실재 여부를 확인할 수 없는 글"
+      "매매가가 명시됨",
+      "주소가 기재됨",
+      "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
-    "operabilityTodos": [],
+    "operabilityTodos": [
+      "게시 후 249일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
     "koreanEligible": false
   },
   {
     "id": "iw-real_estate_mb-10383",
-    "type": "bisnis",
-    "subtype": "akuisisi",
+    "type": "properti",
+    "subtype": "jual",
     "title": "토지 매매(수방)",
     "category": "한인 커뮤니티 매물 · NO",
     "dealType": "매매",
@@ -558,8 +1310,8 @@ const COMMUNITY_LISTINGS = [
     "monthlyRevenue": null,
     "monthlyRevenueNum": null,
     "profit": null,
-    "price": "5 IDR",
-    "priceNum": 5.0,
+    "price": "5 IDR (가격 미표기로 간주)",
+    "priceNum": null,
     "area": 4334.0,
     "floors": null,
     "established": null,
@@ -587,14 +1339,490 @@ const COMMUNITY_LISTINGS = [
       "건축허가(PBG/IMB) 언급 있음",
       "가격 협의 가능"
     ],
-    "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 5 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
-    "foreignSteps": [],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
     "operability": "부적합",
     "operabilityReasons": [
-      "영업 실체 신호(영업중 여부·매출·업력·직원)가 하나도 없음 - 실재 여부를 확인할 수 없는 글"
+      "면적이 명시됨",
+      "주소가 기재됨",
+      "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
-    "operabilityTodos": [],
+    "operabilityTodos": [
+      "게시 후 256일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "매매가 미표기 - 원문·매도인에게 호가 확인",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
     "koreanEligible": false
+  },
+  {
+    "id": "iw-real_estate_mb-10381",
+    "type": "properti",
+    "subtype": "jual",
+    "title": "메이카르타 아파트",
+    "category": "한인 커뮤니티 매물 · 아파트",
+    "dealType": "매매",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "지역 미상",
+    "address": "메이카르타",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \n \n \n \n \n \n \r\n 면적은 91.31m2 이고. 소호 (6) 층 입니다. 층고가 높은 자리고 사무실 겸용 가능하고 준2층 개조해서 사용 할수 있다고 합니다. \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "1,200,000,000 IDR",
+    "priceNum": 1200000000.0,
+    "area": 913.0,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: 91.3m2㎡, 4개"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=610031449_qjzTPiEg_1.png",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=610031449_xJwc5fLj_2.png",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=610031449_YhtAlwV9_3.png",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=610031449_pb5kuqdO_4.png",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=610031449_6cQVSPKE_5.png"
+    ],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10381&page=2",
+    "postedAt": "2025-11-28T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 사무실"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignSteps": [
+      "표시가 Rp 1.2십억 - 관할 주(州) 최소 가격 기준 확인 필요",
+      "체류허가(KITAS/KITAP) 사본 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "주소가 기재됨"
+    ],
+    "operabilityTodos": [
+      "게시 후 291일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "iw-real_estate_mb-10380",
+    "type": "properti",
+    "subtype": "jual",
+    "title": "주택 asana resident cibubur",
+    "category": "한인 커뮤니티 매물 · 2층주택",
+    "dealType": "매매",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "지역 미상",
+    "address": "asana resident cibubur blok F-51 JL akses tol cimanggis cikeas udik, gunung putri",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \n \n \n \n \n \n \n \n \n \n \r\n 2층짜리 단독주택 팝니다\n주소지는 cikeas 인데 단지 이름은 asana resident cibubur 입니다.\nLuas Tanah = 84m2\nUkuran Kavling = 7 x 12 m\nLuas bangunan = 69m2\n부엌이 맨뒤에있고 그 오룬쪽공간이 공터인데 세탁기 자리 만들고\n창고로 쓰려고 바닥에 공구리 쳐서 자리만들고 수도연결 했습니다.\n밖에 캐노피, 부엌싱크대, 에어컨 샤프 1pk 2대, 모든 창문에 커텐 포함입니다.\nwa : [연락처 비공개]\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "1,300,000,000 IDR",
+    "priceNum": 1300000000.0,
+    "area": 84.0,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: 84m2㎡, 3개"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=2734374466_4oBSAfOi_ECA79112.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=2734374466_Ifd9sk8b_ECA79101.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=2734374466_uSvUVxOR_ECA79104.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=2734374466_KUL7wqui_ECA79109.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=2734374466_p83Nc0aY_ECA79107.jpg"
+    ],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10380&page=2",
+    "postedAt": "2025-11-25T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 창고·물류"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "나대지는 외국인 개인 취득 불가 - PT PMA 명의 HGB 로만 가능",
+    "foreignSteps": [
+      "PT PMA 설립 후 HGB 취득",
+      "SHM 매물이면 매도인의 HGB 전환 절차 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "주소가 기재됨"
+    ],
+    "operabilityTodos": [
+      "게시 후 294일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "iw-real_estate_mb-10379",
+    "type": "properti",
+    "subtype": "jual",
+    "title": "( 싼가격!!) Orange County Irvine 2BR 풀옵션, 즉시입주 가능",
+    "category": "한인 커뮤니티 매물 · 아파트",
+    "dealType": "매매,임대",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "지역 미상",
+    "address": "Orange County Tower Irvine, Lippo Cikarang Cibatu",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \n \n \n \n \n \n \n \n \r\n – OC Irvine 아파트 2BR (87.28㎡)\n– 풀퍼니시드 (세탁기 없음)\n– 깨끗하고 관리 잘 된 유닛\n– 전력 3300 watt / 주차 1대 가능\n– 보증금: 1개월 / 월세: 8 juta (협의 가능)\n– 관리비, 전기세, 수도세, 인터넷: 세입자 부담\n– 매매 조건 (판매)\n– 매매가: 1억 1천만 루피아 (협의 가능)\n※ Indonesia 1.1 billion IDR\n– OC Irvine 내 넓은 구조의 2BR 유닛 중 가성비 우수\n– 자기거주 및 투자 목적 모두 적합 \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "월간 - 8,000,000 IDR (임대료 - 매매가 미표기)",
+    "priceNum": null,
+    "area": 8728.0,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: 87.28㎡, 2개"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [
+      "https://indoweb.org/love/bbs/profile_view_image.php?mb_id=hua_26&img=mb3_hua_26_461047010__WhatsApp_Image_2025-11-21_at_3.25.30_PM.jpeg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=461047010_iRQj5T9V_WhatsApp_Image_2025-11-21_at_3.45.27_PM.jpeg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=461047010_6av05so4_WhatsApp_Image_2025-11-21_at_3.45.28_PM.jpeg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=461047010_pfk1HLR3_WhatsApp_Image_2025-11-21_at_3.45.28_PM_1.jpeg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=461047010_iLHI0x6Z_WhatsApp_Image_2025-11-21_at_3.45.28_PM_2.jpeg"
+    ],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10379&page=2",
+    "postedAt": "2025-11-21T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 한인 커뮤니티 매물 · 아파트",
+      "보증금 1",
+      "월 임대료 8juta",
+      "설비·집기 인계 포함",
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 필요",
+      "가격 협의 가능"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignSteps": [
+      "표시가 Rp 0 - 관할 주(州) 최소 가격 기준 확인 필요",
+      "체류허가(KITAS/KITAP) 사본 필요"
+    ],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "설비·집기 인계 범위가 언급됨",
+      "임차 잔여 기간이 명시됨",
+      "면적이 명시됨",
+      "주소가 기재됨",
+      "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "게시 후 298일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "매매가 미표기 - 원문·매도인에게 호가 확인",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": false
+  },
+  {
+    "id": "iw-real_estate_mb-10378",
+    "type": "properti",
+    "subtype": "jual",
+    "title": "찌까랑 오렌지 카운티 92sqm(full furnished - 가구&전자제품 1년미만 최상)",
+    "category": "한인 커뮤니티 매물 · 아파트",
+    "dealType": "매매,임대",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "찌까랑",
+    "address": "Orange County Tower Irvine, Lippo Cikarang Cibatu",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \n \n \n \n \n \n \n \n \n \r\n 면적\n– 92 sqm\n구조\n– 방 2개, 화장실 2개 (욕조 1)\n– 안방 붙박이장 설치\n(일반 2 베드룸 구조와 다른 유닛)\n풀퍼니처 (Full-furnished)\n– 구매 1년 미만 거의 새것\n월세: 11 juta (보증금: 1개월치 월세)\n매매: 1.5 m (9만불)\n*월세/매매 가격 협상 가능 \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "월간 - 11,000,000 IDR (임대료 - 매매가 미표기)",
+    "priceNum": null,
+    "area": 92.0,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: 92㎡, 2개"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=245439944_2jtAf0gS_01.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=245439944_KcWlnqU5_02.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=245439944_WSTbL7Bm_03.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=245439944_6kjHvR9q_04.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=245439944_AyFvD2zi_05.jpg"
+    ],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10378&page=2",
+    "postedAt": "2025-11-21T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 한인 커뮤니티 매물 · 아파트",
+      "보증금 1",
+      "월 임대료 11juta",
+      "가구·집기 포함",
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 필요"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignSteps": [
+      "표시가 Rp 0 - 관할 주(州) 최소 가격 기준 확인 필요",
+      "체류허가(KITAS/KITAP) 사본 필요"
+    ],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "설비·집기 인계 범위가 언급됨",
+      "임차 잔여 기간이 명시됨",
+      "면적이 명시됨",
+      "주소가 기재됨",
+      "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
+    ],
+    "operabilityTodos": [
+      "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
+      "게시 후 298일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "매매가 미표기 - 원문·매도인에게 호가 확인",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": false
+  },
+  {
+    "id": "iw-real_estate_mb-10375",
+    "type": "properti",
+    "subtype": "jual",
+    "title": "아파트",
+    "category": "한인 커뮤니티 매물 · 아파트",
+    "dealType": "매매",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "지역 미상",
+    "address": "다르마왕사 Essence Tower 2 급매합니다!",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \r\n 안녕하세요, \nDharmawangsa Essence Tower 2, 중층 세대 매매합니다. \n방 3개, 화장실 2개, Maid 방 확장해서 창고 및 세탁기 공간으로 사용중입니다. \n전용면적 114m2 (약 35평)으로 매우 공간이 넓으며, 층고도 다른 세대보다 높은 층에 있는 몇 안되는 세대입니다. \nAJB(등기) 등록된 매물이라 안전하고, \n끄망과 가까워서 주변 인프라도 좋은 편입니다. \nAJB등록 비용, 인테리어 비용(2022년) 등 고려해서 IDR 28.5억에 매매하려 합니다. \n관심 있으신 분은 WA 주시면 최대한 빨리 답변 드리겠습니다. https://indoweb.org/love/data/file/real_estate_mb/3529412161_Y0XSoIFG_20240714_103350.heic\nWA: +81315776604 \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "2,850,000,000 IDR",
+    "priceNum": 2850000000.0,
+    "area": null,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: ㎡"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=3529412161_unNdbLCa_WhatsApp_Image_2025-08-25_at_19.09.21.jpeg"
+    ],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10375&page=2",
+    "postedAt": "2025-10-17T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 창고·물류",
+      "권리 형태: AJB(매매증서)",
+      "면적 114㎡"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignSteps": [
+      "표시가 Rp 2.9십억 - 관할 주(州) 최소 가격 기준 확인 필요",
+      "체류허가(KITAS/KITAP) 사본 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "주소가 기재됨",
+      "권리 형태(증서)가 표기됨"
+    ],
+    "operabilityTodos": [
+      "게시 후 333일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "iw-real_estate_mb-10374",
+    "type": "properti",
+    "subtype": "jual",
+    "title": "BADA",
+    "category": "한인 커뮤니티 매물 · 루꼬",
+    "dealType": "매매",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "지역 미상",
+    "address": "!!!!!!!한국 레스토랑 풀 인테리어 PIK 지역 !!!!!!",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \n \n \n \n \n \n \n \n \r\n 한국식 주방 완비, 성공적인 식당 사업 양도 기회!\n안녕하세요,\n이번에 특별한 식당 양도 기회를 소개해드립니다. 오픈한지 3개월 된 이 식당은 한국에서 직접 수입한 최상급 주방 집기와 최신식 커스텀 환풍 시스템을 자랑합니다. 인테리어는 완벽하게 준비되어 있어 바로 영업을 시작할 수 있는 상태입니다.\n연락은 [연락처 비공개]으로 연락주시면 감사합니다!\n1층, 2층 홀\n3층 오피스, 주거공간\n4층 스테이케이션\n<주요 특징>\n한국산 주방 장비: 최상의 요리 환경을 제공하며, 효율적인 운영을 보장합니다.\n커스텀 주방 시스템: 한국에서 커스텀으로 제작된 시스템으로, 편리하게 구이 음식을 제공할수 있습니다\n현대적 인테리어 완비: 고객들이 편하게 머물 수 있는 세련되고 감성적인 인테리어가 완성되어 있습니다.\n급한 양도: 셰프의 갑작스러운 한국 귀국으로 인해 어쩔 수 없이 양도합니다. 이는 행운의 기회가 될 것입니다.\n이곳은 맛있는 음식을 사랑하는 모든 분들에게 새로운 시작을 위한 완벽한 기회가 될 것입니다. 관심 있으신 분들은 빠른 연락 부탁드립니다.\n감사합니다. \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "0 IDR",
+    "priceNum": null,
+    "area": null,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: ㎡"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=3399823103_TRQEg5vC_1.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=3399823103_gwmKk01l_2.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=3399823103_5QEI8eDa_3.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=3399823103_Vc7XEuLn_4.jpg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=3399823103_NF867eJm_5.jpg"
+    ],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10374&page=2",
+    "postedAt": "2025-10-06T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 음식점 · 상가·점포 · 사무실",
+      "설비·집기 인계 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "설비·집기 인계 범위가 언급됨",
+      "주소가 기재됨",
+      "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
+    ],
+    "operabilityTodos": [
+      "게시 후 344일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
+      "매매가 미표기 - 원문·매도인에게 호가 확인",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": false
+  },
+  {
+    "id": "iw-real_estate_mb-10373",
+    "type": "properti",
+    "subtype": "jual",
+    "title": "maikarta(soho)",
+    "category": "한인 커뮤니티 매물 · 아파트",
+    "dealType": "매매",
+    "board": "부동산·업체 매매(주력)",
+    "location": "Indonesia",
+    "locationKo": "지역 미상",
+    "address": "maikarta",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \n \n \n \n \n \r\n 층고가 높아서 사무실 겸용으로 사용 가능 합니다. \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "whatsapp": null,
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "1,200,000,000 IDR",
+    "priceNum": 1200000000.0,
+    "area": 9131.0,
+    "floors": null,
+    "established": null,
+    "facilities": [
+      "한인 커뮤니티",
+      "원문 링크에서 상세 확인",
+      "면적/방: 91.31㎡, 4개"
+    ],
+    "c2c": false,
+    "images": "🇰🇷",
+    "photoUrls": [
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=610031449_10LQTxf9_1.jpeg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=610031449_HGJIYcaw_2.jpeg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=610031449_wE7L8YDs_3.jpeg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=610031449_VJUxsni5_4.jpeg",
+      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=610031449_n4o2DhG5_5.jpeg"
+    ],
+    "badge": "커뮤니티 매물",
+    "source": "indoweb.org",
+    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10373&page=2",
+    "postedAt": "2025-10-02T00:00:00+00:00",
+    "indexOnly": false,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 사무실"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignSteps": [
+      "표시가 Rp 1.2십억 - 관할 주(州) 최소 가격 기준 확인 필요",
+      "체류허가(KITAS/KITAP) 사본 필요"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "주소가 기재됨"
+    ],
+    "operabilityTodos": [
+      "게시 후 348일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
   }
 ];

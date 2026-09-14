@@ -8,9 +8,13 @@
     SHMSRS(집합건물 소유권, 아파트)를 취득할 수 있다. 지역별 최소 가격 규정이 있다.
   - PT PMA(외국인투자법인)는 HGB(건물사용권)/Hak Pakai 를 취득할 수 있다.
     SHM 매물은 매도인이 HGB 로 전환(pelepasan hak → HGB)해야 인수 가능하다.
-  - PT PMA 는 업종(KBLI)·지역당 최소 투자액 Rp 100억(토지·건물 제외)과
-    납입자본 Rp 100억 요건을 받는다. 소매업·소규모 요식업 등 UMKM 유보 업종은
+  - PT PMA 는 업종(KBLI 5자리)·사업장당 투자계획 Rp 100억 초과(토지·건물 제외)와
+    납입자본 Rp 25억 요건을 받는다(BKPM 규정 2025년 제5호, 2025-10-02 시행으로
+    납입자본이 Rp 100억 → Rp 25억으로 인하). 소매업·소규모 요식업 등 UMKM 유보 업종은
     외국인 투자가 막혀 있다.
+  - 기존 법인의 지분을 사는 거래(share deal)는 새 PT PMA 를 세우지 않고 법인을 그대로
+    넘겨받는다. 사업자산만 넘기는 거래(asset deal)는 인수자가 PT PMA 를 새로 세워야 한다.
+    한인 커뮤니티의 소형 매장 양도는 거의 전부 후자다.
 
 ⚠️ 이 모듈은 공개 수집 데이터(제목·설명·증서 표기)만으로 하는 1차 스크리닝이다.
    법률 자문이 아니며, 최종 판단은 공증인(notaris)·BKPM 확인이 필요하다.
@@ -28,8 +32,11 @@ BLOCKED = "불가"        # 현행 제도상 외국인이 취득할 수 없는 �
 BLOCKED_BUSINESS = [
     (r"\bwarung\b|\bwarteg\b|\bkaki lima\b|\bgerobak\b|\bangkringan\b",
      "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음"),
-    (r"\btoko kelontong\b|\bsembako\b|\bminimarket\b|\bwarung sembako\b",
-     "생필품 소매업은 외국인 투자 유보 업종"),
+    (r"\btoko kelontong\b|\bsembako\b|\bminimarket\b|\bwarung sembako\b|"
+     r"\balfamart\b|\bindomaret\b|\balfamidi\b",
+     "생필품 소매업(편의점 가맹점 포함)은 외국인 투자 유보 업종"),
+    (r"\bsekolah\b.*\b(?:sd|smp|sma|smk)\b|\b(?:sd|smp|sma|smk)\b.*\bsekolah\b",
+     "초·중·고 정규학교 운영은 경제특구(KEK) 밖에서 외국인 투자 불가"),
     (r"\bpangkalan gas\b|\bagen lpg\b|\bpertamini\b",
      "LPG·연료 소매 유통은 외국인 투자 제한 업종"),
     (r"\bojek\b|\btravel\b.*\bangkutan\b|\bangkutan (?:umum|orang)\b",
@@ -52,6 +59,26 @@ PT_PMA_MIN_INVESTMENT = 10_000_000_000
 # 토지·건물 제외)' 기준이므로, 인수가가 그보다 작다는 사실만으로 불가라고 할 수 없다.
 # 따라서 이 선 아래만 구조 불성립으로 보고, 그 위는 '조건부'로 두어 요건 충족 방법을 안내한다.
 BUSINESS_REALISTIC_MIN = 100_000_000
+
+# 신규 PT PMA 납입자본 하한(BKPM 규정 2025년 제5호).
+# 2026-09-14 재조정: 위 하향 이후 인수가 Rp 4억짜리 카페·포차까지 '조건부'로 통과해,
+# 추천 목록이 실제로는 한국인이 적법하게 인수할 수 없는 매물로 채워졌다.
+# 자산 양도(asset deal)는 인수자가 PT PMA 를 새로 세워야 하는데, 인수가가 납입자본
+# 하한에도 못 미치면 인수가의 몇 배를 법인에 묶고 사업장당 Rp 100억 투자계획까지 내야 한다.
+# 이 가격대에서 실제로 쓰이는 방식은 현지인 명의 대여(명의신탁)이고, 이는 투자법상 무효라
+# 분쟁 시 매장을 통째로 잃는다. 그래서 이 선 아래의 자산 양도는 '불가'로 내린다.
+# 가격 미표기와 지분 인수(share deal)는 이 규칙을 적용하지 않는다.
+PT_PMA_MIN_PAID_UP = 2_500_000_000
+
+# 기존 법인을 통째로(지분으로) 넘기는 거래. 인수자가 새 법인을 세우지 않아도 된다.
+_SHARE_DEAL = re.compile(
+    r"법인\s*(?:매각|양도|매매|인수)|지분\s*(?:매각|양도|인수|100\s*%)|주식\s*양도|"
+    r"take\s*over\s*(?:pt|perusahaan|saham)|jual\s*(?:pt|perusahaan)\b|"
+    r"akuisisi\s*saham|saham\s*(?:dijual|100\s*%)|share\s*(?:sale|deal|transfer)", re.I)
+# 매도인이 '법인·지분은 넘기지 않는다'고 못박은 글. 지분 인수 표현보다 우선한다.
+_ASSET_ONLY = re.compile(
+    r"(?:지분|법인)[^.\n]{0,30}(?:매각|양도)하는\s*거래가\s*아닙|사업자산\s*양도|"
+    r"자산\s*양도\s*방식|별도(?:의)?\s*(?:법인|사업자)[^.\n]{0,10}설립", re.I)
 
 # 외국인 개인 주거용 취득 최소 가격(지역별 상이, 자카르타권 기준을 보수적으로 사용).
 FOREIGN_HOME_MIN_PRICE = 3_000_000_000
@@ -107,6 +134,21 @@ def classify(item):
         if blocked:
             return BLOCKED, blocked, []
 
+        # 지분 인수: 법인과 그 인허가·임차계약을 그대로 넘겨받으므로 인수가와 무관하게
+        # 외국인이 취득할 수 있는 구조다. 다만 법인이 PMDN(내국 법인)이면 지분 인수 순간
+        # PMA 로 전환돼 투자 요건을 새로 받는다.
+        if _SHARE_DEAL.search(text) and not _ASSET_ONLY.search(text):
+            steps = ["AHU 법인 등기부로 현재 주주 구성과 PMA/PMDN 여부 확인",
+                     "OSS 에서 법인의 KBLI 가 외국인 지분 100% 허용 업종인지 확인",
+                     "PMDN 이면 지분 인수 시 PMA 전환 - 납입자본 Rp 25억·투자계획 요건 재충족 필요",
+                     "세무(DJP)·임금·임차료 미납과 소송(SIPP) 등 법인에 딸린 채무 실사 필수"]
+            if not price:
+                steps.insert(0, "인수가 미표기 - 지분가와 법인 부채 인수 범위를 함께 확인")
+            if item.get("propertyIncluded") or has_shm:
+                steps.append("법인 명의 부동산이 SHM 이면 법인이 보유할 수 없는 권리 - HGB 여부 확인")
+            return (ELIGIBLE, "기존 법인 지분 인수 - 신규 PT PMA 설립 없이 외국인 인수 가능한 구조",
+                    steps)
+
         # 가격 미표기(한인 커뮤니티 글은 '연락 주세요'로 끝나는 경우가 흔하다)를
         # 0원으로 읽어 불가 처리하면, 정작 실제 인수 대상인 매물이 전부 사라진다.
         # 모르는 값은 모른다고 하고 확인 절차를 안내한다.
@@ -117,6 +159,11 @@ def classify(item):
                     f"인수가 {rupiah_ko(price)} - 법인 설립·인허가 비용에도 못 미치는 규모로"
                     " 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
                     [])
+        elif price < PT_PMA_MIN_PAID_UP:
+            return (BLOCKED,
+                    f"자산 양도 {rupiah_ko(price)} - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐"
+                    " 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
+                    ["이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"])
 
         steps.append("PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가")
         steps.append("해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인")

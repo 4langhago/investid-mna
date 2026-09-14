@@ -25,7 +25,12 @@ jobs:
         with:
           python-version: "3.12"
 
+      # 2026-08-15 이후 99.co 가 GitHub 러너 IP 에 403 을 반환해 수집 0건 → exit 1 로
+      # 잡 전체가 중단됐다. 그 뒤의 인도웹·OLX 수집과 텔레그램 추천이 한 달간 한 번도
+      # 돌지 않은 원인이다. 부동산 소스 하나가 막혀도 나머지는 계속 돌아야 한다
+      # (낡은 부동산 데이터는 telegram_recommend.py 가 소스별 신선도로 걸러낸다).
       - name: 부동산 매물 수집 (99.co)
+        continue-on-error: true
         run: python scraper/scrape_99co.py
 
       # 실패해도 부동산 발송은 계속되어야 하므로 워크플로를 중단시키지 않는다.

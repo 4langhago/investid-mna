@@ -42,12 +42,10 @@ const BUSINESS_LISTINGS = [
       "직원 인계 대상 있음",
       "설비 일체 포함"
     ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignStatus": "불가",
+    "foreignReason": "자산 양도 Rp 650백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
     "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 650백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
     ],
     "operability": "운영가능",
     "operabilityReasons": [
@@ -59,7 +57,7 @@ const BUSINESS_LISTINGS = [
     "operabilityTodos": [
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
-    "koreanEligible": true
+    "koreanEligible": false
   },
   {
     "id": "biz-10844",
@@ -209,12 +207,10 @@ const BUSINESS_LISTINGS = [
       "직원 인계 대상 있음",
       "설비 일체 포함"
     ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignStatus": "불가",
+    "foreignReason": "자산 양도 Rp 650백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
     "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 650백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
     ],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -223,11 +219,11 @@ const BUSINESS_LISTINGS = [
       "설비·집기 인계 범위가 언급됨"
     ],
     "operabilityTodos": [
-      "게시 후 196일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 223일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
-    "koreanEligible": true
+    "koreanEligible": false
   },
   {
     "id": "biz-10744",
@@ -268,12 +264,10 @@ const BUSINESS_LISTINGS = [
       "직원 인계 대상 있음",
       "설비 일체 포함"
     ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignStatus": "불가",
+    "foreignReason": "자산 양도 Rp 400백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
     "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 400백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
     ],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -282,11 +276,11 @@ const BUSINESS_LISTINGS = [
       "설비·집기 인계 범위가 언급됨"
     ],
     "operabilityTodos": [
-      "게시 후 219일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 247일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
-    "koreanEligible": true
+    "koreanEligible": false
   },
   {
     "id": "biz-10737",
@@ -323,12 +317,10 @@ const BUSINESS_LISTINGS = [
       "업종/용도: 카페 · 음식점",
       "임차 조건 포함 - 계약 잔여기간 확인 필요"
     ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignStatus": "불가",
+    "foreignReason": "자산 양도 Rp 210백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
     "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 210백만 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
     ],
     "operability": "부적합",
     "operabilityReasons": [
@@ -338,7 +330,7 @@ const BUSINESS_LISTINGS = [
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
-      "게시 후 224일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 252일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
@@ -383,12 +375,10 @@ const BUSINESS_LISTINGS = [
       "직원 인계 대상 있음",
       "설비 일체 포함"
     ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignStatus": "불가",
+    "foreignReason": "자산 양도 Rp 2.4십억 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
     "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 2.4십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
     ],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -397,11 +387,11 @@ const BUSINESS_LISTINGS = [
       "설비·집기 인계 범위가 언급됨"
     ],
     "operabilityTodos": [
-      "게시 후 287일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 315일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
-    "koreanEligible": true
+    "koreanEligible": false
   },
   {
     "id": "biz-10490",
@@ -443,7 +433,7 @@ const BUSINESS_LISTINGS = [
     "foreignSteps": [],
     "operability": "부적합",
     "operabilityReasons": [
-      "게시 후 466일 경과 - 거래 종료 가능성이 높아 추천 대상에서 제외"
+      "게시 후 494일 경과 - 거래 종료 가능성이 높아 추천 대상에서 제외"
     ],
     "operabilityTodos": [],
     "koreanEligible": false

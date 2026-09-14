@@ -78,6 +78,16 @@ BIZ_RE = re.compile(
 NOISE_RE = re.compile(r"구인|구직|채용|모집|후원|공모전|문의드립니다|추천해주세요|"
                       r"찾습니다|구합니다|광고/제휴|임대|렌트|월세\s*놓|세놓|"
                       r"인사드립니다|안내드립니다")
+RECRUIT_RE = re.compile(r"구인|구직|채용|모집|찾습니다|구합니다")
+
+# 사업체가 아니라 부동산 자체를 파는 글. 사업체로 분류하면 '영업 실체(매출·직원)' 잣대로
+# 부적합이 되고, 외국인 판정도 HGB 여부를 보지 않는다(예: Majalengka HGB 공장이 '불가').
+PROPERTY_TITLE_RE = re.compile(
+    r"공장|토지|땅|부지|사무실|아파트|주택|빌라|창고|레지던스|원룸|스튜디오|"
+    r"\btanah\b|\bgudang\b|\bpabrik\b|apartemen|residence|건물", re.I)
+# 제목에 이런 표현이 있으면 부동산이 아니라 영업 중인 사업체(또는 법인) 거래로 본다.
+OPERATING_TITLE_RE = re.compile(
+    r"법인|지분|사업|업체|브랜드|식당|카페|매장|세차장|포차|운영|거래처|제조")
 
 LOCATION_KO = {
     "자카르타": "자카르타", "땅그랑": "탕그랑", "탕그랑": "탕그랑",
@@ -122,9 +132,12 @@ def parse_rows(page_html, board, board_ko):
         title = html_lib.unescape(re.sub(r"<[^>]+>", "", m.group("title"))).strip()
         if not title:
             continue
+        # 게시판 분류 링크(매매/임대/재임대). 제목 키워드보다 확실한 거래 구분이다.
+        cate = re.search(r'class="bo_cate_link"[^>]*>\s*([^<]+?)\s*</a>', m.group(0))
         items.append({
             "wr_id": m.group("wr_id"),
             "title": title,
+            "cate": cate.group(1) if cate else None,
             "date": m.group("date").strip(),
             "url": html_lib.unescape(m.group("url")).replace(":443", ""),
             "board": board,
@@ -158,7 +171,16 @@ def parse_location(title):
     return None
 
 
-def is_business_deal(title):
+def is_business_deal(title, cate=None):
+    # 작성자가 '매매'로 분류한 글은 제목에 거래·업종 표현이 없어도 매물이다.
+    # 제목 키워드만 보던 동안 '토지 및 건물'(탕그랑 공장 Rp 120억), '포차 매각',
+    # 'SCBD 캐피탈 레지던스 아파트 매매/임대' 같은 실제 매매 글이 빠졌다.
+    if cate in ("임대", "재임대"):
+        return False, "매물 아님(임대 분류)"
+    if cate == "매매":
+        if RECRUIT_RE.search(title):
+            return False, "매물 아님(구인·문의 등)"
+        return True, ""
     if NOISE_RE.search(title):
         return False, "매물 아님(구인·문의 등)"
     if not DEAL_RE.search(title):
@@ -194,12 +216,7 @@ def _digits(raw):
     return float(re.sub(r"[^\d]", "", raw) or 0)
 
 
-def parse_price(raw):
-    """(표시 문자열, 루피아 환산값) 반환. 해석 불가면 (원문, None)."""
-    if not raw:
-        return None, None
-    text = raw.strip()
-    low = text.lower()
+def _parse_price_num(text, low):
     m = re.search(r"([\d][\d,\.]*)", text)
     if not m:
         return text, None
@@ -216,6 +233,26 @@ def parse_price(raw):
     if "억" in low:
         return text, n * 100_000_000        # 한국어 '억' 은 원화가 아니라 루피아 억으로 쓰인다
     return text, n
+
+
+# 게시판 가격 칸은 필수 입력이라 '1 USD', '5 IDR', '월간 - 1 USD' 같은 자리채움 값이 흔하다.
+# 이를 실제 가격으로 읽으면 Rp 1만6천짜리 공장이 되어 '인수 구조 불성립'으로 떨어진다
+# (예: Majalengka HGB 공장 21,201㎡). 사업체·부동산 매매가가 될 수 없는 금액은 미표기로 본다.
+PLACEHOLDER_PRICE_MAX = 10_000_000
+
+
+def parse_price(raw):
+    """(표시 문자열, 루피아 환산값) 반환. 해석 불가·자리채움 값이면 (원문, None)."""
+    if not raw:
+        return None, None
+    text = raw.strip()
+    # '월간 - 2,600 USD' 처럼 임대료 칸 값이 매매가 자리에 오는 글(매매/임대 겸용)이 있다.
+    if re.search(r"월간|년간|연간|/\s*월|per\s*(?:bulan|month)|/\s*bulan", text, re.I):
+        return f"{text} (임대료 - 매매가 미표기)", None
+    shown, num = _parse_price_num(text, text.lower())
+    if num is not None and num < PLACEHOLDER_PRICE_MAX:
+        return f"{text} (가격 미표기로 간주)", None
+    return shown, num
 
 
 def strip_html(fragment):
@@ -324,7 +361,7 @@ def to_model(row):
     title = re.sub(r"\s*(?:댓글\s*\d+\s*개|좋아요\s*\d+|새글|인기글)\s*", " ", title).strip()
     title = re.sub(r"\s{2,}", " ", title)
 
-    ok, reason = is_business_deal(title)
+    ok, reason = is_business_deal(title, row.get("cate"))
     if not ok:
         return None, reason
 
@@ -334,10 +371,15 @@ def to_model(row):
     if posted < datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS):
         return None, f"게시 {MAX_AGE_DAYS}일 초과"
 
+    # 부동산 게시판 글은 제목에 부동산 표현이 없어도('NAVAPARK BSD', '펜트하우스 56 AH')
+    # 대부분 부동산이다. 영업 중인 사업체라는 표현이 있을 때만 사업체로 본다.
+    is_property = (not OPERATING_TITLE_RE.search(title)
+                   and (bool(PROPERTY_TITLE_RE.search(title))
+                        or row["board"].startswith("real_estate")))
     return {
         "id": f"iw-{row['board']}-{row['wr_id']}",
-        "type": "bisnis",
-        "subtype": "akuisisi",
+        "type": "properti" if is_property else "bisnis",
+        "subtype": "jual" if is_property else "akuisisi",
         "title": title,
         "category": "한인 커뮤니티 매물",
         "dealType": None,
