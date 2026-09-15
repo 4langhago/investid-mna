@@ -4,7 +4,14 @@ on:
   schedule:
     # 매일 00:00 UTC = 한국 09:00 / 자카르타 07:00
     - cron: "0 0 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      telegram_only:
+        # 추천 발송만 시험할 때 쓴다. 수집 스텝(인도웹만 40분+)을 건너뛰고 이미 커밋된
+        # 데이터로 바로 발송한다. 텔레그램 토큰이 GitHub Secrets 에만 있어 로컬에서는 발송 테스트가 안 된다.
+        description: "수집 없이 텔레그램 추천만 실행"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -32,6 +39,7 @@ jobs:
       # 99.co·tempat-usaha.com 은 데이터센터 IP만 막혀 있어 scraper/daily_update.ps1
       # (로컬 PC 스케줄 작업)로 매일 별도 수집·커밋된다 — 여기서 0건이어도 정상이다.
       - name: 부동산 매물 수집 (99.co)
+        if: ${{ !inputs.telegram_only }}
         id: co99
         continue-on-error: true
         run: python scraper/scrape_99co.py
@@ -40,16 +48,19 @@ jobs:
       # (2026-09-15 로컬 재현 확인) 로컬 우회로도 해결되지 않는다. 원인 불명의 광범위한
       # 차단 — 현재는 소스가 복구될 때까지 실패를 기록만 하고 다음 소스로 넘어간다.
       - name: 사업체 인수 매물 수집 (OLX — 주력, 현재 차단됨)
+        if: ${{ !inputs.telegram_only }}
         id: olx
         continue-on-error: true
         run: python scraper/scrape_olx.py
 
       - name: 사업체 인수 매물 수집 (tempat-usaha.com — 보조)
+        if: ${{ !inputs.telegram_only }}
         id: business
         continue-on-error: true
         run: python scraper/scrape_business.py
 
       - name: 소스별 수집 결과 요약
+        if: ${{ !inputs.telegram_only }}
         run: |
           summarize() {
             name="$1"; outcome="$2"; file="$3"
@@ -70,10 +81,12 @@ jobs:
       # 다만 인도웹은 요청을 조여 실패가 잦으므로 워크플로를 중단시키지는 않는다.
       # 요청 간 12초 딜레이 + 상세 페이지 수집이라 시간이 걸린다(아래 timeout 참고).
       - name: 한인 커뮤니티 매물 수집 (indoweb.org — 1순위)
+        if: ${{ !inputs.telegram_only }}
         continue-on-error: true
         run: python scraper/scrape_indoweb.py --pages 2
 
       - name: 변경 사항 커밋 & 푸시
+        if: ${{ !inputs.telegram_only }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
