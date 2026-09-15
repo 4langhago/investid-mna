@@ -1,22 +1,43 @@
 {
-  "cursor": 36,
+  "cursor": 37,
   "note": "2026-07-27 발송 소스를 js/data.js(실재 미확인) -> js/live_data.js(99.co 실수집)로 교체하면서 커서 초기화. 이전 커서(25)와 lastSentIds(46,78,102,57,47)는 실재 미확인 매물 기준이므로 승계하지 않음.",
-  "bizCursor": 54,
-  "lastRunAt": "2026-08-14T02:18:22+00:00",
+  "bizCursor": 2,
+  "lastRunAt": "2026-09-15T15:34:06+00:00",
   "lastSentIds": [
-    "olx-941039689",
-    "olx-947283277",
-    "olx-945114759",
-    "live-1007888979",
-    "live-1005514940"
+    "iw-real_estate_mb-10428",
+    "iw-real_estate_mb-10427",
+    "olx-946510723",
+    "olx-946364102",
+    "live-1011757724"
   ],
   "lastSentBusinessIds": [
-    "olx-941039689",
-    "olx-947283277",
-    "olx-945114759"
+    "olx-946510723",
+    "olx-946364102"
   ],
   "lastSentPropertyIds": [
-    "live-1007888979",
-    "live-1005514940"
+    "live-1011757724"
+  ],
+  "commCursor": 0,
+  "lastSentCommunityIds": [
+    "iw-real_estate_mb-10428",
+    "iw-real_estate_mb-10427"
+  ],
+  "seenCommunityIds": [
+    "iw-biz_promo-32737",
+    "iw-market-63690",
+    "iw-real_estate_mb-10373",
+    "iw-real_estate_mb-10375",
+    "iw-real_estate_mb-10380",
+    "iw-real_estate_mb-10381",
+    "iw-real_estate_mb-10391",
+    "iw-real_estate_mb-10399",
+    "iw-real_estate_mb-10402",
+    "iw-real_estate_mb-10404",
+    "iw-real_estate_mb-10407",
+    "iw-real_estate_mb-10412",
+    "iw-real_estate_mb-10419",
+    "iw-real_estate_mb-10420",
+    "iw-real_estate_mb-10427",
+    "iw-real_estate_mb-10428"
   ]
 }
