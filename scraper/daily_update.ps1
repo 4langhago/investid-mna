@@ -17,17 +17,27 @@ $logFile = Join-Path $logDir ("update_{0}.log" -f (Get-Date -Format "yyyy-MM-dd"
 
 function Log($msg) { $msg | Tee-Object -FilePath $logFile -Append }
 
+# Windows PowerShell 5.1 은 외부 프로그램 출력을 시스템 코드페이지(CP949)로 읽는다.
+# 파이썬이 UTF-8 로 찍는 한글이 로그에서 전부 깨져 결과 건수를 읽을 수 없었다.
+$env:PYTHONIOENCODING = "utf-8"
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+
+# git 은 진행 메시지("From ...", "To ...")를 stderr 로 내보낸다. 2>&1 로 받으면 5.1 이
+# 정상 메시지까지 NativeCommandError(빨간 오류)로 감싸 로그에 실패처럼 남는다.
+# 오류 레코드를 문자열로 풀어서 기록하고, 성공 여부는 종료 코드로만 판단한다.
+function LogNative { process { Log ($(if ($_ -is [System.Management.Automation.ErrorRecord]) { $_.Exception.Message } else { $_ })) } }
+
 Log "===== $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') 수집 시작 ====="
 
 # 두 스크래퍼는 서로 독립적이다 — 하나가 실패(0건)해도 다른 하나는 계속 시도한다.
 # 각 스크립트 자체가 0건이면 기존 js/*.js를 덮어쓰지 않으므로 여기서 별도 롤백은 불필요.
 Log "-- 99.co 수집 --"
-py -3 scraper\scrape_99co.py 2>&1 | ForEach-Object { Log $_ }
+py -3 scraper\scrape_99co.py 2>&1 | LogNative
 $co99Ok = ($LASTEXITCODE -eq 0)
 Log $(if ($co99Ok) { "99.co: 성공" } else { "99.co: 실패 (exit $LASTEXITCODE)" })
 
 Log "-- tempat-usaha.com 수집 --"
-py -3 scraper\scrape_business.py 2>&1 | ForEach-Object { Log $_ }
+py -3 scraper\scrape_business.py 2>&1 | LogNative
 $businessOk = ($LASTEXITCODE -eq 0)
 Log $(if ($businessOk) { "tempat-usaha.com: 성공" } else { "tempat-usaha.com: 실패 (exit $LASTEXITCODE)" })
 
@@ -49,12 +59,12 @@ if ($branch -ne "main") {
     exit 1
 }
 
-git add js/live_data.js js/business_data.js 2>&1 | ForEach-Object { Log $_ }
-git commit -m "chore: auto-update listings ($(Get-Date -Format 'yyyy-MM-dd'))" 2>&1 | ForEach-Object { Log $_ }
+git add js/live_data.js js/business_data.js 2>&1 | LogNative
+git commit -m "chore: auto-update listings ($(Get-Date -Format 'yyyy-MM-dd'))" 2>&1 | LogNative
 # GitHub Actions 도 매일 같은 브랜치에 수집 커밋을 올린다. 먼저 받아오지 않으면
 # push 가 non-fast-forward 로 거절돼 이 PC 에서 모은 데이터가 올라가지 않는다.
-git pull --rebase --autostash origin main 2>&1 | ForEach-Object { Log $_ }
-git push origin main 2>&1 | ForEach-Object { Log $_ }
+git pull --rebase --autostash origin main 2>&1 | LogNative
+git push origin main 2>&1 | LogNative
 
 if ($LASTEXITCODE -eq 0) {
     Log "push 완료"
