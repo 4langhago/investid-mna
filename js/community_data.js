@@ -1,8 +1,8 @@
 // 자동 생성 파일 — scraper/scrape_indoweb.py 가 갱신합니다. 직접 수정 금지.
 // 제목/지역/게시일/가격/면적/사실 요약만 보관한다.
 // 글쓴이 이름·전화·이메일·메신저 ID 는 저장하지 않는다(MASK_RE 로 제거).
-// 갱신 시각: 2026-09-15T04:58:22+00:00
-const COMMUNITY_LISTINGS_UPDATED_AT = "2026-09-15T04:58:22+00:00";
+// 갱신 시각: 2026-09-15T21:31:28+07:00
+const COMMUNITY_LISTINGS_UPDATED_AT = "2026-09-15T21:31:28+07:00";
 const COMMUNITY_LISTINGS = [
   {
     "id": "iw-real_estate_mb-10428",
@@ -52,14 +52,14 @@ const COMMUNITY_LISTINGS = [
       "인수가 미표기 - 지분가와 법인 부채 인수 범위를 함께 확인",
       "AHU 법인 등기부로 현재 주주 구성과 PMA/PMDN 여부 확인",
       "OSS 에서 법인의 KBLI 가 외국인 지분 100% 허용 업종인지 확인",
-      "PMDN 이면 지분 인수 시 PMA 전환 - 납입자본 Rp 25억·투자계획 요건 재충족 필요",
+      "PMDN 이면 외국인 지분이 1%만 들어와도 PMA 전환 의무 - 납입자본 Rp 25억(12개월 인출 불가)·투자계획 Rp 100억 요건 재충족 필요",
       "세무(DJP)·임금·임차료 미납과 소송(SIPP) 등 법인에 딸린 채무 실사 필수"
     ],
     "operability": "확인필요",
     "operabilityReasons": [
       "사업자 등록·인허가 관련 언급이 있음",
       "공장 가동·거래처 등 제조 영업 기반이 언급됨",
-      "최근 게시(8일 전)"
+      "최근 게시(9일 전)"
     ],
     "operabilityTodos": [
       "인수가(권리금 포함) 미표기 - 매도인에게 총액과 포함 범위 확인",
@@ -121,7 +121,7 @@ const COMMUNITY_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "공장 가동·거래처 등 제조 영업 기반이 언급됨",
-      "최근 게시(14일 전)"
+      "최근 게시(15일 전)"
     ],
     "operabilityTodos": [
       "인수가(권리금 포함) 미표기 - 매도인에게 총액과 포함 범위 확인",
@@ -955,9 +955,9 @@ const COMMUNITY_LISTINGS = [
       "업종/용도: 한인 커뮤니티 매물 · 아파트"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignReason": "외국인 개인 취득 가능 유형 - 매매가 미표기로 최소가 충족 여부 미확인",
     "foreignSteps": [
-      "표시가 Rp 0 - 관할 주(州) 최소 가격 기준 확인 필요",
+      "DKI Jakarta 외국인 아파트 최소가 Rp 3.0십억 이상인지 매매가 확인",
       "체류허가(KITAS/KITAP) 사본 필요"
     ],
     "operability": "확인필요",
@@ -1016,9 +1016,9 @@ const COMMUNITY_LISTINGS = [
       "가격 협의 가능"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignReason": "외국인 개인 취득 가능 유형 - 매매가 미표기로 최소가 충족 여부 미확인",
     "foreignSteps": [
-      "표시가 Rp 0 - 관할 주(州) 최소 가격 기준 확인 필요",
+      "Jawa Barat 외국인 아파트 최소가 Rp 2.0십억 이상인지 매매가 확인",
       "체류허가(KITAS/KITAP) 사본 필요"
     ],
     "operability": "부적합",
@@ -1080,9 +1080,9 @@ const COMMUNITY_LISTINGS = [
       "업종/용도: 한인 커뮤니티 매물 · 아파트"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignReason": "외국인 개인 취득 가능 유형 - 매매가 미표기로 최소가 충족 여부 미확인",
     "foreignSteps": [
-      "표시가 Rp 0 - 관할 주(州) 최소 가격 기준 확인 필요",
+      "Jawa Barat 외국인 아파트 최소가 Rp 2.0십억 이상인지 매매가 확인",
       "체류허가(KITAS/KITAP) 사본 필요"
     ],
     "operability": "확인필요",
@@ -1145,10 +1145,10 @@ const COMMUNITY_LISTINGS = [
       "가격 협의 가능"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignReason": "외국인 개인 취득 가능 유형이나 지역 미상(자카르타 기준 적용) 최소가 Rp 3.0십억 미달",
     "foreignSteps": [
-      "표시가 Rp 1.7십억 - 관할 주(州) 최소 가격 기준 확인 필요",
-      "체류허가(KITAS/KITAP) 사본 필요"
+      "표시가 Rp 1.7십억 - 최소가 미만이면 외국인 명의 등기 불가",
+      "최소가 이상으로 매매하는 경우에만 진행(다운계약은 등기 무효 위험)"
     ],
     "operability": "운영가능",
     "operabilityReasons": [
@@ -1158,7 +1158,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 232일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 233일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1220,7 +1220,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 237일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 238일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
@@ -1275,10 +1275,10 @@ const COMMUNITY_LISTINGS = [
       "가격 협의 가능"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignReason": "SOHO·사무실 분양 - 비주거용이라 외국인 개인 명의 불가, PT PMA 명의로 취득",
     "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+      "PT PMA 설립 후 법인 명의 취득(건물 토지가 HGB 인지 확인)",
+      "사업장 주소로 쓰려면 건물 용도가 사무실(PBG/SLF)로 등록돼 있는지 확인"
     ],
     "operability": "부적합",
     "operabilityReasons": [
@@ -1287,7 +1287,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 249일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 250일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1352,7 +1352,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 256일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 257일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1405,10 +1405,10 @@ const COMMUNITY_LISTINGS = [
       "업종/용도: 사무실"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignReason": "외국인 개인 취득 가능 유형이나 Jawa Barat 최소가 Rp 2.0십억 미달",
     "foreignSteps": [
-      "표시가 Rp 1.2십억 - 관할 주(州) 최소 가격 기준 확인 필요",
-      "체류허가(KITAS/KITAP) 사본 필요"
+      "표시가 Rp 1.2십억 - 최소가 미만이면 외국인 명의 등기 불가",
+      "최소가 이상으로 매매하는 경우에만 진행(다운계약은 등기 무효 위험)"
     ],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -1417,7 +1417,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 291일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 292일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1469,10 +1469,11 @@ const COMMUNITY_LISTINGS = [
       "업종/용도: 창고·물류"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "나대지는 외국인 개인 취득 불가 - PT PMA 명의 HGB 로만 가능",
+    "foreignReason": "단독주택 Rp 1.3십억 - DKI Jakarta 외국인 최소가 Rp 5.0십억 미달",
     "foreignSteps": [
-      "PT PMA 설립 후 HGB 취득",
-      "SHM 매물이면 매도인의 HGB 전환 절차 필요"
+      "최소가 미만 주택은 외국인 개인 명의 취득 불가",
+      "외국인 개인은 Hak Pakai 로만 취득(30년+20년 연장+30년 갱신) - SHM/HGB 는 매도인 측 권리 전환 필요",
+      "체류허가(KITAS/KITAP) 필요, 가구당 1필지·2,000㎡ 이하"
     ],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -1481,7 +1482,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 294일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 295일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1505,7 +1506,7 @@ const COMMUNITY_LISTINGS = [
     "profit": null,
     "price": "월간 - 8,000,000 IDR (임대료 - 매매가 미표기)",
     "priceNum": null,
-    "area": 8728.0,
+    "area": 87.28,
     "floors": null,
     "established": null,
     "facilities": [
@@ -1538,9 +1539,9 @@ const COMMUNITY_LISTINGS = [
       "가격 협의 가능"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignReason": "외국인 개인 취득 가능 유형 - 매매가 미표기로 최소가 충족 여부 미확인",
     "foreignSteps": [
-      "표시가 Rp 0 - 관할 주(州) 최소 가격 기준 확인 필요",
+      "Jawa Barat 외국인 아파트 최소가 Rp 2.0십억 이상인지 매매가 확인",
       "체류허가(KITAS/KITAP) 사본 필요"
     ],
     "operability": "부적합",
@@ -1553,7 +1554,7 @@ const COMMUNITY_LISTINGS = [
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
-      "게시 후 298일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 299일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1610,9 +1611,9 @@ const COMMUNITY_LISTINGS = [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 필요"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignReason": "외국인 개인 취득 가능 유형 - 매매가 미표기로 최소가 충족 여부 미확인",
     "foreignSteps": [
-      "표시가 Rp 0 - 관할 주(州) 최소 가격 기준 확인 필요",
+      "Jawa Barat 외국인 아파트 최소가 Rp 2.0십억 이상인지 매매가 확인",
       "체류허가(KITAS/KITAP) 사본 필요"
     ],
     "operability": "부적합",
@@ -1625,7 +1626,7 @@ const COMMUNITY_LISTINGS = [
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
-      "게시 후 298일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 299일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1676,10 +1677,10 @@ const COMMUNITY_LISTINGS = [
       "면적 114㎡"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignReason": "외국인 개인 취득 가능 유형이나 지역 미상(자카르타 기준 적용) 최소가 Rp 3.0십억 미달",
     "foreignSteps": [
-      "표시가 Rp 2.9십억 - 관할 주(州) 최소 가격 기준 확인 필요",
-      "체류허가(KITAS/KITAP) 사본 필요"
+      "표시가 Rp 2.9십억 - 최소가 미만이면 외국인 명의 등기 불가",
+      "최소가 이상으로 매매하는 경우에만 진행(다운계약은 등기 무효 위험)"
     ],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -1688,7 +1689,7 @@ const COMMUNITY_LISTINGS = [
       "권리 형태(증서)가 표기됨"
     ],
     "operabilityTodos": [
-      "게시 후 333일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 334일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1753,7 +1754,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 344일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 345일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
@@ -1779,7 +1780,7 @@ const COMMUNITY_LISTINGS = [
     "profit": null,
     "price": "1,200,000,000 IDR",
     "priceNum": 1200000000.0,
-    "area": 9131.0,
+    "area": 91.31,
     "floors": null,
     "established": null,
     "facilities": [
@@ -1807,10 +1808,10 @@ const COMMUNITY_LISTINGS = [
       "업종/용도: 사무실"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
+    "foreignReason": "SOHO·사무실 분양 - 비주거용이라 외국인 개인 명의 불가, PT PMA 명의로 취득",
     "foreignSteps": [
-      "표시가 Rp 1.2십억 - 관할 주(州) 최소 가격 기준 확인 필요",
-      "체류허가(KITAS/KITAP) 사본 필요"
+      "PT PMA 설립 후 법인 명의 취득(건물 토지가 HGB 인지 확인)",
+      "사업장 주소로 쓰려면 건물 용도가 사무실(PBG/SLF)로 등록돼 있는지 확인"
     ],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -1819,7 +1820,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 348일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 349일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],

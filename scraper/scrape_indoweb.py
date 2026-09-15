@@ -216,22 +216,59 @@ def _digits(raw):
     return float(re.sub(r"[^\d]", "", raw) or 0)
 
 
+def _area_digits(raw):
+    """면적 표기는 가격과 달리 소수점(91.31㎡)과 천단위 구분자(4.334㎡)가 둘 다 쓰인다.
+
+    _digits()처럼 '.'을 전부 구분자로 지우면 '91.31㎡'(soho 유닛)가 9131㎡(대형 부지)로
+    둔갑한다(maikarta(soho) wr_id=10373 실사례). 쉼표는 항상 천단위 구분자로 보되,
+    마침표는 소수점 이하가 정확히 2자리일 때만 소수점으로 본다 - 실면적 표기 관행상
+    ',31' 같은 2자리 소수는 거의 항상 m² 단위 소수(91.31㎡)이고, 그 외의 마침표
+    (4.334㎡ 처럼 3자리씩 끊김)는 인도네시아식 천단위 구분자다.
+    """
+    s = raw.replace(",", "")
+    if re.fullmatch(r"\d+\.\d{2}", s):
+        return float(s)
+    return float(re.sub(r"[^\d]", "", s) or 0)
+
+
+# 단위 앞 경계는 '\b' 로 잡으면 안 된다. 숫자와 영문자는 둘 다 단어 문자라 '150jt' 에서
+# \b 가 성립하지 않아 단위를 놓치고, 150 이 자리채움 값으로 버려졌다. 앞이 영문자만 아니면 된다.
+_UNIT_BILLION = re.compile(r"(?<![a-z])(?:m|miliar|milyar|milliar)(?![a-z²\d])|십억")
+_UNIT_MILLION = re.compile(r"(?<![a-z])(?:jt|juta)(?![a-z])|백만")
+
+
+def _scaled_number(raw):
+    """단위(M·jt·억)가 붙은 금액의 숫자부. '3,5 M' / '2.75 miliar' 의 구분자는 소수점이다.
+
+    구분자 뒤가 정확히 3자리씩이면('1.500 jt') 천단위, 그 외('3,5', '2.75')는 소수로 본다.
+    _digits()로 구분자를 모두 지우면 '3,5 miliar'가 35십억(10배)으로 부풀었다.
+    """
+    if re.fullmatch(r"\d{1,3}(?:[.,]\d{3})+", raw):
+        return _digits(raw)
+    m = re.fullmatch(r"(\d+)[.,](\d{1,2})", raw)
+    if m:
+        return float(f"{m.group(1)}.{m.group(2)}")
+    return _digits(raw)
+
+
 def _parse_price_num(text, low):
-    m = re.search(r"([\d][\d,\.]*)", text)
+    m = re.search(r"([\d][\d,\.]*\d|\d)", text)
     if not m:
         return text, None
-    n = _digits(m.group(1))
+    raw = m.group(1)
+    n = _digits(raw)
     if n <= 0:
         return text, None
 
     if re.search(r"usd|\$|달러|불\b", low):
         return f"{text} (≈ Rp {n * USD_TO_IDR:,.0f})", n * USD_TO_IDR
-    if re.search(r"\b(?:m|miliar|milyar)\b|십억", low):
-        return text, n * 1_000_000_000
-    if re.search(r"\bjt\b|juta|백만", low):
-        return text, n * 1_000_000
+    if _UNIT_BILLION.search(low):
+        return text, _scaled_number(raw) * 1_000_000_000
+    if _UNIT_MILLION.search(low):
+        return text, _scaled_number(raw) * 1_000_000
     if "억" in low:
-        return text, n * 100_000_000        # 한국어 '억' 은 원화가 아니라 루피아 억으로 쓰인다
+        # 한국어 '억' 은 원화가 아니라 루피아 억으로 쓰인다
+        return text, _scaled_number(raw) * 100_000_000
     return text, n
 
 
@@ -345,10 +382,16 @@ def apply_detail(item, fields, desc, photos=()):
         item["priceNum"] = num
 
     area = fields.get("면적/방") or fields.get("면적")
+    if not area:
+        # 정형 필드가 비어 있어도 본문에 "면적 : 91.78m2 (Nett) / 109.31m2 (Gross)",
+        # "토지 면적 : 6,290 ㎡" 처럼 적혀 있는 글이 많다(예: wr_id=10386, 10390).
+        # 가격을 본문에서 폴백 추출하는 것과 같은 방식으로 면적도 본문에서 찾는다.
+        m = re.search(r"(?:토지\s*)?면\s*적\s*[:\-]?\s*([^\n]{1,60})", desc or "")
+        area = m.group(1).strip() if m else None
     if area:
         m = re.search(r"([\d,\.]+)\s*(?:㎡|m2|m²)", area)
         if m:
-            item["area"] = _digits(m.group(1))
+            item["area"] = _area_digits(m.group(1))
         item["facilities"] = list(dict.fromkeys(
             (item.get("facilities") or []) + [f"면적/방: {area}"]))
     return item

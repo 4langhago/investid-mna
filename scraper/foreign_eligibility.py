@@ -35,8 +35,11 @@ BLOCKED_BUSINESS = [
     (r"\btoko kelontong\b|\bsembako\b|\bminimarket\b|\bwarung sembako\b|"
      r"\balfamart\b|\bindomaret\b|\balfamidi\b",
      "생필품 소매업(편의점 가맹점 포함)은 외국인 투자 유보 업종"),
-    (r"\bsekolah\b.*\b(?:sd|smp|sma|smk)\b|\b(?:sd|smp|sma|smk)\b.*\bsekolah\b",
+    (r"\bsekolah\b.{0,40}\b(?:sd|smp|sma|smk)\b|\b(?:sd|smp|sma|smk)\b.{0,40}\bsekolah\b",
      "초·중·고 정규학교 운영은 경제특구(KEK) 밖에서 외국인 투자 불가"),
+    # KBLI 96200 은 Perpres 49/2021 Lampiran II 에서 UMKM·협동조합 유보로 확인됨(2026-09-15 조사).
+    (r"\blaundry\b|\bbinatu\b|\bcuci\s*(?:kiloan|baju|setrika)\b|세탁소|런드리|빨래방",
+     "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가"),
     (r"\bpangkalan gas\b|\bagen lpg\b|\bpertamini\b",
      "LPG·연료 소매 유통은 외국인 투자 제한 업종"),
     (r"\bojek\b|\btravel\b.*\bangkutan\b|\bangkutan (?:umum|orang)\b",
@@ -80,11 +83,80 @@ _ASSET_ONLY = re.compile(
     r"(?:지분|법인)[^.\n]{0,30}(?:매각|양도)하는\s*거래가\s*아닙|사업자산\s*양도|"
     r"자산\s*양도\s*방식|별도(?:의)?\s*(?:법인|사업자)[^.\n]{0,10}설립", re.I)
 
-# 외국인 개인 주거용 취득 최소 가격(지역별 상이, 자카르타권 기준을 보수적으로 사용).
-FOREIGN_HOME_MIN_PRICE = 3_000_000_000
+# 외국인 개인 주거용 취득 최소 가격 (PP 18/2021, Kepmen ATR/BPN 1241/SK-HK.02/IX/2022).
+# 예전에는 전국에 Rp 30억(자카르타 아파트 기준) 하나만 적용해, 반텐·서부자바의 Rp 20억대
+# 아파트까지 '최소가 미달'로 낮췄고 단독주택에는 최소가 검사가 아예 없었다.
+# 2026-09-15 조사에서 출처(Hukumonline 요약 vs detik.com)끼리 자카르타·반텐·발리 밖 수치가
+# 엇갈렸다. 스크리닝이 '가능'을 잘못 내는 쪽이 더 위험하므로 엇갈리면 높은 값을 쓴다.
+# (주, 단독주택 최소가, 아파트 최소가)
+FOREIGN_MIN_PRICE_BY_PROVINCE = {
+    "DKI Jakarta": (5_000_000_000, 3_000_000_000),
+    "Banten": (5_000_000_000, 2_000_000_000),
+    "Jawa Barat": (5_000_000_000, 2_000_000_000),
+    "Jawa Tengah": (5_000_000_000, 2_000_000_000),
+    "DI Yogyakarta": (5_000_000_000, 2_000_000_000),
+    "Jawa Timur": (5_000_000_000, 2_000_000_000),
+    "Bali": (5_000_000_000, 2_000_000_000),
+    "Nusa Tenggara Barat": (3_000_000_000, 1_000_000_000),
+    "Sumatera Utara": (2_000_000_000, 1_000_000_000),
+    "Kalimantan Timur": (2_000_000_000, 1_000_000_000),
+    "Sulawesi Selatan": (2_000_000_000, 1_000_000_000),
+    "Kepulauan Riau": (2_000_000_000, 1_000_000_000),
+}
+# 지역을 못 찾으면 가장 높은 기준(자카르타)을 쓴다 - 모르는 지역을 싸게 보지 않기 위함.
+_DEFAULT_MIN_PRICE = FOREIGN_MIN_PRICE_BY_PROVINCE["DKI Jakarta"]
 
-_APARTMENT = re.compile(r"\bapartemen\b|\bapartment\b|\bcondo|\bstrata\b|아파트", re.I)
+# 매물 텍스트의 도시·지역명 → 주. 수집 소스(99.co/OLX/인도웹)에 실제로 나오는 표기 위주.
+_PROVINCE_KEYWORDS = [
+    ("DKI Jakarta", r"jakarta|자카르타|jkt|kelapa\s*gading|끌라빠\s*가딩|pluit|sunter|kemayoran|"
+                    r"pantai\s*indah\s*kapuk|\bpik\b|scbd|kuningan|kebayoran|cibubur"),
+    ("Banten", r"tangerang|탕그랑|땅그랑|\bbsd\b|serpong|세르퐁|alam\s*sutera|karawaci|"
+               r"가라와찌|cipondoh|ciputat|serang|cilegon|찔레곤|tigaraksa|banten"),
+    ("Jawa Barat", r"bekasi|브카시|cikarang|찌까랑|meikarta|maikarta|메이까르타|메이카르타|bogor|보고르|"
+                   r"depok|데포|bandung|반둥|karawang|subang|수방|majalengka|purwakarta|"
+                   r"cirebon|sukabumi|parung|cimahi|jawa\s*barat"),
+    ("Jawa Tengah", r"semarang|스마랑|solo\b|surakarta|kartasura|purwokerto|sragen|jawa\s*tengah"),
+    ("DI Yogyakarta", r"yogyakarta|jogja|sleman|condongcatur|족자"),
+    ("Jawa Timur", r"surabaya|수라바야|malang|sidoarjo|pasuruan|pandaan|gresik|lamongan|kepanjen|"
+                   r"\bbatu\b|jawa\s*timur"),
+    ("Bali", r"\bbali\b|발리|denpasar|badung|canggu|ubud|seminyak|jimbaran"),
+    ("Nusa Tenggara Barat", r"lombok|롬복|mataram"),
+    ("Sumatera Utara", r"medan|메단"),
+    ("Kalimantan Timur", r"balikpapan|samarinda"),
+    ("Sulawesi Selatan", r"makassar"),
+    ("Kepulauan Riau", r"batam|바탐|bintan"),
+]
+
+# SOHO·오피스 분양은 비주거 집합건물이라 외국인 개인 명의 대상(주거용 rumah susun)이 아니다.
+# 여기 넣으면 'Boutique Soho BSD', 'Grand Soho Slipi 사무실'이 개인 취득 '가능'으로 잘못 나온다.
+_APARTMENT = re.compile(r"\bapartemen\b|\bapartment\b|\bcondo|\bstrata\b|아파트|레지던스|"
+                        r"펜트하우스|penthouse", re.I)
+_NON_RESIDENTIAL_STRATA = re.compile(r"\bsoho\b|\boffice\b|\bkantor\b|사무실|오피스", re.I)
 _LAND_ONLY = re.compile(r"\btanah\s+(?:kosong|kavling)\b|\bkavling\b", re.I)
+# '토지 매매' 글이라도 제목이 집·건물이면 나대지가 아니다(단지 내 kavling 표기 오판 방지).
+_BUILDING_TITLE = re.compile(r"\brumah\b|\bhouse\b|\bvilla\b|주택|빌라|건물|bangunan|gedung", re.I)
+_BUILDING_DEAL_TITLE = re.compile(r"\bruko\b|\brukan\b|\bgedung\b|\bbangunan\b|\brumah\b(?!\s*makan)|"
+                                  r"\bgudang\b|\bpabrik\b|건물|루코|공장", re.I)
+_HOUSE = re.compile(r"\brumah\b|\bhouse\b|\bvilla\b|주택|빌라|townhouse|cluster", re.I)
+
+
+def detect_province(item):
+    """매물의 주(州)를 추정한다. 못 찾으면 None."""
+    # 정형 필드 → 제목 → 본문 순으로 본다. 본문에는 '자카르타에서 1시간' 같은
+    # 다른 도시 언급이 섞여 있어, 한 덩어리로 보면 엉뚱한 주가 먼저 잡힌다.
+    for keys in (("location", "locationKo", "address"), ("title",), ("description",)):
+        text = " ".join(str(item.get(k) or "") for k in keys)
+        for province, pat in _PROVINCE_KEYWORDS:
+            if re.search(pat, text, re.I):
+                return province
+    return None
+
+
+def foreign_min_price(item, kind):
+    """(최소가, 주 이름 또는 '지역 미상') 반환. kind 는 'house' / 'apartment'."""
+    province = detect_province(item)
+    house, apartment = FOREIGN_MIN_PRICE_BY_PROVINCE.get(province, _DEFAULT_MIN_PRICE)
+    return (house if kind == "house" else apartment), (province or "지역 미상(자카르타 기준 적용)")
 
 
 def rupiah_ko(amount):
@@ -101,11 +173,20 @@ def _text(item):
                     ("title", "description", "category", "type", "badge"))
 
 
+# 업종 키워드 바로 앞에 위치 표현이 오면 그 업종이 아니라 '주변 시설' 설명이다.
+# 이걸 가리지 않던 동안 'sebelah Indomaret(인도마렛 옆) 세탁소', 'Dekat Pangkalan Angkutan
+# Umum(버스 정류장 근처) 학교'가 편의점·여객운송 업종으로 오판돼 '불가'로 떨어졌다.
+_NEARBY_PREFIX = re.compile(
+    r"(?:sebelah|samping|dekat|deket|dkt|depan|seberang|belakang|di\s+area|area|"
+    r"near|next\s+to|opposite|옆|근처|앞)\s*(?:\(|dengan|dg|ada)?\s*$", re.I)
+
+
 def _blocked_business_reason(item):
     text = _text(item)
     for pat, reason in BLOCKED_BUSINESS:
-        if re.search(pat, text, re.I):
-            return reason
+        for m in re.finditer(pat, text, re.I):
+            if not _NEARBY_PREFIX.search(text[max(0, m.start() - 20):m.start()]):
+                return reason
     return None
 
 
@@ -132,6 +213,16 @@ def classify(item):
     if item.get("subtype") == "akuisisi" or item.get("type") == "bisnis":
         blocked = _blocked_business_reason(item)
         if blocked:
+            # 'RUKO 4 lantai + usaha laundry Rp 45억'처럼 가치의 대부분이 건물인 매물은
+            # 영업은 못 넘겨받아도 건물은 PT PMA 명의(HGB)로 살 수 있다. 통째로 불가로 내리면
+            # 실제로 거래 가능한 부동산까지 버린다.
+            if (_BUILDING_DEAL_TITLE.search(str(item.get("title") or ""))
+                    and price >= PT_PMA_MIN_PAID_UP):
+                return (CONDITIONAL,
+                        f"건물만 취득 검토 가능 - {blocked}",
+                        ["해당 업종 영업·권리금은 인수 대상에서 제외하고 건물(부동산)만 매매",
+                         "PT PMA 명의 HGB 로 취득 - SHM 이면 매도인의 HGB 전환 필요",
+                         "건물 용도(PBG/SLF)가 인수 후 운영할 업종과 맞는지 확인"])
             return BLOCKED, blocked, []
 
         # 지분 인수: 법인과 그 인허가·임차계약을 그대로 넘겨받으므로 인수가와 무관하게
@@ -140,7 +231,8 @@ def classify(item):
         if _SHARE_DEAL.search(text) and not _ASSET_ONLY.search(text):
             steps = ["AHU 법인 등기부로 현재 주주 구성과 PMA/PMDN 여부 확인",
                      "OSS 에서 법인의 KBLI 가 외국인 지분 100% 허용 업종인지 확인",
-                     "PMDN 이면 지분 인수 시 PMA 전환 - 납입자본 Rp 25억·투자계획 요건 재충족 필요",
+                     "PMDN 이면 외국인 지분이 1%만 들어와도 PMA 전환 의무 - "
+                     "납입자본 Rp 25억(12개월 인출 불가)·투자계획 Rp 100억 요건 재충족 필요",
                      "세무(DJP)·임금·임차료 미납과 소송(SIPP) 등 법인에 딸린 채무 실사 필수"]
             if not price:
                 steps.insert(0, "인수가 미표기 - 지분가와 법인 부채 인수 범위를 함께 확인")
@@ -190,22 +282,51 @@ def classify(item):
         return status, reason, steps
 
     # --- 3) 아파트/집합건물: 외국인 개인 취득이 가장 명확한 유형 ---
-    if _APARTMENT.search(text) or has_shmsrs:
-        if price < FOREIGN_HOME_MIN_PRICE:
-            return (CONDITIONAL,
-                    "외국인 개인 취득 가능 유형이나 지역별 최소 가격 요건 미달 가능",
-                    [f"표시가 {rupiah_ko(price)} - 관할 주(州) 최소 가격 기준 확인 필요",
+    title = str(item.get("title") or "")
+    if _NON_RESIDENTIAL_STRATA.search(title) and not _APARTMENT.search(title):
+        return (CONDITIONAL, "SOHO·사무실 분양 - 비주거용이라 외국인 개인 명의 불가, PT PMA 명의로 취득",
+                ["PT PMA 설립 후 법인 명의 취득(건물 토지가 HGB 인지 확인)",
+                 "사업장 주소로 쓰려면 건물 용도가 사무실(PBG/SLF)로 등록돼 있는지 확인"])
+    if _APARTMENT.search(title) or has_shmsrs or (
+            _APARTMENT.search(text) and not _HOUSE.search(title)):
+        min_price, where = foreign_min_price(item, "apartment")
+        if not price:
+            return (CONDITIONAL, "외국인 개인 취득 가능 유형 - 매매가 미표기로 최소가 충족 여부 미확인",
+                    [f"{where} 외국인 아파트 최소가 {rupiah_ko(min_price)} 이상인지 매매가 확인",
                      "체류허가(KITAS/KITAP) 사본 필요"])
-        return (ELIGIBLE, "SHMSRS/Hak Pakai 구조로 외국인 개인 명의 취득 가능",
+        if price < min_price:
+            return (CONDITIONAL,
+                    f"외국인 개인 취득 가능 유형이나 {where} 최소가 {rupiah_ko(min_price)} 미달",
+                    [f"표시가 {rupiah_ko(price)} - 최소가 미만이면 외국인 명의 등기 불가",
+                     "최소가 이상으로 매매하는 경우에만 진행(다운계약은 등기 무효 위험)"])
+        return (ELIGIBLE, f"SHMSRS 구조로 외국인 개인 명의 취득 가능({where} 최소가 충족)",
                 ["체류허가(KITAS/KITAP) 보유 시 개인 명의 등기 가능",
-                 "분양 잔여 사용기간과 관리비 체납 여부 확인"])
+                 "건물이 HGB 토지 위 SHMSRS 인지, 분양 잔여 기간과 관리비 체납 여부 확인"])
 
-    # --- 4) 나대지 ---
-    if _LAND_ONLY.search(text):
+    # --- 4) 단독주택: 외국인 개인은 Hak Pakai 로만, 지역별 최소가 이상일 때 ---
+    if _HOUSE.search(title) and item.get("type") != "ruko":
+        min_price, where = foreign_min_price(item, "house")
+        steps = ["외국인 개인은 Hak Pakai 로만 취득(30년+20년 연장+30년 갱신) - "
+                 "SHM/HGB 는 매도인 측 권리 전환 필요",
+                 "체류허가(KITAS/KITAP) 필요, 가구당 1필지·2,000㎡ 이하"]
+        if has_shm and not (has_hgb or has_pakai):
+            steps.insert(0, "SHM - 외국인 명의 불가, Hak Pakai 로 전환 후 등기")
+        if not price:
+            return (CONDITIONAL, "단독주택 - 매매가 미표기로 외국인 최소가 충족 여부 미확인",
+                    [f"{where} 외국인 단독주택 최소가 {rupiah_ko(min_price)} 이상인지 확인"] + steps)
+        if price < min_price:
+            return (CONDITIONAL,
+                    f"단독주택 {rupiah_ko(price)} - {where} 외국인 최소가 {rupiah_ko(min_price)} 미달",
+                    ["최소가 미만 주택은 외국인 개인 명의 취득 불가"] + steps)
+        return (CONDITIONAL, f"단독주택 - Hak Pakai 전환 시 외국인 개인 취득 가능({where} 최소가 충족)",
+                steps)
+
+    # --- 5) 나대지 ---
+    if _LAND_ONLY.search(text) and not _BUILDING_TITLE.search(title):
         return (CONDITIONAL, "나대지는 외국인 개인 취득 불가 - PT PMA 명의 HGB 로만 가능",
                 ["PT PMA 설립 후 HGB 취득", "SHM 매물이면 매도인의 HGB 전환 절차 필요"])
 
-    # --- 5) 루코·상가·창고 등 상업용 부동산 ---
+    # --- 6) 루코·상가·창고 등 상업용 부동산 ---
     if has_hgb:
         return (ELIGIBLE, "HGB 매물 - PT PMA 명의로 직접 취득 가능",
                 ["PT PMA 설립 및 KBLI 등록", "HGB 잔여 기간과 연장 이력 확인"])

@@ -53,7 +53,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
-      "최근 게시(28일 전)"
+      "최근 게시(29일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -106,7 +106,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(28일 전)"
+      "최근 게시(29일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -155,14 +155,14 @@ const OLX_LISTINGS = [
       "유동인구·배후세대가 많은 곳(매도인 주장)"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "생필품 소매업(편의점 가맹점 포함)은 외국인 투자 유보 업종",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "설비·집기 인계 범위가 언급됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(28일 전)"
+      "최근 게시(29일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -214,7 +214,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(28일 전)"
+      "최근 게시(29일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -275,7 +275,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "사업자 등록·인허가 관련 언급이 있음",
-      "최근 게시(28일 전)"
+      "최근 게시(29일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -335,7 +335,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "사업자 등록·인허가 관련 언급이 있음",
-      "최근 게시(28일 전)"
+      "최근 게시(29일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -395,7 +395,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "사업자 등록·인허가 관련 언급이 있음",
-      "최근 게시(28일 전)"
+      "최근 게시(29일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -448,7 +448,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(29일 전)"
+      "최근 게시(30일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -502,7 +502,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(29일 전)"
+      "최근 게시(30일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -557,7 +557,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(29일 전)"
+      "최근 게시(30일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -610,7 +610,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(29일 전)"
+      "최근 게시(30일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -664,7 +664,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "임차 잔여 기간이 명시됨",
-      "최근 게시(29일 전)"
+      "최근 게시(30일 전)"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -719,7 +719,7 @@ const OLX_LISTINGS = [
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "매출·수익 수치가 제시됨",
-      "최근 게시(29일 전)"
+      "최근 게시(30일 전)"
     ],
     "operabilityTodos": [
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
@@ -817,8 +817,7 @@ const OLX_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "임차 잔여 기간이 명시됨",
-      "최근 게시(29일 전)"
+      "임차 잔여 기간이 명시됨"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -866,13 +865,12 @@ const OLX_LISTINGS = [
       "설비 일체 포함"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 59백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "설비·집기 인계 범위가 언급됨",
-      "최근 게시(29일 전)"
+      "설비·집기 인계 범위가 언급됨"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -916,13 +914,12 @@ const OLX_LISTINGS = [
       "업종/용도: 세탁소 · 음식점 · 숙박업 · 카페"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "설비·집기 인계 범위가 언급됨",
-      "최근 게시(29일 전)"
+      "설비·집기 인계 범위가 언급됨"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -977,8 +974,7 @@ const OLX_LISTINGS = [
       "현재 영업 중이라고 명시됨",
       "매출·수익 수치가 제시됨",
       "인계 대상 직원이 있음",
-      "설비·집기 인계 범위가 언급됨",
-      "최근 게시(30일 전)"
+      "설비·집기 인계 범위가 언급됨"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -1024,15 +1020,14 @@ const OLX_LISTINGS = [
       "임차 조건 포함 - 계약 잔여기간 확인 필요"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 38백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
-    "operability": "운영가능",
+    "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "인계 대상 직원이 있음",
       "설비·집기 인계 범위가 언급됨",
-      "임차 잔여 기간이 명시됨",
-      "최근 게시(30일 전)"
+      "임차 잔여 기간이 명시됨"
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
@@ -1081,12 +1076,11 @@ const OLX_LISTINGS = [
     "foreignStatus": "불가",
     "foreignReason": "인수가 Rp 12백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
     "foreignSteps": [],
-    "operability": "운영가능",
+    "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
       "인계 대상 직원이 있음",
-      "설비·집기 인계 범위가 언급됨",
-      "최근 게시(30일 전)"
+      "설비·집기 인계 범위가 언급됨"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -1246,12 +1240,11 @@ const OLX_LISTINGS = [
       "가격 인하됨"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignReason": "건물만 취득 검토 가능 - 세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 4.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
-      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+      "해당 업종 영업·권리금은 인수 대상에서 제외하고 건물(부동산)만 매매",
+      "PT PMA 명의 HGB 로 취득 - SHM 이면 매도인의 HGB 전환 필요",
+      "건물 용도(PBG/SLF)가 인수 후 운영할 업종과 맞는지 확인"
     ],
     "operability": "운영가능",
     "operabilityReasons": [
@@ -1728,10 +1721,8 @@ const OLX_LISTINGS = [
       "업종/용도: 세탁소 · 미용실·살롱"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "자산 양도 Rp 450백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
-    "foreignSteps": [
-      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
-    ],
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
+    "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
@@ -2165,12 +2156,11 @@ const OLX_LISTINGS = [
       "임차 조건 포함 - 계약 잔여기간 확인 필요"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignReason": "건물만 취득 검토 가능 - 세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 7.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
-      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+      "해당 업종 영업·권리금은 인수 대상에서 제외하고 건물(부동산)만 매매",
+      "PT PMA 명의 HGB 로 취득 - SHM 이면 매도인의 HGB 전환 필요",
+      "건물 용도(PBG/SLF)가 인수 후 운영할 업종과 맞는지 확인"
     ],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -2224,7 +2214,7 @@ const OLX_LISTINGS = [
       "간선도로변"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "생필품 소매업(편의점 가맹점 포함)은 외국인 투자 유보 업종",
+    "foreignReason": "인수가 Rp 22백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
     "foreignSteps": [],
     "operability": "부적합",
     "operabilityReasons": [
@@ -2527,7 +2517,7 @@ const OLX_LISTINGS = [
       "유동인구·배후세대가 많은 곳(매도인 주장)"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "생필품 소매업(편의점 가맹점 포함)은 외국인 투자 유보 업종",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "운영가능",
     "operabilityReasons": [
@@ -2910,7 +2900,7 @@ const OLX_LISTINGS = [
       "설비 일체 포함"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 80백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -2963,7 +2953,7 @@ const OLX_LISTINGS = [
       "임차 조건 포함 - 계약 잔여기간 확인 필요"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 35백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -3121,7 +3111,7 @@ const OLX_LISTINGS = [
       "유동인구·배후세대가 많은 곳(매도인 주장)"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 53백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "운영가능",
     "operabilityReasons": [
@@ -3174,7 +3164,7 @@ const OLX_LISTINGS = [
       "가격 협의 가능"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 20백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -3332,7 +3322,7 @@ const OLX_LISTINGS = [
       "업종/용도: 기타 사업"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "생필품 소매업(편의점 가맹점 포함)은 외국인 투자 유보 업종",
+    "foreignReason": "인수가 Rp 25백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
     "foreignSteps": [],
     "operability": "부적합",
     "operabilityReasons": [
@@ -3595,7 +3585,7 @@ const OLX_LISTINGS = [
       "업종/용도: 세탁소"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 30백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "운영가능",
     "operabilityReasons": [
@@ -3799,10 +3789,8 @@ const OLX_LISTINGS = [
       "업종/용도: 세탁소"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "자산 양도 Rp 135백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
-    "foreignSteps": [
-      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
-    ],
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
+    "foreignSteps": [],
     "operability": "운영가능",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
@@ -3851,10 +3839,8 @@ const OLX_LISTINGS = [
       "설비 일체 포함"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "자산 양도 Rp 250백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
-    "foreignSteps": [
-      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
-    ],
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
+    "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
@@ -3963,10 +3949,8 @@ const OLX_LISTINGS = [
       "가구·집기 포함"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "자산 양도 Rp 110백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
-    "foreignSteps": [
-      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
-    ],
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
+    "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
@@ -4069,10 +4053,8 @@ const OLX_LISTINGS = [
       "유동인구·배후세대가 많은 곳(매도인 주장)"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "자산 양도 Rp 2.3십억 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
-    "foreignSteps": [
-      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
-    ],
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
+    "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨"
@@ -4382,10 +4364,8 @@ const OLX_LISTINGS = [
       "월매출 약 Rp 20 (매도인 제시값 · 장부 확인 필요)"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "자산 양도 Rp 160백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
-    "foreignSteps": [
-      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
-    ],
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
+    "foreignSteps": [],
     "operability": "운영가능",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
@@ -4542,7 +4522,7 @@ const OLX_LISTINGS = [
       "업종/용도: 세탁소"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 25백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -4591,10 +4571,8 @@ const OLX_LISTINGS = [
       "가격 협의 가능"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "자산 양도 Rp 200백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
-    "foreignSteps": [
-      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
-    ],
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
+    "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨"
@@ -4751,7 +4729,7 @@ const OLX_LISTINGS = [
       "직원 인계 대상 있음"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 39백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -4853,7 +4831,7 @@ const OLX_LISTINGS = [
       "업종/용도: 세탁소"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 25백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -5113,10 +5091,8 @@ const OLX_LISTINGS = [
       "업종/용도: 세탁소"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "자산 양도 Rp 150백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
-    "foreignSteps": [
-      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
-    ],
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
+    "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
@@ -5167,7 +5143,7 @@ const OLX_LISTINGS = [
       "임차 조건 포함 - 계약 잔여기간 확인 필요"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 50백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -5700,7 +5676,7 @@ const OLX_LISTINGS = [
       "월매출 약 Rp 15백만 (매도인 제시값 · 장부 확인 필요)"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 65백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "운영가능",
     "operabilityReasons": [
@@ -6129,7 +6105,7 @@ const OLX_LISTINGS = [
       "현재 영업 중"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 80백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -6779,12 +6755,11 @@ const OLX_LISTINGS = [
       "건축허가(PBG/IMB) 언급 있음"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignReason": "건물만 취득 검토 가능 - 세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 2.8십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것",
-      "부동산이 포함된 경우 SHM 은 PT PMA 명의로 이전 불가 - HGB 전환 또는 부동산 임차 구조로 분리 필요"
+      "해당 업종 영업·권리금은 인수 대상에서 제외하고 건물(부동산)만 매매",
+      "PT PMA 명의 HGB 로 취득 - SHM 이면 매도인의 HGB 전환 필요",
+      "건물 용도(PBG/SLF)가 인수 후 운영할 업종과 맞는지 확인"
     ],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -7049,11 +7024,11 @@ const OLX_LISTINGS = [
       "요지 입지(매도인 주장)"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignReason": "건물만 취득 검토 가능 - 세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 3.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+      "해당 업종 영업·권리금은 인수 대상에서 제외하고 건물(부동산)만 매매",
+      "PT PMA 명의 HGB 로 취득 - SHM 이면 매도인의 HGB 전환 필요",
+      "건물 용도(PBG/SLF)가 인수 후 운영할 업종과 맞는지 확인"
     ],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -7103,11 +7078,11 @@ const OLX_LISTINGS = [
       "요지 입지(매도인 주장)"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignReason": "건물만 취득 검토 가능 - 세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 3.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+      "해당 업종 영업·권리금은 인수 대상에서 제외하고 건물(부동산)만 매매",
+      "PT PMA 명의 HGB 로 취득 - SHM 이면 매도인의 HGB 전환 필요",
+      "건물 용도(PBG/SLF)가 인수 후 운영할 업종과 맞는지 확인"
     ],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -7314,7 +7289,7 @@ const OLX_LISTINGS = [
       "유동인구·배후세대가 많은 곳(매도인 주장)"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 12백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -7415,7 +7390,7 @@ const OLX_LISTINGS = [
       "업종/용도: 세탁소 · 미용실·살롱"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "인수가 Rp 25백만 - 법인 설립·인허가 비용에도 못 미치는 규모로 외국인 인수 구조가 성립하지 않음(임차권 양도 수준)",
+    "foreignReason": "세탁업(KBLI 96200)은 UMKM·협동조합 유보 업종으로 외국인 투자 불가",
     "foreignSteps": [],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -7466,9 +7441,13 @@ const OLX_LISTINGS = [
       "권리 형태: SHM(소유권)",
       "건축허가(PBG/IMB) 언급 있음"
     ],
-    "foreignStatus": "불가",
-    "foreignReason": "LPG·연료 소매 유통은 외국인 투자 제한 업종",
-    "foreignSteps": [],
+    "foreignStatus": "조건부",
+    "foreignReason": "건물만 취득 검토 가능 - LPG·연료 소매 유통은 외국인 투자 제한 업종",
+    "foreignSteps": [
+      "해당 업종 영업·권리금은 인수 대상에서 제외하고 건물(부동산)만 매매",
+      "PT PMA 명의 HGB 로 취득 - SHM 이면 매도인의 HGB 전환 필요",
+      "건물 용도(PBG/SLF)가 인수 후 운영할 업종과 맞는지 확인"
+    ],
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨"
@@ -7477,7 +7456,7 @@ const OLX_LISTINGS = [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
-    "koreanEligible": false
+    "koreanEligible": true
   },
   {
     "id": "olx-940016522",
@@ -7517,9 +7496,13 @@ const OLX_LISTINGS = [
       "권리 형태: SHM(소유권)",
       "건축허가(PBG/IMB) 언급 있음"
     ],
-    "foreignStatus": "불가",
-    "foreignReason": "LPG·연료 소매 유통은 외국인 투자 제한 업종",
-    "foreignSteps": [],
+    "foreignStatus": "조건부",
+    "foreignReason": "건물만 취득 검토 가능 - LPG·연료 소매 유통은 외국인 투자 제한 업종",
+    "foreignSteps": [
+      "해당 업종 영업·권리금은 인수 대상에서 제외하고 건물(부동산)만 매매",
+      "PT PMA 명의 HGB 로 취득 - SHM 이면 매도인의 HGB 전환 필요",
+      "건물 용도(PBG/SLF)가 인수 후 운영할 업종과 맞는지 확인"
+    ],
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨"
@@ -7528,7 +7511,7 @@ const OLX_LISTINGS = [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
-    "koreanEligible": false
+    "koreanEligible": true
   },
   {
     "id": "olx-930874878",

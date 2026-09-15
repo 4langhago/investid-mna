@@ -258,7 +258,11 @@ def collect(max_age_days):
             except urllib.error.HTTPError as e:
                 if e.code == 400:      # 마지막 페이지 초과
                     break
-                raise
+                # 403 등은 사이트가 이 요청 출처(예: CI 데이터센터 IP)를 막았다는 뜻이다.
+                # 재시도해도 같은 결과이므로 이후 검색어도 모두 실패할 것 — 여기서
+                # 수집을 중단하고 지금까지 모은 후보로 계속 진행한다(전체 크래시 방지).
+                print(f"  '{term}' p{page} HTTP {e.code} - 이 소스 수집 중단")
+                break
             if not posts:
                 break
             for p in posts:

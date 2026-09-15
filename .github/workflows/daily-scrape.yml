@@ -29,18 +29,42 @@ jobs:
       # 잡 전체가 중단됐다. 그 뒤의 인도웹·OLX 수집과 텔레그램 추천이 한 달간 한 번도
       # 돌지 않은 원인이다. 부동산 소스 하나가 막혀도 나머지는 계속 돌아야 한다
       # (낡은 부동산 데이터는 telegram_recommend.py 가 소스별 신선도로 걸러낸다).
+      # 99.co·tempat-usaha.com 은 데이터센터 IP만 막혀 있어 scraper/daily_update.ps1
+      # (로컬 PC 스케줄 작업)로 매일 별도 수집·커밋된다 — 여기서 0건이어도 정상이다.
       - name: 부동산 매물 수집 (99.co)
+        id: co99
         continue-on-error: true
         run: python scraper/scrape_99co.py
 
-      # 실패해도 부동산 발송은 계속되어야 하므로 워크플로를 중단시키지 않는다.
-      - name: 사업체 인수 매물 수집 (OLX — 주력)
+      # OLX 는 GitHub 러너뿐 아니라 국내 가정용 회선에서도 연결이 끊기거나 타임아웃돼
+      # (2026-09-15 로컬 재현 확인) 로컬 우회로도 해결되지 않는다. 원인 불명의 광범위한
+      # 차단 — 현재는 소스가 복구될 때까지 실패를 기록만 하고 다음 소스로 넘어간다.
+      - name: 사업체 인수 매물 수집 (OLX — 주력, 현재 차단됨)
+        id: olx
         continue-on-error: true
         run: python scraper/scrape_olx.py
 
       - name: 사업체 인수 매물 수집 (tempat-usaha.com — 보조)
+        id: business
         continue-on-error: true
         run: python scraper/scrape_business.py
+
+      - name: 소스별 수집 결과 요약
+        run: |
+          summarize() {
+            name="$1"; outcome="$2"; file="$3"
+            if [ "$outcome" = "success" ]; then
+              echo "✅ $name: 성공"
+            else
+              echo "❌ $name: 실패 (아래는 마지막으로 성공했을 때 저장된 데이터)"
+            fi
+            if [ -f "$file" ]; then
+              echo "   $file 마지막 갱신: $(git log -1 --format=%cI -- "$file" 2>/dev/null || echo 알수없음)"
+            fi
+          }
+          summarize "99.co" "${{ steps.co99.outcome }}" js/live_data.js
+          summarize "OLX" "${{ steps.olx.outcome }}" js/olx_data.js
+          summarize "tempat-usaha.com" "${{ steps.business.outcome }}" js/business_data.js
 
       # 한인 커뮤니티는 추천 1순위 소스다(한국인이 실제로 인수·운영하는 매물).
       # 다만 인도웹은 요청을 조여 실패가 잦으므로 워크플로를 중단시키지는 않는다.

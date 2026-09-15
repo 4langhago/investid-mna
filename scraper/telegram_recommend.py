@@ -37,6 +37,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -74,6 +75,11 @@ MAX_DATA_AGE_HOURS = 48
 # 이런 매물이 매번 추천 최상단을 차지한다.
 MIN_PLAUSIBLE_PRICE = 100_000_000        # 루코 최저가 Rp 100 jt
 MIN_PLAUSIBLE_PRICE_PER_M2 = 1_000_000   # m²당 Rp 1 jt
+# m²당 하한은 '건물 면적이 값을 결정하는' 루코·상가에만 맞는 기준이다. 토지·공장·창고는
+# 대지가 넓을수록 m²당 단가가 싸지는 게 정상이라(Subang 농지 Rp 692k/m² 등) 이 규칙을
+# 대면 정상 매물이 오탈락한다.
+LAND_OR_FACTORY_RE = re.compile(r"토지|땅|부지|공장|창고|농장|농지|\btanah\b|\bpabrik\b|\bgudang\b|\bkebun\b",
+                                re.I)
 # 사업체 인수는 소규모(세탁소·카페 등)가 많아 하한을 따로 둔다.
 MIN_BUSINESS_PRICE = 10_000_000          # Rp 10 jt
 
@@ -192,6 +198,63 @@ def url_is_live(url):
         return False, f"접속 실패({type(e).__name__})"
 
 
+# 인도웹은 초당 요청 제한이 엄격해 이보다 빨리 요청하면 접속을 끊는다(다른 스크레이퍼
+# 코드의 기존 제약과 동일). 발송 직전 후보 몇 건만 확인하므로 이 정도 대기는 무시할 만하다.
+INDOWEB_RATE_LIMIT_SECONDS = 12
+_last_indoweb_request_at = 0.0
+
+SOLD_MARKERS_RE = re.compile(r"거래완료|판매완료|매각완료|계약완료|\bsold\b", re.I)
+# 본문 영역만 추출한다. scrape_indoweb.py의 parse_detail() 과 같은 경계를 쓴다.
+_BO_V_CON_RE = re.compile(
+    r'id="bo_v_con"[^>]*>(.*?)(?:<div[^>]*id="bo_v_share"|</section>)', re.S)
+_BO_V_TITLE_RE = re.compile(r'id="bo_v_title"[^>]*>(.*?)</h\d>', re.S)
+
+
+def check_indoweb_alive(url):
+    """인도웹 게시글이 아직 살아있고 '거래완료' 표시가 없는지 본문으로 직접 확인한다.
+
+    gnuboard(인도웹의 게시판 엔진)는 삭제된 글도 HTTP 200 으로 "오류안내 페이지"를
+    반환한다 - 상태 코드만으로는 죽은 글을 구분할 수 없다.
+
+    ⚠️ 판매완료 문구는 반드시 글 제목/본문(bo_v_title, bo_v_con) 안에서만 찾는다.
+    페이지 전체를 검사하면 모든 real_estate_mb 게시물에 공통으로 깔리는 게시판
+    이용안내("거래가 완료되면 분류를 거래완료로 수정...")에 걸려 살아있는 글도
+    전부 '거래완료'로 오탐된다(실측 확인함, wr_id=10427/10428).
+
+    반환: (상태, 사유) - 상태는 "alive" / "dead" / "unknown"(네트워크 실패 - 발송 대상에서
+    빼지 않고 로그만 남긴다. 접속이 원래 불안정한 사이트라, 확인 실패를 '팔렸다'로
+    해석하면 매번 접속이 불안정할 때마다 추천 목록이 텅 비게 된다).
+    """
+    global _last_indoweb_request_at
+    wait = INDOWEB_RATE_LIMIT_SECONDS - (time.monotonic() - _last_indoweb_request_at)
+    if wait > 0:
+        time.sleep(wait)
+    _last_indoweb_request_at = time.monotonic()
+
+    req = urllib.request.Request(url, method="GET",
+                                 headers={"User-Agent": USER_AGENT,
+                                          "Accept-Language": "ko-KR,ko;q=0.9"})
+    try:
+        with urllib.request.urlopen(req, timeout=URL_CHECK_TIMEOUT) as res:
+            body = res.read().decode("utf-8", errors="replace")
+    except Exception as e:  # 타임아웃/DNS/HTTP 오류 등 - 확인 불가, 발송 목록은 그대로 둔다
+        return "unknown", f"접속 실패({type(e).__name__})"
+
+    if "오류안내 페이지" in body:
+        return "dead", "게시글이 삭제됨(오류안내 페이지)"
+
+    con = _BO_V_CON_RE.search(body)
+    title = _BO_V_TITLE_RE.search(body)
+    post_text = (title.group(1) if title else "") + " " + (con.group(1) if con else "")
+    if not con and not title:
+        # 글 영역 자체를 못 찾았다 - 페이지 구조가 바뀌었거나 확인 불가 상태.
+        # '팔렸다'로 단정하지 않는다.
+        return "unknown", "게시글 본문 영역을 찾을 수 없음(페이지 구조 확인 필요)"
+    if SOLD_MARKERS_RE.search(post_text):
+        return "dead", "거래완료/판매완료 표시가 글 제목·본문에 있음"
+    return "alive", ""
+
+
 def validate(item, check_url=False, min_price=None, allowed_statuses=ALLOWED_FOREIGN_STATUSES,
              require_price=True):
     """실재성 + 외국인 취득 가능성 + 운영 가능성 검증.
@@ -220,8 +283,13 @@ def validate(item, check_url=False, min_price=None, allowed_statuses=ALLOWED_FOR
     # m²당 단가 규칙은 루코·상가처럼 '건물 면적'이 값을 결정하는 매물에만 유효하다.
     # 사업체 인수(양계장·농장 등 대지가 넓은 업종)에 적용하면 정상 매물이 탈락한다.
     # 예: 양계장 Rp 16 M / 32,000m² = m²당 500 → 오탐.
+    # price_num 이 0인 것(가격 미표기 커뮤니티 글, priceNum=None)까지 이 규칙에 들어오면
+    # 0/area=0 이 항상 하한선 미만이라 가격 미표기 매물이 전부 '단가 비정상'으로 오탈락한다.
+    # 실가격이 있는 매물끼리만 비교한다.
     area = item.get("area")
-    if (item.get("subtype") != "akuisisi" and area
+    is_land_or_factory = LAND_OR_FACTORY_RE.search(
+        f"{item.get('category') or ''} {item.get('title') or ''}")
+    if (item.get("subtype") != "akuisisi" and not is_land_or_factory and area and price_num
             and price_num / float(area) < MIN_PLAUSIBLE_PRICE_PER_M2):
         return False, (f"m²당 단가 비정상({item.get('price')} / {area}m²) - 단위 오기재로 보임")
 
@@ -255,6 +323,79 @@ def price_value(item):
         return 0.0
 
 
+BOARD_PREFIX_RE = re.compile(r"^[^|]{1,12}\|\s*")
+_TITLE_PUNCT_RE = re.compile(r"[^\w가-힣]+")
+
+
+def normalize_title(title):
+    """게시판 접두어("식당/식품 | ")와 구두점을 지워 같은 매물을 비교 가능하게 만든다.
+
+    인도웹 게시판은 같은 매물이 카테고리별 다른 게시판(iw-market, iw-biz_promo 등)에
+    복수 등록되는 게 흔하다. 접두어만 다르고 본문 제목은 동일한 경우가 많다
+    (예: "식당/식품 | 반둥 한국 감성 디저트 카페 브랜드 매각..." ≡ "반둥 한국 감성 디저트
+    카페 브랜드 매각...").
+    """
+    t = BOARD_PREFIX_RE.sub("", str(title or ""))
+    t = _TITLE_PUNCT_RE.sub(" ", t).strip().lower()
+    return re.sub(r"\s+", " ", t)
+
+
+def _title_tokens(title):
+    return set(t for t in normalize_title(title).split(" ") if len(t) >= 2)
+
+
+def _dupe_quality(item):
+    """중복군에서 '가장 상세하거나 최신인' 쪽을 고르기 위한 비교 키(클수록 우선)."""
+    return (
+        bool(item.get("priceNum")),
+        bool(item.get("area")),
+        len(item.get("description") or ""),
+        str(item.get("postedAt") or ""),
+    )
+
+
+def dedupe_listings(items):
+    """같은 매물이 여러 게시판에 중복 등록된 것을 제거한다(슬롯 배분 전에 적용).
+
+    1) 정규화한 제목이 완전히 같으면 중복(게시판 접두어 차이 등).
+    2) 한쪽 제목의 토큰 대부분이 다른 쪽 제목에 포함되면(한 글이 여러 매물을 묶어
+       재게시한 경우, 예: "카페 및 세차장 사업체 양도"가 개별 글 2건을 묶어 재등록)
+       중복으로 본다. 토큰 3개 미만인 제목은(오탐 위험이 커서) 이 규칙에서 제외한다.
+    각 중복군에서는 가격·면적·설명이 더 상세하거나 더 최근에 올라온 쪽만 남긴다.
+    """
+    groups = []  # list[list[item]]
+    for item in items:
+        tokens = _title_tokens(item.get("title"))
+        placed = False
+        for group in groups:
+            g_tokens = _title_tokens(group[0].get("title"))
+            if normalize_title(item.get("title")) == normalize_title(group[0].get("title")):
+                placed = True
+            elif len(tokens) >= 3 and len(g_tokens) >= 3:
+                overlap = len(tokens & g_tokens) / min(len(tokens), len(g_tokens))
+                if overlap >= 0.7:
+                    placed = True
+            if placed:
+                group.append(item)
+                break
+        if not placed:
+            groups.append([item])
+
+    kept, dropped = [], 0
+    for group in groups:
+        if len(group) == 1:
+            kept.append(group[0])
+            continue
+        best = max(group, key=_dupe_quality)
+        kept.append(best)
+        dropped += len(group) - 1
+        losers = ", ".join(f"id={g.get('id')}" for g in group if g is not best)
+        print(f"  -- 중복 매물 제외(→ {best.get('id')} 유지): {best.get('title')} [{losers}]")
+    if dropped:
+        print(f"  -- 중복 제외 합계: {dropped}건")
+    return kept
+
+
 def select_candidates(listings, check_url=False, min_price=None,
                       allowed_statuses=ALLOWED_FOREIGN_STATUSES, require_price=True):
     valid, rejected = [], 0
@@ -268,12 +409,24 @@ def select_candidates(listings, check_url=False, min_price=None,
             print(f"  !! 검증 실패로 제외: id={x.get('id')} {x.get('title')} - {reason}")
     if rejected:
         print(f"  -- 검증 탈락 합계: {rejected}건")
-    # 정렬 우선순위: 운영 가능성 → 외국인 취득 가능성 → 가격 오름차순.
-    # '살 수 있는가'보다 '운영할 수 있는가'를 앞에 둔다 — 제도상 가능해도 실체가
-    # 흐릿한 매물을 위로 올리면 추천의 의미가 없다.
-    valid.sort(key=lambda x: (op.rank_key(op.classify(x)[0]),
-                              fe.rank_key(fe.classify(x)[0]),
-                              price_value(x) or float("inf")))
+    valid = dedupe_listings(valid)
+    # 정렬 우선순위: 외국인 취득 가능성(가능 → 조건부) → 운영 가능성 → 신선도/가격.
+    # '실제로 인수할 수 있는가'(외국인 취득 가능성)가 제품의 핵심 질문이라 1순위로 둔다
+    # (예전엔 운영 가능성이 1순위여서, PT PMA 설립 등 절차가 필요한 조건부 매물이
+    # 개인 명의로 바로 살 수 있는 매물보다 위로 올라오는 경우가 있었다).
+    # 운영 가능성은 여전히 2순위 — 제도상 가능해도 실체가 흐릿한 매물을 위로 올리면
+    # 추천의 의미가 없다. 커뮤니티 매물은 마지막 동률 기준으로 최신 게시물을 우선한다
+    # (좋은 매물이 며칠 안에 빠지므로), 그 외에는 가격 오름차순.
+    def sort_key(x):
+        is_community = x.get("source") == "indoweb.org"
+        if is_community:
+            age = data_age_hours(x["postedAt"]) if x.get("postedAt") else None
+            freshness = age if age is not None else float("inf")  # 게시일 없으면 맨 뒤로
+        else:
+            freshness = price_value(x) or float("inf")
+        return (fe.rank_key(fe.classify(x)[0]), op.rank_key(op.classify(x)[0]), freshness)
+
+    valid.sort(key=sort_key)
     return valid
 
 
@@ -303,6 +456,36 @@ def pick_verified_batch(candidates, cursor, size, cache):
     return picked, (cursor + i) % n, dropped
 
 
+def verify_community_liveness(picked, pool, slots):
+    """발송 직전 커뮤니티 후보만 실물 페이지를 확인해 죽은 글을 빼고 다음 후보로 채운다.
+
+    인도웹 게시글은 팔린 뒤에도 글이 그대로 남아 있는 경우가 흔해(URL 이 200 을 계속
+    반환) validate() 의 존재 확인만으로는 걸러지지 않는다. 전체 후보를 다 확인하면
+    요청이 너무 많아지고(≥12초 간격 제한) 어차피 보내지 않을 글까지 확인하게 되므로,
+    실제로 보낼 몇 건만 확인한다.
+    """
+    tried_ids = {x.get("id") for x in picked}
+    backfill = [x for x in pool if x.get("id") not in tried_ids]
+    bi = 0
+    alive, queue = [], list(picked)
+    while queue and len(alive) < slots:
+        item = queue.pop(0)
+        if item.get("source") != "indoweb.org" or not item.get("sourceUrl"):
+            alive.append(item)
+            continue
+        status, reason = check_indoweb_alive(item["sourceUrl"])
+        if status == "dead":
+            print(f"  !! 발송 직전 실물 확인 실패로 제외: {item.get('title')} - {reason}")
+            if bi < len(backfill):
+                queue.append(backfill[bi])
+                bi += 1
+            continue
+        if status == "unknown":
+            print(f"  !! 실물 확인 불가(발송은 유지, 로그만 남김): {item.get('title')} - {reason}")
+        alive.append(item)
+    return alive
+
+
 def load_state():
     if STATE_FILE.exists():
         return json.loads(STATE_FILE.read_text(encoding="utf-8"))
@@ -326,6 +509,17 @@ def pick_batch(candidates, cursor, size=BATCH_SIZE):
 def md_safe(text):
     """텔레그램 Markdown 파싱이 깨지지 않도록 서식 문자를 제거."""
     return re.sub(r"[*_`\[\]]", "", str(text or ""))
+
+
+def md_safe_url(url):
+    """URL은 문자를 지울 수 없으니(링크가 깨짐) 이스케이프한다.
+
+    인도웹 상세글 URL(wr_id=10373 등)이나 사진 파일명에 밑줄(_)이 흔한데,
+    텔레그램 레거시 Markdown은 링크가 아닌 평문 속 '_'도 이탤릭 시작/끝으로 파싱한다.
+    글마다 밑줄 개수가 짝이 안 맞으면 "can't find end of the entity" 400 이 난다.
+    레거시 Markdown은 '\\'로 서식 문자를 이스케이프하는 것을 지원한다.
+    """
+    return re.sub(r"([*_`\[\]])", r"\\\1", str(url or ""))
 
 
 def maps_link(item):
@@ -528,7 +722,7 @@ def format_item(item, rank, total, peers):
     place = item.get("_place")
     if place:
         lines.append("\n🌐 *구글 실측* (매도인 주장이 아닌 구글 등록 정보)")
-        lines.extend(f"• {md_safe(x)}" if not x.startswith("http") else x
+        lines.extend(f"• {md_safe(x)}" if not x.startswith("http") else md_safe_url(x)
                      for x in pc.format_lines(place))
 
     # 운영 가능성 판정 - '살 수 있는가'와 별개로 '굴릴 수 있는가'를 본다.
@@ -578,21 +772,21 @@ def format_item(item, rank, total, peers):
         lines.extend(f"• {n}" for n in review)
 
     lines.append("\n🔗 *링크*")
-    lines.append(f"원본({md_safe(item.get('source'))}): {item['sourceUrl']}")
+    lines.append(f"원본({md_safe(item.get('source'))}): {md_safe_url(item['sourceUrl'])}")
     m = maps_link(item)
     if m:
         kind_of_pin = "좌표 기준 대략 위치" if (item.get("lat") and item.get("lng")) else "지역명 검색"
-        lines.append(f"지도({kind_of_pin}): {m}")
+        lines.append(f"지도({kind_of_pin}): {md_safe_url(m)}")
 
     # 실제 이용자 평판은 우리가 요약하지 않는다(상호 불일치 위험). 바로 확인할 검색 링크를 준다.
     lines.append("\n🔎 *실제 평판·리뷰 직접 확인*")
     for label, url in lc.review_links(item):
-        lines.append(f"{label}: {url}")
+        lines.append(f"{label}: {md_safe_url(url)}")
 
     photos = [p for p in (item.get("photoUrls") or item.get("imageUrls") or []) if p][:3]
     if photos:
         lines.append("\n📷 *사진(원문 서버)*")
-        lines.extend(photos)
+        lines.extend(md_safe_url(p) for p in photos)
 
     lines.append("\n📋 *계약 전 직접 조회할 공적 장부*")
     for label, url in lc.DUE_DILIGENCE_LINKS:
@@ -673,24 +867,47 @@ def send_telegram(message):
         _send_one(chunk if i == 0 else f"(이어서 {i + 1})\n{chunk}")
 
 
+def _post_telegram(token, chat_id, message, parse_mode):
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+    payload = {
+        "chat_id": chat_id,
+        "text": message,
+        "disable_web_page_preview": "true",
+    }
+    if parse_mode:
+        payload["parse_mode"] = parse_mode
+    data = urllib.parse.urlencode(payload).encode("utf-8")
+    req = urllib.request.Request(url, data=data, method="POST")
+    with urllib.request.urlopen(req, timeout=15) as res:
+        return json.loads(res.read().decode("utf-8"))
+
+
 def _send_one(message):
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
     if not token or not chat_id:
         raise RuntimeError("TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 환경변수가 설정되지 않음")
 
-    url = f"https://api.telegram.org/bot{token}/sendMessage"
-    data = urllib.parse.urlencode({
-        "chat_id": chat_id,
-        "text": message,
-        "parse_mode": "Markdown",
-        "disable_web_page_preview": "true",
-    }).encode("utf-8")
-    req = urllib.request.Request(url, data=data, method="POST")
-    with urllib.request.urlopen(req, timeout=15) as res:
-        result = json.loads(res.read().decode("utf-8"))
-    if not result.get("ok"):
-        raise RuntimeError(f"텔레그램 전송 실패: {result}")
+    try:
+        result = _post_telegram(token, chat_id, message, "Markdown")
+        if not result.get("ok"):
+            raise RuntimeError(f"텔레그램 전송 실패: {result}")
+        return
+    except urllib.error.HTTPError as e:
+        # 예전에는 응답 본문을 버려서 400의 실제 원인(대개 "can't find end of the entity"
+        # 같은 Markdown 엔티티 파싱 실패)이 로그에 안 남았다. 원인 확인용으로 본문을 읽는다.
+        body = e.read().decode("utf-8", errors="replace")
+        print(f"  !! 텔레그램 전송 실패 HTTP {e.code}: {body}")
+        if e.code != 400:
+            raise
+        # Markdown 파싱 실패로 400이 난 매물 하나 때문에 배치 전체가 중단되면 안 된다.
+        # 서식을 포기하고 순수 텍스트로 재시도한다(메시지 자체는 대부분 유효한 내용이라
+        # 발송하지 않는 것보다 서식 없이라도 보내는 게 낫다).
+        plain = re.sub(r"[*_`\[\]]", "", str(message))
+        result = _post_telegram(token, chat_id, plain, None)
+        if not result.get("ok"):
+            raise RuntimeError(f"텔레그램 전송 실패(평문 재시도 후에도 실패): {result}")
+        print("  -- Markdown 파싱 실패로 평문으로 재전송함")
 
 
 def main():
@@ -769,6 +986,13 @@ def main():
         min(COMMUNITY_SLOTS, len(fresh_comm or comm_candidates)), place_cache)
     if fresh_comm:
         comm_next = state.get("commCursor", 0)  # 새 글을 보냈으면 순환 위치는 그대로 둔다
+
+    # 발송 직전 실물 확인. dry-run 에서는 --verify-urls 를 줄 때만 실제로 요청한다
+    # (토큰이 없는 로컬 테스트에서 매번 인도웹에 접속하는 걸 막기 위함).
+    if comm_picked and (not dry_run or check_url):
+        comm_picked = verify_community_liveness(
+            comm_picked, fresh_comm or comm_candidates, len(comm_picked))
+
     biz_picked, biz_next, biz_drop = pick_verified_batch(
         biz_candidates, state.get("bizCursor", 0),
         min(BUSINESS_SLOTS, len(biz_candidates)), place_cache)
