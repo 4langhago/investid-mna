@@ -69,7 +69,8 @@ def test_asset_deal_below_realistic_min_is_blocked():
 
 
 def test_asset_deal_cafe_448m_is_blocked():
-    # 실사례: 448,000,000 (28,000 USD 환산) 카페 - PT_PMA_MIN_PAID_UP(25억) 미달
+    # 실사례: 448,000,000 (28,000 USD 환산 ≈ ₩3,900만) 카페 - ASSET_DEAL_MIN(≈₩1억) 미달.
+    # 이 규모에 납입자본 Rp 25억·투자계획 Rp 100억을 얹는 구조는 성립하지 않는다.
     it = item(title="카페 양도 (즉시 운영 가능)", type="bisnis", subtype="akuisisi",
               priceNum=448_000_000)
     status, reason, steps = fe.classify(it)
@@ -77,11 +78,28 @@ def test_asset_deal_cafe_448m_is_blocked():
     assert "납입자본" in reason
 
 
-def test_asset_deal_2_4b_is_blocked():
-    # PT_PMA_MIN_PAID_UP(25억) 바로 아래
-    it = item(title="식당 양도", type="bisnis", subtype="akuisisi", priceNum=2_400_000_000)
+def test_asset_deal_1_5b_is_conditional_with_cash_requirement():
+    # ₩1억~2.2억 구간(2026-09-17 완화): 납입자본을 입금한 뒤 그 안에서 인수하는 구조가
+    # 성립하므로 '조건부'. 다만 총 현금 ₩2.2억과 투자계획 요건이 안내에 반드시 붙어야 한다.
+    it = item(title="식당 양도", type="bisnis", subtype="akuisisi", priceNum=1_500_000_000)
+    status, reason, steps = fe.classify(it)
+    assert status == fe.CONDITIONAL
+    assert "총 현금" in reason
+    assert any("투자계획" in s for s in steps)
+
+
+def test_asset_deal_just_below_krw_100m_is_blocked():
+    it = item(title="식당 양도", type="bisnis", subtype="akuisisi",
+              priceNum=fe.ASSET_DEAL_MIN - 1)
     status, reason, steps = fe.classify(it)
     assert status == fe.BLOCKED
+
+
+def test_asset_deal_2_4b_is_conditional():
+    # PT_PMA_MIN_PAID_UP(25억) 바로 아래 - 예전엔 불가였으나 ₩1억 이상은 조건부로 연다
+    it = item(title="식당 양도", type="bisnis", subtype="akuisisi", priceNum=2_400_000_000)
+    status, reason, steps = fe.classify(it)
+    assert status == fe.CONDITIONAL
 
 
 def test_asset_deal_4_5b_is_conditional():

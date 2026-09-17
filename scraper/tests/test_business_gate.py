@@ -78,7 +78,7 @@ def test_ruko_with_cafe_is_not_a_business_acquisition():
 
 
 def test_blocked_by_foreign_eligibility():
-    # 자산 양도가 신규 PT PMA 납입자본에도 못 미치면 취득 구조가 성립하지 않는다.
+    # 자산 양도가 ₩1억(ASSET_DEAL_MIN)에도 못 미치면 취득 구조가 성립하지 않는다.
     ok, why, _ = bg.assess(make(priceNum=400_000_000))
     assert not ok
     assert "외국인 취득 불가" in why
@@ -117,3 +117,19 @@ def test_screen_counts_rejections():
     passed, rejected = bg.screen(items)
     assert len(passed) == 1
     assert sum(rejected.values()) == 2
+
+
+@pytest.mark.parametrize("price, tier", [
+    (1_160_000_000, bg.TIER_BUDGET),   # ≈₩1.0억 - 하한
+    (2_000_000_000, bg.TIER_BUDGET),   # ≈₩1.7억
+    (2_320_000_000, bg.TIER_BUDGET),   # ≈₩2.0억 - 상한
+    (5_000_000_000, bg.TIER_OVER),     # ≈₩4.3억 - 초과
+    (None, bg.TIER_OVER),              # 미표기는 예산 안이라고 볼 수 없다
+])
+def test_budget_tier(price, tier):
+    assert bg.budget_tier({"priceNum": price})[0] == tier
+
+
+def test_screen_marks_tier_on_passed_items():
+    passed, _ = bg.screen([make(priceNum=1_500_000_000), make(priceNum=5_000_000_000)])
+    assert [x["_tier"] for x in passed] == [bg.TIER_BUDGET, bg.TIER_OVER]

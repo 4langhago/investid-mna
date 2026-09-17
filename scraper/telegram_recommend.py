@@ -669,6 +669,8 @@ def format_item(item, rank, total, peers):
     # 상세 페이지를 못 받은 글에는 그대로 남아 있어, 표시할 때 한 번 더 걷어낸다.
     title = re.sub(r"^[^|]{1,20}\|\s*", "", str(item.get("title") or ""))
     lines = [f"*[{rank}/{total}] {md_safe(title)}*", ""]
+    if item.get("_tier"):
+        lines.append(f"🎯 {md_safe(item['_tier'])} · {md_safe(item.get('_tierNote') or '')}")
     if kind:
         lines.append(f"🏷 {kind}")
     lines.append(f"📍 {where}")
@@ -794,8 +796,16 @@ def build_messages(picked, updated_at, peers):
     """머리말 1건 + 매물 1건당 1메시지. 텔레그램 4096자 제한을 넘기지 않기 위함."""
     today = datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d")
     total = len(picked)
+    tier1 = [x for x in picked if x.get("_tier") == bg.TIER_BUDGET]
+    tier2 = [x for x in picked if x.get("_tier") != bg.TIER_BUDGET]
     messages = [f"*오늘의 매물 추천* ({today})\n"
-                f"인수해서 운영할 수 있다고 본 매물 {total}건\n\n"
+                f"인수해서 운영할 수 있다고 본 매물 {total}건 "
+                f"— 1차 최적(₩1~2억) {len(tier1)}건 · 2차 예산 밖 {len(tier2)}건\n\n"
+                f"_1차는 인수가가 한국돈 1~2억인 매물입니다. 이 구간도 PT PMA 납입자본 Rp 25억"
+                f"(≈₩2.2억)을 먼저 넣고 그 안에서 인수·운전자금을 쓰는 구조라 총 현금은 ₩2.2억"
+                f" 이상, 투자계획 Rp 100억(≈₩8.6억)이 별도로 필요합니다._\n"
+                f"_2차는 예산을 넘거나 가격이 공개되지 않은 매물입니다. 공동 투자·지분 일부"
+                f" 인수 등 다른 구조로 검토할 가치가 있는 것만 넣었습니다._\n\n"
                 f"_아래 관문을 모두 통과한 매물만 보냅니다._\n"
                 f"_① 업종 — 외국인 투자가 열려 있다고 확인된 업종만 "
                 f"(세탁·미용실·소형 소매·노점은 제외)_\n"
@@ -818,8 +828,16 @@ def build_messages(picked, updated_at, peers):
                      "위 업체에 조건(업종·예산·지역)을 직접 제시하면 비공개 물건을 받습니다._")
         messages.append("\n".join(lines))
 
-    for rank, x in enumerate(picked, start=1):
-        messages.append(format_item(x, rank, total, peers))
+    rank = 0
+    for label, group in ((f"■ 1차 {bg.TIER_BUDGET}", tier1), (f"■ 2차 {bg.TIER_OVER}", tier2)):
+        if not group:
+            if label.startswith("■ 1차"):
+                messages.append(f"*{label}* 0건\n_오늘은 예산 구간에서 기준을 넘는 매물이 없습니다._")
+            continue
+        messages.append(f"*{label}* {len(group)}건")
+        for x in group:
+            rank += 1
+            messages.append(format_item(x, rank, total, peers))
     return messages
 
 
@@ -930,7 +948,9 @@ def main():
         else:
             print(f"  !! 실재성 검증 탈락: {x.get('title')} - {why}")
 
-    candidates.sort(key=lambda x: (fe.rank_key(fe.classify(x)[0]),
+    # 1차(예산 구간)를 앞에 둔다. 발송 상한(BATCH_SIZE)에 걸려도 예산 안 매물이 먼저 나간다.
+    candidates.sort(key=lambda x: (x.get("_tier") != bg.TIER_BUDGET,
+                                   fe.rank_key(fe.classify(x)[0]),
                                    -(op.classify(x)[1] or 0),
                                    data_age_hours(x.get("postedAt")) or float("inf")))
 

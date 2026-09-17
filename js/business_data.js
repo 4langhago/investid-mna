@@ -43,7 +43,7 @@ const BUSINESS_LISTINGS = [
       "설비 일체 포함"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "자산 양도 Rp 650백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
+    "foreignReason": "자산 양도 Rp 650백만(≈₩0.56억) - 신규 PT PMA 납입자본(Rp 25억)·투자계획(Rp 100억)에 견줘 규모가 너무 작아 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
     "foreignSteps": [
       "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
     ],
@@ -208,7 +208,7 @@ const BUSINESS_LISTINGS = [
       "설비 일체 포함"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "자산 양도 Rp 650백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
+    "foreignReason": "자산 양도 Rp 650백만(≈₩0.56억) - 신규 PT PMA 납입자본(Rp 25억)·투자계획(Rp 100억)에 견줘 규모가 너무 작아 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
     "foreignSteps": [
       "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
     ],
@@ -265,7 +265,7 @@ const BUSINESS_LISTINGS = [
       "설비 일체 포함"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "자산 양도 Rp 400백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
+    "foreignReason": "자산 양도 Rp 400백만(≈₩0.34억) - 신규 PT PMA 납입자본(Rp 25억)·투자계획(Rp 100억)에 견줘 규모가 너무 작아 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
     "foreignSteps": [
       "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
     ],
@@ -318,7 +318,7 @@ const BUSINESS_LISTINGS = [
       "임차 조건 포함 - 계약 잔여기간 확인 필요"
     ],
     "foreignStatus": "불가",
-    "foreignReason": "자산 양도 Rp 210백만 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
+    "foreignReason": "자산 양도 Rp 210백만(≈₩0.18억) - 신규 PT PMA 납입자본(Rp 25억)·투자계획(Rp 100억)에 견줘 규모가 너무 작아 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
     "foreignSteps": [
       "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
     ],
@@ -375,10 +375,13 @@ const BUSINESS_LISTINGS = [
       "직원 인계 대상 있음",
       "설비 일체 포함"
     ],
-    "foreignStatus": "불가",
-    "foreignReason": "자산 양도 Rp 2.4십억 - 신규 PT PMA 납입자본(Rp 25억)에도 못 미쳐 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
+    "foreignStatus": "조건부",
+    "foreignReason": "자산 양도 Rp 2.4십억 - PT PMA 설립 시 인수 가능하나 납입자본(Rp 25억)이 인수가보다 크므로 총 현금 ₩2.2억 이상 필요",
     "foreignSteps": [
-      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "총 현금 약 Rp 25억(≈₩2.2억) 필요 - 납입자본을 입금한 뒤 인수가 Rp 2.4십억 와 운전자금을 그 안에서 지출(입금 후 12개월 인출 제한)",
+      "투자계획 Rp 100억(≈₩8.6억, 3년·설비·운전자금 포함) 제출과 이행 보고(LKPM) 필요 - 이 규모 매장 하나로는 계획이 과도하므로 증설 계획을 함께 설계할 것",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인"
     ],
     "operability": "확인필요",
     "operabilityReasons": [
@@ -387,11 +390,11 @@ const BUSINESS_LISTINGS = [
       "설비·집기 인계 범위가 언급됨"
     ],
     "operabilityTodos": [
-      "게시 후 317일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 318일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
-    "koreanEligible": false
+    "koreanEligible": true
   },
   {
     "id": "biz-10490",

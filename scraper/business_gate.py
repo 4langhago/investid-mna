@@ -160,13 +160,36 @@ def assess(item):
     return True, "", reasons
 
 
+# 사용자 예산: 한국돈 1~2억. 이 구간의 인수가를 '최적(1차)'으로, 나머지(초과·미표기)는
+# '예산 밖(2차)'으로 나눠 보낸다. 2차를 버리지 않는 이유는 예산 밖이라도 정말 좋은
+# 매물(예: 다점포 브랜드)은 공동 투자·지분 일부 인수 같은 다른 구조로 검토할 가치가 있어서다.
+BUDGET_MIN_KRW = 100_000_000
+BUDGET_MAX_KRW = 200_000_000
+TIER_BUDGET = "최적(₩1~2억)"
+TIER_OVER = "예산 밖"
+
+
+def budget_tier(item):
+    """(등급, 한글 설명) 반환. 인수가 미표기는 예산 밖으로 둔다 - 모르는 값을 맞다고 볼 수 없다."""
+    price = item.get("priceNum") or 0
+    if not price:
+        return TIER_OVER, "인수가 미표기"
+    krw = price / fe.KRW_TO_IDR
+    if BUDGET_MIN_KRW <= krw <= BUDGET_MAX_KRW:
+        return TIER_BUDGET, f"인수가 ≈₩{krw / 1e8:.2f}억"
+    if krw < BUDGET_MIN_KRW:
+        return TIER_OVER, f"인수가 ≈₩{krw / 1e8:.2f}억 - 예산 하한 미만"
+    return TIER_OVER, f"인수가 ≈₩{krw / 1e8:.1f}억 - 예산 초과"
+
+
 def screen(items):
-    """(통과 목록, 탈락 사유별 건수) 반환."""
+    """(통과 목록, 탈락 사유별 건수) 반환. 통과 매물에는 _tier(1차/2차)를 붙인다."""
     passed, rejected = [], {}
     for item in items:
         ok, why, reasons = assess(item)
         if ok:
             item["_gateReasons"] = reasons
+            item["_tier"], item["_tierNote"] = budget_tier(item)
             passed.append(item)
         else:
             key = why.split(" - ")[0]
