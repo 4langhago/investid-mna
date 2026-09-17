@@ -618,6 +618,33 @@ def build_outlook(item, peers):
     return lines
 
 
+def seller_document_checklist(item):
+    """매도인에게 먼저 받아야 할 서류 목록.
+
+    2026-09-17 추가: 통과 매물을 실제로 검증해 보니, 글에 적힌 매출·점포 수·인증은 전부
+    매도인 주장이고 공개 정보로는 확인되지 않았다(반둥 카페 건: 브랜드 실체는 확인됐지만
+    매출은 현지 벤치마크 상단을 넘었고, 글쓴이가 소유자인지도 확인 불가).
+    추천은 '연락해 볼 가치가 있다'는 뜻이지 '검증됐다'는 뜻이 아니므로, 무엇을 받아
+    확인해야 하는지를 매물마다 함께 보낸다.
+    """
+    text = " ".join(str(item.get(k) or "") for k in ("title", "description"))
+    items = [
+        "법인 등기(AHU)·NIB·KBLI 사본 - 매각 대상 법인이 실재하고 글쓴이가 대표·수임인인지 확인",
+        "최근 12~24개월 은행 거래내역과 세무신고서 - 내부 엑셀·구두 수치는 근거로 보지 않는다",
+        "매각 구조 명시 요구 - 지분(법인) 인수인지, 자산·브랜드만 넘기는지에 따라 절차와 위험이 달라진다",
+        "매각 사유 - 영업이 잘된다는 매물일수록 파는 이유를 직접 물을 것",
+    ]
+    if re.search(r"매장|점포|지점|아울렛|outlet|cabang|카페|식당|resto|cafe", text, re.I):
+        items.append("전 점포 임대차계약서 - 잔여 기간·양도 가능 여부·임대인 승계 동의 절차")
+    if re.search(r"할랄|halal", text, re.I):
+        items.append("할랄 인증서 명의 - 법인 단위 발급이라 소유자가 바뀌면 재인증이 필요할 수 있다(BPJPH 확인)")
+    if re.search(r"직원|karyawan|pegawai|staff", text, re.I):
+        items.append("직원 명부·근속연수·퇴직충당금 - 인력 승계 시 퇴직금 부담이 인수가에 숨어 있다")
+    if re.search(r"설비|기계|장비|mesin|peralatan|equipment", text, re.I):
+        items.append("설비 목록과 인수 포함 여부 - 생산·검사 장비가 제외되면 인수 후 가동이 안 된다")
+    return items
+
+
 def format_item(item, rank, total, peers):
     """매물 1건을 텔레그램 메시지 하나로 상세 포맷."""
     wa = str(item.get("whatsapp") or "").replace("+", "").replace(" ", "")
@@ -698,6 +725,9 @@ def format_item(item, rank, total, peers):
 
     lines.append("\n🛠 *인수 후 운영 개시까지* (이 순서로 진행)")
     lines.extend(f"• {md_safe(x)}" for x in lc.operating_playbook(item))
+
+    lines.append("\n📑 *접촉하면 먼저 요구할 서류* (받기 전에는 가격 협상 금지)")
+    lines.extend(f"• {md_safe(x)}" for x in seller_document_checklist(item))
 
     hist = item.get("_historyNotes") or []
     if hist:
