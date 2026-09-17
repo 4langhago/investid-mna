@@ -57,6 +57,9 @@ VALUES
 
 let supabaseClient = null;
 
+// index.html #priceRange 의 max 와 같아야 한다. 이 값이면 가격 상한 없음('전체').
+const PRICE_RANGE_MAX = 25000000000;
+
 // ── 로컬 저장 (Supabase 미설정 시 localStorage로 영속화) ──
 const LS_KEY = 'mna_listings_v1';
 
@@ -243,7 +246,7 @@ async function fetchListings(filters = {}) {
         query = query.eq('category', filters.category);
       }
     }
-    if (filters.maxPrice) {
+    if (filters.maxPrice && filters.maxPrice < PRICE_RANGE_MAX) {
       query = query.lte('price', filters.maxPrice);
     }
     if (filters.businessType && filters.businessType !== '전체 업종') {
@@ -369,8 +372,10 @@ function applyLocalFilters(filters) {
   if (businessType && businessType !== '전체 업종') {
     results = results.filter(l => l.category === businessType);
   }
-  if (maxPrice) {
-    results = results.filter(l => l.priceNum <= maxPrice);
+  // 슬라이더 최댓값은 '전체'(상한 없음)다. 가격 미표기 매물도 가격 필터로 버리지 않는다
+  // (app.js render() 와 같은 규칙 - 둘이 다르면 첫 로드에서 매물이 조용히 빠진다).
+  if (maxPrice && maxPrice < PRICE_RANGE_MAX) {
+    results = results.filter(l => l.priceNum == null || l.priceNum <= maxPrice);
   }
   return results;
 }

@@ -258,7 +258,9 @@ def _parse_price_num(text, low):
     raw = m.group(1)
     n = _digits(raw)
     if n <= 0:
-        return text, None
+        # 가격 칸의 '0 IDR' 은 미표기다. 문자열을 남기면 카드에 '0 IDR' 이 가격처럼 찍혀
+        # 사이트의 '가격 문의' 표시가 나오지 않는다.
+        return None, None
 
     if re.search(r"usd|\$|달러|불\b", low):
         return f"{text} (≈ Rp {n * USD_TO_IDR:,.0f})", n * USD_TO_IDR

@@ -1,13 +1,14 @@
 'use strict';
 
 // ===== STATE =====
+// PRICE_RANGE_MAX 는 db.js 에 정의돼 있다(admin.html 은 app.js 없이 db.js 만 쓴다).
 const state = {
   filter: {
     keyword: '',
     location: '전체 지역',
     category: 'all',
     businessType: '전체 업종',
-    maxPrice: 25000000000,
+    maxPrice: PRICE_RANGE_MAX,
     koreanOnly: false
   },
   sort: 'latest',
@@ -290,7 +291,12 @@ function getFiltered() {
   // 색인형 매물(커뮤니티)은 가격이 없다. null 을 0으로 취급하면 가격 필터를 항상
   // 통과하고 오름차순 최상단을 차지하므로, 가격 미표기는 필터에서 제외하지 않고
   // 정렬에서만 뒤로 보낸다.
-  results = results.filter(l => l.priceNum == null || l.priceNum <= maxPrice);
+  // 슬라이더 최댓값(기본 위치)은 화면에 '전체'로 표시되므로 상한 없이 본다.
+  // 예전에는 Rp 250억 초과 매물이 조용히 빠져, 투자 요건(Rp 100억)을 충족하는
+  // 대형 공장 매물처럼 오히려 외국인 인수가 현실적인 물건이 목록에서 사라졌다.
+  if (maxPrice < PRICE_RANGE_MAX) {
+    results = results.filter(l => l.priceNum == null || l.priceNum <= maxPrice);
+  }
 
   const priceAsc = l => (l.priceNum == null ? Infinity : l.priceNum);
   const priceDesc = l => (l.priceNum == null ? -Infinity : l.priceNum);
@@ -578,7 +584,7 @@ function resetFilters() {
     location: '전체 지역',
     category: 'all',
     businessType: '전체 업종',
-    maxPrice: 25000000000,
+    maxPrice: PRICE_RANGE_MAX,
     koreanOnly: false
   };
   const koreanOnlyToggle = $('koreanOnlyToggle');
@@ -587,7 +593,7 @@ function resetFilters() {
   locationSelect.value = '전체 지역';
   $('sidebarLocation').value = '전체 지역';
   businessTypeSelect.value = '전체 업종';
-  $('priceRange').value = 25000000000;
+  $('priceRange').value = PRICE_RANGE_MAX;
   $('priceDisplay').textContent = '전체';
   document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
   document.querySelector('.cat-btn[data-cat="all"]').classList.add('active');
@@ -595,6 +601,7 @@ function resetFilters() {
 }
 
 function formatPriceLabel(val) {
+  if (val >= PRICE_RANGE_MAX) return '전체';
   if (val >= 1000000000) return `Rp ${(val / 1000000000).toFixed(1)}M 이하`;
   if (val >= 1000000) return `Rp ${(val / 1000000).toFixed(0)}jt 이하`;
   return '전체';
