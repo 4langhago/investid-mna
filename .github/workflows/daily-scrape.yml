@@ -102,6 +102,9 @@ jobs:
       # 교체하고 재개함. 반드시 위 '매물 수집' 스텝 뒤에 있어야 한다 —
       # telegram_recommend.py 는 live_data.js 가 48시간 이내 갱신된 경우에만 발송한다.
       - name: 텔레그램 매물 추천 (한인 커뮤니티 2 + 사업체 2 + 부동산)
+        # 저장소 변수 TELEGRAM_ENABLED 가 'false' 면 발송을 건너뛴다(판정 로직 손보는 동안 일시 중지).
+        # 재개: gh variable set TELEGRAM_ENABLED --body true
+        if: ${{ vars.TELEGRAM_ENABLED != 'false' }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -112,6 +115,7 @@ jobs:
       # 매물 이력(가격 변동·체류 기간)과 Places 캐시는 실행 간에 유지돼야 의미가 있다.
       # 커밋하지 않으면 매 실행이 '첫 실행'이 되어 추적이 영원히 시작되지 않는다.
       - name: 발송 상태·매물 이력 커밋 & 푸시
+        if: ${{ vars.TELEGRAM_ENABLED != 'false' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
