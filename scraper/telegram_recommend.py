@@ -1,36 +1,23 @@
-# -*- coding: utf-8 -*-
-"""
-99.co에서 실제로 수집된 매물만 골라 매일 5건을 텔레그램으로 추천.
+"""수집한 매물 중 '한국인이 인수해서 실제로 사업을 굴릴 수 있는 것'만 텔레그램으로 보낸다.
 
-- 대상: js/live_data.js 의 LIVE_LISTINGS (scrape_99co.py 가 99.co에서 직접 수집)
-  ※ js/data.js 는 사용하지 않는다. 해당 105건은 whatsapp 번호가 순번 플레이스홀더
-    (+6281234567001~105)이고 sourceUrl 이 없어 실재를 확인할 수 없는 데이터다.
-    2026-07-27 이전까지 이 파일이 발송 소스였고, 그래서 발송을 중단했었다.
+2026-09-17 정책: 건수를 채우지 않는다. 기준을 넘는 매물이 하나도 없으면 0건이라고 알린다.
+예전에는 커뮤니티·사업체·부동산 세 섹션에 슬롯(2/2/나머지)을 배분해 매일 5건을 채웠고,
+그래서 기준에 못 미치는 날에도 애매한 물건이 추천으로 나갔다.
 
-- 검증: 아래를 모두 통과한 매물만 발송 — 사람 개입 없음
-    1) 데이터 신선도: LIVE_LISTINGS_UPDATED_AT 이 MAX_DATA_AGE_HOURS 이내
-       (같은 워크플로에서 scrape_99co.py 가 방금 99.co 목록에서 실제로 가져온 것이므로,
-        신선도 자체가 '해당 시점에 게시 중이었다'는 증거다)
-    2) 필수 필드(제목/지역/가격/면적) 누락 없음
-    3) sourceUrl 보유 — 수신자가 원본을 직접 확인할 수 있어야 함
-    4) whatsapp 이 플레이스홀더 패턴이 아님 (값이 없으면 원본 링크로 안내)
-    5) 외국인(한국인) 취득 가능 - foreign_eligibility.classify 가 '불가'로 본 매물은 제외.
-       Girik 미등기 토지, 외국인 투자 유보 업종(노점·생필품 소매 등)이 여기에 해당한다.
-       '조건부'(PT PMA 설립·HGB 전환 필요)는 절차를 함께 안내하고 발송한다.
-  --verify-urls 를 주면 sourceUrl HTTP 확인을 추가로 수행한다. 다만 99.co는 상세
-  페이지 봇 요청에 404를 주므로 기본값으로는 켜지 않는다 (url_is_live docstring 참고).
+관문 (순서대로, 하나라도 못 넘으면 탈락)
+  1) 사업 운영 관문 (business_gate) — 업종이 외국인에게 열려 있는가, 취득 구조가 성립하는가,
+     영업 실체가 확인되는가, 규모(인수가·매출)를 알 수 있는가, 90일 이내 글인가.
+     루코·아파트·토지 같은 순수 부동산은 '인수해서 운영할 사업'이 아니므로 여기서 빠진다.
+  2) 실재성 — 필수 필드·원문 링크·플레이스홀더 연락처·단위 오기재 가격 검증.
+  3) 실물 확인 — 구글 Places 로 영구 폐업 제외, 인도웹 원문 글의 삭제·거래완료 확인.
 
-- 선정: 가격(priceNum) 오름차순 정렬 후, 이전 발송 위치(scraper/telegram_state.json)
-        다음부터 5건씩 순환(로테이션). 끝까지 가면 처음부터 다시 순환.
-  ※ 수익률 정렬을 쓰지 않는 이유: 실수집 매물에는 월매출·수익률 데이터가 없다.
-    없는 수치를 추천 근거로 만들어내지 않는다.
-- 전송: Telegram Bot API (TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 환경변수 필요)
+메시지에는 한글 상세, 법적 쟁점, 인수 후 운영 개시 절차, 비용 구조, 사진·지도·평판 링크,
+공적 장부 조회 링크가 함께 붙는다. 업종 개방 여부는 2차 자료 기준이므로 계약 전 OSS 확인이 필요하다.
 
 사용법:
   python scraper/telegram_recommend.py             # 실제 전송
   python scraper/telegram_recommend.py --dry-run   # 전송 없이 선정 결과만 출력
   python scraper/telegram_recommend.py --verify-urls  # 원본 URL 생존까지 확인
-  python scraper/telegram_recommend.py --foreign-only-eligible  # 외국인 '가능' 등급만 발송
 """
 import json
 import os
@@ -45,6 +32,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import business_gate as bg  # noqa: E402  사업 운영 가능성 최종 관문
 import foreign_eligibility as fe  # noqa: E402
 import legal_check as lc  # noqa: E402
 import listing_history as lh  # noqa: E402
@@ -82,11 +70,6 @@ LAND_OR_FACTORY_RE = re.compile(r"토지|땅|부지|공장|창고|농장|농지|
                                 re.I)
 # 사업체 인수는 소규모(세탁소·카페 등)가 많아 하한을 따로 둔다.
 MIN_BUSINESS_PRICE = 10_000_000          # Rp 10 jt
-
-BUSINESS_SLOTS = 2   # OLX·tempat-usaha 인수 매물 수
-# 한인 커뮤니티 매물을 가장 앞 슬롯에 둔다. 한국인이 실제로 인수해 운영하는 매물은
-# 현지 사이트보다 여기에 먼저 올라오고, 매도인과 한국어로 협상할 수 있다.
-COMMUNITY_SLOTS = 2
 
 # 운영 가능성 필터. '부적합'(영업 실체 미확인·임대글·거래 종료)은 발송하지 않는다.
 ALLOWED_OPERABILITY = (op.OPERABLE, op.UNCERTAIN)
@@ -396,40 +379,6 @@ def dedupe_listings(items):
     return kept
 
 
-def select_candidates(listings, check_url=False, min_price=None,
-                      allowed_statuses=ALLOWED_FOREIGN_STATUSES, require_price=True):
-    valid, rejected = [], 0
-    for x in listings:
-        ok, reason = validate(x, check_url=check_url, min_price=min_price,
-                              allowed_statuses=allowed_statuses, require_price=require_price)
-        if ok:
-            valid.append(x)
-        else:
-            rejected += 1
-            print(f"  !! 검증 실패로 제외: id={x.get('id')} {x.get('title')} - {reason}")
-    if rejected:
-        print(f"  -- 검증 탈락 합계: {rejected}건")
-    valid = dedupe_listings(valid)
-    # 정렬 우선순위: 외국인 취득 가능성(가능 → 조건부) → 운영 가능성 → 신선도/가격.
-    # '실제로 인수할 수 있는가'(외국인 취득 가능성)가 제품의 핵심 질문이라 1순위로 둔다
-    # (예전엔 운영 가능성이 1순위여서, PT PMA 설립 등 절차가 필요한 조건부 매물이
-    # 개인 명의로 바로 살 수 있는 매물보다 위로 올라오는 경우가 있었다).
-    # 운영 가능성은 여전히 2순위 — 제도상 가능해도 실체가 흐릿한 매물을 위로 올리면
-    # 추천의 의미가 없다. 커뮤니티 매물은 마지막 동률 기준으로 최신 게시물을 우선한다
-    # (좋은 매물이 며칠 안에 빠지므로), 그 외에는 가격 오름차순.
-    def sort_key(x):
-        is_community = x.get("source") == "indoweb.org"
-        if is_community:
-            age = data_age_hours(x["postedAt"]) if x.get("postedAt") else None
-            freshness = age if age is not None else float("inf")  # 게시일 없으면 맨 뒤로
-        else:
-            freshness = price_value(x) or float("inf")
-        return (fe.rank_key(fe.classify(x)[0]), op.rank_key(op.classify(x)[0]), freshness)
-
-    valid.sort(key=sort_key)
-    return valid
-
-
 def pick_verified_batch(candidates, cursor, size, cache):
     """후보를 뽑되, 구글 Places 로 '영구 폐업'이 확인된 매물은 버리고 다음 후보로 채운다.
 
@@ -482,6 +431,9 @@ def verify_community_liveness(picked, pool, slots):
             continue
         if status == "unknown":
             print(f"  !! 실물 확인 불가(발송은 유지, 로그만 남김): {item.get('title')} - {reason}")
+        else:
+            # 살아 있다는 것도 남긴다. 아무 줄도 안 남으면 확인을 건너뛴 건지 알 수 없다.
+            print(f"  [실물 확인] 게시 중: {item.get('title')} - {reason}")
         alive.append(item)
     return alive
 
@@ -495,15 +447,6 @@ def load_state():
 def save_state(state):
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
     STATE_FILE.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
-
-
-def pick_batch(candidates, cursor, size=BATCH_SIZE):
-    n = len(candidates)
-    if n == 0 or size <= 0:
-        return [], cursor
-    picked = [candidates[(cursor + i) % n] for i in range(min(size, n))]
-    next_cursor = (cursor + len(picked)) % n
-    return picked, next_cursor
 
 
 def md_safe(text):
@@ -695,7 +638,10 @@ def format_item(item, rank, total, peers):
     where = md_safe(item.get("address") or item.get("locationKo") or item.get("location"))
     kind = " / ".join(x for x in (md_safe(item.get("category")), md_safe(item.get("badge"))) if x)
 
-    lines = [f"*[{rank}/{total}] {md_safe(item['title'])}*", ""]
+    # 인도웹 벼룩시장 글은 제목 앞에 게시판 분류가 붙는다("식당/식품 | ..."). 수집기가
+    # 상세 페이지를 못 받은 글에는 그대로 남아 있어, 표시할 때 한 번 더 걷어낸다.
+    title = re.sub(r"^[^|]{1,20}\|\s*", "", str(item.get("title") or ""))
+    lines = [f"*[{rank}/{total}] {md_safe(title)}*", ""]
     if kind:
         lines.append(f"🏷 {kind}")
     lines.append(f"📍 {where}")
@@ -798,23 +744,37 @@ def format_item(item, rank, total, peers):
     return "\n".join(lines)
 
 
-def build_messages(community, business, property_items, updated_at, peers):
+def build_empty_message(scanned, rejected):
+    """추천 0건인 날의 알림. 아무것도 안 보내면 파이프라인이 죽은 것과 구분되지 않는다."""
+    today = datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d")
+    top = sorted(rejected.items(), key=lambda x: -x[1])[:5]
+    lines = [f"*오늘의 매물 추천* ({today})",
+             "",
+             f"기준을 넘는 매물이 없습니다. 수집 {scanned}건 전부 탈락했습니다.",
+             "",
+             "*주요 탈락 사유*"]
+    lines += [f"• {md_safe(why)} — {n}건" for why, n in top]
+    lines.append("")
+    lines.append("_인수해서 실제로 운영할 수 있는 매물만 보냅니다. "
+                 "기준에 못 미치는 날은 건너뜁니다._")
+    return "\n".join(lines)
+
+
+def build_messages(picked, updated_at, peers):
     """머리말 1건 + 매물 1건당 1메시지. 텔레그램 4096자 제한을 넘기지 않기 위함."""
     today = datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d")
-    total = len(community) + len(business) + len(property_items)
+    total = len(picked)
     messages = [f"*오늘의 매물 추천* ({today})\n"
-                f"검증 통과 매물 {total}건 "
-                f"(한인 커뮤니티 {len(community)} · 사업체 인수 {len(business)} · "
-                f"부동산 {len(property_items)})\n"
-                f"부동산 수집시각 {updated_at}\n\n"
-                f"_두 관문을 모두 통과한 매물만 보냅니다._\n"
-                f"_① 운영 가능성 — 🟩 운영가능 · 🟨 확인필요 (🟥 부적합은 발송 제외: "
-                f"임대글·거래 종료·영업 실체 미확인)_\n"
-                f"_② 외국인 취득 — 🟢 바로 취득 가능 · 🟡 PT PMA 설립 등 절차 필요 "
-                f"(🔴 불가는 발송 제외)_\n"
-                f"_각 매물에 법적 쟁점·지분 구조·반복 사고 유형과 공적 장부 조회 링크를 "
-                f"함께 붙였습니다._\n"
-                f"_모든 수치는 매도인 게시 정보에서 추출한 것이며 검증된 값이 아닙니다. "
+                f"인수해서 운영할 수 있다고 본 매물 {total}건\n\n"
+                f"_아래 관문을 모두 통과한 매물만 보냅니다._\n"
+                f"_① 업종 — 외국인 투자가 열려 있다고 확인된 업종만 "
+                f"(세탁·미용실·소형 소매·노점은 제외)_\n"
+                f"_② 취득 구조 — 🟢 바로 취득 가능 · 🟡 PT PMA 설립 등 절차 필요_\n"
+                f"_③ 영업 실체 — 영업 중·매출·업력·직원 신호가 확인된 매물만_\n"
+                f"_④ 규모와 신선도 — 인수가나 매출이 제시되고 90일 이내 게시_\n"
+                f"_업종 개방 여부는 2차 자료 기준입니다. 계약 전 OSS 에서 해당 KBLI 를 "
+                f"직접 확인하세요._\n"
+                f"_모든 수치는 매도인 게시 정보이며 검증된 값이 아닙니다. "
                 f"법률 자문이 아니고, 계약 전 현장 실사와 공증인(notaris) 확인이 필요합니다._"]
 
     # 공개 게시판에 뜨는 매물은 일부다. 실제 물건을 들고 있는 한인 중개·컨설팅 채널을
@@ -828,16 +788,8 @@ def build_messages(community, business, property_items, updated_at, peers):
                      "위 업체에 조건(업종·예산·지역)을 직접 제시하면 비공개 물건을 받습니다._")
         messages.append("\n".join(lines))
 
-    rank = 0
-    for label, group in (("■ 한인 커뮤니티 매물 (한국어 협상 가능)", community),
-                         ("■ 사업체 인수 (운영 중)", business),
-                         ("■ 부동산/루코 매매", property_items)):
-        if not group:
-            continue
-        messages.append(f"*{label}* {len(group)}건")
-        for x in group:
-            rank += 1
-            messages.append(format_item(x, rank, total, peers))
+    for rank, x in enumerate(picked, start=1):
+        messages.append(format_item(x, rank, total, peers))
     return messages
 
 
@@ -913,103 +865,72 @@ def _send_one(message):
 def main():
     dry_run = "--dry-run" in sys.argv
     check_url = "--verify-urls" in sys.argv
-    allowed = ((fe.ELIGIBLE,) if "--foreign-only-eligible" in sys.argv
-               else ALLOWED_FOREIGN_STATUSES)
-    print(f"[외국인 취득 필터] 발송 허용 등급: {' / '.join(allowed)}")
 
+    # 2026-09-17 정책 변경: '인수해서 실제로 사업을 굴릴 수 있는 매물'만 보낸다.
+    # 예전에는 세 섹션(커뮤니티/사업체/부동산)을 슬롯 수만큼 채워 보냈다. 그러면 기준을
+    # 넘는 매물이 없는 날에도 목록을 채우려고 애매한 물건이 올라갔다.
+    # 이제 business_gate 를 통과한 것만 보내고, 0건이면 0건이라고 알린다.
     listings, updated_at = load_listings()
-
-    # 신선도는 소스별로 따진다. 예전에는 99.co 데이터가 낡으면 발송 자체를 중단해서,
-    # 그날 인도웹에 올라온 한인 매물까지 함께 묻혔다. 낡은 소스만 빼고 나머지는 보낸다.
-    age = data_age_hours(updated_at)
-    if age is None:
-        print(f"!! 부동산 수집 시각을 해석할 수 없음({updated_at}) - 부동산 소스 제외")
-        property_fresh = False
-    else:
-        print(f"[신선도] 부동산 수집 시각 {updated_at} "
-              f"(경과 {age:.1f}시간 / 허용 {MAX_DATA_AGE_HOURS}시간)")
-        property_fresh = age <= MAX_DATA_AGE_HOURS
-        if not property_fresh:
-            print("!! 부동산 데이터가 오래되어 현재 게시 중이라 보장할 수 없음 - 부동산 제외")
-            print("!! scrape_99co.py 를 실행해 js/live_data.js 를 갱신할 것")
-
-    candidates = (select_candidates(listings, check_url=check_url, allowed_statuses=allowed)
-                  if property_fresh else [])
-    print(f"[검증] 부동산 {len(listings)}건 중 {len(candidates)}건 검증 통과")
-
     biz_all, biz_updated = load_business_listings()
-    biz_candidates = select_candidates(biz_all, check_url=check_url,
-                                       min_price=MIN_BUSINESS_PRICE,
-                                       allowed_statuses=allowed) if biz_all else []
-    print(f"[검증] 사업체 인수 {len(biz_all)}건 중 {len(biz_candidates)}건 검증 통과"
-          + (f" (수집시각 {biz_updated})" if biz_updated else " (수집 파일 없음)"))
-
-    # 한인 커뮤니티 매물은 가격 미표기가 흔하므로 가격 필수 요건을 면제한다.
-    # 대신 운영 가능성 판정은 동일하게 적용된다.
     comm_all, comm_updated = load_community_listings()
-    comm_candidates = select_candidates(comm_all, check_url=check_url,
-                                        min_price=MIN_BUSINESS_PRICE,
-                                        allowed_statuses=allowed,
-                                        require_price=False) if comm_all else []
-    print(f"[검증] 한인 커뮤니티 {len(comm_all)}건 중 {len(comm_candidates)}건 검증 통과"
-          + (f" (수집시각 {comm_updated})" if comm_updated else " (수집 파일 없음)"))
+    print(f"[수집] 부동산 {len(listings)} (수집시각 {updated_at}) · "
+          f"사업체 {len(biz_all)} ({biz_updated}) · 커뮤니티 {len(comm_all)} ({comm_updated})")
 
-    if not candidates and not biz_candidates and not comm_candidates:
-        print("!! 실재가 확인된 매물이 0건 - 발송하지 않고 종료")
-        print("!! 확인되지 않은 매물을 추천으로 내보내지 않는 것이 의도된 동작임")
-        sys.exit(1)
-
-    # 매물 이력 갱신. 검증 통과 여부와 무관하게 '수집된 전체'를 기준으로 기록해야
-    # 사라진 매물(팔림)과 가격 인하를 놓치지 않는다.
+    # 매물 이력은 선정과 무관하게 '수집된 전체'로 갱신해야 사라진 매물·가격 인하를 놓치지 않는다.
     history = lh.load()
     new_n, drop_n, gone_n = lh.update(history, listings + biz_all + comm_all)
     lh.save(history)
     print(f"[이력] 신규 {new_n}건 · 가격 인하 {drop_n}건 · 사라짐 {gone_n}건 "
           f"(누적 {len(history)}건 추적)")
 
+    # 1차: 사업 운영 관문(업종 개방·취득 구조·영업 실체·규모·신선도)
+    pool = dedupe_listings(listings + biz_all + comm_all)
+    gated, rejected = bg.screen(pool)
+    print(f"[선정] 수집 {len(pool)}건 중 {len(gated)}건이 사업 운영 관문 통과")
+    for why, n in sorted(rejected.items(), key=lambda x: -x[1]):
+        print(f"  {n:>4}건  {why}")
+
+    # 2차: 실재성 검증(필수 필드·원문 링크·연락처·단위 오기재 가격)
+    candidates = []
+    for x in gated:
+        ok, why = validate(x, check_url=check_url, min_price=MIN_BUSINESS_PRICE,
+                           require_price=bool(x.get("priceNum")))
+        if ok:
+            candidates.append(x)
+        else:
+            print(f"  !! 실재성 검증 탈락: {x.get('title')} - {why}")
+
+    candidates.sort(key=lambda x: (fe.rank_key(fe.classify(x)[0]),
+                                   -(op.classify(x)[1] or 0),
+                                   data_age_hours(x.get("postedAt")) or float("inf")))
+
     state = load_state()
     place_cache = pc._load_cache() if pc.enabled() else {}
     print(f"[구글 Places] {'사용' if pc.enabled() else '비활성(GOOGLE_PLACES_API_KEY 없음)'}")
 
-    # 슬롯 배분: 한인 커뮤니티 → 사업체 인수 → 남는 자리를 부동산으로.
-    # 한인 커뮤니티는 좋은 매물이 며칠 안에 빠진다. 로테이션보다 '새 글'이 우선이며,
-    # 새 글이 없을 때만 기존 후보를 순환해 보낸다.
-    seen_comm = set(state.get("seenCommunityIds") or [])
-    fresh_comm = [x for x in comm_candidates if x.get("id") not in seen_comm]
-    fresh_comm.sort(key=lambda x: str(x.get("postedAt") or ""), reverse=True)
-    if seen_comm and fresh_comm:
-        print(f"[신규] 한인 커뮤니티 새 매물 {len(fresh_comm)}건 - 우선 발송")
-
-    comm_picked, comm_next, comm_drop = pick_verified_batch(
-        fresh_comm or comm_candidates,
-        0 if fresh_comm else state.get("commCursor", 0),
-        min(COMMUNITY_SLOTS, len(fresh_comm or comm_candidates)), place_cache)
-    if fresh_comm:
-        comm_next = state.get("commCursor", 0)  # 새 글을 보냈으면 순환 위치는 그대로 둔다
-
-    # 발송 직전 실물 확인. dry-run 에서는 --verify-urls 를 줄 때만 실제로 요청한다
-    # (토큰이 없는 로컬 테스트에서 매번 인도웹에 접속하는 걸 막기 위함).
-    if comm_picked and (not dry_run or check_url):
-        comm_picked = verify_community_liveness(
-            comm_picked, fresh_comm or comm_candidates, len(comm_picked))
-
-    biz_picked, biz_next, biz_drop = pick_verified_batch(
-        biz_candidates, state.get("bizCursor", 0),
-        min(BUSINESS_SLOTS, len(biz_candidates)), place_cache)
-    picked, next_cursor, prop_drop = pick_verified_batch(
-        candidates, state.get("cursor", 0),
-        max(0, BATCH_SIZE - len(comm_picked) - len(biz_picked)), place_cache)
-
-    for x in comm_picked + biz_picked + picked:
-        x["_historyNotes"] = lh.notes(history, x)
-
-    for item, why in comm_drop + biz_drop + prop_drop:
+    # 3차: 구글 실측(영구 폐업 제외) + 원문 글 생존 확인
+    picked, _next, dropped = pick_verified_batch(candidates, 0, min(BATCH_SIZE, len(candidates)),
+                                                 place_cache)
+    for item, why in dropped:
         print(f"  !! 구글 확인으로 제외: {item.get('title')} - {why}")
     if pc.enabled():
         pc._save_cache(place_cache)
-    # 비교군은 검증을 통과한 전체 후보. 분석 수치는 여기서만 계산한다.
-    messages = build_messages(comm_picked, biz_picked, picked, updated_at,
-                              peers=comm_candidates + biz_candidates + candidates)
+
+    community_picked = [x for x in picked if x.get("source") == "indoweb.org"]
+    if community_picked and (not dry_run or check_url):
+        alive = verify_community_liveness(community_picked, candidates, len(community_picked))
+        alive_ids = {x["id"] for x in alive}
+        picked = [x for x in picked
+                  if x.get("source") != "indoweb.org" or x["id"] in alive_ids]
+
+    for x in picked:
+        x["_historyNotes"] = lh.notes(history, x)
+
+    if picked:
+        messages = build_messages(picked, updated_at, peers=candidates)
+    else:
+        messages = [build_empty_message(len(pool), rejected)]
+        print("[선정] 기준을 넘는 매물 0건 - '추천 없음'만 알린다")
 
     print("----- 발송 내용 미리보기 -----")
     for m in messages:
@@ -1023,22 +944,13 @@ def main():
 
     for m in messages:
         send_telegram(m)
-    state["cursor"] = next_cursor
-    state["bizCursor"] = biz_next
-    state["commCursor"] = comm_next
     state["lastRunAt"] = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
-    # 세 섹션을 모두 기록한다. 일부만 남기면 실제 발송분과 기록이 어긋난다.
-    state["lastSentCommunityIds"] = [x["id"] for x in comm_picked]
-    # 발송한 커뮤니티 매물은 '본 것'으로 기록해 다음 실행에서 신규만 골라낼 수 있게 한다.
+    state["lastSentIds"] = [x["id"] for x in picked]
+    # 보낸 매물은 '본 것'으로 남겨 다음 실행에서 같은 물건을 다시 올리지 않는다.
     state["seenCommunityIds"] = sorted(
-        set(state.get("seenCommunityIds") or []) | {x["id"] for x in comm_candidates})
-    state["lastSentBusinessIds"] = [x["id"] for x in biz_picked]
-    state["lastSentPropertyIds"] = [x["id"] for x in picked]
-    state["lastSentIds"] = [x["id"] for x in comm_picked + biz_picked + picked]
+        set(state.get("seenCommunityIds") or []) | {x["id"] for x in picked})
     save_state(state)
-    print(f"[전송 완료] 총 {len(comm_picked) + len(biz_picked) + len(picked)}건"
-          f" (커뮤니티 {len(comm_picked)} / 사업체 {len(biz_picked)} / 부동산 {len(picked)})"
-          f", 다음 커서 - 커뮤니티 {comm_next} · 사업체 {biz_next} · 부동산 {next_cursor}")
+    print(f"[전송 완료] 추천 {len(picked)}건")
 
 
 if __name__ == "__main__":
