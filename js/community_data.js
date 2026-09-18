@@ -1,8 +1,8 @@
 // 자동 생성 파일 — scraper/scrape_indoweb.py 가 갱신합니다. 직접 수정 금지.
 // 제목/지역/게시일/가격/면적/사실 요약만 보관한다.
 // 글쓴이 이름·전화·이메일·메신저 ID 는 저장하지 않는다(MASK_RE 로 제거).
-// 갱신 시각: 2026-09-17T05:02:44+00:00
-const COMMUNITY_LISTINGS_UPDATED_AT = "2026-09-17T05:02:44+00:00";
+// 갱신 시각: 2026-09-18T04:47:12+00:00
+const COMMUNITY_LISTINGS_UPDATED_AT = "2026-09-18T04:47:12+00:00";
 const COMMUNITY_LISTINGS = [
   {
     "id": "iw-real_estate_mb-10428",
