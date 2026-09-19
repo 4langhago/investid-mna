@@ -18,6 +18,7 @@
   python scraper/telegram_recommend.py             # 실제 전송
   python scraper/telegram_recommend.py --dry-run   # 전송 없이 선정 결과만 출력
   python scraper/telegram_recommend.py --verify-urls  # 원본 URL 생존까지 확인
+  python scraper/telegram_recommend.py --test-mode    # 0건일 때 "추천 매물 없음" 1줄만
 """
 import json
 import os
@@ -33,6 +34,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import business_gate as bg  # noqa: E402  사업 운영 가능성 최종 관문
+import deal_tier as dt  # noqa: E402  금액 5단계 구간 · 딜 구조(지분/자산) 판정
 import foreign_eligibility as fe  # noqa: E402
 import legal_check as lc  # noqa: E402
 import listing_history as lh  # noqa: E402
@@ -48,6 +50,7 @@ LIVE_JS = ROOT / "js" / "live_data.js"
 BUSINESS_JS = ROOT / "js" / "business_data.js"
 OLX_JS = ROOT / "js" / "olx_data.js"
 COMMUNITY_JS = ROOT / "js" / "community_data.js"
+SMERGERS_JS = ROOT / "js" / "smergers_data.js"
 EXPORT_JS = Path(__file__).resolve().parent / "export_listings.js"
 STATE_FILE = Path(__file__).resolve().parent / "telegram_state.json"
 
@@ -110,15 +113,21 @@ def load_listings():
 
 
 def load_business_listings():
-    """사업체 인수 매물을 두 소스에서 합친다. 파일이 없는 소스는 건너뛴다.
+    """사업체 인수 매물을 여러 소스에서 합친다. 파일이 없는 소스는 건너뛴다.
 
     부동산이 함께 딸린 매물(propertyIncluded)은 사업체 인수와 성격이 달라
     추천 대상에서 제외한다. 사이트에는 그대로 노출된다.
+
+    SMERGERS 는 성격이 다른 소스다. C2C 게시판(OLX·tempat-usaha)은 전부 자산 양수인데,
+    SMERGERS 에는 재무가 공개된 지분 양수 건이 섞여 있다. 인도네시아는 인허가(NIB)의
+    법인 간 이전 제도가 없어 이 차이가 실행 난이도를 가르므로 같은 풀에 넣고
+    deal_tier 가 구조를 구분한다.
     """
     listings, updated = [], []
     for js_file, var, ts_var in (
             (BUSINESS_JS, "BUSINESS_LISTINGS", "BUSINESS_LISTINGS_UPDATED_AT"),
-            (OLX_JS, "OLX_LISTINGS", "OLX_LISTINGS_UPDATED_AT")):
+            (OLX_JS, "OLX_LISTINGS", "OLX_LISTINGS_UPDATED_AT"),
+            (SMERGERS_JS, "SMERGERS_LISTINGS", "SMERGERS_LISTINGS_UPDATED_AT")):
         if not js_file.exists():
             continue
         listings.extend(export_var(js_file, var))
@@ -327,6 +336,18 @@ def _title_tokens(title):
     return set(t for t in normalize_title(title).split(" ") if len(t) >= 2)
 
 
+# 제목 토큰 유사도로 중복을 잡으면 안 되는 소스.
+# SMERGERS 는 매도인을 비공개로 두기 위해 제목을 정형 문구로 만든다
+# ("<업종> Company Equity Stake For Sale in Jakarta, Indonesia"). 서로 다른 매물끼리
+# 토큰이 90% 겹쳐서, 유사도 규칙을 대면 수십 건이 1건으로 뭉개진다(실제로 47건 → 1건).
+# 이 소스는 매물마다 고유 id 가 있고 재게시가 없으므로, 제목이 완전히 같을 때만 중복으로 본다.
+TITLE_SIMILARITY_EXEMPT_SOURCES = {"smergers.com"}
+
+
+def _similarity_exempt(*items):
+    return any(x.get("source") in TITLE_SIMILARITY_EXEMPT_SOURCES for x in items)
+
+
 def _dupe_quality(item):
     """중복군에서 '가장 상세하거나 최신인' 쪽을 고르기 위한 비교 키(클수록 우선)."""
     return (
@@ -352,7 +373,9 @@ def dedupe_listings(items):
         placed = False
         for group in groups:
             g_tokens = _title_tokens(group[0].get("title"))
-            if normalize_title(item.get("title")) == normalize_title(group[0].get("title")):
+            if _similarity_exempt(item, group[0]):
+                pass  # 정형 제목 소스는 제목으로 묶지 않는다(위 주석 참조). id 로만 구분한다.
+            elif normalize_title(item.get("title")) == normalize_title(group[0].get("title")):
                 placed = True
             elif len(tokens) >= 3 and len(g_tokens) >= 3:
                 overlap = len(tokens & g_tokens) / min(len(tokens), len(g_tokens))
@@ -669,8 +692,15 @@ def format_item(item, rank, total, peers):
     # 상세 페이지를 못 받은 글에는 그대로 남아 있어, 표시할 때 한 번 더 걷어낸다.
     title = re.sub(r"^[^|]{1,20}\|\s*", "", str(item.get("title") or ""))
     lines = [f"*[{rank}/{total}] {md_safe(title)}*", ""]
-    if item.get("_tier"):
+    if item.get("_tierLabel"):
+        lines.append(f"🎯 {md_safe(item['_tierLabel'])} · {md_safe(item.get('_tierNote5') or '')}")
+    elif item.get("_tier"):
         lines.append(f"🎯 {md_safe(item['_tier'])} · {md_safe(item.get('_tierNote') or '')}")
+    # 딜 구조는 금액·업종만큼 중요하다. 자산 양수면 매도인의 인허가가 따라오지 않는다.
+    if item.get("_dealStructure"):
+        icon = "🧾" if item["_dealStructure"] == dt.SHARE_DEAL else "⚠️"
+        lines.append(f"{icon} 딜 구조 *{md_safe(item['_dealStructure'])}* — "
+                     f"{md_safe(item.get('_dealStructureNote') or '')}")
     if kind:
         lines.append(f"🏷 {kind}")
     lines.append(f"📍 {where}")
@@ -796,22 +826,26 @@ def build_messages(picked, updated_at, peers):
     """머리말 1건 + 매물 1건당 1메시지. 텔레그램 4096자 제한을 넘기지 않기 위함."""
     today = datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d")
     total = len(picked)
-    tier1 = [x for x in picked if x.get("_tier") == bg.TIER_BUDGET]
-    tier2 = [x for x in picked if x.get("_tier") != bg.TIER_BUDGET]
+    budget_n = sum(1 for x in picked if x.get("_tier") == bg.TIER_BUDGET)
+    share_n = sum(1 for x in picked if x.get("_dealStructure") == dt.SHARE_DEAL)
     messages = [f"*오늘의 매물 추천* ({today})\n"
                 f"인수해서 운영할 수 있다고 본 매물 {total}건 "
-                f"— 1차 최적(₩1~2억) {len(tier1)}건 · 2차 예산 밖 {len(tier2)}건\n\n"
-                f"_1차는 인수가가 한국돈 1~2억인 매물입니다. 이 구간도 PT PMA 납입자본 Rp 25억"
-                f"(≈₩2.2억)을 먼저 넣고 그 안에서 인수·운전자금을 쓰는 구조라 총 현금은 ₩2.2억"
-                f" 이상, 투자계획 Rp 100억(≈₩8.6억)이 별도로 필요합니다._\n"
-                f"_2차는 예산을 넘거나 가격이 공개되지 않은 매물입니다. 공동 투자·지분 일부"
-                f" 인수 등 다른 구조로 검토할 가치가 있는 것만 넣었습니다._\n\n"
+                f"— 예산 구간(₩1~2억) {budget_n}건 · 지분양수 가능 {share_n}건\n\n"
+                f"_금액 5단계로 나눠 보냅니다. 단계에 매물이 없으면 '적합 매물 없음'으로 "
+                f"표시합니다 — 건수를 채우지 않습니다._\n"
+                f"_1~3단계(₩5억 이하)는 PT PMA 투자계획 Rp 100억(≈₩8.6억)에 미달해, "
+                f"단독으로는 합법 인수 구조가 성립하지 않습니다. 기존 PMA 활용이나 "
+                f"복수 매물 묶음(롤업)을 전제로 보셔야 합니다._\n"
+                f"_딜 구조도 함께 표시합니다. 인도네시아는 인허가(NIB)의 법인 간 이전 제도가 "
+                f"없어, 🧾지분양수는 허가가 함께 넘어오고 ⚠️자산양수는 인수자가 전부 새로 "
+                f"받아야 합니다(그 사이 영업 공백)._\n\n"
                 f"_아래 관문을 모두 통과한 매물만 보냅니다._\n"
                 f"_① 업종 — 외국인 투자가 열려 있다고 확인된 업종만 "
-                f"(세탁·미용실·소형 소매·노점은 제외)_\n"
+                f"(세탁·미용실·소형 소매·노점·화물운송은 제외)_\n"
                 f"_② 취득 구조 — 🟢 바로 취득 가능 · 🟡 PT PMA 설립 등 절차 필요_\n"
-                f"_③ 영업 실체 — 영업 중·매출·업력·직원 신호가 확인된 매물만_\n"
-                f"_④ 규모와 신선도 — 인수가나 매출이 제시되고 90일 이내 게시_\n"
+                f"_③ 경영권 — 50% 미만 소수지분은 인수가 아니라 증자 참여이므로 제외_\n"
+                f"_④ 영업 실체 — 영업 중·매출·업력·직원 신호가 확인된 매물만_\n"
+                f"_⑤ 규모와 신선도 — 인수가나 매출이 제시되고 90일 이내 게시_\n"
                 f"_업종 개방 여부는 2차 자료 기준입니다. 계약 전 OSS 에서 해당 KBLI 를 "
                 f"직접 확인하세요._\n"
                 f"_모든 수치는 매도인 게시 정보이며 검증된 값이 아닙니다. "
@@ -828,13 +862,19 @@ def build_messages(picked, updated_at, peers):
                      "위 업체에 조건(업종·예산·지역)을 직접 제시하면 비공개 물건을 받습니다._")
         messages.append("\n".join(lines))
 
+    # 금액 5단계 + 구간 밖. 빈 단계도 건너뛰지 않고 '적합 매물 없음'으로 적는다 —
+    # 그 단계에 매물이 없다는 것 자체가 전략에 반영해야 하는 정보다.
+    sections = [(idx, label) for idx, label, _lo, _hi in dt.TIERS]
+    sections.append(dt.TIER_OUT)
+
     rank = 0
-    for label, group in ((f"■ 1차 {bg.TIER_BUDGET}", tier1), (f"■ 2차 {bg.TIER_OVER}", tier2)):
+    for idx, label in sections:
+        group = [x for x in picked if x.get("_tierIndex") == idx]
         if not group:
-            if label.startswith("■ 1차"):
-                messages.append(f"*{label}* 0건\n_오늘은 예산 구간에서 기준을 넘는 매물이 없습니다._")
+            if idx != dt.TIER_OUT[0]:
+                messages.append(f"*■ {label}*\n_적합 매물 없음_")
             continue
-        messages.append(f"*{label}* {len(group)}건")
+        messages.append(f"*■ {label}* {len(group)}건")
         for x in group:
             rank += 1
             messages.append(format_item(x, rank, total, peers))
@@ -913,6 +953,7 @@ def _send_one(message):
 def main():
     dry_run = "--dry-run" in sys.argv
     check_url = "--verify-urls" in sys.argv
+    test_mode = "--test-mode" in sys.argv
 
     # 2026-09-17 정책 변경: '인수해서 실제로 사업을 굴릴 수 있는 매물'만 보낸다.
     # 예전에는 세 섹션(커뮤니티/사업체/부동산)을 슬롯 수만큼 채워 보냈다. 그러면 기준을
@@ -978,9 +1019,16 @@ def main():
 
     if picked:
         messages = build_messages(picked, updated_at, peers=candidates)
+    elif test_mode:
+        # 작동 테스트 모드: 전달 경로만 확인하므로 정해진 한 줄만 보낸다.
+        messages = ["추천 매물 없음"]
+        print("[선정] 0건 - 테스트 모드이므로 '추천 매물 없음' 1줄만 보낸다")
     else:
+        # 평소에는 탈락 사유 요약을 함께 보낸다. 아무것도 보내지 않으면 '매물이 없는 날'과
+        # '파이프라인이 죽은 날'을 구분할 수 없다 — 실제로 그 때문에 한 달간 추천이
+        # 끊긴 것을 아무도 몰랐던 적이 있다.
         messages = [build_empty_message(len(pool), rejected)]
-        print("[선정] 기준을 넘는 매물 0건 - '추천 없음'만 알린다")
+        print("[선정] 기준을 넘는 매물 0건 - '추천 없음'과 탈락 사유를 알린다")
 
     print("----- 발송 내용 미리보기 -----")
     for m in messages:

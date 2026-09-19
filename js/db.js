@@ -94,12 +94,14 @@ function persistLocalListings() {
 //   biz-  : js/business_data.js  (scrape_business.py — tempat-usaha.com 사업체 인수)
 //   olx-  : js/olx_data.js       (scrape_olx.py — OLX 사업체 인수, 주력 소스)
 //   iw-   : js/community_data.js (scrape_indoweb.py — 한인 커뮤니티, 색인형)
+//   smg-  : js/smergers_data.js  (scrape_smergers.py — SMERGERS, 재무 공개·지분양수)
 (function mergeScrapedListings() {
   const sources = [
     { prefix: 'live-', data: typeof LIVE_LISTINGS !== 'undefined' ? LIVE_LISTINGS : null },
     { prefix: 'biz-', data: typeof BUSINESS_LISTINGS !== 'undefined' ? BUSINESS_LISTINGS : null },
     { prefix: 'olx-', data: typeof OLX_LISTINGS !== 'undefined' ? OLX_LISTINGS : null },
-    { prefix: 'iw-', data: typeof COMMUNITY_LISTINGS !== 'undefined' ? COMMUNITY_LISTINGS : null }
+    { prefix: 'iw-', data: typeof COMMUNITY_LISTINGS !== 'undefined' ? COMMUNITY_LISTINGS : null },
+    { prefix: 'smg-', data: typeof SMERGERS_LISTINGS !== 'undefined' ? SMERGERS_LISTINGS : null }
   ];
 
   sources.forEach(function (source) {
