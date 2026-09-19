@@ -60,6 +60,22 @@ POSITIVE = [
      2, "공장 가동·거래처 등 제조 영업 기반이 언급됨"),
     (r"sisa kontrak|kontrak sampai|sewa sampai|masa sewa|임차\s*기간|계약\s*기간|잔여\s*기간",
      1, "임차 잔여 기간이 명시됨"),
+    # M&A 플랫폼(SMERGERS 등)은 영어로 쓰고, 위의 인도네시아어·한국어 신호에 하나도
+    # 걸리지 않는다. 그래서 매출·EBITDA·직원 수를 다 공개한 매물이 '확인필요'로
+    # 떨어지던 문제가 있었다. 같은 사실을 가리키는 영어 표현을 함께 본다.
+    (r"\bebitda\b|run\s*rate\s*sales|reported\s*sales|annual\s*(?:revenue|sales|turnover)|"
+     r"\bprofitable\b|\bmonthly\s*sales\b",
+     3, "매출·EBITDA 가 공개됨"),
+    (r"years?\s*(?:in\s*)?operation|established\s*(?:in\s*)?\d{4}|operating\s*since|"
+     r"\d+\s*-\s*\d+\s*years",
+     2, "영업 기간(업력)이 제시됨"),
+    (r"\bemployees?\b|\bstaff\s*(?:of|members)\b|full-?time",
+     1, "인계 대상 직원이 있음"),
+    (r"client\s*(?:base|roster|relationships)|recurring\s*(?:clients|customers|revenue)|"
+     r"customer\s*database|supplier\s*relationships",
+     1, "고정 고객·거래처 기반이 언급됨"),
+    (r"\bfully\s*operational\b|currently\s*operating|going\s*concern|still\s*running",
+     3, "현재 영업 중이라고 명시됨"),
 ]
 
 # 감점 신호.
@@ -76,7 +92,11 @@ SUBSTANCE_RE = re.compile(
     r"laba bersih|net profit|keuntungan|pendapatan|sejak tahun|berdiri|sudah \d+ tahun|"
     r"karyawan|pegawai|pelanggan tetap|siap operasional|"
     r"영업\s*중|운영\s*중|즉시\s*운영|매출|순익|수익|직원|년\s*(?:째|간)|단골|고정\s*고객|"
-    r"가동\s*(?:중|수준)|거래처|클린룸|clean\s*room",
+    r"가동\s*(?:중|수준)|거래처|클린룸|clean\s*room|"
+    # 영어 M&A 매물의 동일 신호
+    r"\bebitda\b|run\s*rate\s*sales|reported\s*sales|annual\s*(?:revenue|sales|turnover)|"
+    r"\bprofitable\b|\bemployees?\b|years?\s*(?:in\s*)?operation|operating\s*since|"
+    r"fully\s*operational|going\s*concern|client\s*(?:base|roster)",
     re.I)
 
 STALE_DAYS = 180          # 이 기간을 넘긴 글은 거래 종료 가능성이 높다
@@ -122,6 +142,12 @@ def classify(item):
         if re.search(pat, text, re.I):
             score += pts
             reasons.append(why)
+
+    # 수치 필드로 들어온 증거는 문구와 무관하게 인정한다. 글의 언어·표현이 무엇이든
+    # 연매출과 수익률이 숫자로 제시된 매물은 '영업 실체가 있는 쪽'에 가깝다.
+    if (item.get("annualRevenueNum") or item.get("monthlyRevenueNum")) and item.get("ebitdaMargin"):
+        score += 2
+        reasons.append("연매출·EBITDA 마진이 수치로 제시됨")
     for pat, pts, why in NEGATIVE:
         if re.search(pat, text, re.I):
             score += pts

@@ -207,10 +207,14 @@ def extract_facts(item):
 
     # 매출 / 순익 - 사업체 인수 판단의 핵심 수치
     for pat, label in (
-        (r"(?:omset|omzet|pendapatan kotor|pemasukan kotor)[^\d]{0,15}([\d.,]+)\s*"
+        # 숫자 부분은 반드시 숫자로 시작해야 한다. [\d.,]+ 로 두면 쉼표·마침표만으로도
+        # 매치돼 "순이익 약 Rp , " 같은 빈 금액이 찍힌다(영어 매물의 "Profitable ... 25 %"
+        # 에서 실제로 발생).
+        (r"(?:omset|omzet|pendapatan kotor|pemasukan kotor)[^\d]{0,15}(\d[\d.,]*)\s*"
          r"(jt|juta|m\b|miliar|milyar|rb|ribu)?\s*/?\s*(bulan|bln|thn|tahun)?", "월매출"),
         (r"(?:net profit|laba bersih|keuntungan bersih|pendapatan bersih|profit)[^\d]{0,15}"
-         r"([\d.,]+)\s*(jt|juta|m\b|miliar|milyar|rb|ribu)?\s*/?\s*(bulan|bln|thn|tahun)?", "순이익"),
+         r"(\d[\d.,]*)\s*(jt|juta|m\b|miliar|milyar|rb|ribu)?\s*/?\s*(bulan|bln|thn|tahun)?",
+         "순이익"),
     ):
         m = re.search(pat, text, re.I)
         if m:
