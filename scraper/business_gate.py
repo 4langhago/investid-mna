@@ -19,6 +19,7 @@ foreign_eligibility 는 '명의를 가질 수 있는 구조인가'(제도), oper
 import re
 from datetime import datetime, timezone
 
+import deal_tier as dt
 import foreign_eligibility as fe
 import operability as op
 
@@ -29,6 +30,20 @@ _PROPERTY_ONLY = re.compile(
 
 # 게시 후 이 기간을 넘긴 글은 추천하지 않는다(operability 의 180/365일보다 엄격하게 본다).
 MAX_POST_AGE_DAYS = 90
+
+# 대상 지역: 자카르타(1순위) · 브까시·찌카랑(2순위) · 보고르·땅그랑·데뽁(3순위).
+# 수집기는 전국을 긁어오므로(SMERGERS 는 자카르타 본사·잠비 광산처럼 소재지가 어긋난
+# 매물도 있다) 관문에서 한 번 더 거른다. 실제로 반둥 카페와 잠비 탄광이 추천에 올라왔다.
+TARGET_REGION_RE = re.compile(
+    r"\bjakarta\b|\bdki\b|\bjabodetabek\b|자카르타|"
+    r"\bbekasi\b|\bcikarang\b|브까시|버까시|찌카랑|"
+    r"\bbogor\b|\btangerang\b|\bdepok\b|\bserpong\b|\bbsd\b|\bbanten\b|"
+    r"보고르|땅그랑|탕그랑|데뽁|반뜬", re.I)
+
+# 사용자가 검토하는 인수 금액 상한(₩10억). 이 구간 밖은 보내지 않는다.
+# 가격 미표기는 예외로 남긴다 — 커뮤니티 글은 금액을 협의로 두는 경우가 흔하고,
+# 그 자체가 매물을 버릴 이유는 아니다(메시지에서 '가격 미표기'로 표시된다).
+MAX_BUDGET_KRW = 1_000_000_000
 
 # 업종 판정: (업종명, 정규식, 상태, 근거)
 # 상태 OPEN  = 외국인 지분 100% 가능으로 조사된 업종
@@ -57,6 +72,11 @@ SECTORS = [
     # --- 지분 상한이 있어 경영권 확보 불가 ---
     ("택배·운송대행(KBLI 53201)", r"\bekspedisi\b|\bkurir\b|\bcourier\b|택배",
      "CAPPED", "외국인 지분 49% 상한 - 단독 경영 불가"),
+    # 화물운송·포워딩은 아래 '창고·물류 OPEN' 보다 먼저 봐야 한다. 창고를 함께 가진
+    # 포워딩 업체가 창고 규칙에 걸려 OPEN 으로 잘못 통과하는 것을 막는다.
+    ("화물운송·포워딩·3PL(KBLI 52291·52292)",
+     r"freight|forwarding|\bforwarder\b|\b3pl\b|logistic|cargo|화물|포워딩|물류대행",
+     "CAPPED", "외국인 지분 49% 상한 - 단독 경영 불가(싱가포르 지주구조 등 별도 검토 필요)"),
     ("육상 여객운송", r"\bojek\b|angkutan\s*(?:umum|orang)", "CAPPED", "외국인 지분 제한"),
     # --- 외국인 지분 100% 가능(투자계획 Rp 100억 요건은 별도) ---
     ("요식업(KBLI 56101·56303)",
@@ -65,6 +85,10 @@ SECTORS = [
      "OPEN", "외국인 지분 100% 가능"),
     ("제과·베이커리(KBLI 10710)", r"bakery|patisserie|\broti\b|\bkue\b|베이커리|제과|디저트",
      "OPEN", "외국인 지분 100% 가능"),
+    ("식품 제조·중앙주방(KBLI 10xxx)",
+     r"food\s*processing|central\s*kitchen|pengolahan\s*makanan|frozen\s*food|"
+     r"식품\s*제조|중앙주방",
+     "OPEN", "식품 제조는 외국인 지분 100% 가능(BPOM·할랄 인증 별도 확인)"),
     ("세차·자동차정비(KBLI 45201)",
      r"cuci\s*mobil|car\s*wash|carwash|\bbengkel\b|detailing|세차장|정비소|카센터",
      "OPEN", "외국인 지분 100% 가능"),
@@ -102,9 +126,17 @@ def detect_sector(item):
     return None, None, None
 
 
+# 게시일이 없는 소스(SMERGERS)의 신선도 대체 근거. 플랫폼이 매도인의 최근 접속 상태를
+# 카드에 직접 노출하므로, 게시일을 지어내지 않고 이 상태를 신선도로 쓴다.
+# 'Inactive'·'미표기'는 통과시키지 않는다 — 응답하지 않는 매도인은 검토를 시작할 수 없다.
+FRESH_LISTING_ACTIVITY = ("Active", "Moderately Active")
+
+
 def _age_days(item):
     raw = item.get("postedAt")
     if not raw:
+        if str(item.get("listingActivity") or "").strip() in FRESH_LISTING_ACTIVITY:
+            return 0.0
         return None
     try:
         ts = datetime.fromisoformat(str(raw))
@@ -123,6 +155,7 @@ def assess(item):
     is_business = item.get("type") == "bisnis" or item.get("subtype") == "akuisisi"
     if not is_business or _PROPERTY_ONLY.search(title):
         return False, "사업체 인수 매물이 아님(부동산 매매)", []
+
 
     sector, sector_status, sector_source = detect_sector(item)
     if sector is None:
@@ -150,12 +183,35 @@ def assess(item):
     if not item.get("priceNum") and not item.get("monthlyRevenueNum") and not revenue_stated:
         return False, "인수가·매출이 모두 없어 규모를 검토할 수 없음", []
 
+    # 지역·금액 범위는 업종·실체 판정 뒤에 본다. 같은 매물이 여러 이유로 탈락할 때
+    # '세탁업이라 불가'가 '지역 밖'보다 쓸모 있는 사유라, 더 구체적인 쪽을 먼저 돌려준다.
+    where = " ".join(str(item.get(k) or "") for k in
+                     ("location", "locationKo", "address", "title", "description"))
+    if not TARGET_REGION_RE.search(where):
+        return False, ("대상 지역 밖(자카르타·브까시·찌카랑·보고르·땅그랑 외): "
+                       f"{item.get('locationKo') or item.get('location') or '지역 미표기'}"), []
+    reasons.append(f"대상 지역({item.get('locationKo') or item.get('location') or '본문 확인'})")
+
+    price_krw = (item.get("priceNum") or 0) / fe.KRW_TO_IDR
+    if price_krw > MAX_BUDGET_KRW:
+        return False, f"검토 금액 상한(₩10억) 초과 - 인수가 ≈₩{price_krw / 1e8:.1f}억", []
+
     age = _age_days(item)
     if age is None:
         return False, "게시일을 알 수 없음", []
     if age > MAX_POST_AGE_DAYS:
         return False, f"게시 후 {age:.0f}일 경과({MAX_POST_AGE_DAYS}일 초과)", []
-    reasons.append(f"최근 게시({age:.0f}일 전)")
+    if item.get("postedAt"):
+        reasons.append(f"최근 게시({age:.0f}일 전)")
+    else:
+        reasons.append(f"매도인 활동 상태 {item.get('listingActivity')}(게시일 미제공 소스)")
+
+    # 50% 미만 지분은 인수가 아니라 증자 참여다. 경영권 없이 들어가면 운영도, 회수도
+    # 매도인 손에 달린다. 금액·업종이 맞아도 추천하지 않는다.
+    structure, note = dt.classify_structure(item)
+    if structure == dt.MINORITY:
+        return False, f"소수지분(50% 미만) - {note}", []
+    reasons.append(f"딜 구조 {structure} - {note}")
 
     return True, "", reasons
 
@@ -183,13 +239,20 @@ def budget_tier(item):
 
 
 def screen(items):
-    """(통과 목록, 탈락 사유별 건수) 반환. 통과 매물에는 _tier(1차/2차)를 붙인다."""
+    """(통과 목록, 탈락 사유별 건수) 반환.
+
+    통과 매물에 붙는 값
+      _tier / _tierNote            사용자 예산(₩1~2억) 적합 여부 - 발송 순서를 정한다
+      _tierIndex / _tierLabel      금액 5단계 구간(보고서 양식) - 섹션을 나눈다
+      _dealStructure               지분양수 / 자산양수 - 인허가 승계 여부가 갈린다
+    """
     passed, rejected = [], {}
     for item in items:
         ok, why, reasons = assess(item)
         if ok:
             item["_gateReasons"] = reasons
             item["_tier"], item["_tierNote"] = budget_tier(item)
+            dt.annotate(item)
             passed.append(item)
         else:
             key = why.split(" - ")[0]

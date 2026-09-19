@@ -100,8 +100,9 @@ def test_scale_unknown_rejected():
 
 def test_revenue_in_text_counts_as_scale():
     # 한인 글은 '연매출 20억'처럼 문장으로만 쓴다. 숫자 필드가 비어도 규모가 제시된 것으로 본다.
+    # 지역은 이 테스트의 관심사가 아니므로 대상 지역(자카르타) 매물로 둔다.
     ok, why, _ = bg.assess(make(priceNum=None, monthlyRevenueNum=None,
-                                title="반둥 디저트 카페 브랜드 매각",
+                                title="자카르타 디저트 카페 브랜드 매각",
                                 description="현재 영업 중이며 연매출 20억 이상. 9개 매장 운영. 사업자 등록 완료."))
     assert ok, why
 
@@ -133,3 +134,43 @@ def test_budget_tier(price, tier):
 def test_screen_marks_tier_on_passed_items():
     passed, _ = bg.screen([make(priceNum=1_500_000_000), make(priceNum=5_000_000_000)])
     assert [x["_tier"] for x in passed] == [bg.TIER_BUDGET, bg.TIER_OVER]
+
+
+# --- 지역·금액 범위 관문 (2026-09-19 추가) ---------------------------------
+# 수집기는 전국을 긁어온다. 실제로 반둥 디저트 카페와 잠비 탄광(자카르타 본사 표기)이
+# 추천 메시지에 올라왔다. 대상은 자카르타·브까시·찌카랑·보고르·땅그랑뿐이다.
+
+@pytest.mark.parametrize("location", [
+    "Jakarta Selatan", "Bekasi Kota", "Cikarang", "Bogor Kab.",
+    "Tangerang Selatan", "Depok Kota", "Banten",
+])
+def test_target_regions_pass(location):
+    ok, why, _ = bg.assess(make(location=location, title="한식당 양도"))
+    assert ok, why
+
+
+@pytest.mark.parametrize("location", ["Bandung Kota", "Jambi", "Surabaya Kota", "Bali"])
+def test_outside_target_region_rejected(location):
+    ok, why, _ = bg.assess(make(location=location, title="한식당 양도"))
+    assert not ok
+    assert "대상 지역 밖" in why
+
+
+def test_region_unknown_is_rejected():
+    """모르면 추천하지 않는다 - 업종 판정과 같은 원칙."""
+    ok, why, _ = bg.assess(make(title="한식당 양도", description="현재 영업 중이며 월 매출 3억 루피아, 직원 8명 인계. 3년째 운영."))
+    assert not ok
+    assert "대상 지역 밖" in why
+
+
+def test_over_budget_cap_rejected():
+    """₩10억 초과는 사용자가 검토하는 구간 밖이다(잠비 탄광 Rp 1,050억 등)."""
+    ok, why, _ = bg.assess(make(location="Jakarta", priceNum=105_000_000_000))
+    assert not ok
+    assert "상한" in why
+
+
+def test_price_missing_still_passes():
+    """가격 협의 매물을 버릴 이유는 없다 - 메시지에 '가격 미표기'로 표시된다."""
+    ok, why, _ = bg.assess(make(location="Jakarta", priceNum=None))
+    assert ok, why
