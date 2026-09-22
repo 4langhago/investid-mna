@@ -1,8 +1,8 @@
 // 자동 생성 파일 — scraper/scrape_indoweb.py 가 갱신합니다. 직접 수정 금지.
 // 제목/지역/게시일/가격/면적/사실 요약만 보관한다.
 // 글쓴이 이름·전화·이메일·메신저 ID 는 저장하지 않는다(MASK_RE 로 제거).
-// 갱신 시각: 2026-09-20T05:02:22+00:00
-const COMMUNITY_LISTINGS_UPDATED_AT = "2026-09-20T05:02:22+00:00";
+// 갱신 시각: 2026-09-22T05:03:20+00:00
+const COMMUNITY_LISTINGS_UPDATED_AT = "2026-09-22T05:03:20+00:00";
 const COMMUNITY_LISTINGS = [
   {
     "id": "iw-real_estate_mb-10428",
@@ -59,7 +59,7 @@ const COMMUNITY_LISTINGS = [
     "operabilityReasons": [
       "사업자 등록·인허가 관련 언급이 있음",
       "공장 가동·거래처 등 제조 영업 기반이 언급됨",
-      "최근 게시(13일 전)"
+      "최근 게시(15일 전)"
     ],
     "operabilityTodos": [
       "인수가(권리금 포함) 미표기 - 매도인에게 총액과 포함 범위 확인",
@@ -79,7 +79,7 @@ const COMMUNITY_LISTINGS = [
     "location": "Indonesia",
     "locationKo": "지역 미상",
     "address": "반뗀지역",
-    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \n \r\n 안녕하십니까? \n한국컨설팅의 대표 서병환 입니다.\n인도네시아 제조업 금형(몰드) 사업체(공장등 부동산포함)을 매각 합니다. \n기존의 거래처 포함해서 매각하오니 관심이 있는 분들은 언제든지 연락 주시기 바랍니다.\n매매금액은 금형사업및 부동산 및 유효토지등 여러가지 사안별로 협의 가능합니다. \n현장 방문은 미팅 후 가능하며 실 구매자에 한해서 안내 가능합니다. \n감사합니다. \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \n \r\n 안녕하십니까? \n한국컨설팅의 대표 서병환 입니다.\n인도네시아 제조업, 플라스틱 사출 사업체(공장등 부동산포함)을 매각 합니다. \n기존의 거래처 포함해서 매각하오니 관심이 있는 분들은 언제든지 연락 주시기 바랍니다.\n매매금액은 플라스틱 사출사업 및 부동산, 유효토지등 여러가지 사안별로 협의 가능합니다. \n현장 방문은 미팅 후 가능하며 실 구매자에 한해서 안내 가능합니다. \n감사합니다. \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
     "whatsapp": null,
     "monthlyRevenue": null,
     "monthlyRevenueNum": null,
@@ -121,7 +121,7 @@ const COMMUNITY_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "공장 가동·거래처 등 제조 영업 기반이 언급됨",
-      "최근 게시(19일 전)"
+      "최근 게시(21일 전)"
     ],
     "operabilityTodos": [
       "인수가(권리금 포함) 미표기 - 매도인에게 총액과 포함 범위 확인",
@@ -1085,17 +1085,19 @@ const COMMUNITY_LISTINGS = [
       "Jawa Barat 외국인 아파트 최소가 Rp 2.0십억 이상인지 매매가 확인",
       "체류허가(KITAS/KITAP) 사본 필요"
     ],
-    "operability": "확인필요",
+    "operability": "부적합",
     "operabilityReasons": [
       "면적이 명시됨",
-      "주소가 기재됨"
+      "주소가 기재됨",
+      "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
+      "게시 후 181일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
-    "koreanEligible": true
+    "koreanEligible": false
   },
   {
     "id": "iw-real_estate_mb-10391",
@@ -1158,7 +1160,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 237일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 239일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1220,7 +1222,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 242일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 244일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
@@ -1287,7 +1289,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 254일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 256일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1352,7 +1354,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 261일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 263일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1417,7 +1419,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 296일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 298일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1482,7 +1484,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 299일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 301일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1554,7 +1556,7 @@ const COMMUNITY_LISTINGS = [
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
-      "게시 후 303일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 305일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1626,7 +1628,7 @@ const COMMUNITY_LISTINGS = [
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
-      "게시 후 303일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 305일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1689,7 +1691,7 @@ const COMMUNITY_LISTINGS = [
       "권리 형태(증서)가 표기됨"
     ],
     "operabilityTodos": [
-      "게시 후 338일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 340일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1754,7 +1756,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 349일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 351일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
@@ -1820,7 +1822,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 353일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 355일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
