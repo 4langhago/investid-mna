@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-09-22T04:47:59+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-09-22T04:47:59+00:00";
+// 갱신 시각: 2026-09-23T04:44:28+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-09-23T04:44:28+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -3175,7 +3175,7 @@ const SMERGERS_LISTINGS = [
     "postedAt": null,
     "listingActivity": "Active",
     "platformRating": 9.2,
-    "platformRatingCount": 4,
+    "platformRatingCount": 5,
     "platformVerified": [
       "Google",
       "Phone"
