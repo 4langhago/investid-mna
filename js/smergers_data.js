@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-09-23T04:44:28+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-09-23T04:44:28+00:00";
+// 갱신 시각: 2026-09-24T04:39:46+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-09-24T04:39:46+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -646,81 +646,6 @@ const SMERGERS_LISTINGS = [
     "operabilityReasons": [
       "매출·수익 수치가 제시됨",
       "매출·EBITDA 가 공개됨",
-      "연매출·EBITDA 마진이 수치로 제시됨"
-    ],
-    "operabilityTodos": [
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": false,
-    "_tierIndex": 1,
-    "_tierLabel": "1단계 ₩1억 이하",
-    "_tierNote5": "인수가 ≈₩0.77억 · PMA 투자계획 Rp 100억(≈₩8.6억) 미달 - 단독 인수로는 합법 구조 불성립. 동일 KBLI PT PMA 보유자의 자산 인수 또는 복수 매물 묶음(롤업)만 가능",
-    "_dealStructure": "소수지분",
-    "_dealStructureNote": "50% 미만 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
-  },
-  {
-    "id": "smg-ivdp7",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Payment Services Company Equity Stake For Sale in South Jakarta, Indonesia",
-    "category": "제조",
-    "location": "South Jakarta",
-    "locationKo": "자카르타 남부",
-    "address": "South Jakarta, Special Capital Region of Jakarta, Indonesia",
-    "monthlyRevenue": "IDR 63 jt/월",
-    "monthlyRevenueNum": 62666666,
-    "profit": null,
-    "price": "IDR 896 jt",
-    "priceNum": 896000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Jakarta technology company providing integrated cloud, POS, AI and industrial solutions, seeking expansion investment. Technology company headquartered in Jakarta providing an integrated suite of cloud, software and industrial technology solutions.\n- Offers a POS system, email services, domain and hosting services, AI-powered application development, colocation and industrial monitoring solutions.\n- Provides monitoring solutions for oil and gas pumps, mining systems and factory operations.\n- AI technology supports automated development of websites, web applications, Android applications and Apple applications.\n- XCSM Vault provides virtual machine protection and secure system connectivity for high-security data protection.\n- POS system is integrated with dynamic QRIS payments and is designed for UMKM and SME businesses across food and non-food sectors.\n- Android-based POS application supports menu management, automated ordering, payment recording with Dynamic QRIS provided by our partner DOKU tier 1 PJP in indonesia, multi-branch operations and analytics covering sales, employees, products and branches.\n- POS platform is offered without an upfront usage charge, no subscription, and applies only a 5% fee on final sales, to attract merchants with full stand alone pos system, stand alone qris dynamic, stand alone kitchen system, table order, and stand alone with AI manage and interconnection between apps to be super apps for UMKM selling system.\n- The company targets large-scale adoption among UMKM users and plans to expand its POS network with target of 1,000,000 merchant in 10 years with revenue of 4,3% from each sale per merchant with possible of revenue to IDR 9,000,000,000,000/year.\n- Generated approximately IDR 500 million in revenue last year, with an additional IDR 200 million pipeline from colocation and monitoring services.\n- Email services generated approximately IDR 100 million in revenue.\n- The company provides migration solutions for organisations affected by the planned discontinuation of AWS WorkMail, targeting customers across Indonesia and ASEAN.\n- All domain services are integrated with the company&#x27;s proprietary technology platform.\n- Maintains a corporate banking account with Bank Mandiri through Kopra.\n- The business is fully registered with Akta Pendirian, NIB, Ijin Usaha and NPWP. Does not need any other approvals for operations. 매각 사유: Seeking strategic funding to accelerate sales and advertising for our super app and integrated all‑in‑one POS system. The platform features dynamic QRIS integration, domain registration, automatic AI hosting, live editor web development, and AI‑driven app creation for Android and iOS. Funds will support DUNS registration to enable developer status in Indonesia, ensuring seamless app publishing for subscribers. Additional capital will be allocated to server upgrades with NVIDIA Spark AI chips, enhancing deep learning capabilities for automatic bug detection, monitoring, and optimization. Target markets include mining, oil, gas, and manufacturing sectors, where robust AI‑powered monitoring systems can replace manual processes. The owner will continue development in partnership with investors to perfect and expand the super app globally.",
-    "facilities": [
-      "SMERGERS 소수지분",
-      "연매출 IDR 0.75B",
-      "EBITDA 마진 0 - 10 %",
-      "플랫폼 인증: LinkedIn·Phone",
-      "매도인 활동 Active"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "📊",
-    "badge": "M&A 플랫폼",
-    "source": "smergers.com",
-    "sourceUrl": "https://www.smergers.com/business/payment-services-company-equity-stake-for-sale-in-south-jakarta-indonesia/ivdp7/",
-    "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 8.3,
-    "platformRatingCount": 3,
-    "platformVerified": [
-      "LinkedIn",
-      "Phone"
-    ],
-    "dealStructure": "소수지분",
-    "dealLabel": "Partial Stake Sale",
-    "stakePercent": 6.0,
-    "ebitdaMargin": "0 - 10 %",
-    "annualRevenueNum": 752000000,
-    "sellReason": "Seeking strategic funding to accelerate sales and advertising for our super app and integrated all‑in‑one POS system. The platform features dynamic QRIS integration, domain registration, automatic AI hosting, live editor web development, and AI‑driven app creation for Android and iOS. Funds will support DUNS registration to enable developer status in Indonesia, ensuring seamless app publishing for subscribers. Additional capital will be allocated to server upgrades with NVIDIA Spark AI chips, enhancing deep learning capabilities for automatic bug detection, monitoring, and optimization. Target markets include mining, oil, gas, and manufacturing sectors, where robust AI‑powered monitoring systems can replace manual processes. The owner will continue development in partnership with investors to perfect and expand the super app globally.",
-    "regionPriority": 1,
-    "lat": null,
-    "lng": null,
-    "summaryKo": [
-      "업종/용도: 공장·제조",
-      "사업자 등록번호(NIB/SIUP/NPWP) 언급 있음"
-    ],
-    "foreignStatus": "불가",
-    "foreignReason": "자산 양도 Rp 896백만(≈₩0.77억) - 신규 PT PMA 납입자본(Rp 25억)·투자계획(Rp 100억)에 견줘 규모가 너무 작아 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
-    "foreignSteps": [
-      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매출·수익 수치가 제시됨",
-      "사업자 등록·인허가 관련 언급이 있음",
-      "매출·EBITDA 가 공개됨",
-      "인계 대상 직원이 있음",
       "연매출·EBITDA 마진이 수치로 제시됨"
     ],
     "operabilityTodos": [
@@ -1574,6 +1499,85 @@ const SMERGERS_LISTINGS = [
     "_tierNote5": "인수가 ≈₩1.63억 · PMA 투자계획 미달 + 납입자본 Rp 25억(≈₩2.2억)이 인수가를 넘거나 비슷함 - 총 소요 현금이 인수가보다 커진다",
     "_dealStructure": "지분양수",
     "_dealStructureNote": "법인 주식을 인수하면 NIB·업종허가·거래처 계약이 함께 넘어온다. 대신 과거 세무·노무 우발부채도 함께 인수하므로 3개년 재무·세무 실사가 필수"
+  },
+  {
+    "id": "smg-ivuau",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Hygiene Products Company Equity Stake For Sale in Central Jakarta, Indonesia",
+    "category": "광고·마케팅",
+    "location": "Central Jakarta",
+    "locationKo": "자카르타 중부",
+    "address": "Central Jakarta, Special Capital Region of Jakarta, Indonesia",
+    "monthlyRevenue": "IDR 135 jt/월",
+    "monthlyRevenueNum": 134666666,
+    "profit": null,
+    "price": "IDR 2.00 M",
+    "priceNum": 2000000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Herbal hair and skincare brand with 15 years’ presence, strong distribution, and online-offline sales channels. Founded 15 years ago, our company is focused on commercial distribution of herbal hair and skin care products under own brand.\r\n- The company owns the product branding and formulations, while manufacturing is outsourced to a manufacturing partner in China.\r\n- Products are marketed through official stores on Shopee, TikTok Shop, Tokopedia, and Lazada.\r\n- Also distributed through modern market networks, including Guardian, Yogya, The FoodHall, Apotek Roxy, FamilyMart, and Dan+Dan, as well as traditional markets and resellers. Online and offline sales channels contribute equally to the company’s revenue.\r\n- Marketing activities are supported by paid influencer promotions, national TV advertisements, including Kompas TV, and advertisements in the Kompas newspaper.\r\n- The business model involves selling finished products to end consumers and retail partners through online and offline distribution channels.\r\n- Annual sales are approximately US$100,000, with over 200 orders per month.\r\n- The company holds NIB registration for its business operations. 매각 사유: Seeking investment to expand product inventory, strengthen working capital and cash flow, increase marketplace marketing activities, and hire additional marketing staff to support sales growth.The valuation reflects the company’s projected sales growth of approximately 2–3x over the next 3 years, supported by increased inventory, expanded marketplace marketing, and a larger sales team.",
+    "facilities": [
+      "SMERGERS 소수지분",
+      "연매출 IDR 1.62B",
+      "EBITDA 마진 10 - 20 %",
+      "플랫폼 인증: Email·Google·Phone",
+      "매도인 활동 Active"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "📊",
+    "badge": "M&A 플랫폼",
+    "source": "smergers.com",
+    "sourceUrl": "https://www.smergers.com/business/hygiene-products-company-equity-stake-for-sale-in-central-jakarta-indonesia/ivuau/",
+    "postedAt": null,
+    "listingActivity": "Active",
+    "platformRating": 7.1,
+    "platformRatingCount": 1,
+    "platformVerified": [
+      "Email",
+      "Google",
+      "Phone"
+    ],
+    "dealStructure": "소수지분",
+    "dealLabel": "Partial Stake Sale",
+    "stakePercent": 10.0,
+    "ebitdaMargin": "10 - 20 %",
+    "annualRevenueNum": 1616000000,
+    "sellReason": "Seeking investment to expand product inventory, strengthen working capital and cash flow, increase marketplace marketing activities, and hire additional marketing staff to support sales growth.The valuation reflects the company’s projected sales growth of approximately 2–3x over the next 3 years, supported by increased inventory, expanded marketplace marketing, and a larger sales team.",
+    "regionPriority": 1,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 약국",
+      "사업자 등록번호(NIB/SIUP/NPWP) 언급 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "자산 양도 Rp 2.0십억 - PT PMA 설립 시 인수 가능하나 납입자본(Rp 25억)이 인수가보다 크므로 총 현금 ₩2.2억 이상 필요",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "총 현금 약 Rp 25억(≈₩2.2억) 필요 - 납입자본을 입금한 뒤 인수가 Rp 2.0십억 와 운전자금을 그 안에서 지출(입금 후 12개월 인출 제한)",
+      "투자계획 Rp 100억(≈₩8.6억, 3년·설비·운전자금 포함) 제출과 이행 보고(LKPM) 필요 - 이 규모 매장 하나로는 계획이 과도하므로 증설 계획을 함께 설계할 것",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매출·수익 수치가 제시됨",
+      "인계 대상 직원이 있음",
+      "사업자 등록·인허가 관련 언급이 있음",
+      "매출·EBITDA 가 공개됨",
+      "연매출·EBITDA 마진이 수치로 제시됨"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true,
+    "_tierIndex": 2,
+    "_tierLabel": "2단계 ₩1~3억",
+    "_tierNote5": "인수가 ≈₩1.72억 · PMA 투자계획 미달 + 납입자본 Rp 25억(≈₩2.2억)이 인수가를 넘거나 비슷함 - 총 소요 현금이 인수가보다 커진다",
+    "_dealStructure": "소수지분",
+    "_dealStructureNote": "50% 미만 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
   },
   {
     "id": "smg-tzuhy",
