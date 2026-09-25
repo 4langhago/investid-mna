@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-09-24T04:39:46+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-09-24T04:39:46+00:00";
+// 갱신 시각: 2026-09-25T04:54:05+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-09-25T04:54:05+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -889,81 +889,6 @@ const SMERGERS_LISTINGS = [
     "_dealStructureNote": "50% 미만 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
   },
   {
-    "id": "smg-871o",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Wedding Planners Business Equity Stake For Sale in Jakarta, Indonesia",
-    "category": "기타 사업",
-    "location": "Jakarta",
-    "locationKo": "자카르타",
-    "address": "Jakarta, Special Capital Region of Jakarta, Indonesia",
-    "monthlyRevenue": "IDR 75 jt/월",
-    "monthlyRevenueNum": 74666666,
-    "profit": null,
-    "price": "IDR 1.34 M",
-    "priceNum": 1344000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "A Company Providing Creative & Innovative Photography And Video Experience Is Seeking Investment. Our expertise is in creating innovative & creative photos and videos. We create wedding cinematic experience. All our photographers and videographers are professionals and experts in their field. 매각 사유: Need funds to improve job performance and increase partner expansion in hotels. We need to buy equipment to support the performance of the final wedding videos that we create.",
-    "facilities": [
-      "SMERGERS 지분양수",
-      "연매출 IDR 0.90B",
-      "EBITDA 마진 20 %",
-      "플랫폼 인증: Email·LinkedIn",
-      "매도인 활동 Active"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "📊",
-    "badge": "M&A 플랫폼",
-    "source": "smergers.com",
-    "sourceUrl": "https://www.smergers.com/business/wedding-planners-business-equity-stake-for-sale-in-jakarta-indonesia/871o/",
-    "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 6.2,
-    "platformRatingCount": 1,
-    "platformVerified": [
-      "Email",
-      "LinkedIn"
-    ],
-    "dealStructure": "지분양수",
-    "dealLabel": "Partial Stake Sale",
-    "stakePercent": 70.0,
-    "ebitdaMargin": "20 %",
-    "annualRevenueNum": 896000000,
-    "sellReason": "Need funds to improve job performance and increase partner expansion in hotels. We need to buy equipment to support the performance of the final wedding videos that we create.",
-    "regionPriority": 1,
-    "lat": null,
-    "lng": null,
-    "summaryKo": [
-      "업종/용도: 기타 사업"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "자산 양도 Rp 1.3십억 - PT PMA 설립 시 인수 가능하나 납입자본(Rp 25억)이 인수가보다 크므로 총 현금 ₩2.2억 이상 필요",
-    "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "총 현금 약 Rp 25억(≈₩2.2억) 필요 - 납입자본을 입금한 뒤 인수가 Rp 1.3십억 와 운전자금을 그 안에서 지출(입금 후 12개월 인출 제한)",
-      "투자계획 Rp 100억(≈₩8.6억, 3년·설비·운전자금 포함) 제출과 이행 보고(LKPM) 필요 - 이 규모 매장 하나로는 계획이 과도하므로 증설 계획을 함께 설계할 것",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매출·수익 수치가 제시됨",
-      "매출·EBITDA 가 공개됨",
-      "연매출·EBITDA 마진이 수치로 제시됨"
-    ],
-    "operabilityTodos": [
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": true,
-    "_tierIndex": 2,
-    "_tierLabel": "2단계 ₩1~3억",
-    "_tierNote5": "인수가 ≈₩1.16억 · PMA 투자계획 미달 + 납입자본 Rp 25억(≈₩2.2억)이 인수가를 넘거나 비슷함 - 총 소요 현금이 인수가보다 커진다",
-    "_dealStructure": "지분양수",
-    "_dealStructureNote": "법인 주식을 인수하면 NIB·업종허가·거래처 계약이 함께 넘어온다. 대신 과거 세무·노무 우발부채도 함께 인수하므로 3개년 재무·세무 실사가 필수"
-  },
-  {
     "id": "smg-f8p1n",
     "type": "bisnis",
     "subtype": "akuisisi",
@@ -1148,7 +1073,7 @@ const SMERGERS_LISTINGS = [
     "postedAt": null,
     "listingActivity": "Active",
     "platformRating": 7.2,
-    "platformRatingCount": 1,
+    "platformRatingCount": 2,
     "platformVerified": [
       "Google",
       "Phone"
@@ -1687,7 +1612,7 @@ const SMERGERS_LISTINGS = [
     "postedAt": null,
     "listingActivity": "Active",
     "platformRating": 7.5,
-    "platformRatingCount": 3,
+    "platformRatingCount": 2,
     "platformVerified": [
       "Email",
       "Google",
@@ -1719,153 +1644,6 @@ const SMERGERS_LISTINGS = [
     ],
     "operabilityTodos": [],
     "koreanEligible": false,
-    "_tierIndex": 2,
-    "_tierLabel": "2단계 ₩1~3억",
-    "_tierNote5": "인수가 ≈₩2.34억 · PMA 투자계획 미달 + 납입자본 Rp 25억(≈₩2.2억)이 인수가를 넘거나 비슷함 - 총 소요 현금이 인수가보다 커진다",
-    "_dealStructure": "소수지분",
-    "_dealStructureNote": "50% 미만 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
-  },
-  {
-    "id": "smg-lvpdu",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Digital Publishing Company Equity Stake For Sale in Jakarta, Indonesia",
-    "category": "광고·마케팅",
-    "location": "Jakarta",
-    "locationKo": "자카르타",
-    "address": "Jakarta, Special Capital Region of Jakarta, Indonesia",
-    "monthlyRevenue": "IDR 627 jt/월",
-    "monthlyRevenueNum": 626666666,
-    "profit": null,
-    "price": "IDR 2.72 M",
-    "priceNum": 2720000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Digital media publishing company witnessing a high growth and is looking for expansion. Jakarta-based company that has been operational for 3 years.\r\n- We publish digital content related to news and entertainment and have developed a community of loyal users.\r\n- We also offer digital marketing and advertising services to other clients.\r\n- Majority of the revenue is generated from our own digital publishing and by serving our clients.\r\n- We are seeing high growth in traffic, and social media presence.\r\n- Receive 50,000,000 page views every month.\r\n- We have more than 1,000,000 followers across social media platforms.\r\n- We also do content marketing for clients and publicize their posts.\r\n- Right now for revenue we are sticking with programmatic & direct ads.\r\n- Our sales have increased due to the acquisition of government clients.\r\n- Aim to expand vertically and horizontally.\r\n- Detailed business plan, financial projections, and the pitch deck are available after connecting. 매각 사유: - We are seeking to hire manpower and scale operations to move in the market to grab the first movers advantage.- For the aggressive expansion of the business in terms of content, reach and quantity.- To increase revenue by operating and investing activities.- We are already working on major marketing to drive more sales.",
-    "facilities": [
-      "SMERGERS 소수지분",
-      "연매출 IDR 7.52B",
-      "EBITDA 마진 20 - 30 %",
-      "플랫폼 인증: Google·Phone",
-      "매도인 활동 Active"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "📊",
-    "badge": "M&A 플랫폼",
-    "source": "smergers.com",
-    "sourceUrl": "https://www.smergers.com/business/digital-publishing-company-equity-stake-for-sale-in-jakarta-indonesia/lvpdu/",
-    "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 8.3,
-    "platformRatingCount": 2,
-    "platformVerified": [
-      "Google",
-      "Phone"
-    ],
-    "dealStructure": "소수지분",
-    "dealLabel": "Partial Stake Sale",
-    "stakePercent": 30.0,
-    "ebitdaMargin": "20 - 30 %",
-    "annualRevenueNum": 7520000000,
-    "sellReason": "- We are seeking to hire manpower and scale operations to move in the market to grab the first movers advantage.- For the aggressive expansion of the business in terms of content, reach and quantity.- To increase revenue by operating and investing activities.- We are already working on major marketing to drive more sales.",
-    "regionPriority": 1,
-    "lat": null,
-    "lng": null,
-    "summaryKo": [
-      "업종/용도: 광고·마케팅"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
-    "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 2.7십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매출·수익 수치가 제시됨",
-      "매출·EBITDA 가 공개됨",
-      "연매출·EBITDA 마진이 수치로 제시됨"
-    ],
-    "operabilityTodos": [
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": true,
-    "_tierIndex": 2,
-    "_tierLabel": "2단계 ₩1~3억",
-    "_tierNote5": "인수가 ≈₩2.34억 · PMA 투자계획 미달 + 납입자본 Rp 25억(≈₩2.2억)이 인수가를 넘거나 비슷함 - 총 소요 현금이 인수가보다 커진다",
-    "_dealStructure": "소수지분",
-    "_dealStructureNote": "50% 미만 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
-  },
-  {
-    "id": "smg-1nnnv",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Bar Equity Stake For Sale in Special Capital Region of Jakarta, Indonesia",
-    "category": "카페 & 레스토랑",
-    "location": "Special Capital Region of Jakarta",
-    "locationKo": "자카르타",
-    "address": "Special Capital Region of Jakarta, Indonesia",
-    "monthlyRevenue": "IDR 587 jt/월",
-    "monthlyRevenueNum": 586666666,
-    "profit": null,
-    "price": "IDR 2.72 M",
-    "priceNum": 2720000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Newly opened restaurant and bar that combines Asian, Mediterranean and European cuisine. We are a restaurant and bar located in the heart of Jl. Gunawarman, South Jakarta.\r\n- Have a curated menu that combines flavours from parts of Europe, the Mediterranean and Asia.\r\n- The average footfall per day is 36 customers with more guests during weekends.\r\n- Our recurring clientele provides us with a steady revenue stream and has huge potential to grow and expand.\r\n- Restaurant has a very upscale decor with oakwood doors, big marble tables and velvet sofa. We have a seating capacity of 78 people.\r\n- Our chef has spent nine years honing his skills in countries such as Canada and Portugal.\r\n- We also have a fully stocked bar and live entertainment to provide a lively atmosphere.\r\n- Have tie up with Zomato and we have a 3.9 star rating. 매각 사유: Looking for a strategic financial partner who is able to help grow the business.",
-    "facilities": [
-      "SMERGERS 소수지분",
-      "연매출 IDR 7.04B",
-      "EBITDA 마진 14 %",
-      "플랫폼 인증: Google",
-      "매도인 활동 Moderately Active"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "📊",
-    "badge": "M&A 플랫폼",
-    "source": "smergers.com",
-    "sourceUrl": "https://www.smergers.com/business/bar-equity-stake-for-sale-in-special-capital-region-of-jakarta-indonesia/1nnnv/",
-    "postedAt": null,
-    "listingActivity": "Moderately Active",
-    "platformRating": 6.5,
-    "platformRatingCount": 1,
-    "platformVerified": [
-      "Google"
-    ],
-    "dealStructure": "소수지분",
-    "dealLabel": "Partial Stake Sale",
-    "stakePercent": 35.0,
-    "ebitdaMargin": "14 %",
-    "annualRevenueNum": 7040000000,
-    "sellReason": "Looking for a strategic financial partner who is able to help grow the business.",
-    "regionPriority": 1,
-    "lat": null,
-    "lng": null,
-    "summaryKo": [
-      "업종/용도: 카페 · 음식점"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
-    "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 2.7십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매출·수익 수치가 제시됨",
-      "매출·EBITDA 가 공개됨",
-      "연매출·EBITDA 마진이 수치로 제시됨"
-    ],
-    "operabilityTodos": [
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": true,
     "_tierIndex": 2,
     "_tierLabel": "2단계 ₩1~3억",
     "_tierNote5": "인수가 ≈₩2.34억 · PMA 투자계획 미달 + 납입자본 Rp 25억(≈₩2.2억)이 인수가를 넘거나 비슷함 - 총 소요 현금이 인수가보다 커진다",
@@ -2296,80 +2074,6 @@ const SMERGERS_LISTINGS = [
     "lng": null,
     "summaryKo": [
       "업종/용도: 소매·유통"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
-    "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
-      "인수가 Rp 4.5십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매출·수익 수치가 제시됨",
-      "매출·EBITDA 가 공개됨",
-      "연매출·EBITDA 마진이 수치로 제시됨"
-    ],
-    "operabilityTodos": [
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": true,
-    "_tierIndex": 3,
-    "_tierLabel": "3단계 ₩3~5억",
-    "_tierNote5": "인수가 ≈₩3.86억 · PMA 투자계획 미달 - 복수 매물 묶음 또는 기존 PMA 활용 전제",
-    "_dealStructure": "소수지분",
-    "_dealStructureNote": "50% 미만 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
-  },
-  {
-    "id": "smg-rjf6y",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Edutech Company Equity Stake For Sale in Special Capital Region of Jakarta, Indonesia",
-    "category": "광고·마케팅",
-    "location": "Special Capital Region of Jakarta",
-    "locationKo": "자카르타",
-    "address": "Special Capital Region of Jakarta, Indonesia",
-    "monthlyRevenue": "IDR 27 jt/월",
-    "monthlyRevenueNum": 26666666,
-    "profit": null,
-    "price": "IDR 4.48 M",
-    "priceNum": 4480000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Online Psychological Test website having 24 different sets of questionnaires seeks funding. It is an online psychological test website.\r\n- This helps to know the strengths and weaknesses of personality, effective communication, behaviour under pressure.\r\n- It can also be used as a social media to communicate with others, such as sending and receiving messages, viewing friend&#x27;s status or commenting on a post.\r\n- We have 1,000 registered users so far.\r\n- It consists of 24 different sets of questionnaires.\r\n- There are 2 other doctors connected to this website.\r\n- Revenue model: 2 modes of subscription charges.\r\n- Owner has one year of industry experience and he is a psychologist himself. 매각 사유: I need additional funds for operational costs, product development, promotions.At present all costs come from personal funds.",
-    "facilities": [
-      "SMERGERS 소수지분",
-      "연매출 IDR 0.32B",
-      "EBITDA 마진 5 %",
-      "플랫폼 인증: LinkedIn·Phone",
-      "매도인 활동 Active"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "📊",
-    "badge": "M&A 플랫폼",
-    "source": "smergers.com",
-    "sourceUrl": "https://www.smergers.com/business/edutech-company-equity-stake-for-sale-in-special-capital-region-of-jakarta-indonesia/rjf6y/",
-    "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 6.2,
-    "platformRatingCount": 1,
-    "platformVerified": [
-      "LinkedIn",
-      "Phone"
-    ],
-    "dealStructure": "소수지분",
-    "dealLabel": "Partial Stake Sale",
-    "stakePercent": 10.0,
-    "ebitdaMargin": "5 %",
-    "annualRevenueNum": 320000000,
-    "sellReason": "I need additional funds for operational costs, product development, promotions.At present all costs come from personal funds.",
-    "regionPriority": 1,
-    "lat": null,
-    "lng": null,
-    "summaryKo": [
-      "업종/용도: 광고·마케팅"
     ],
     "foreignStatus": "조건부",
     "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
@@ -2956,7 +2660,7 @@ const SMERGERS_LISTINGS = [
     "sourceUrl": "https://www.smergers.com/business/restaurant-equity-stake-for-sale-in-jakarta-indonesia/uzu6a/",
     "postedAt": null,
     "listingActivity": "Active",
-    "platformRating": 6.9,
+    "platformRating": 6.8,
     "platformRatingCount": 2,
     "platformVerified": [
       "Email",
@@ -3373,78 +3077,6 @@ const SMERGERS_LISTINGS = [
     "_dealStructureNote": "50% 미만 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
   },
   {
-    "id": "smg-3nfhf",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Car Dealers Company Equity Stake For Sale in Special Capital Region of Jakarta, Indonesia",
-    "category": "IT·소프트웨어",
-    "location": "Special Capital Region of Jakarta",
-    "locationKo": "자카르타",
-    "address": "Special Capital Region of Jakarta, Indonesia",
-    "monthlyRevenue": "IDR 893 jt/월",
-    "monthlyRevenueNum": 893333333,
-    "profit": null,
-    "price": "IDR 13.44 M",
-    "priceNum": 13440000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Company sells multiple brands and types of cars in Indonesia through offline and online platforms. Newly established company selling cars of various brands across Indonesia.\r\n- Have more than 13 conventional dealers.\r\n- We have listed more than 10 brands on our website.\r\n- Have served more than 88 customer through offline store and 230 customers through online website.\r\n- On average, we receive 2-5 customer on a daily basis.\r\n- Have received more than 230 orders since November 2018.\r\n- 70% of the revenue is generated through online sales and 30% from showroom.\r\n- Promoter has more than 20 years of combined experience in sales and technology industry. 매각 사유: Have realized that transforming customer behavior from conventional to digital method requires digital transformation journey. So we keep providing offline purchase channel through retail showroom. As part of transformation strategies, we will conduct campaigns for customers through social media, automotive websites and marketing events. Funding would be utilized for this purpose.",
-    "facilities": [
-      "SMERGERS 소수지분",
-      "연매출 IDR 10.72B",
-      "EBITDA 마진 20 %",
-      "플랫폼 인증: Phone",
-      "매도인 활동 Moderately Active"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "📊",
-    "badge": "M&A 플랫폼",
-    "source": "smergers.com",
-    "sourceUrl": "https://www.smergers.com/business/car-dealers-company-equity-stake-for-sale-in-special-capital-region-of-jakarta-indonesia/3nfhf/",
-    "postedAt": null,
-    "listingActivity": "Moderately Active",
-    "platformRating": 6.4,
-    "platformRatingCount": 1,
-    "platformVerified": [
-      "Phone"
-    ],
-    "dealStructure": "소수지분",
-    "dealLabel": "Partial Stake Sale",
-    "stakePercent": 30.0,
-    "ebitdaMargin": "20 %",
-    "annualRevenueNum": 10720000000,
-    "sellReason": "Have realized that transforming customer behavior from conventional to digital method requires digital transformation journey. So we keep providing offline purchase channel through retail showroom. As part of transformation strategies, we will conduct campaigns for customers through social media, automotive websites and marketing events. Funding would be utilized for this purpose.",
-    "regionPriority": 1,
-    "lat": null,
-    "lng": null,
-    "summaryKo": [
-      "업종/용도: IT·소프트웨어"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
-    "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매출·수익 수치가 제시됨",
-      "매출·EBITDA 가 공개됨",
-      "연매출·EBITDA 마진이 수치로 제시됨"
-    ],
-    "operabilityTodos": [
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": true,
-    "_tierIndex": 9,
-    "_tierLabel": "구간 밖",
-    "_tierNote5": "인수가 ≈₩11.6억 - ₩10억 초과",
-    "_dealStructure": "소수지분",
-    "_dealStructureNote": "50% 미만 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
-  },
-  {
     "id": "smg-t3j9f",
     "type": "bisnis",
     "subtype": "akuisisi",
@@ -3665,81 +3297,6 @@ const SMERGERS_LISTINGS = [
     "_tierNote5": "인수가 ≈₩27.0억 - ₩10억 초과",
     "_dealStructure": "소수지분",
     "_dealStructureNote": "50% 미만 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
-  },
-  {
-    "id": "smg-aadva",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Mining Support Company Equity Stake For Sale in Jakarta, Indonesia",
-    "category": "광업",
-    "location": "Jakarta",
-    "locationKo": "자카르타",
-    "address": "Jakarta, Special Capital Region of Jakarta, Indonesia",
-    "monthlyRevenue": "IDR 2133 jt/월",
-    "monthlyRevenueNum": 2133333333,
-    "profit": null,
-    "price": "IDR 36.32 M",
-    "priceNum": 36320000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Well established mining consultant & management group servicing the SE Asia mining industry. Leading service provider for the mining industry in South East Asia.\r\n- We provide a wide range of services including exploration services & management, mine management services, JORC reporting, advisory services for M&A, mine survey services, and much more.\r\n- Have executed over 1,000 projects for 100+ clients including international & domestic banks, private equity companies, mine owners, and mining contractors. We are accredited and respected within the mining industry.\r\n- Our wide range of services can primarily be divided into two verticals: technical services and on-site management services. The revenue split is 50-50 for both verticals.\r\n- We execute 5-10 technical service projects every month and 1-2 on-site management projects every year. The duration of our on-site projects ranges from 1-5 years.\r\n- We have 8 projects in hand with each project bringing in a revenue of about USD 100,000.\r\n- Business has huge potential for growth into mine equity ownership, operational management, and life of mine projects.\r\n- Business owned assets include 3-story building, interior furnishing, and mining equipment. Our group&#x27;s headquarters is in Jakarta and our branch office is in Downtown Core, Singapore. 매각 사유: Required to downsize & restructure and service some tax liabilities to allow readiness to commence pre-COVID negotiated contracts and allow a return to new normal with reduced overheads and higher profitability.Valuation is based on projected growth and profitability post-restructuring.",
-    "facilities": [
-      "SMERGERS 지분양수",
-      "연매출 IDR 25.60B",
-      "EBITDA 마진 10 - 20 %",
-      "플랫폼 인증: Facebook·Google·Phone",
-      "매도인 활동 Moderately Active"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "📊",
-    "badge": "M&A 플랫폼",
-    "source": "smergers.com",
-    "sourceUrl": "https://www.smergers.com/business/mining-support-company-equity-stake-for-sale-in-jakarta-indonesia/aadva/",
-    "postedAt": null,
-    "listingActivity": "Moderately Active",
-    "platformRating": 6.8,
-    "platformRatingCount": 1,
-    "platformVerified": [
-      "Facebook",
-      "Google",
-      "Phone"
-    ],
-    "dealStructure": "지분양수",
-    "dealLabel": "Partial Stake Sale",
-    "stakePercent": 60.0,
-    "ebitdaMargin": "10 - 20 %",
-    "annualRevenueNum": 25600000000,
-    "sellReason": "Required to downsize & restructure and service some tax liabilities to allow readiness to commence pre-COVID negotiated contracts and allow a return to new normal with reduced overheads and higher profitability.Valuation is based on projected growth and profitability post-restructuring.",
-    "regionPriority": 1,
-    "lat": null,
-    "lng": null,
-    "summaryKo": [
-      "업종/용도: 광업"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
-    "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매출·수익 수치가 제시됨",
-      "매출·EBITDA 가 공개됨",
-      "영업 기간(업력)이 제시됨",
-      "연매출·EBITDA 마진이 수치로 제시됨"
-    ],
-    "operabilityTodos": [
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": true,
-    "_tierIndex": 9,
-    "_tierLabel": "구간 밖",
-    "_tierNote5": "인수가 ≈₩31.3억 - ₩10억 초과",
-    "_dealStructure": "지분양수",
-    "_dealStructureNote": "법인 주식을 인수하면 NIB·업종허가·거래처 계약이 함께 넘어온다. 대신 과거 세무·노무 우발부채도 함께 인수하므로 3개년 재무·세무 실사가 필수"
   },
   {
     "id": "smg-o5ujy",
@@ -4038,80 +3595,6 @@ const SMERGERS_LISTINGS = [
     "_tierNote5": "인수가 ≈₩386.2억 - ₩10억 초과",
     "_dealStructure": "소수지분",
     "_dealStructureNote": "50% 미만 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
-  },
-  {
-    "id": "smg-rpf0z",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Shopping Mall for Sale in Special Capital Region of Jakarta, Indonesia",
-    "category": "소매·유통",
-    "location": "Special Capital Region of Jakarta",
-    "locationKo": "자카르타",
-    "address": "Special Capital Region of Jakarta, Indonesia",
-    "monthlyRevenue": "IDR 2133 jt/월",
-    "monthlyRevenueNum": 2133333333,
-    "profit": null,
-    "price": "IDR 800.00 M",
-    "priceNum": 800000000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "6 storey shopping mall that has 2,000 shops spread across 60,000 sq mt seeks buyers. It&#x27;s a running shopping mall strategically located in Indonesia.\r\n- The mall is spread across the land area of 60,000 sq mt.\r\n- It has about 2,000 small shops and stands as 6 storey building.\r\n- Size of parking area: available for 500 cars.\r\n- Customer traffic is approx 3,000 per day. 매각 사유: We develop and sell mall.",
-    "facilities": [
-      "SMERGERS 지분양수",
-      "연매출 IDR 25.60B",
-      "EBITDA 마진 12 %",
-      "플랫폼 인증: Email·Google·Phone",
-      "매도인 활동 Active"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "📊",
-    "badge": "M&A 플랫폼",
-    "source": "smergers.com",
-    "sourceUrl": "https://www.smergers.com/business/shopping-mall-for-sale-in-special-capital-region-of-jakarta-indonesia/rpf0z/",
-    "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 7.2,
-    "platformRatingCount": 2,
-    "platformVerified": [
-      "Email",
-      "Google",
-      "Phone"
-    ],
-    "dealStructure": "지분양수",
-    "dealLabel": "Business for Sale",
-    "stakePercent": null,
-    "ebitdaMargin": "12 %",
-    "annualRevenueNum": 25600000000,
-    "sellReason": "We develop and sell mall.",
-    "regionPriority": 1,
-    "lat": null,
-    "lng": null,
-    "summaryKo": [
-      "업종/용도: 소매·유통"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
-    "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매출·수익 수치가 제시됨",
-      "매출·EBITDA 가 공개됨",
-      "연매출·EBITDA 마진이 수치로 제시됨"
-    ],
-    "operabilityTodos": [
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": true,
-    "_tierIndex": 9,
-    "_tierLabel": "구간 밖",
-    "_tierNote5": "인수가 ≈₩689.7억 - ₩10억 초과",
-    "_dealStructure": "지분양수",
-    "_dealStructureNote": "법인 주식을 인수하면 NIB·업종허가·거래처 계약이 함께 넘어온다. 대신 과거 세무·노무 우발부채도 함께 인수하므로 3개년 재무·세무 실사가 필수"
   },
   {
     "id": "smg-nr5zt",

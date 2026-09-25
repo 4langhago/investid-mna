@@ -1,8 +1,8 @@
 // 자동 생성 파일 — scraper/scrape_indoweb.py 가 갱신합니다. 직접 수정 금지.
 // 제목/지역/게시일/가격/면적/사실 요약만 보관한다.
 // 글쓴이 이름·전화·이메일·메신저 ID 는 저장하지 않는다(MASK_RE 로 제거).
-// 갱신 시각: 2026-09-24T04:56:15+00:00
-const COMMUNITY_LISTINGS_UPDATED_AT = "2026-09-24T04:56:15+00:00";
+// 갱신 시각: 2026-09-25T05:06:43+00:00
+const COMMUNITY_LISTINGS_UPDATED_AT = "2026-09-25T05:06:43+00:00";
 const COMMUNITY_LISTINGS = [
   {
     "id": "iw-real_estate_mb-10428",
@@ -59,7 +59,7 @@ const COMMUNITY_LISTINGS = [
     "operabilityReasons": [
       "사업자 등록·인허가 관련 언급이 있음",
       "공장 가동·거래처 등 제조 영업 기반이 언급됨",
-      "최근 게시(17일 전)"
+      "최근 게시(18일 전)"
     ],
     "operabilityTodos": [
       "인수가(권리금 포함) 미표기 - 매도인에게 총액과 포함 범위 확인",
@@ -121,7 +121,7 @@ const COMMUNITY_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "공장 가동·거래처 등 제조 영업 기반이 언급됨",
-      "최근 게시(23일 전)"
+      "최근 게시(24일 전)"
     ],
     "operabilityTodos": [
       "인수가(권리금 포함) 미표기 - 매도인에게 총액과 포함 범위 확인",
@@ -792,26 +792,25 @@ const COMMUNITY_LISTINGS = [
     "type": "properti",
     "subtype": "jual",
     "title": "SUBANG 공장 매물",
-    "category": "한인 커뮤니티 매물 · 봉제공장",
-    "dealType": "매매",
+    "category": "한인 커뮤니티 매물",
+    "dealType": null,
     "board": "부동산·업체 매매(주력)",
     "location": "Indonesia",
     "locationKo": "지역 미상",
-    "address": "JL SUBANG-CIKAMURANG KM 12 DESA PADAASIH CIBOGO SUBANG",
-    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \r\n *15년차 우본 공장 (헤비 가먼트) \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
+    "address": null,
+    "description": "오류안내 페이지 \r\n \r\n \n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \r\n\r\n \r\n \r\n 다음 항목에 오류가 있습니다. \r\n \r\n 글이 존재하지 않습니다.\n글이 삭제되었거나 이동된 경우입니다. \n\r\n \r\n 돌아가기",
     "whatsapp": null,
     "monthlyRevenue": null,
     "monthlyRevenueNum": null,
     "profit": null,
-    "price": "400 USD (가격 미표기로 간주)",
+    "price": null,
     "priceNum": null,
-    "area": 2.0,
+    "area": null,
     "floors": null,
     "established": null,
     "facilities": [
       "한인 커뮤니티",
-      "원문 링크에서 상세 확인",
-      "면적/방: 토지 62,300M2 건물 12500M2 ㎡"
+      "원문 링크에서 상세 확인"
     ],
     "c2c": false,
     "images": "🇰🇷",
@@ -832,17 +831,17 @@ const COMMUNITY_LISTINGS = [
       "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
       "SHM 이면 PT PMA + HGB 전환이 전제됨"
     ],
-    "operability": "확인필요",
+    "operability": "부적합",
     "operabilityReasons": [
-      "면적이 명시됨",
-      "주소가 기재됨"
+      "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
-    "koreanEligible": true
+    "koreanEligible": false
   },
   {
     "id": "iw-real_estate_mb-10404",
@@ -1092,7 +1091,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 183일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 184일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1160,7 +1159,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 241일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 242일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1222,7 +1221,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 246일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 247일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
@@ -1289,7 +1288,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 258일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 259일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1354,7 +1353,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 265일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 266일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1419,7 +1418,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 300일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 301일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1484,7 +1483,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 303일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 304일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1556,7 +1555,7 @@ const COMMUNITY_LISTINGS = [
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
-      "게시 후 307일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 308일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1628,7 +1627,7 @@ const COMMUNITY_LISTINGS = [
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
-      "게시 후 307일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 308일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1691,7 +1690,7 @@ const COMMUNITY_LISTINGS = [
       "권리 형태(증서)가 표기됨"
     ],
     "operabilityTodos": [
-      "게시 후 342일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 343일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1756,7 +1755,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 353일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 354일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
@@ -1822,7 +1821,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 357일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 358일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
