@@ -1,8 +1,8 @@
 // 자동 생성 파일 — scraper/scrape_indoweb.py 가 갱신합니다. 직접 수정 금지.
 // 제목/지역/게시일/가격/면적/사실 요약만 보관한다.
 // 글쓴이 이름·전화·이메일·메신저 ID 는 저장하지 않는다(MASK_RE 로 제거).
-// 갱신 시각: 2026-10-01T05:52:36+00:00
-const COMMUNITY_LISTINGS_UPDATED_AT = "2026-10-01T05:52:36+00:00";
+// 갱신 시각: 2026-10-02T05:42:14+00:00
+const COMMUNITY_LISTINGS_UPDATED_AT = "2026-10-02T05:42:14+00:00";
 const COMMUNITY_LISTINGS = [
   {
     "id": "iw-real_estate_mb-10428",
@@ -59,7 +59,7 @@ const COMMUNITY_LISTINGS = [
     "operabilityReasons": [
       "사업자 등록·인허가 관련 언급이 있음",
       "공장 가동·거래처 등 제조 영업 기반이 언급됨",
-      "최근 게시(24일 전)"
+      "최근 게시(25일 전)"
     ],
     "operabilityTodos": [
       "인수가(권리금 포함) 미표기 - 매도인에게 총액과 포함 범위 확인",
@@ -1091,7 +1091,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 190일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 191일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1159,7 +1159,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 248일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 249일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1221,7 +1221,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 253일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 254일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
@@ -1288,7 +1288,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 265일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 266일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1353,7 +1353,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 272일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 273일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1418,7 +1418,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 307일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 308일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1483,7 +1483,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 310일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 311일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1555,7 +1555,7 @@ const COMMUNITY_LISTINGS = [
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
-      "게시 후 314일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 315일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1627,7 +1627,7 @@ const COMMUNITY_LISTINGS = [
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
-      "게시 후 314일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 315일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1690,7 +1690,7 @@ const COMMUNITY_LISTINGS = [
       "권리 형태(증서)가 표기됨"
     ],
     "operabilityTodos": [
-      "게시 후 349일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 350일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1755,76 +1755,12 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 360일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 361일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
     "koreanEligible": false
-  },
-  {
-    "id": "iw-real_estate_mb-10373",
-    "type": "properti",
-    "subtype": "jual",
-    "title": "maikarta(soho)",
-    "category": "한인 커뮤니티 매물 · 아파트",
-    "dealType": "매매",
-    "board": "부동산·업체 매매(주력)",
-    "location": "Indonesia",
-    "locationKo": "지역 미상",
-    "address": "maikarta",
-    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \n \n \n \n \n \r\n 층고가 높아서 사무실 겸용으로 사용 가능 합니다. \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
-    "whatsapp": null,
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "1,200,000,000 IDR",
-    "priceNum": 1200000000.0,
-    "area": 91.31,
-    "floors": null,
-    "established": null,
-    "facilities": [
-      "한인 커뮤니티",
-      "원문 링크에서 상세 확인",
-      "면적/방: 91.31㎡, 4개"
-    ],
-    "c2c": false,
-    "images": "🇰🇷",
-    "photoUrls": [
-      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=610031449_10LQTxf9_1.jpeg",
-      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=610031449_HGJIYcaw_2.jpeg",
-      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=610031449_wE7L8YDs_3.jpeg",
-      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=610031449_VJUxsni5_4.jpeg",
-      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=610031449_n4o2DhG5_5.jpeg"
-    ],
-    "badge": "커뮤니티 매물",
-    "source": "indoweb.org",
-    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10373&page=2",
-    "postedAt": "2025-10-02T00:00:00+00:00",
-    "indexOnly": false,
-    "lat": null,
-    "lng": null,
-    "summaryKo": [
-      "업종/용도: 사무실"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "SOHO·사무실 분양 - 비주거용이라 외국인 개인 명의 불가, PT PMA 명의로 취득",
-    "foreignSteps": [
-      "PT PMA 설립 후 법인 명의 취득(건물 토지가 HGB 인지 확인)",
-      "사업장 주소로 쓰려면 건물 용도가 사무실(PBG/SLF)로 등록돼 있는지 확인"
-    ],
-    "operability": "확인필요",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "주소가 기재됨"
-    ],
-    "operabilityTodos": [
-      "게시 후 364일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
-      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
   }
 ];

@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-10-01T05:43:46+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-01T05:43:46+00:00";
+// 갱신 시각: 2026-10-02T05:33:47+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-02T05:33:47+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -1212,7 +1212,7 @@ const SMERGERS_LISTINGS = [
       "연매출 IDR 0.45B",
       "EBITDA 마진 40 %",
       "플랫폼 인증: Google·Phone",
-      "매도인 활동 Active"
+      "매도인 활동 Moderately Active"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -1221,8 +1221,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/consulting-company-equity-stake-for-sale-in-jakarta-indonesia/d091l/",
     "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 7.2,
+    "listingActivity": "Moderately Active",
+    "platformRating": 6.5,
     "platformRatingCount": 2,
     "platformVerified": [
       "Google",
