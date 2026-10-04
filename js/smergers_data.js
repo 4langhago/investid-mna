@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-10-03T05:16:39+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-03T05:16:39+00:00";
+// 갱신 시각: 2026-10-04T05:47:06+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-04T05:47:06+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -691,7 +691,7 @@ const SMERGERS_LISTINGS = [
     "sourceUrl": "https://www.smergers.com/business/payment-services-company-equity-stake-for-sale-in-south-jakarta-indonesia/ivdp7/",
     "postedAt": null,
     "listingActivity": "Active",
-    "platformRating": 8.5,
+    "platformRating": 8.4,
     "platformRatingCount": 5,
     "platformVerified": [
       "LinkedIn",
@@ -4292,7 +4292,7 @@ const SMERGERS_LISTINGS = [
     "sourceUrl": "https://www.smergers.com/business/digital-marketing-company-equity-stake-for-sale-in-albuquerque-usa/xu7hv/",
     "postedAt": null,
     "listingActivity": "Active",
-    "platformRating": 8.2,
+    "platformRating": 8.1,
     "platformRatingCount": 1,
     "platformVerified": [
       "Google",
