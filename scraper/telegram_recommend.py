@@ -19,6 +19,10 @@
   python scraper/telegram_recommend.py --dry-run   # 전송 없이 선정 결과만 출력
   python scraper/telegram_recommend.py --verify-urls  # 원본 URL 생존까지 확인
   python scraper/telegram_recommend.py --test-mode    # 0건일 때 "추천 매물 없음" 1줄만
+  python scraper/telegram_recommend.py --summary      # 전송 없이 매물당 링크 + 3줄 요약만 출력
+
+2026-10-05: 텔레그램 발송을 전면 중지했다(저장소 변수 TELEGRAM_ENABLED=false).
+당분간은 --summary 로 추천 매물을 링크와 3줄 요약으로만 확인한다.
 """
 import json
 import os
@@ -40,7 +44,7 @@ import legal_check as lc  # noqa: E402
 import listing_history as lh  # noqa: E402
 import operability as op  # noqa: E402
 import places_check as pc  # noqa: E402
-from korean_brief import build_korean_brief, build_korean_detail  # noqa: E402
+from korean_brief import build_korean_brief, build_korean_detail, detect_business_kind  # noqa: E402
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -806,6 +810,47 @@ def format_item(item, rank, total, peers):
     return "\n".join(lines)
 
 
+def build_summary(item, rank, total):
+    """매물 1건을 제목 + 원문 링크 + 3줄로 줄인다(--summary).
+
+    텔레그램 발송을 멈춘 동안 쓰는 형식이다. 상세 메시지(format_item)와 같은 판정 함수를
+    쓰므로 내용이 서로 어긋나지 않는다. 3줄은 '무엇을 · 얼마에 · 살 수 있고 굴릴 수 있는가'.
+    """
+    title = re.sub(r"^[^|]{1,20}\|\s*", "", str(item.get("title") or ""))
+    # 업종은 관문이 실제로 판정에 쓴 값을 먼저 쓴다. 설명문 키워드(detect_business_kind)는
+    # 부수 언급까지 잡아 요가 스튜디오가 '카페·음식점'으로 찍히는 식으로 어긋난다.
+    kind = (bg.detect_sector(item)[0] or " · ".join(detect_business_kind(item))
+            or item.get("category") or "업종 미상")
+    where = item.get("locationKo") or item.get("location") or item.get("address") or "위치 미상"
+
+    money = [str(item.get("price") or "가격 미표기 - 매도인 문의")]
+    if item.get("_tierLabel"):
+        money.append(str(item["_tierLabel"]))
+    if item.get("_dealStructure"):
+        money.append(str(item["_dealStructure"]))
+
+    op_status = op.classify(item)[0]
+    fe_status, fe_reason, _steps = fe.classify(item)
+
+    return "\n".join([
+        f"[{rank}/{total}] {title}",
+        str(item.get("sourceUrl") or ""),
+        f"- {kind} · {where}",
+        f"- {' · '.join(money)}",
+        f"- 운영 가능성 {op_status} · 외국인 취득 {fe_status} — {fe_reason}",
+    ])
+
+
+def build_summary_report(picked, scanned):
+    """--summary 전체 출력. 0건이어도 한 줄은 남긴다(파이프라인이 죽은 날과 구분)."""
+    today = datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d")
+    if not picked:
+        return f"오늘의 매물 추천 ({today}) — 기준을 넘는 매물 없음 (수집 {scanned}건 전부 탈락)"
+    blocks = [f"오늘의 매물 추천 ({today}) — {len(picked)}건"]
+    blocks += [build_summary(x, i, len(picked)) for i, x in enumerate(picked, 1)]
+    return "\n\n".join(blocks)
+
+
 def build_empty_message(scanned, rejected):
     """추천 0건인 날의 알림. 아무것도 안 보내면 파이프라인이 죽은 것과 구분되지 않는다."""
     today = datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d")
@@ -954,6 +999,7 @@ def main():
     dry_run = "--dry-run" in sys.argv
     check_url = "--verify-urls" in sys.argv
     test_mode = "--test-mode" in sys.argv
+    summary = "--summary" in sys.argv
 
     # 2026-09-17 정책 변경: '인수해서 실제로 사업을 굴릴 수 있는 매물'만 보낸다.
     # 예전에는 세 섹션(커뮤니티/사업체/부동산)을 슬롯 수만큼 채워 보냈다. 그러면 기준을
@@ -1016,6 +1062,20 @@ def main():
 
     for x in picked:
         x["_historyNotes"] = lh.notes(history, x)
+
+    if summary:
+        # 발송 중지 기간: 텔레그램으로는 아무것도 보내지 않고 요약만 남긴다.
+        # 보낸 것이 없으므로 발송 상태(telegram_state.json)도 건드리지 않는다.
+        report = build_summary_report(picked, len(pool))
+        print("----- 추천 요약 -----")
+        print(report)
+        print("---------------------")
+        step_summary = os.environ.get("GITHUB_STEP_SUMMARY")
+        if step_summary:
+            # Actions 실행 페이지에서 로그를 뒤지지 않고 바로 보이게 한다.
+            with open(step_summary, "a", encoding="utf-8") as f:
+                f.write(f"```\n{report}\n```\n")
+        return
 
     if picked:
         messages = build_messages(picked, updated_at, peers=candidates)

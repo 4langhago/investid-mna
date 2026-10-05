@@ -123,10 +123,19 @@ jobs:
           GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
         run: python scraper/telegram_recommend.py
 
+      # 2026-10-05: 텔레그램 발송 전면 중지(TELEGRAM_ENABLED=false). 중지 기간에는 선정만 돌려
+      # 매물당 링크 + 3줄 요약을 실행 페이지(Summary)에 남긴다. 이 스텝에는 텔레그램 토큰을
+      # 넘기지 않으므로 어떤 경로로도 발송되지 않는다.
+      - name: 매물 추천 요약 (텔레그램 발송 중지 기간 — 링크 + 3줄)
+        if: ${{ vars.TELEGRAM_ENABLED == 'false' }}
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+        run: python scraper/telegram_recommend.py --summary
+
       # 매물 이력(가격 변동·체류 기간)과 Places 캐시는 실행 간에 유지돼야 의미가 있다.
       # 커밋하지 않으면 매 실행이 '첫 실행'이 되어 추적이 영원히 시작되지 않는다.
+      # 발송 중지 기간에도 이력은 계속 쌓는다(요약 스텝이 이력을 갱신한다).
       - name: 발송 상태·매물 이력 커밋 & 푸시
-        if: ${{ vars.TELEGRAM_ENABLED != 'false' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
