@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-10-05T05:33:19+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-05T05:33:19+00:00";
+// 갱신 시각: 2026-10-06T06:20:29+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-06T06:20:29+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -893,7 +893,7 @@ const SMERGERS_LISTINGS = [
     "id": "smg-50ynf",
     "type": "bisnis",
     "subtype": "akuisisi",
-    "title": "Profitable Ecommerce Website Equity Stake For Sale in Jakarta, Indonesia",
+    "title": "Profitable Paper Packaging Company Equity Stake For Sale in Jakarta, Indonesia",
     "category": "제조",
     "location": "Jakarta",
     "locationKo": "자카르타",
@@ -919,7 +919,7 @@ const SMERGERS_LISTINGS = [
     "images": "📊",
     "badge": "M&A 플랫폼",
     "source": "smergers.com",
-    "sourceUrl": "https://www.smergers.com/business/profitable-ecommerce-website-equity-stake-for-sale-in-jakarta-indonesia/50ynf/",
+    "sourceUrl": "https://www.smergers.com/business/profitable-paper-packaging-company-equity-stake-for-sale-in-jakarta-indonesia/50ynf/",
     "postedAt": null,
     "listingActivity": "Moderately Active",
     "platformRating": 6.5,
@@ -2121,7 +2121,7 @@ const SMERGERS_LISTINGS = [
       "연매출 IDR 7.52B",
       "EBITDA 마진 22 %",
       "플랫폼 인증: Google·Phone",
-      "매도인 활동 Active"
+      "매도인 활동 Moderately Active"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -2130,8 +2130,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/profitable-specialty-retailer-equity-stake-for-sale-in-jakarta-indonesia/7avvx/",
     "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 7.8,
+    "listingActivity": "Moderately Active",
+    "platformRating": 7.2,
     "platformRatingCount": 2,
     "platformVerified": [
       "Google",
@@ -2718,7 +2718,7 @@ const SMERGERS_LISTINGS = [
       "연매출 IDR 3.74B",
       "EBITDA 마진 10 - 20 %",
       "플랫폼 인증: Email·Google",
-      "매도인 활동 Active"
+      "매도인 활동 Moderately Active"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -2727,8 +2727,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/interior-design-architecture-for-sale-in-jakarta-indonesia/i7viy/",
     "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 6.6,
+    "listingActivity": "Moderately Active",
+    "platformRating": 6.0,
     "platformRatingCount": 2,
     "platformVerified": [
       "Email",
@@ -3667,6 +3667,81 @@ const SMERGERS_LISTINGS = [
     "_dealStructureNote": "법인 주식을 인수하면 NIB·업종허가·거래처 계약이 함께 넘어온다. 대신 과거 세무·노무 우발부채도 함께 인수하므로 3개년 재무·세무 실사가 필수"
   },
   {
+    "id": "smg-nr5lx",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Vehicle Rental Company Equity Stake For Sale in East Jakarta, Indonesia",
+    "category": "물류",
+    "location": "East Jakarta",
+    "locationKo": "자카르타 동부",
+    "address": "East Jakarta, Special Capital Region of Jakarta, Indonesia",
+    "monthlyRevenue": "IDR 960 jt/월",
+    "monthlyRevenueNum": 960000000,
+    "profit": null,
+    "price": "IDR 28.80 M",
+    "priceNum": 28800000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Long-established vehicle rental business with 42-vehicle fleet, recurring corporate rentals, and diversified revenue streams. Long-established vehicle rental business with 5 decades of industry experience and a proven operating track record.\r\n- Proven recurring revenue model driven primarily by long-term/monthly vehicle rentals (70–75%) followed by short-term rentals (15–20%), chauffeur-driven rentals (5–10%), and driver outsourcing (approximately 5%).\r\n- Long-term/monthly rentals are typically priced at IDR 5–15 million per vehicle per month, short-term rentals at IDR 500,000–1.5 million per vehicle per day, chauffeur-driven rentals at IDR 800,000–2 million per day, and driver outsourcing at IDR 4–7 million per driver per month.\r\n- Long-standing relationships with corporate customers and experience managing recurring fleet requirements.\r\n- Asset-backed business model with an operating fleet of approximately 42 vehicles and supporting operational facilities.\r\n- Experienced founder-led management with extensive industry and operational knowledge.\r\n- Growth strategy includes fleet expansion, adoption of EV and hybrid vehicles, and potential diversification into commercial and logistics vehicle rental.\r\n- The business holds a valid business registration certificate. 매각 사유: The business is being offered for investment primarily as part of a family succession and retirement plan. One of the existing shareholders, the founder’s father, holds 50% of the company and plans to retire, while the remaining 50% is held by the other shareholder.The investment will provide capital to expand the vehicle fleet, strengthen working capital, and support future business diversification, including commercial and logistics vehicle rental.The preferred transaction is to offer a 70% stake to an investor, with the remaining 30% retained by the existing shareholder, as this would provide greater capital to support the company’s expansion.",
+    "facilities": [
+      "SMERGERS 지분양수",
+      "연매출 IDR 11.52B",
+      "EBITDA 마진 40 %",
+      "플랫폼 인증: Google·LinkedIn·Phone",
+      "매도인 활동 Active"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "📊",
+    "badge": "M&A 플랫폼",
+    "source": "smergers.com",
+    "sourceUrl": "https://www.smergers.com/business/vehicle-rental-company-equity-stake-for-sale-in-east-jakarta-indonesia/nr5lx/",
+    "postedAt": null,
+    "listingActivity": "Active",
+    "platformRating": 9.4,
+    "platformRatingCount": 1,
+    "platformVerified": [
+      "Google",
+      "LinkedIn",
+      "Phone"
+    ],
+    "dealStructure": "지분양수",
+    "dealLabel": "Partial Stake Sale",
+    "stakePercent": 70.0,
+    "ebitdaMargin": "40 %",
+    "annualRevenueNum": 11520000000,
+    "sellReason": "The business is being offered for investment primarily as part of a family succession and retirement plan. One of the existing shareholders, the founder’s father, holds 50% of the company and plans to retire, while the remaining 50% is held by the other shareholder.The investment will provide capital to expand the vehicle fleet, strengthen working capital, and support future business diversification, including commercial and logistics vehicle rental.The preferred transaction is to offer a 70% stake to an investor, with the remaining 30% retained by the existing shareholder, as this would provide greater capital to support the company’s expansion.",
+    "regionPriority": 1,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 창고·물류"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매출·수익 수치가 제시됨",
+      "매출·EBITDA 가 공개됨",
+      "고정 고객·거래처 기반이 언급됨",
+      "연매출·EBITDA 마진이 수치로 제시됨"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true,
+    "_tierIndex": 9,
+    "_tierLabel": "구간 밖",
+    "_tierNote5": "인수가 ≈₩24.8억 - ₩10억 초과",
+    "_dealStructure": "지분양수",
+    "_dealStructureNote": "법인 주식을 인수하면 NIB·업종허가·거래처 계약이 함께 넘어온다. 대신 과거 세무·노무 우발부채도 함께 인수하므로 3개년 재무·세무 실사가 필수"
+  },
+  {
     "id": "smg-voivr",
     "type": "bisnis",
     "subtype": "akuisisi",
@@ -4220,7 +4295,7 @@ const SMERGERS_LISTINGS = [
     "sourceUrl": "https://www.smergers.com/business/restaurant-for-sale-in-banten-indonesia/nr5zt/",
     "postedAt": null,
     "listingActivity": "미표기",
-    "platformRating": 6.9,
+    "platformRating": 6.8,
     "platformRatingCount": 1,
     "platformVerified": [
       "Email",
