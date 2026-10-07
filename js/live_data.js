@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_99co.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-10-06T20:45:33+07:00
-const LIVE_LISTINGS_UPDATED_AT = "2026-10-06T20:45:33+07:00";
+// 갱신 시각: 2026-10-07T22:43:05+07:00
+const LIVE_LISTINGS_UPDATED_AT = "2026-10-07T22:43:05+07:00";
 const LIVE_LISTINGS = [
   {
     "id": "live-1013245929",
@@ -645,26 +645,26 @@ const LIVE_LISTINGS = [
     "koreanEligible": true
   },
   {
-    "id": "live-1010254967",
+    "id": "live-1011815588",
     "type": "ruko",
     "subtype": "jual",
-    "title": "Jual Super Murah Ruko Santa Monica,Gading Serpong Tangerang",
+    "title": "Unit Ruko Dijual di Tangerang LT 108m2 & LB 250m2",
     "category": "루코",
     "location": "Tangerang",
     "locationKo": "탕그랑",
     "monthlyRevenue": null,
     "monthlyRevenueNum": null,
     "profit": null,
-    "price": "Rp 1,85 Miliar",
-    "priceNum": 1850000000,
+    "price": "Rp 3,3 Miliar",
+    "priceNum": 3300000000,
     "established": null,
-    "area": 95.0,
-    "floors": 2,
-    "description": "Unit komersial di Tangerang dijual dengan LT 63m2, LB 95m2 Kawasan sangat strategis, cocok untuk investasi Lokasi di area ramai. 8 menit ke SutraLoop, 13 menit ke Terminal Cimone Harga Rp 1,85 Miliar ------------------------------------------------------------ Serial Ruko murah Ruko St. Monica Ga...",
+    "area": 250.0,
+    "floors": 4,
+    "description": "FOR SALE! Ruko di Tangerang, Banten. Spesifikasi: LT 108m2, LB 250m2, cocok untuk berbagai jenis bisnis Area tak perlu diragukan lagi karena strategis. 12 menit ke SutraLoop SHM ------------------------------------------------------------ Ruko lantai Granite ( 60 x 60 ), closet monoblok sandimas,...",
     "facilities": [
-      "토지 63m²",
+      "토지 108m²",
       "shm 증서",
-      "2층",
+      "4층",
       "99.co 실시간"
     ],
     "whatsapp": null,
@@ -672,16 +672,15 @@ const LIVE_LISTINGS = [
     "images": "🛰️",
     "badge": "매매",
     "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-1miliar-gading-serpong-cp-1010254967",
-    "lat": -6.22255,
-    "lng": 106.63623,
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-3miliar-gading-serpong-cp-1011815588",
+    "lat": -6.249063,
+    "lng": 106.6145316,
     "summaryKo": [
       "업종/용도: 상가·점포",
       "권리 형태: SHM(소유권)",
-      "토지 면적 63m²",
-      "건물 면적 95m²",
-      "요지 입지(매도인 주장)",
-      "유동인구·배후세대가 많은 곳(매도인 주장)"
+      "토지 면적 108m²",
+      "건물 면적 250m²",
+      "요지 입지(매도인 주장)"
     ],
     "foreignStatus": "조건부",
     "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
@@ -748,6 +747,65 @@ const LIVE_LISTINGS = [
     "operabilityTodos": [
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "live-1010254967",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Jual Super Murah Ruko Santa Monica,Gading Serpong Tangerang",
+    "category": "루코",
+    "location": "Tangerang",
+    "locationKo": "탕그랑",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 1,85 Miliar",
+    "priceNum": 1850000000,
+    "established": null,
+    "area": 95.0,
+    "floors": 2,
+    "description": "Unit komersial di Tangerang dijual dengan LT 63m2, LB 95m2 Kawasan sangat strategis, cocok untuk investasi Lokasi di area ramai. 8 menit ke SutraLoop, 13 menit ke Terminal Cimone Harga Rp 1,85 Miliar ------------------------------------------------------------ Serial Ruko murah Ruko St. Monica Ga...",
+    "facilities": [
+      "토지 63m²",
+      "shm 증서",
+      "2층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-1miliar-gading-serpong-cp-1010254967",
+    "lat": -6.22255,
+    "lng": 106.63623,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 63m²",
+      "건물 면적 95m²",
+      "요지 입지(매도인 주장)",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
+    "foreignSteps": [
+      "PT PMA 설립",
+      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
+      "전환 비용·기간을 매매 조건에 반영할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨",
+      "권리 형태(증서)가 표기됨"
+    ],
+    "operabilityTodos": [
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
     "koreanEligible": true
@@ -928,6 +986,56 @@ const LIVE_LISTINGS = [
     "koreanEligible": true
   },
   {
+    "id": "live-2205261",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Wander Alley Walk",
+    "category": "루코",
+    "location": "Tangerang",
+    "locationKo": "탕그랑",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 2,28 Miliar",
+    "priceNum": 2281997000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "<p>Wander Alley Walk merupakan klaster komersial terbaru di BSD City yang dirancang sebagai pusat bisnis dan lifestyle modern di kawasan Transit-Oriented Development (TOD) Intermoda. Berlokasi strategis di area Intermoda BSD City, Wander Alley Walk menghadirkan konsep komersial modern dengan perp...",
+    "facilities": [
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/wander-alley-walk-2205261",
+    "lat": -6.2819487,
+    "lng": 106.6635481,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
     "id": "live-1010254972",
     "type": "ruko",
     "subtype": "jual",
@@ -978,56 +1086,6 @@ const LIVE_LISTINGS = [
     ],
     "operabilityTodos": [
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-2205261",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Wander Alley Walk",
-    "category": "루코",
-    "location": "Tangerang",
-    "locationKo": "탕그랑",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 2,28 Miliar",
-    "priceNum": 2281997000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "<p>Wander Alley Walk merupakan klaster komersial terbaru di BSD City yang dirancang sebagai pusat bisnis dan lifestyle modern di kawasan Transit-Oriented Development (TOD) Intermoda. Berlokasi strategis di area Intermoda BSD City, Wander Alley Walk menghadirkan konsep komersial modern dengan perp...",
-    "facilities": [
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/wander-alley-walk-2205261",
-    "lat": -6.2819487,
-    "lng": 106.6635481,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "요지 입지(매도인 주장)"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
-    "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
-    ],
-    "operability": "확인필요",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음"
-    ],
-    "operabilityTodos": [
-      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
-      "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
     "koreanEligible": true
@@ -1208,6 +1266,54 @@ const LIVE_LISTINGS = [
     "koreanEligible": true
   },
   {
+    "id": "live-1108261",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "West Lakeside",
+    "category": "루코",
+    "location": "Tangerang",
+    "locationKo": "탕그랑",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 2,52 Miliar",
+    "priceNum": 2522017000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "<p>West Lakeside merupakan satu-satunya lakeside commercial destination di West BSD yang berlokasi di kawasan West Village Business District, BSD City. Dirancang sebagai landmark baru kawasan West BSD, West Lakeside menghadirkan pengalaman berbisnis dan lifestyle yang berpadu dengan panorama dana...",
+    "facilities": [
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/west-lakeside-1108261",
+    "lat": 0,
+    "lng": 0,
+    "summaryKo": [
+      "업종/용도: 상가·점포"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "매매가가 명시됨"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
     "id": "live-1012166965",
     "type": "ruko",
     "subtype": "jual",
@@ -1264,22 +1370,22 @@ const LIVE_LISTINGS = [
     "koreanEligible": true
   },
   {
-    "id": "live-1108261",
+    "id": "live-4239",
     "type": "ruko",
     "subtype": "jual",
-    "title": "West Lakeside",
+    "title": "Capital Cove, BSD City",
     "category": "루코",
     "location": "Tangerang",
     "locationKo": "탕그랑",
     "monthlyRevenue": null,
     "monthlyRevenueNum": null,
     "profit": null,
-    "price": "Rp 2,52 Miliar",
-    "priceNum": 2522017000,
+    "price": "Rp 20,1 Miliar",
+    "priceNum": 20100000000,
     "established": null,
     "area": null,
     "floors": null,
-    "description": "<p>West Lakeside merupakan satu-satunya lakeside commercial destination di West BSD yang berlokasi di kawasan West Village Business District, BSD City. Dirancang sebagai landmark baru kawasan West BSD, West Lakeside menghadirkan pengalaman berbisnis dan lifestyle yang berpadu dengan panorama dana...",
+    "description": "<p>Capital Cove merupakan Properti Business Loft yang dikembangkan oleh Sinar Mas Land dengan konsep True Multi-Tenant Business loft. Capital Cove berada di lokasi yang sangat strategis dan sudah berkembang yang sangat mendukung kesuksesan bisnis Anda.</p><p><br></p><p>Capital Cove memiliki Moder...",
     "facilities": [
       "99.co 실시간"
     ],
@@ -1288,11 +1394,12 @@ const LIVE_LISTINGS = [
     "images": "🛰️",
     "badge": "매매",
     "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/west-lakeside-1108261",
-    "lat": 0,
-    "lng": 0,
+    "sourceUrl": "https://www.99.co/id/properti/capital-cove-bsd-city-4239",
+    "lat": -6.672447099999999,
+    "lng": 108.5420875,
     "summaryKo": [
-      "업종/용도: 상가·점포"
+      "업종/용도: 상가·점포",
+      "요지 입지(매도인 주장)"
     ],
     "foreignStatus": "조건부",
     "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
@@ -1302,7 +1409,8 @@ const LIVE_LISTINGS = [
     ],
     "operability": "확인필요",
     "operabilityReasons": [
-      "매매가가 명시됨"
+      "매매가가 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음"
     ],
     "operabilityTodos": [
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
@@ -1371,56 +1479,6 @@ const LIVE_LISTINGS = [
     "koreanEligible": true
   },
   {
-    "id": "live-4239",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Capital Cove, BSD City",
-    "category": "루코",
-    "location": "Tangerang",
-    "locationKo": "탕그랑",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 20,1 Miliar",
-    "priceNum": 20100000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "<p>Capital Cove merupakan Properti Business Loft yang dikembangkan oleh Sinar Mas Land dengan konsep True Multi-Tenant Business loft. Capital Cove berada di lokasi yang sangat strategis dan sudah berkembang yang sangat mendukung kesuksesan bisnis Anda.</p><p><br></p><p>Capital Cove memiliki Moder...",
-    "facilities": [
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/capital-cove-bsd-city-4239",
-    "lat": -6.672447099999999,
-    "lng": 108.5420875,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "요지 입지(매도인 주장)"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
-    "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
-    ],
-    "operability": "확인필요",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음"
-    ],
-    "operabilityTodos": [
-      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
-      "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
     "id": "live-1005361060",
     "type": "ruko",
     "subtype": "jual",
@@ -1481,26 +1539,26 @@ const LIVE_LISTINGS = [
     "koreanEligible": true
   },
   {
-    "id": "live-1012119026",
+    "id": "live-1010254944",
     "type": "ruko",
     "subtype": "jual",
-    "title": "Jual Murah Ruko Estrella,Banjar Wijaya Cipete,Pinang Tangerang",
+    "title": "Jual Ruko Strategis Banjar Wijaya Cipondoh Tangerang",
     "category": "루코",
     "location": "Tangerang",
     "locationKo": "탕그랑",
     "monthlyRevenue": null,
     "monthlyRevenueNum": null,
     "profit": null,
-    "price": "Rp 1,55 Miliar",
-    "priceNum": 1550000000,
+    "price": "Rp 2,5 Miliar",
+    "priceNum": 2500000000,
     "established": null,
-    "area": 107.0,
-    "floors": 2,
-    "description": "Unit Ruko siap milik di Banjar Wijaya Tangerang Lokasi paling strategis. 9 menit ke Stasiun Tanah Tinggi, 10 menit ke Stasiun Batu Ceper, 11 menit ke Stasiun Tangerang Luas tanah 57m2, luas bangunan 107m2, dengan fasilitas sekitar yang lengkap. Harga jual Rp 1,55 Miliar --------------------------...",
+    "area": 255.0,
+    "floors": 1,
+    "description": "DIJUAL CEPAT Jual Ruko Strategis Banjar Wijaya Cipondoh Tangerang Ruko bagus di Banjar Wijaya Tangerang ini memiliki lokasi yang sangat strategis. 9 menit ke Stasiun Tanah Tinggi, 10 menit ke Stasiun Batu Ceper, 11 menit ke Stasiun Tangerang Jadi sangat memudahkan akses dan memiliki pasar yang be...",
     "facilities": [
-      "토지 57m²",
-      "ppjb 증서",
-      "2층",
+      "토지 75m²",
+      "shm 증서",
+      "1층",
       "99.co 실시간"
     ],
     "whatsapp": null,
@@ -1508,26 +1566,23 @@ const LIVE_LISTINGS = [
     "images": "🛰️",
     "badge": "매매",
     "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-1miliar-banjar-wijaya-cp-1012119026",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-2miliar-banjar-wijaya-cp-1010254944",
     "lat": -6.20296,
     "lng": 106.65992,
     "summaryKo": [
       "업종/용도: 상가·점포",
-      "권리 형태: PPJB(매매예약증서)",
-      "토지 면적 57m²",
-      "건물 면적 107m²",
-      "요지 입지(매도인 주장)",
-      "설비 일체 포함"
+      "권리 형태: SHM(소유권)",
+      "요지 입지(매도인 주장)"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
     "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+      "PT PMA 설립",
+      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
+      "전환 비용·기간을 매매 조건에 반영할 것"
     ],
     "operability": "운영가능",
     "operabilityReasons": [
-      "설비·집기 인계 범위가 언급됨",
       "매매가가 명시됨",
       "면적이 명시됨",
       "좌표가 있어 실물 위치를 특정할 수 있음",
@@ -1646,352 +1701,6 @@ const LIVE_LISTINGS = [
       "권리 형태(증서)가 표기됨"
     ],
     "operabilityTodos": [
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-1010254982",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Jual Ruko Strategis di Pinggir Jalan Raya Cipondoh Tangerang",
-    "category": "루코",
-    "location": "Tangerang",
-    "locationKo": "탕그랑",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 3,5 Miliar",
-    "priceNum": 3500000000,
-    "established": null,
-    "area": 228.0,
-    "floors": 3,
-    "description": "Ruko untuk dijual di Tangerang, Banten. Memiliki luas tanah 76m2 dan luas bangunan 228m2. Harga Rp 3,5 Miliar Dijual cepat! Hubungi kami sekarang juga. ------------------------------------------------------------ Dijual ruko di pinggir jalan raya cipondoh Tangerang Luas : 76 m2 3 lantai kamar man...",
-    "facilities": [
-      "토지 76m²",
-      "shm 증서",
-      "3층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-3miliar-cipondoh-cp-1010254982",
-    "lat": -6.20268,
-    "lng": 106.677887,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "권리 형태: SHM(소유권)",
-      "토지 면적 76m²",
-      "건물 면적 228m²",
-      "3층",
-      "요지 입지(매도인 주장)",
-      "간선도로변"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
-    "foreignSteps": [
-      "PT PMA 설립",
-      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
-      "전환 비용·기간을 매매 조건에 반영할 것"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨",
-      "권리 형태(증서)가 표기됨"
-    ],
-    "operabilityTodos": [
-      "상세 내용을 공개하지 않고 연락만 유도함",
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-1013737014",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Ruko Bagus Dijual LB 395m2 Lokasi Strategis Jakarta Selatan Area Cocok untuk Bisnis",
-    "category": "루코",
-    "location": "Jakarta Selatan",
-    "locationKo": "자카르타 남부",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 12,7 Juta",
-    "priceNum": 12750000,
-    "established": null,
-    "area": 395.0,
-    "floors": 4,
-    "description": "Ruko dijual di pusat bisnis Jakarta Selatan. Memiliki luas bangunan 395m2 dan tanah 173m2. Harga Rp 12,7 Juta nego Lokasi paling dicari. 2 menit ke Halte Pondok Indah, 4 menit ke Stasiun Cipete Raya, 4 menit ke MRT Lebak Bulus ------------------------------------------------------------ DIJUAL CE...",
-    "facilities": [
-      "토지 173m²",
-      "4층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-12jt-pondok-indah-cp-1013737014",
-    "lat": -6.2754,
-    "lng": 106.782059,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "건물 면적 395m²",
-      "요지 입지(매도인 주장)",
-      "가격 협의 가능"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
-    "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨"
-    ],
-    "operabilityTodos": [
-      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-1013608678",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Ruko Bagus Dijual LB 250m2 Lokasi Strategis Jakarta Selatan Area Cocok untuk Bisnis",
-    "category": "루코",
-    "location": "Jakarta Selatan",
-    "locationKo": "자카르타 남부",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 3,7 Miliar",
-    "priceNum": 3700000000,
-    "established": null,
-    "area": 250.0,
-    "floors": 3,
-    "description": "Dijual Ruko di Bangka. Memiliki luas tanah 100m2 dan bangunan 250m2, Ruko ini cocok dijadikan aset usaha Anda. Harga penawaran hanya Rp 3,7 Miliar! ------------------------------------------------------------ Kesempatan terbatas buat Anda dapatkan ruko nyaman dengan return investasi tinggi di Ban...",
-    "facilities": [
-      "토지 100m²",
-      "shm 증서",
-      "3층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-3miliar-bangka-cp-1013608678",
-    "lat": -6.26899,
-    "lng": 106.806,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "권리 형태: SHM(소유권)",
-      "토지 면적 100m²",
-      "건물 면적 250m²",
-      "요지 입지(매도인 주장)"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
-    "foreignSteps": [
-      "PT PMA 설립",
-      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
-      "전환 비용·기간을 매매 조건에 반영할 것"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨",
-      "권리 형태(증서)가 표기됨"
-    ],
-    "operabilityTodos": [
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-1013087840",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Ruko atau Rumah Akses Mudah ke Scbd & Kuningan, Siap Huni\"",
-    "category": "루코",
-    "location": "Jakarta Selatan",
-    "locationKo": "자카르타 남부",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 3,7 Miliar",
-    "priceNum": 3700000000,
-    "established": null,
-    "area": 150.0,
-    "floors": 2,
-    "description": "Dijual Ruko di Mampang. Memiliki luas tanah 100m2 dan bangunan 150m2, Ruko ini cocok dijadikan aset usaha Anda. Harga penawaran hanya Rp 3,7 Miliar! ------------------------------------------------------------ Ruko di Mampang. Cek segera ruko yang nyaman ini, dijual menghadirkan lingkungan fasili...",
-    "facilities": [
-      "토지 100m²",
-      "shm 증서",
-      "2층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-3miliar-mampang-cp-1013087840",
-    "lat": -6.26899,
-    "lng": 106.806,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "권리 형태: SHM(소유권)",
-      "토지 면적 100m²",
-      "즉시 입주 가능"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
-    "foreignSteps": [
-      "PT PMA 설립",
-      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
-      "전환 비용·기간을 매매 조건에 반영할 것"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨",
-      "권리 형태(증서)가 표기됨"
-    ],
-    "operabilityTodos": [
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-1014558327",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Ruko Baru Siap Pakai Turun Harga Bangka Kemang Jakarta Selatan",
-    "category": "루코",
-    "location": "Jakarta Selatan",
-    "locationKo": "자카르타 남부",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 3,4 Miliar",
-    "priceNum": 3400000000,
-    "established": null,
-    "area": 250.0,
-    "floors": 3,
-    "description": "DIJUAL CEPAT Ruko Baru Siap Pakai Turun Harga Bangka Kemang Jakarta Selatan Ruko bagus di Bangka Jakarta Selatan ini memiliki lokasi yang sangat strategis. 3 menit ke Halte Duren Tiga Pancoran, 4 menit ke Halte Duren Tiga Mampang Prapatan, 7 menit ke MRT Haji Nawi Jadi sangat memudahkan akses dan...",
-    "facilities": [
-      "토지 100m²",
-      "shm 증서",
-      "3층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-3miliar-bangka-cp-1014558327",
-    "lat": -6.26593,
-    "lng": 106.82502,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "권리 형태: SHM(소유권)",
-      "즉시 운영 가능",
-      "요지 입지(매도인 주장)",
-      "가격 인하됨"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
-    "foreignSteps": [
-      "PT PMA 설립",
-      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
-      "전환 비용·기간을 매매 조건에 반영할 것"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "현재 영업 중이라고 명시됨",
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨",
-      "권리 형태(증서)가 표기됨"
-    ],
-    "operabilityTodos": [
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-1013642282",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Untuk Dijual Ruko di Tebet Jakarta Selatan LT 153m2 / LB 700m2",
-    "category": "루코",
-    "location": "Jakarta Selatan",
-    "locationKo": "자카르타 남부",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 20 Miliar",
-    "priceNum": 20000000000,
-    "established": null,
-    "area": 700.0,
-    "floors": 1,
-    "description": "Ruko untuk dijual di Jakarta Selatan, DKI Jakarta. Memiliki luas tanah 153m2 dan luas bangunan 700m2. Harga Rp 20 Miliar Dijual cepat! Hubungi kami sekarang juga. ------------------------------------------------------------ Kesempatan terbatas buat Anda dapatkan ruko strategis dengan return inves...",
-    "facilities": [
-      "토지 153m²",
-      "1층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-20miliar-tebet-cp-1013642282",
-    "lat": -6.22881052,
-    "lng": 106.8507073,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "토지 면적 153m²",
-      "건물 면적 700m²",
-      "요지 입지(매도인 주장)"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
-    "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨"
-    ],
-    "operabilityTodos": [
-      "상세 내용을 공개하지 않고 연락만 유도함",
-      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
     "koreanEligible": true
@@ -2433,62 +2142,6 @@ const LIVE_LISTINGS = [
     "koreanEligible": false
   },
   {
-    "id": "live-1013527609",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Area Ramai! Ruko Dijual di Tebet untuk Bisnis Luas Bangunan 171m2",
-    "category": "루코",
-    "location": "Jakarta Selatan",
-    "locationKo": "자카르타 남부",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 2,9 Miliar",
-    "priceNum": 2900000000,
-    "established": null,
-    "area": 171.0,
-    "floors": 3,
-    "description": "Ruko dijual di Tebet, Jakarta Selatan, DKI Jakarta. Spesifikasi Ruko: Luas tanah 114m2, luas bangunan 171m2 Harga Rp 2,9 Miliar. Lokasi Ruko strategis. 1 menit ke Halte Bus Tebet, 1 menit ke Halte Supomo, 1 menit ke Halte Lapangan Ros ------------------------------------------------------------ D...",
-    "facilities": [
-      "토지 114m²",
-      "3층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-2miliar-tebet-cp-1013527609",
-    "lat": -6.22881052,
-    "lng": 106.8507073,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "토지 면적 114m²",
-      "건물 면적 171m²",
-      "요지 입지(매도인 주장)",
-      "유동인구·배후세대가 많은 곳(매도인 주장)"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
-    "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨"
-    ],
-    "operabilityTodos": [
-      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
     "id": "live-1014262067",
     "type": "ruko",
     "subtype": "jual",
@@ -2834,6 +2487,517 @@ const LIVE_LISTINGS = [
       "권리 형태(증서)가 표기됨"
     ],
     "operabilityTodos": [
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "live-1015123322",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Ruko Komersil 3 Lantai di Melawai",
+    "category": "루코",
+    "location": "Jakarta Selatan",
+    "locationKo": "자카르타 남부",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 14,5 Miliar",
+    "priceNum": 14500000000,
+    "established": null,
+    "area": 356.0,
+    "floors": 3,
+    "description": "Ruko untuk dijual, lokasi Kebayoran Baru Jakarta Selatan. Cocok untuk investasi Anda! Spesifikasi: LT 93m2, LB 356m2. Harga Rp 14,5 Miliar Ruko ini banyak dicari karena areanya yang amat strategis. 0 menit ke MRT Blok M, 0 menit ke Terminal Blok M, 1 menit ke Halte Gereja Melawai ----------------...",
+    "facilities": [
+      "토지 93m²",
+      "3층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-14miliar-kebayoran-baru-cp-1015123322",
+    "lat": -6.24475108,
+    "lng": 106.801412,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "토지 면적 93m²",
+      "건물 면적 356m²",
+      "3층",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "live-1013915339",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Ruko Favorit Dijual di Mampang Prapatan Jakarta Selatan Kawasan Pusat Bisnis",
+    "category": "루코",
+    "location": "Jakarta Selatan",
+    "locationKo": "자카르타 남부",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 13,4 Miliar",
+    "priceNum": 13400000000,
+    "established": null,
+    "area": 543.0,
+    "floors": 5,
+    "description": "Unit Ruko di Mampang Prapatan, Jakarta Selatan, DKI Jakarta dijual dengan harga Rp 13,4 Miliar. LT 103m2 / LB 543m2. Pastikan Anda memilih Ruko yang punya potensi bisnis besar. Harga jual Rp 13,4 Miliar ------------------------------------------------------------ Ruko 6 lantai termasuk roof top d...",
+    "facilities": [
+      "토지 103m²",
+      "5층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-13miliar-mampang-prapatan-cp-1013915339",
+    "lat": -6.25226834,
+    "lng": 106.8209535,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "토지 면적 103m²",
+      "건물 면적 543m²",
+      "6층"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "live-1012642050",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Dijual Ruko di Haji Nawi Raya, Jakarta Selatan SHM",
+    "category": "루코",
+    "location": "Jakarta Selatan",
+    "locationKo": "자카르타 남부",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 6,5 Miliar",
+    "priceNum": 6500000000,
+    "established": null,
+    "area": 350.0,
+    "floors": 1,
+    "description": "DIJUAL CEPAT! Dijual Ruko di Haji Nawi Raya, Jakarta Selatan SHM Lokasi: - Kecamatan: Kebayoran Baru - Kota: Jakarta Selatan Spesifikasi: - LT 97m2 - LB 350m2 Lokasi prime area. 1 menit ke Halte Wijaya, 1 menit ke Halte Gereja Melawai, 2 menit ke Halte Transjakarta Pasar Santa Harga Rp 6,5 Miliar...",
+    "facilities": [
+      "토지 97m²",
+      "shm 증서",
+      "1층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-6miliar-kebayoran-baru-cp-1012642050",
+    "lat": -6.245699,
+    "lng": 106.808929,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 97m²",
+      "건물 면적 350m²"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
+    "foreignSteps": [
+      "PT PMA 설립",
+      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
+      "전환 비용·기간을 매매 조건에 반영할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨",
+      "권리 형태(증서)가 표기됨"
+    ],
+    "operabilityTodos": [
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "live-1015117761",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Fatmawati.ruko.dalam Komplek Perkantoran Itc",
+    "category": "루코",
+    "location": "Jakarta Selatan",
+    "locationKo": "자카르타 남부",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 6,5 Miliar",
+    "priceNum": 6500000000,
+    "established": null,
+    "area": 400.0,
+    "floors": 4,
+    "description": "Ruko untuk dijual di Fatmawati Jakarta Selatan, DKI Jakarta. Potensi usaha besar. Spesifikasi lengkap: LT 124m2, LB 400m2 Kawasan sangat strategis, cocok untuk kembangkan bisnis! Lokasi: 2 menit ke MRT Haji Nawi, 2 menit ke Stasiun Haji Nawi, 3 menit ke Stasiun MRT Cipete Raya -------------------...",
+    "facilities": [
+      "토지 124m²",
+      "4층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-6miliar-fatmawati-cp-1015117761",
+    "lat": -6.26899,
+    "lng": 106.806,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "토지 면적 124m²",
+      "건물 면적 400m²",
+      "요지 입지(매도인 주장)",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "설비·집기 인계 범위가 언급됨",
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "live-1015100322",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Fatmawati Komplek.ruko Dutamas",
+    "category": "루코",
+    "location": "Jakarta Selatan",
+    "locationKo": "자카르타 남부",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 6 Miliar",
+    "priceNum": 6000000000,
+    "established": null,
+    "area": 400.0,
+    "floors": 4,
+    "description": "Dijual Ruko di Cipete, Jakarta Selatan, DKI Jakarta. Unit Ruko ini memiliki LT 90m2, LB 400m2. Cocok untuk berbagai jenis usaha Harga jual mulai dari Rp 6 Miliar ------------------------------------------------------------ Kesempatan terbatas buat Anda dapatkan ruko strategis dengan return invest...",
+    "facilities": [
+      "토지 90m²",
+      "4층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-6miliar-cipete-cp-1015100322",
+    "lat": -6.26899,
+    "lng": 106.806,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "토지 면적 90m²",
+      "건물 면적 400m²",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "live-1015103641",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Ruko Siap Huni.park Luas",
+    "category": "루코",
+    "location": "Jakarta Selatan",
+    "locationKo": "자카르타 남부",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 6 Miliar",
+    "priceNum": 6000000000,
+    "established": null,
+    "area": 400.0,
+    "floors": 4,
+    "description": "Ruko untuk dijual di Fatmawati Jakarta Selatan, DKI Jakarta. Potensi usaha besar. Spesifikasi lengkap: LT 90m2, LB 400m2 Area sangat strategis, cocok untuk mengembangkan bisnis! Lokasi: 2 menit ke MRT Haji Nawi, 2 menit ke Stasiun Haji Nawi, 3 menit ke Stasiun MRT Cipete Raya --------------------...",
+    "facilities": [
+      "토지 90m²",
+      "4층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-6miliar-fatmawati-cp-1015103641",
+    "lat": -6.26899,
+    "lng": 106.806,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "토지 면적 90m²",
+      "건물 면적 400m²",
+      "즉시 입주 가능",
+      "요지 입지(매도인 주장)",
+      "설비 일체 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "설비·집기 인계 범위가 언급됨",
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "live-1013637807",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Ruko Dijual di Jakarta Barat LT 78m2 & LB 350m2 Lokasi Terbaik!",
+    "category": "루코",
+    "location": "Jakarta Barat",
+    "locationKo": "자카르타 서부",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 4,5 Miliar",
+    "priceNum": 4500000000,
+    "established": null,
+    "area": 350.0,
+    "floors": 5,
+    "description": "Ruko dijual di pusat bisnis Jakarta Barat. Memiliki luas bangunan 350m2 dan tanah 78m2. Harga Rp 4,5 Miliar bisa nego Lokasi paling dicari. 1 menit ke Stasiun Angke, 2 menit ke Halte Jembatan Dua, 2 menit ke Halte Bandengan ------------------------------------------------------------ *DIJUAL RUKO...",
+    "facilities": [
+      "토지 78m²",
+      "shm 증서",
+      "5층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-4miliar-tubagus-angke-cp-1013637807",
+    "lat": -6.1426,
+    "lng": 106.799301,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 78m²",
+      "건물 면적 350m²",
+      "가격 협의 가능"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
+    "foreignSteps": [
+      "PT PMA 설립",
+      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
+      "전환 비용·기간을 매매 조건에 반영할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨",
+      "권리 형태(증서)가 표기됨"
+    ],
+    "operabilityTodos": [
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "live-1014780346",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Ruko Siap Huni Taman Ratu Jakarta Barat",
+    "category": "루코",
+    "location": "Jakarta Barat",
+    "locationKo": "자카르타 서부",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 4,6 Miliar",
+    "priceNum": 4600000000,
+    "established": null,
+    "area": 200.0,
+    "floors": 3,
+    "description": "FOR SALE! Ruko di Jakarta Barat, DKI Jakarta. Spesifikasi: LT 116m2, LB 200m2, cocok untuk berbagai jenis bisnis Area tak perlu diragukan lagi karena strategis. 3 menit ke Stasiun Taman Kota, 3 menit ke Halte Dispenda Samsat Barat Arah Grogol, 3 menit ke Halte Pulo Nangka SHM --------------------...",
+    "facilities": [
+      "토지 116m²",
+      "shm 증서",
+      "3층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-4miliar-taman-ratu-cp-1014780346",
+    "lat": -6.1585,
+    "lng": 106.747,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 116m²",
+      "건물 면적 200m²",
+      "즉시 입주 가능",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
+    "foreignSteps": [
+      "PT PMA 설립",
+      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
+      "전환 비용·기간을 매매 조건에 반영할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨",
+      "권리 형태(증서)가 표기됨"
+    ],
+    "operabilityTodos": [
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "live-1010190933",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Dijual Cepat Ruko Crown Green Lake City, Tangerang. Harga Nego",
+    "category": "루코",
+    "location": "Jakarta Barat",
+    "locationKo": "자카르타 서부",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 3,8 Miliar",
+    "priceNum": 3800000000,
+    "established": null,
+    "area": 67.0,
+    "floors": 4,
+    "description": "FOR SALE! Ruko di Jakarta Barat, DKI Jakarta. Spesifikasi: LT 67m2, LB 67m2, cocok untuk berbagai jenis bisnis Area tak perlu diragukan lagi karena strategis. 5 menit ke Stasiun Kalideres, 5 menit ke Stasiun Kali Deres, 7 menit ke Halte Bis Lampu Merah Kalideres - --------------------------------...",
+    "facilities": [
+      "토지 67m²",
+      "4층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-3miliar-green-lake-city-cp-1010190933",
+    "lat": -6.180283,
+    "lng": 106.710808,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "토지 면적 67m²",
+      "건물 면적 67m²",
+      "요지 입지(매도인 주장)",
+      "가격 협의 가능"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
     "koreanEligible": true
@@ -3391,60 +3555,6 @@ const LIVE_LISTINGS = [
     "koreanEligible": true
   },
   {
-    "id": "live-1011938299",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Ruko Tembus Rumah Grogol, Jakarta Barat Bagus",
-    "category": "루코",
-    "location": "Jakarta Barat",
-    "locationKo": "자카르타 서부",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 16 Miliar",
-    "priceNum": 16000000000,
-    "established": null,
-    "area": 600.0,
-    "floors": 4,
-    "description": "Dijual Ruko di Grogol, Jakarta Barat, DKI Jakarta. Unit Ruko ini memiliki LT 500m2, LB 600m2. Cocok untuk berbagai jenis bisnis Harga jual mulai dari Rp 16 Miliar ------------------------------------------------------------ Ruko di Grogol, Jakarta Barat. Dijual di wilayah yang nyaman. Dengan rinc...",
-    "facilities": [
-      "토지 500m²",
-      "4층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-16miliar-grogol-cp-1011938299",
-    "lat": -6.16184,
-    "lng": 106.7919,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "토지 면적 500m²",
-      "건물 면적 600m²"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
-    "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨"
-    ],
-    "operabilityTodos": [
-      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
     "id": "live-1014543479",
     "type": "ruko",
     "subtype": "jual",
@@ -3669,6 +3779,61 @@ const LIVE_LISTINGS = [
     "koreanEligible": true
   },
   {
+    "id": "live-1013401988",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Unit Ruko Dijual di Cengkareng Jakarta Barat Luas Bangunan 270m2",
+    "category": "루코",
+    "location": "Jakarta Barat",
+    "locationKo": "자카르타 서부",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 5,6 Miliar",
+    "priceNum": 5600000000,
+    "established": null,
+    "area": 270.0,
+    "floors": 4,
+    "description": "Unit Ruko komersial dijual di Jakarta Barat. LT 68m2 & LB 270m2 Harga penawaran Rp 5,6 Miliar Target pasar luas karena lokasinya strategis. 5 menit ke Stasiun Kalideres, 5 menit ke Stasiun Kali Deres, 7 menit ke Halte Bis Lampu Merah Kalideres -----------------------------------------------------...",
+    "facilities": [
+      "토지 68m²",
+      "4층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-5miliar-cengkareng-cp-1013401988",
+    "lat": -6.180283,
+    "lng": 106.710808,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "토지 면적 68m²",
+      "건물 면적 270m²",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
     "id": "live-1013639663",
     "type": "ruko",
     "subtype": "jual",
@@ -3775,290 +3940,6 @@ const LIVE_LISTINGS = [
     ],
     "operabilityTodos": [
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-1013914788",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Lokasi Strategis! Dijual Ruko Bisnis di Kembangan, Jakarta Barat Kondisi Bagus",
-    "category": "루코",
-    "location": "Jakarta Barat",
-    "locationKo": "자카르타 서부",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 10 Miliar",
-    "priceNum": 10000000000,
-    "established": null,
-    "area": 444.0,
-    "floors": 4,
-    "description": "Tersedia Ruko di Kembangan, Jakarta Barat, DKI Jakarta. Luas tanah 209m2 dan bangunan 444m2. Harga jual Rp 10 Miliar Lokasi strategis & akses mudah. 4 menit ke Halte Universitas Mercubuana, 4 menit ke Halte Sipil Mercu, 4 menit ke Halte Kejaksaan Negeri Jakbar ------------------------------------...",
-    "facilities": [
-      "토지 209m²",
-      "4층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-10miliar-kembangan-cp-1013914788",
-    "lat": -6.19840588,
-    "lng": 106.7417649,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "토지 면적 209m²",
-      "요지 입지(매도인 주장)"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
-    "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨"
-    ],
-    "operabilityTodos": [
-      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-1014569092",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Ruko 3,5 Lantai di Grogol, Jakarta Barat",
-    "category": "루코",
-    "location": "Jakarta Barat",
-    "locationKo": "자카르타 서부",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 2 Miliar",
-    "priceNum": 2000000000,
-    "established": null,
-    "area": 280.0,
-    "floors": 3,
-    "description": "FOR SALE! Ruko di Jakarta Barat, DKI Jakarta. Spesifikasi: LT 80m2, LB 280m2, cocok untuk berbagai jenis bisnis Area tak perlu diragukan lagi karena strategis. 1 menit ke Halte Busway Latumeten St. Grogol, 1 menit ke Stasiun Grogol, 1 menit ke Halte Grogol Petamburan - ---------------------------...",
-    "facilities": [
-      "토지 80m²",
-      "3층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-2miliar-grogol-cp-1014569092",
-    "lat": -6.16184,
-    "lng": 106.7919,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "토지 면적 80m²",
-      "건물 면적 280m²",
-      "3.5층",
-      "요지 입지(매도인 주장)"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
-    "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨"
-    ],
-    "operabilityTodos": [
-      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-1013566977",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Ruko Bagus Dijual LB 100m2 Lokasi Strategis Jakarta Barat Area Cocok untuk Berbisnis",
-    "category": "루코",
-    "location": "Jakarta Barat",
-    "locationKo": "자카르타 서부",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 4 Miliar",
-    "priceNum": 4000000000,
-    "established": null,
-    "area": 100.0,
-    "floors": 2,
-    "description": "Unit Ruko siap milik di Citra Garden Jakarta Barat Lokasi paling strategis. 3 menit ke Stasiun Taman Kota, 3 menit ke Halte Dispenda Samsat Barat Arah Grogol, 3 menit ke Halte Pulo Nangka Luas tanah 54m2, luas bangunan 100m2, dengan fasilitas sekitar yang lengkap. Harga jual Rp 4 Miliar ---------...",
-    "facilities": [
-      "토지 54m²",
-      "2층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-4miliar-citra-garden-cp-1013566977",
-    "lat": -6.1585,
-    "lng": 106.747,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "토지 면적 54m²",
-      "건물 면적 100m²",
-      "요지 입지(매도인 주장)",
-      "설비 일체 포함"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
-    "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "설비·집기 인계 범위가 언급됨",
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨"
-    ],
-    "operabilityTodos": [
-      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-1010666691",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Ruko Bagus Dijual di Cibubur Depok Lokasi Strategis Cocok untuk Kembangkan Bisnis",
-    "category": "루코",
-    "location": "Depok",
-    "locationKo": "데포",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 4,9 Miliar",
-    "priceNum": 4900000000,
-    "established": null,
-    "area": 153.0,
-    "floors": 3,
-    "description": "DIJUAL CEPAT RUKO JALAN ALTERNATIF CIBUBUR PINGGIR JALAN RAMAI Ruko bagus di Cibubur Depok ini memiliki lokasi yang sangat strategis. 1 menit ke LRT Harjamukti, 6 menit ke Tol Cimanggis Jadi sangat memudahkan akses dan memiliki pasar yang besar. Memiliki LT 109m2, LB 153m2 Harga Rp 4,9 Miliar Jan...",
-    "facilities": [
-      "토지 109m²",
-      "3층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-4miliar-cibubur-cp-1010666691",
-    "lat": -6.37616,
-    "lng": 106.89928,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "토지 면적 109m²",
-      "건물 면적 153m²",
-      "요지 입지(매도인 주장)",
-      "간선도로변",
-      "유동인구·배후세대가 많은 곳(매도인 주장)"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
-    "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨"
-    ],
-    "operabilityTodos": [
-      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-1013957245",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Unit Ruko Dijual di Depok LT 35m2 & LB 60m2",
-    "category": "루코",
-    "location": "Depok",
-    "locationKo": "데포",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 899 Juta",
-    "priceNum": 899000000,
-    "established": null,
-    "area": 60.0,
-    "floors": 2,
-    "description": "Ruko untuk dijual di Cinangka Depok, Jawa Barat. Potensi bisnis besar. Spesifikasi lengkap: LT 35m2, LB 60m2 Kawasan sangat strategis, sesuai untuk mengembangkan bisnis! Lokasi: 11 menit ke Pintu Tol Desari ------------------------------------------------------------ Ruko di Cinangka. Temukan ruk...",
-    "facilities": [
-      "토지 35m²",
-      "shm 증서",
-      "2층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-899jt-cinangka-cp-1013957245",
-    "lat": -6.35978,
-    "lng": 106.764839,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "권리 형태: SHM(소유권)",
-      "토지 면적 35m²",
-      "건물 면적 60m²",
-      "요지 입지(매도인 주장)",
-      "설비 일체 포함"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
-    "foreignSteps": [
-      "PT PMA 설립",
-      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
-      "전환 비용·기간을 매매 조건에 반영할 것"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "설비·집기 인계 범위가 언급됨",
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨",
-      "권리 형태(증서)가 표기됨"
-    ],
-    "operabilityTodos": [
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
     "koreanEligible": true
@@ -5096,25 +4977,26 @@ const LIVE_LISTINGS = [
     "koreanEligible": true
   },
   {
-    "id": "live-1009353850",
+    "id": "live-1013608773",
     "type": "ruko",
     "subtype": "jual",
-    "title": "RUKO PINGGIR JALAN SANGAT STRATEGIS CIBUBUR",
+    "title": "Ruko Paling Dicari LB 228m2 Dijual di Tapos",
     "category": "루코",
-    "location": "Bekasi",
-    "locationKo": "브카시",
+    "location": "Depok",
+    "locationKo": "데포",
     "monthlyRevenue": null,
     "monthlyRevenueNum": null,
     "profit": null,
-    "price": "Rp 5,3 Miliar",
-    "priceNum": 5300000000,
+    "price": "Rp 4,3 Miliar",
+    "priceNum": 4300000000,
     "established": null,
-    "area": 153.0,
-    "floors": 3,
-    "description": "Untuk dijual Ruko di Cibubur. Memiliki luas tanah 109m2 dan bangunan 153m2, Ruko ini cocok dijadikan aset investasi Anda. Harga penawaran hanya Rp 5,3 Miliar! ------------------------------------------------------------ Kesempatan terbatas buat Anda dapatkan ruko strategis dengan return investasi...",
+    "area": 228.0,
+    "floors": 2,
+    "description": "Dijual Ruko di Tapos, Depok, Jawa Barat. Luas tanah 219m2 dan bangunan 228m2. Harga jual Rp 4,3 Miliar Lokasi strategis & akses mudah. 9 menit ke LRT Harjamukti, 11 menit ke Terminal Jatijajar, 12 menit ke Tol Cimanggis ------------------------------------------------------------ Dijual Ruko Gand...",
     "facilities": [
-      "토지 109m²",
-      "3층",
+      "토지 219m²",
+      "shm 증서",
+      "2층",
       "99.co 실시간"
     ],
     "whatsapp": null,
@@ -5122,53 +5004,56 @@ const LIVE_LISTINGS = [
     "images": "🛰️",
     "badge": "매매",
     "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-5miliar-cibubur-cp-1009353850",
-    "lat": -6.3967514,
-    "lng": 106.9584299,
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-4miliar-tapos-cp-1013608773",
+    "lat": -6.40198,
+    "lng": 106.885689,
     "summaryKo": [
       "업종/용도: 상가·점포",
-      "토지 면적 109m²",
-      "요지 입지(매도인 주장)",
-      "간선도로변"
+      "권리 형태: SHM(소유권)",
+      "토지 면적 219m²",
+      "건물 면적 228m²",
+      "요지 입지(매도인 주장)"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
     "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+      "PT PMA 설립",
+      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
+      "전환 비용·기간을 매매 조건에 반영할 것"
     ],
     "operability": "운영가능",
     "operabilityReasons": [
       "매매가가 명시됨",
       "면적이 명시됨",
       "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨"
+      "층수가 기재됨",
+      "권리 형태(증서)가 표기됨"
     ],
     "operabilityTodos": [
-      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
     "koreanEligible": true
   },
   {
-    "id": "live-1011108016",
+    "id": "live-1012759598",
     "type": "ruko",
     "subtype": "jual",
-    "title": "TURUN HARGA!!! RUKO 3 LANTAI PINGGIR JALAN ALTERNATIF CIBUBUR ",
+    "title": "Ruko 3 Lantai di Pancoran Mas Depok",
     "category": "루코",
-    "location": "Bekasi",
-    "locationKo": "브카시",
+    "location": "Depok",
+    "locationKo": "데포",
     "monthlyRevenue": null,
     "monthlyRevenueNum": null,
     "profit": null,
-    "price": "Rp 5 Miliar",
-    "priceNum": 5000000000,
+    "price": "Rp 3,8 Miliar",
+    "priceNum": 3800000000,
     "established": null,
-    "area": 153.0,
+    "area": 450.0,
     "floors": 3,
-    "description": "Dijual Ruko di Cibubur. Memiliki luas tanah 109m2 dan bangunan 153m2, Ruko ini cocok dijadikan aset usaha Anda. Harga penawaran hanya Rp 5 Miliar! ------------------------------------------------------------ Kesempatan terbatas buat Anda dapatkan ruko strategis dengan return investasi tinggi di C...",
+    "description": "Ruko untuk dijual, lokasi Pancoran Mas Depok. Cocok untuk bisnis Anda! Spesifikasi: LT 245m2, LB 450m2. Harga Rp 3,8 Miliar Ruko ini banyak diincar karena lokasinya yang sangat strategis. 4 menit ke Stasiun Depok, 5 menit ke Stasiun Depok Baru, 11 menit ke Stasiun Pondok Cina --------------------...",
     "facilities": [
-      "토지 109m²",
+      "토지 245m²",
+      "shm 증서",
       "3층",
       "99.co 실시간"
     ],
@@ -5177,81 +5062,33 @@ const LIVE_LISTINGS = [
     "images": "🛰️",
     "badge": "매매",
     "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-5miliar-cibubur-cp-1011108016",
-    "lat": -6.3823255,
-    "lng": 106.926137,
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-3miliar-pancoran-mas-cp-1012759598",
+    "lat": -6.39444,
+    "lng": 106.808189,
     "summaryKo": [
       "업종/용도: 상가·점포",
-      "토지 면적 109m²",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 245m²",
+      "건물 면적 450m²",
       "3층",
-      "요지 입지(매도인 주장)",
-      "간선도로변",
-      "가격 인하됨"
+      "요지 입지(매도인 주장)"
     ],
     "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
     "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+      "PT PMA 설립",
+      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
+      "전환 비용·기간을 매매 조건에 반영할 것"
     ],
     "operability": "운영가능",
     "operabilityReasons": [
       "매매가가 명시됨",
       "면적이 명시됨",
       "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨"
+      "층수가 기재됨",
+      "권리 형태(증서)가 표기됨"
     ],
     "operabilityTodos": [
-      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-2204263",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Terra At Pospera HUB Grand Wisata",
-    "category": "루코",
-    "location": "Bekasi",
-    "locationKo": "브카시",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 4,89 Miliar",
-    "priceNum": 4890155852,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "<p>Grand Wisata Bekasi merupakan kawasan pemukiman modern yang dikembangkan oleh Sinar Mas Land, Grand Wisata Bekasi menciptakan sinergitas antara lingkungan hunian yang nyaman dan asri serta mampu mengakomodir kegiatan bisnis penghuninya. Grand wisata bekasi juga memadupadankan konsep Live, Play...",
-    "facilities": [
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/terra-at-pospera-hub-grand-wisata-2204263",
-    "lat": -6.279090099999999,
-    "lng": 107.0479557,
-    "summaryKo": [
-      "업종/용도: 상가·점포"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
-    "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
-    ],
-    "operability": "확인필요",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음"
-    ],
-    "operabilityTodos": [
-      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
-      "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
     "koreanEligible": true
@@ -5367,6 +5204,55 @@ const LIVE_LISTINGS = [
       "권리 형태(증서)가 표기됨"
     ],
     "operabilityTodos": [
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "live-2204263",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Terra At Pospera HUB Grand Wisata",
+    "category": "루코",
+    "location": "Bekasi",
+    "locationKo": "브카시",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 4,89 Miliar",
+    "priceNum": 4890155852,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "<p>Grand Wisata Bekasi merupakan kawasan pemukiman modern yang dikembangkan oleh Sinar Mas Land, Grand Wisata Bekasi menciptakan sinergitas antara lingkungan hunian yang nyaman dan asri serta mampu mengakomodir kegiatan bisnis penghuninya. Grand wisata bekasi juga memadupadankan konsep Live, Play...",
+    "facilities": [
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/terra-at-pospera-hub-grand-wisata-2204263",
+    "lat": -6.279090099999999,
+    "lng": 107.0479557,
+    "summaryKo": [
+      "업종/용도: 상가·점포"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
     "koreanEligible": true
@@ -6283,251 +6169,24 @@ const LIVE_LISTINGS = [
     "koreanEligible": true
   },
   {
-    "id": "live-1006909366",
+    "id": "live-1014194470",
     "type": "ruko",
     "subtype": "jual",
-    "title": "Di jual ruko baru 2 lt di kalipah apo",
+    "title": "Ruko Dijual di Bekasi LT 1678m2 & LB 2500m2 Lokasi Terbaik!",
     "category": "루코",
-    "location": "Bandung",
-    "locationKo": "반둥",
+    "location": "Bekasi",
+    "locationKo": "브카시",
     "monthlyRevenue": null,
     "monthlyRevenueNum": null,
     "profit": null,
-    "price": "Rp 3,5 Miliar",
-    "priceNum": 3500000000,
+    "price": "Rp 15 Miliar",
+    "priceNum": 15000000000,
     "established": null,
-    "area": 100.0,
-    "floors": 2,
-    "description": "Dijual Ruko di Astanaanyar, Bandung, Jawa Barat. Luas tanah 60m2 dan bangunan 100m2. Harga jual Rp 3,5 Miliar Lokasi strategis & akses mudah. 5 menit ke Terminal Leuwipanjang, 7 menit ke Stasiun Hall Bandung, 7 menit ke Stasiun Bandung ------------------------------------------------------------ ...",
-    "facilities": [
-      "토지 60m²",
-      "shm 증서",
-      "2층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-3miliar-astanaanyar-cp-1006909366",
-    "lat": -6.93708,
-    "lng": 107.60945,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "권리 형태: SHM(소유권)",
-      "토지 면적 60m²",
-      "요지 입지(매도인 주장)"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
-    "foreignSteps": [
-      "PT PMA 설립",
-      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
-      "전환 비용·기간을 매매 조건에 반영할 것"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨",
-      "권리 형태(증서)가 표기됨"
-    ],
-    "operabilityTodos": [
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-1012694445",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Di Jual Cepat Ruko dan Gudang di Gunung Batu Mainroad",
-    "category": "루코",
-    "location": "Bandung",
-    "locationKo": "반둥",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 6,5 Miliar",
-    "priceNum": 6500000000,
-    "established": null,
-    "area": 300.0,
-    "floors": 1,
-    "description": "Siap Milik Ruko di Bandung, Jawa Barat Area sangat strategis untuk bangun bisnis 5 menit ke Terminal Dago, 8 menit ke Terminal Sadang Serang, 12 menit ke Bandara Husein Bandung Ruko ini memiliki LT 494m2, LB 300m2. Harga Rp 6,5 Miliar ------------------------------------------------------------ J...",
-    "facilities": [
-      "토지 494m²",
-      "shm 증서",
-      "1층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-6miliar-gunung-batu-cp-1012694445",
-    "lat": -6.87332,
-    "lng": 107.607079,
-    "summaryKo": [
-      "업종/용도: 창고 · 상가·점포",
-      "권리 형태: SHM(소유권)",
-      "토지 면적 494m²",
-      "건물 면적 300m²",
-      "요지 입지(매도인 주장)"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
-    "foreignSteps": [
-      "PT PMA 설립",
-      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
-      "전환 비용·기간을 매매 조건에 반영할 것"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨",
-      "권리 형태(증서)가 표기됨"
-    ],
-    "operabilityTodos": [
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-1010891805",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Dijual Ruko Mekar Puspita Bandung Komplek Mekar Wangi",
-    "category": "루코",
-    "location": "Bandung",
-    "locationKo": "반둥",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 2,5 Miliar",
-    "priceNum": 2500000000,
-    "established": null,
-    "area": 160.0,
-    "floors": 2,
-    "description": "Ruko dijual di pusat bisnis Bandung. Memiliki luas bangunan 160m2 dan tanah 100m2. Harga Rp 2,5 Miliar nego Lokasi paling dicari. 2 menit ke Terminal Leuwipanjang, 11 menit ke Stasiun Hall Bandung, 11 menit ke Stasiun Bandung ------------------------------------------------------------ Luas tanah...",
-    "facilities": [
-      "토지 100m²",
-      "shm 증서",
-      "2층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-2miliar-mekar-wangi-cp-1010891805",
-    "lat": -6.951653716077075,
-    "lng": 107.59864276709402,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "권리 형태: SHM(소유권)",
-      "건물 면적 160m²",
-      "가격 협의 가능"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
-    "foreignSteps": [
-      "PT PMA 설립",
-      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
-      "전환 비용·기간을 매매 조건에 반영할 것"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨",
-      "권리 형태(증서)가 표기됨"
-    ],
-    "operabilityTodos": [
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-1000338991",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Dijual 2 Unit Ruko Paskal 23 Lokasi Utama",
-    "category": "루코",
-    "location": "Bandung",
-    "locationKo": "반둥",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 7,5 Miliar",
-    "priceNum": 7500000000,
-    "established": null,
-    "area": 600.0,
-    "floors": 4,
-    "description": "Dijual Ruko di Bandung, Jawa Barat Area sangat strategis untuk bangun bisnis 3 menit ke Stasiun Hall Bandung, 3 menit ke Stasiun Bandung, 7 menit ke Terminal Sadang Serang Ruko ini memiliki LT 135m2, LB 600m2. Harga Rp 7,5 Miliar ------------------------------------------------------------ Luas t...",
-    "facilities": [
-      "토지 135m²",
-      "4층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-7miliar-pasir-kaliki-cp-1000338991",
-    "lat": -6.907,
-    "lng": 107.61017,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "토지 면적 135m²",
-      "건물 면적 600m²",
-      "요지 입지(매도인 주장)"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
-    "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨"
-    ],
-    "operabilityTodos": [
-      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
-    "id": "live-1012829105",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Harga Dekat NJOP Ruko Abdurahaman Saleh Raya Bandung",
-    "category": "루코",
-    "location": "Bandung",
-    "locationKo": "반둥",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 5,3 Miliar",
-    "priceNum": 5300000000,
-    "established": null,
-    "area": 600.0,
+    "area": 2500.0,
     "floors": 3,
-    "description": "FOR SALE! Ruko di Bandung, Jawa Barat. Spesifikasi: LT 266m2, LB 600m2, cocok untuk berbagai jenis usaha Area tidak perlu diragukan lagi karena strategis. 2 menit ke Bandara Husein Bandung, 6 menit ke Stasiun Bandung, 6 menit ke Stasiun Hall Bandung SHM -------------------------------------------...",
+    "description": "Ruko dijual di Karang Baru, Bekasi. Spesifikasi luas: LT 1678m2, LB 2500m2 Harga Rp 15 Miliar SHM ------------------------------------------------------------ Untuk para investor yang ingin memiliki kontrakan puluhan kamar serta di bagian depan dan samping ada ruko2 siap disewakan untuk berbagai ...",
     "facilities": [
-      "토지 266m²",
+      "토지 1678m²",
       "shm 증서",
       "3층",
       "99.co 실시간"
@@ -6537,14 +6196,65 @@ const LIVE_LISTINGS = [
     "images": "🛰️",
     "badge": "매매",
     "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-5miliar-pajajaran-cp-1012829105",
-    "lat": -6.906395929471898,
-    "lng": 107.58551585427944,
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-15miliar-karang-baru-cp-1014194470",
+    "lat": -6.26003,
+    "lng": 107.114517,
     "summaryKo": [
       "업종/용도: 상가·점포",
       "권리 형태: SHM(소유권)",
-      "토지 면적 266m²",
-      "건물 면적 600m²",
+      "토지 면적 1678m²",
+      "건물 면적 2500m²"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
+    "foreignSteps": [
+      "PT PMA 설립",
+      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
+      "전환 비용·기간을 매매 조건에 반영할 것"
+    ],
+    "operability": "부적합",
+    "operabilityReasons": [
+      "임대 매물 - 인수(양수) 대상이 아님"
+    ],
+    "operabilityTodos": [],
+    "koreanEligible": false
+  },
+  {
+    "id": "live-1012864718",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Ruko 3 Lantai Lokasi Dekat Gerbang Tol dan Stasiun LRT",
+    "category": "루코",
+    "location": "Bekasi",
+    "locationKo": "브카시",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 4 Miliar",
+    "priceNum": 4000000000,
+    "established": null,
+    "area": 50.0,
+    "floors": 3,
+    "description": "Dijual Ruko di Jatibening. Memiliki luas tanah 101m2 dan bangunan 50m2, Ruko ini cocok dijadikan aset investasi Anda. Harga penawaran hanya Rp 4 Miliar! ------------------------------------------------------------ Dijual Ruko 3 lantai di Jatibening cocok untuk bisnis/usaha, lokasi strategis dekat...",
+    "facilities": [
+      "토지 101m²",
+      "shm 증서",
+      "3층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-4miliar-jatibening-cp-1012864718",
+    "lat": -6.23333,
+    "lng": 107,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 101m²",
+      "3층",
       "요지 입지(매도인 주장)"
     ],
     "foreignStatus": "조건부",
@@ -7430,6 +7140,296 @@ const LIVE_LISTINGS = [
     "koreanEligible": true
   },
   {
+    "id": "live-1012409656",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Ruko Transmart Buah Batu Square 3 Lantai Jual Cepat Termurah",
+    "category": "루코",
+    "location": "Bandung",
+    "locationKo": "반둥",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 2,7 Miliar",
+    "priceNum": 2700000000,
+    "established": null,
+    "area": 210.0,
+    "floors": 2,
+    "description": "Unit Ruko komersial dijual di Bandung. LT 117m2 & LB 210m2 Harga penawaran Rp 2,7 Miliar Target pasar besar karena lokasinya strategis. 9 menit ke Pintu Tol Buah Batu ------------------------------------------------------------ Buah batu square Bandung lokasi strategis dekat tol bubat Transmart P...",
+    "facilities": [
+      "토지 117m²",
+      "shm 증서",
+      "2층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-2miliar-bojongsoang-cp-1012409656",
+    "lat": -6.9908,
+    "lng": 107.647041,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 117m²",
+      "건물 면적 210m²",
+      "3층",
+      "요지 입지(매도인 주장)",
+      "주변에 대학·학교·시장·몰·역·톨게이트 등 집객 시설"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
+    "foreignSteps": [
+      "PT PMA 설립",
+      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
+      "전환 비용·기간을 매매 조건에 반영할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨",
+      "권리 형태(증서)가 표기됨"
+    ],
+    "operabilityTodos": [
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "live-1013431555",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Ruko Dijual di Bandung LT 93m2 & LB 200m2 Lokasi Terbaik!",
+    "category": "루코",
+    "location": "Bandung",
+    "locationKo": "반둥",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 1,2 Miliar",
+    "priceNum": 1200000000,
+    "established": null,
+    "area": 200.0,
+    "floors": 1,
+    "description": "Tersedia Ruko di Cimahi, Bandung, Jawa Barat. Unit Ruko ini memiliki LT 93m2, LB 200m2. Cocok untuk berbagai jenis usaha Harga jual mulai dari Rp 1,2 Miliar ------------------------------------------------------------ Dijual Ruko Lokasi strategis Dekat alun-alun kota Cimahi Luas tanah 93 m Luas b...",
+    "facilities": [
+      "토지 93m²",
+      "shm 증서",
+      "1층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-1miliar-cimahi-cp-1013431555",
+    "lat": -6.8715,
+    "lng": 107.555344,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 93m²",
+      "건물 면적 200m²",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
+    "foreignSteps": [
+      "PT PMA 설립",
+      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
+      "전환 비용·기간을 매매 조건에 반영할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨",
+      "권리 형태(증서)가 표기됨"
+    ],
+    "operabilityTodos": [
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "live-1012958274",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Jual Cepat Ruko di Jl. Sudirman Bandung Cocok Utk Kantor/Showroom",
+    "category": "루코",
+    "location": "Bandung",
+    "locationKo": "반둥",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 13,9 Miliar",
+    "priceNum": 13950000000,
+    "established": null,
+    "area": 1000.0,
+    "floors": 4,
+    "description": "Unit komersial di Bandung dijual dengan LT 441m2, LB 1000m2 Area sangat strategis, cocok untuk investasi Lokasi di area ramai. 4 menit ke Stasiun Bandung, 5 menit ke Stasiun Hall Bandung, 5 menit ke Bandara Husein Bandung Harga Rp 13,9 Miliar ------------------------------------------------------...",
+    "facilities": [
+      "토지 441m²",
+      "shm 증서",
+      "4층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-13miliar-sudirman-cp-1012958274",
+    "lat": -6.91906,
+    "lng": 107.58956,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 441m²",
+      "건물 면적 1000m²",
+      "요지 입지(매도인 주장)",
+      "유동인구·배후세대가 많은 곳(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "SOHO·사무실 분양 - 비주거용이라 외국인 개인 명의 불가, PT PMA 명의로 취득",
+    "foreignSteps": [
+      "PT PMA 설립 후 법인 명의 취득(건물 토지가 HGB 인지 확인)",
+      "사업장 주소로 쓰려면 건물 용도가 사무실(PBG/SLF)로 등록돼 있는지 확인"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨",
+      "권리 형태(증서)가 표기됨"
+    ],
+    "operabilityTodos": [
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "live-1013775590",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Ruko Bagus Dijual LB 200m2 Lokasi Strategis Bandung Area Cocok untuk Berbisnis",
+    "category": "루코",
+    "location": "Bandung",
+    "locationKo": "반둥",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 3,65 Miliar",
+    "priceNum": 3650000000,
+    "established": null,
+    "area": 200.0,
+    "floors": 3,
+    "description": "Ruko dijual di Cikutra, Bandung. Spesifikasi luas: LT 110m2, LB 200m2 Harga Rp 3,65 Miliar SHM ------------------------------------------------------------ Jual Cepat Ruko Strategis 3,5 Lantai Mainroad Cikutra, Suci, dekat Gedung Sate, Bandung Lokasi Jalan Cikutra, Suci, dekat ke Gedung Sate dan ...",
+    "facilities": [
+      "토지 110m²",
+      "shm 증서",
+      "3층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-3miliar-cikutra-cp-1013775590",
+    "lat": -6.9048,
+    "lng": 107.648689,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "권리 형태: SHM(소유권)",
+      "토지 면적 110m²",
+      "건물 면적 200m²",
+      "3.5층",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "SHM 매물 - 외국인 개인 명의 불가, PT PMA + HGB 전환 필요",
+    "foreignSteps": [
+      "PT PMA 설립",
+      "매도인의 권리 포기(pelepasan hak) 후 HGB 신규 발급 절차",
+      "전환 비용·기간을 매매 조건에 반영할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨",
+      "권리 형태(증서)가 표기됨"
+    ],
+    "operabilityTodos": [
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "live-1014770485",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Jual Ruko Kbp Banyak Niaga Kota Baru Parahyangan",
+    "category": "루코",
+    "location": "Bandung",
+    "locationKo": "반둥",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 4,3 Miliar",
+    "priceNum": 4300000000,
+    "established": null,
+    "area": 177.0,
+    "floors": 2,
+    "description": "Siap Milik Ruko di Bandung, Jawa Barat Area sangat strategis untuk bangun bisnis 1 menit ke Stasiun Hall Bandung, 1 menit ke Stasiun Bandung, 9 menit ke Bandara Husein Bandung Ruko ini memiliki LT 102m2, LB 177m2. Harga Rp 4,3 Miliar ------------------------------------------------------------ Ju...",
+    "facilities": [
+      "토지 102m²",
+      "2층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-4miliar-kota-baru-parahyangan-cp-1014770485",
+    "lat": -6.91243,
+    "lng": 107.606903,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "토지 면적 102m²",
+      "건물 면적 177m²",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨"
+    ],
+    "operabilityTodos": [
+      "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
     "id": "live-1013710509",
     "type": "ruko",
     "subtype": "jual",
@@ -8098,62 +8098,6 @@ const LIVE_LISTINGS = [
     "koreanEligible": true
   },
   {
-    "id": "live-1011843770",
-    "type": "ruko",
-    "subtype": "jual",
-    "title": "Kutai",
-    "category": "루코",
-    "location": "Surabaya",
-    "locationKo": "수라바야",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 3,9 Miliar",
-    "priceNum": 3900000000,
-    "established": null,
-    "area": 225.0,
-    "floors": 2,
-    "description": "DIJUAL CEPAT Kutai Ruko bagus di Raya Darmo Surabaya ini memiliki lokasi yang sangat strategis. Jadi sangat memudahkan akses dan punya pasar yang besar. Memiliki LT 123m2, LB 225m2 Harga Rp 3,9 Miliar Jangan sampai kelewatan! ------------------------------------------------------------ dekat tama...",
-    "facilities": [
-      "토지 123m²",
-      "hak_pakai 증서",
-      "2층",
-      "99.co 실시간"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "🛰️",
-    "badge": "매매",
-    "source": "99.co",
-    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-3miliar-raya-darmo-cp-1011843770",
-    "lat": -7.2879,
-    "lng": -7.2879,
-    "summaryKo": [
-      "업종/용도: 상가·점포",
-      "토지 면적 123m²",
-      "건물 면적 225m²",
-      "요지 입지(매도인 주장)"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
-    "foreignSteps": [
-      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
-      "SHM 이면 PT PMA + HGB 전환이 전제됨"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "면적이 명시됨",
-      "좌표가 있어 실물 위치를 특정할 수 있음",
-      "층수가 기재됨",
-      "권리 형태(증서)가 표기됨"
-    ],
-    "operabilityTodos": [
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
-  },
-  {
     "id": "live-1011843931",
     "type": "ruko",
     "subtype": "jual",
@@ -8205,6 +8149,62 @@ const LIVE_LISTINGS = [
     ],
     "operabilityTodos": [
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
+      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
+    ],
+    "koreanEligible": true
+  },
+  {
+    "id": "live-1011843770",
+    "type": "ruko",
+    "subtype": "jual",
+    "title": "Kutai",
+    "category": "루코",
+    "location": "Surabaya",
+    "locationKo": "수라바야",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 3,9 Miliar",
+    "priceNum": 3900000000,
+    "established": null,
+    "area": 225.0,
+    "floors": 2,
+    "description": "DIJUAL CEPAT Kutai Ruko bagus di Raya Darmo Surabaya ini memiliki lokasi yang sangat strategis. Jadi sangat memudahkan akses dan punya pasar yang besar. Memiliki LT 123m2, LB 225m2 Harga Rp 3,9 Miliar Jangan sampai kelewatan! ------------------------------------------------------------ dekat tama...",
+    "facilities": [
+      "토지 123m²",
+      "hak_pakai 증서",
+      "2층",
+      "99.co 실시간"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "🛰️",
+    "badge": "매매",
+    "source": "99.co",
+    "sourceUrl": "https://www.99.co/id/properti/ruko-dijual-3miliar-raya-darmo-cp-1011843770",
+    "lat": -7.2879,
+    "lng": -7.2879,
+    "summaryKo": [
+      "업종/용도: 상가·점포",
+      "토지 면적 123m²",
+      "건물 면적 225m²",
+      "요지 입지(매도인 주장)"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "권리 형태(증서) 미표기 - 외국인 취득 가능 여부 확인 필요",
+    "foreignSteps": [
+      "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
+      "SHM 이면 PT PMA + HGB 전환이 전제됨"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매매가가 명시됨",
+      "면적이 명시됨",
+      "좌표가 있어 실물 위치를 특정할 수 있음",
+      "층수가 기재됨",
+      "권리 형태(증서)가 표기됨"
+    ],
+    "operabilityTodos": [
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
     "koreanEligible": true
