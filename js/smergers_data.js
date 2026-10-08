@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-10-07T05:51:06+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-07T05:51:06+00:00";
+// 갱신 시각: 2026-10-08T06:01:24+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-08T06:01:24+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -1496,84 +1496,6 @@ const SMERGERS_LISTINGS = [
     "_tierNote5": "인수가 ≈₩1.53억 · PMA 투자계획 미달 + 납입자본 Rp 25억(≈₩2.2억)이 인수가를 넘거나 비슷함 - 총 소요 현금이 인수가보다 커진다",
     "_dealStructure": "소수지분",
     "_dealStructureNote": "50% 미만 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
-  },
-  {
-    "id": "smg-3zp68",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Profitable Showroom for Sale in North Jakarta, Indonesia",
-    "category": "광고·마케팅",
-    "location": "North Jakarta",
-    "locationKo": "자카르타 북부",
-    "address": "North Jakarta, Special Capital Region of Jakarta, Indonesia",
-    "monthlyRevenue": "IDR 227 jt/월",
-    "monthlyRevenueNum": 226666666,
-    "profit": null,
-    "price": "IDR 1.87 M",
-    "priceNum": 1872000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Established 17-year Indonesian personalized gifting for children e-commerce business serving 20,000+ customers, up for sale. Business is a well-established personalized gifting business in North Jakarta, running strong for the past 17 years, and with all those numbers of years experiences under our belt.\n- Business cater to the needs of families by making custom hampers and party favors for children’s birthdays, baby celebrations, and family events.\n- The best-sellers include fun and unique items like custom tumblers, mugs, tote bags, pouches, and embroidered towels. Perfect for gifts!\n- The primary customers are parents who order in bulk, typically between 25 to 100 units at a time, making it easy for them to get exactly what they need.\n- Business reaches the customers through online marketplaces, social media, and direct inquiries—keeping our community engaged and happy.\n- We manage everything in-house—from design to production, quality control, packaging, and shipping all over Indonesia, ensuring top-notch service.\n- Businesses solid reputation shines through the nearly 5-star ratings on platforms like Shopee and Tokopedia, plus we have a vibrant Instagram following of around 60,000.\n- The business is debt-free and historically generates strong revenue, with an annual turnover around IDR 3.06 billion, showing great growth potential for future segments like corporate gifting and events.\n- Segments like corporate gifting, company merchandise, events, schools, weddings, and the B2B souvenir market have huge potential for growth. 매각 사유: After about 17 years of building and running the business, the owner is ready to explore new opportunities. With a strong brand, loyal customers, efficient operations, and plenty of production know-how, the hope is that buyers will carry on and grow the business, especially in the corporate and B2B gifting markets.",
-    "facilities": [
-      "SMERGERS 지분양수",
-      "연매출 IDR 2.72B",
-      "EBITDA 마진 20 - 30 %",
-      "플랫폼 인증: Email·Google·Phone",
-      "매도인 활동 Active"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "📊",
-    "badge": "M&A 플랫폼",
-    "source": "smergers.com",
-    "sourceUrl": "https://www.smergers.com/business/profitable-showroom-for-sale-in-north-jakarta-indonesia/3zp68/",
-    "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 7.5,
-    "platformRatingCount": 2,
-    "platformVerified": [
-      "Email",
-      "Google",
-      "Phone"
-    ],
-    "dealStructure": "지분양수",
-    "dealLabel": "Business for Sale",
-    "stakePercent": null,
-    "ebitdaMargin": "20 - 30 %",
-    "annualRevenueNum": 2720000000,
-    "sellReason": "After about 17 years of building and running the business, the owner is ready to explore new opportunities. With a strong brand, loyal customers, efficient operations, and plenty of production know-how, the hope is that buyers will carry on and grow the business, especially in the corporate and B2B gifting markets.",
-    "regionPriority": 1,
-    "lat": null,
-    "lng": null,
-    "summaryKo": [
-      "업종/용도: 광고·마케팅",
-      "배달 플랫폼·SNS 채널 운영 중"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "자산 양도 Rp 1.9십억 - PT PMA 설립 시 인수 가능하나 납입자본(Rp 25억)이 인수가보다 크므로 총 현금 ₩2.2억 이상 필요",
-    "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "총 현금 약 Rp 25억(≈₩2.2억) 필요 - 납입자본을 입금한 뒤 인수가 Rp 1.9십억 와 운전자금을 그 안에서 지출(입금 후 12개월 인출 제한)",
-      "투자계획 Rp 100억(≈₩8.6억, 3년·설비·운전자금 포함) 제출과 이행 보고(LKPM) 필요 - 이 규모 매장 하나로는 계획이 과도하므로 증설 계획을 함께 설계할 것",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "현재 영업 중이라고 명시됨",
-      "매출·수익 수치가 제시됨",
-      "매출·EBITDA 가 공개됨",
-      "연매출·EBITDA 마진이 수치로 제시됨"
-    ],
-    "operabilityTodos": [
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": true,
-    "_tierIndex": 2,
-    "_tierLabel": "2단계 ₩1~3억",
-    "_tierNote5": "인수가 ≈₩1.61억 · PMA 투자계획 미달 + 납입자본 Rp 25억(≈₩2.2억)이 인수가를 넘거나 비슷함 - 총 소요 현금이 인수가보다 커진다",
-    "_dealStructure": "지분양수",
-    "_dealStructureNote": "법인 주식을 인수하면 NIB·업종허가·거래처 계약이 함께 넘어온다. 대신 과거 세무·노무 우발부채도 함께 인수하므로 3개년 재무·세무 실사가 필수"
   },
   {
     "id": "smg-ivuau",
@@ -3317,8 +3239,7 @@ const SMERGERS_LISTINGS = [
       "SMERGERS 지분양수",
       "연매출 IDR 5.34B",
       "EBITDA 마진 30 - 40 %",
-      "플랫폼 인증: Email·Google·Phone",
-      "매도인 활동 Active"
+      "플랫폼 인증: Email·Google·Phone"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -3327,8 +3248,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/book-printing-company-for-sale-in-jakarta-indonesia/ainnn/",
     "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 6.8,
+    "listingActivity": "미표기",
+    "platformRating": 6.4,
     "platformRatingCount": 1,
     "platformVerified": [
       "Email",
@@ -3699,7 +3620,7 @@ const SMERGERS_LISTINGS = [
     "sourceUrl": "https://www.smergers.com/business/vehicle-rental-company-equity-stake-for-sale-in-east-jakarta-indonesia/nr5lx/",
     "postedAt": null,
     "listingActivity": "Active",
-    "platformRating": 9.4,
+    "platformRating": 9.3,
     "platformRatingCount": 2,
     "platformVerified": [
       "Google",
