@@ -17,14 +17,15 @@ def item(**kwargs):
     return base
 
 
-def test_factory_sale_with_cleanroom_signal_is_not_unfit_for_lack_of_substance():
-    # '클린룸' 언급은 매출/직원 대신 제조 영업 기반을 드러내는 신호(POSITIVE 목록에 명시)
+def test_cleanroom_spec_alone_is_not_operating_substance():
+    # '클린룸'은 시설 사양이지 영업 실체가 아니다 — 매출·생산 언급 없는 빈 공장 법인이
+    # 이 신호로 '운영가능'이 되면 안 된다(2026-10-19 감사, iw-real_estate_mb-10428)
     it = item(title="법인 매각", type="bisnis", subtype="akuisisi",
               description="24년8월에 클린룸과 인테리아 공사가 완공되고 현재까지 매우 깨끗하게 "
                           "관리가 잘 되어 있습니다. 법인 설립 : 2023년 10월",
               priceNum=None)
     status, score, reasons, todos = op.classify(it)
-    assert status != op.UNFIT
+    assert status != op.OPERABLE
 
 
 def test_factory_sale_with_existing_clients_signal_is_not_unfit_for_lack_of_substance():

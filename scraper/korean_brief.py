@@ -301,7 +301,8 @@ def build_korean_detail(item):
         if line not in grouped[section]:
             grouped[section].append(line)
 
-    kinds = detect_business_kind(item)
+    # 관문이 판정한 업종(_sector)이 있으면 그것을 쓴다 — 키워드 추출보다 정확하다.
+    kinds = [item["_sector"]] if item.get("_sector") else detect_business_kind(item)
     head = " · ".join(kinds) if kinds else (item.get("category") or "유형 미상")
     put("개요", f"업종/용도: {head}")
 
@@ -328,7 +329,7 @@ def build_korean_brief(item):
     """매물 1건의 한글 요약 줄 목록. 뽑을 내용이 없으면 빈 목록."""
     lines = []
 
-    kinds = detect_business_kind(item)
+    kinds = [item["_sector"]] if item.get("_sector") else detect_business_kind(item)
     if kinds:
         lines.append("업종/용도: " + " · ".join(kinds))
     elif item.get("category"):

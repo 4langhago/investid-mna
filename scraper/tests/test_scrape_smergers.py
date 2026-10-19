@@ -57,7 +57,8 @@ def test_full_sale_card_parses():
     assert item["priceNum"] == 500_000_000
     assert item["annualRevenueNum"] == 6_000_000_000
     assert item["ebitdaMargin"] == "0-10 %"
-    assert item["dealStructure"] == dt.SHARE_DEAL
+    # 'Business for Sale' 만으로는 법인 주식을 넘기는지 알 수 없다 → 자산양수로 본다.
+    assert item["dealStructure"] == dt.ASSET_DEAL
     assert item["locationKo"] == "자카르타"
     assert item["category"] == "식품 제조"
     assert item["listingActivity"] == "Active"
@@ -82,6 +83,16 @@ def test_stake_percentage_is_not_read_as_price():
 
 def test_majority_stake_keeps_control():
     item, _ = sm.parse_card(card(deal_label="Stake Sale", price="IDR 9000 Mn for 51%"))
+    assert item["dealStructure"] == dt.SHARE_DEAL
+
+
+def test_exactly_half_stake_is_not_control():
+    item, _ = sm.parse_card(card(deal_label="Partial Stake Sale", price="IDR 1600 Mn for 50%"))
+    assert item["dealStructure"] == dt.MINORITY
+
+
+def test_full_sale_with_share_signal_is_share_deal():
+    item, _ = sm.parse_card(card(title="PT PMA Food Processing Company for Sale in Jakarta"))
     assert item["dealStructure"] == dt.SHARE_DEAL
 
 

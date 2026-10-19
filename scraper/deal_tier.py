@@ -73,7 +73,7 @@ def classify_tier(item):
 # --- 딜 구조 -----------------------------------------------------------------
 SHARE_DEAL = "지분양수"      # 법인 주식을 산다 → NIB·업종허가·세무이력이 함께 넘어온다
 ASSET_DEAL = "자산양수"      # 설비·영업권만 산다 → 인허가는 인수자가 새로 받아야 한다
-MINORITY = "소수지분"        # 50% 미만 → 경영권 없음. 인수가 아니라 투자다
+MINORITY = "소수지분"        # 50% 이하 → 경영권 없음. 인수가 아니라 투자다
 UNKNOWN = "구조미확인"
 
 # 매물 글에 '법인 자체를 넘긴다'는 신호가 있는가.
@@ -92,7 +92,7 @@ _SHARE_NOTE = (
     "법인 주식을 인수하면 NIB·업종허가·거래처 계약이 함께 넘어온다. "
     "대신 과거 세무·노무 우발부채도 함께 인수하므로 3개년 재무·세무 실사가 필수")
 _MINORITY_NOTE = (
-    "50% 미만 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. "
+    "50% 이하 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. "
     "경영권 있는 구조로 재협상하지 못하면 검토 가치 없음")
 
 
@@ -105,7 +105,9 @@ def classify_structure(item):
     이쪽으로 잘못 보는 것이 반대 방향 오판보다 안전하다.
     """
     given = item.get("dealStructure")
-    if given == MINORITY:
+    # 정확히 50% 는 과반이 아니라 주총 결의를 단독으로 못 한다 — 경영권이 없다.
+    stake = item.get("stakePercent")
+    if given == MINORITY or (stake is not None and float(stake) <= 50):
         return MINORITY, _MINORITY_NOTE
     if given == SHARE_DEAL:
         return SHARE_DEAL, _SHARE_NOTE

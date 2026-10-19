@@ -31,7 +31,9 @@ HARD_REJECT = [
      "프랜차이즈 가맹·투자자 모집 - 기존 사업체 인수가 아님"),
     (r"sudah tutup|tidak beroperasi|berhenti operasi|폐업|휴업\s*중",
      "영업이 중단된 매물"),
-    (r"\bsold\b|terjual|판매\s*완료|매각\s*완료|거래\s*완료",
+    # 'sold' 단독은 'products are sold' 같은 영업 설명에도 나온다(smg-p739z 오탐).
+    (r"\bsold\s*out\b|\b(?:already|has\s+been|is)\s+sold\b|^\s*sold\b|\[sold\]|"
+     r"\bsudah\s+terjual\b|\bterjual\b(?!\s+(?:di|ke|melalui|lewat))|판매\s*완료|매각\s*완료|거래\s*완료",
      "이미 거래가 종료된 글"),
 ]
 
@@ -55,7 +57,9 @@ POSITIVE = [
     (r"pelanggan tetap|customer tetap|langganan|고정\s*(?:고객|거래처)|단골",
      1, "고정 고객 기반이 언급됨"),
     # 공장·법인 매각 글은 매출·직원 대신 설비 가동과 거래처로 실체를 드러낸다.
-    (r"가동\s*(?:중|수준)|기존\s*(?:의\s*)?거래처|거래처\s*포함|클린룸|clean\s*room|"
+    # '클린룸'·'가동 수준'은 시설 사양(클린룸 등급 등)이라 영업 실체가 아니다 — 매출·생산
+    # 언급 없는 빈 공장 법인이 이 신호로 '운영가능'이 된 적이 있다(2026-10-19, 10428).
+    (r"가동\s*중|기존\s*(?:의\s*)?거래처|거래처\s*포함|"
      r"법인\s*설립\s*[:：]?\s*\d{4}",
      2, "공장 가동·거래처 등 제조 영업 기반이 언급됨"),
     (r"sisa kontrak|kontrak sampai|sewa sampai|masa sewa|임차\s*기간|계약\s*기간|잔여\s*기간",
@@ -92,7 +96,7 @@ SUBSTANCE_RE = re.compile(
     r"laba bersih|net profit|keuntungan|pendapatan|sejak tahun|berdiri|sudah \d+ tahun|"
     r"karyawan|pegawai|pelanggan tetap|siap operasional|"
     r"영업\s*중|운영\s*중|즉시\s*운영|매출|순익|수익|직원|년\s*(?:째|간)|단골|고정\s*고객|"
-    r"가동\s*(?:중|수준)|거래처|클린룸|clean\s*room|"
+    r"가동\s*중|거래처|"
     # 영어 M&A 매물의 동일 신호
     r"\bebitda\b|run\s*rate\s*sales|reported\s*sales|annual\s*(?:revenue|sales|turnover)|"
     r"\bprofitable\b|\bemployees?\b|years?\s*(?:in\s*)?operation|operating\s*since|"

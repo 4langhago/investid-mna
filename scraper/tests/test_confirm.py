@@ -29,17 +29,26 @@ def test_consistent_share_deal_with_live_source_passes(monkeypatch):
     assert tr.confirm_listing(dict(ITEM, _dealStructure=dt.SHARE_DEAL)) == (True, "")
 
 
-def test_dead_source_url_is_unconfirmed(monkeypatch):
-    _stub(monkeypatch, (fe.CONDITIONAL, "자산 양도 Rp 2.0십억", []), live=(False, "HTTP 403"))
+SHARE_OK = (fe.ELIGIBLE, "기존 법인(PT PMA) 지분 인수 - 신규 PT PMA 설립 없이 외국인 인수 가능한 구조", [])
+
+
+def test_asset_deal_is_never_confirmed(monkeypatch):
+    # 2026-10-19 사용자 결정: 지분양수만 '인수 가능'으로 알린다.
+    _stub(monkeypatch, (fe.CONDITIONAL, "PT PMA 설립 시 인수 가능 - 투자 규모는 최소 요건 충족", []))
     ok, why = tr.confirm_listing(dict(ITEM, _dealStructure=dt.ASSET_DEAL))
+    assert not ok and "자산양수" in why
+
+
+def test_dead_source_url_is_unconfirmed(monkeypatch):
+    _stub(monkeypatch, SHARE_OK, live=(False, "HTTP 403"))
+    ok, why = tr.confirm_listing(dict(ITEM, _dealStructure=dt.SHARE_DEAL))
     assert not ok and "HTTP 403" in why
 
 
 def test_indoweb_unknown_liveness_is_unconfirmed(monkeypatch):
     # 접속 실패로 게시 여부를 모르면 확인된 것이 아니다.
-    _stub(monkeypatch, (fe.CONDITIONAL, "자산 양도 Rp 2.0십억", []),
-          indoweb=("unknown", "접속 실패(TimeoutError)"))
-    item = dict(ITEM, source="indoweb.org", _dealStructure=dt.ASSET_DEAL)
+    _stub(monkeypatch, SHARE_OK, indoweb=("unknown", "접속 실패(TimeoutError)"))
+    item = dict(ITEM, source="indoweb.org", _dealStructure=dt.SHARE_DEAL)
     ok, why = tr.confirm_listing(item)
     assert not ok and "unknown" in why
 

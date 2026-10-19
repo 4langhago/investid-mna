@@ -87,6 +87,9 @@ LOCATION_KO = [
 # 업종 라벨(제목·본문에서 추출) → 사이트 카테고리.
 # 외국인 개방 여부 판정은 business_gate.SECTORS 가 따로 본다(여기는 표시용).
 CATEGORY_KO = [
+    # 요가·필라테스 스튜디오 본문에 'cafe'·'wellness' 가 섞여 식당·뷰티로 분류된 적이 있어 먼저 본다.
+    (r"yoga|pilates|gym|fitness", "피트니스"),
+    (r"interior|architect", "건설·인테리어"),
     (r"food\s*processing|central\s*kitchen|frozen|snack|nutrition", "식품 제조"),
     (r"restaurant|cafe|food\s*(?:&|and)\s*beverage|bakery|catering", "카페 & 레스토랑"),
     (r"freight|logistic|forwarding|courier|3pl|warehous", "물류"),
@@ -200,11 +203,13 @@ def _first_match(table, text, default=""):
     return default
 
 
-def classify_deal(label, title, stake=None):
+def classify_deal(label, title, stake=None, desc=""):
     """(딜 구조, 제외 사유 또는 None).
 
-    'Business for Sale' 은 법인 전부 양도라 주식 양수 구조가 성립한다.
-    지분 매각은 금액 툴팁의 지분율로 경영권 유무를 가른다(50% 미만 = 소수지분).
+    'Business for Sale' 은 '사업 전부 양도'일 뿐 법인 주식을 넘기는지는 알 수 없다
+    (개인사업자·자산 매각일 수 있다). 본문에 주식·법인 양도 신호가 있을 때만 지분양수로 보고,
+    나머지는 자산양수로 본다 — deal_tier 와 같은 원칙(모르면 불리한 쪽).
+    지분 매각은 금액 툴팁의 지분율로 경영권 유무를 가른다(50% 이하 = 소수지분).
     지분율을 못 읽은 지분 매각은 소수지분으로 본다 — 모르는 것을 유리하게 가정하지 않는다.
     """
     low = (label or "").lower()
@@ -216,11 +221,13 @@ def classify_deal(label, title, stake=None):
     is_stake = ("stake" in low or "investment" in low or "investor" in low
                 or "equity" in text or stake is not None)
     if is_stake:
-        if stake is not None and stake >= 50:
+        if stake is not None and stake > 50:
             return dt.SHARE_DEAL, None
         return dt.MINORITY, None
     if "sale" in low:
-        return dt.SHARE_DEAL, None
+        if dt._SHARE_RE.search(f"{title or ''} {desc or ''}"):
+            return dt.SHARE_DEAL, None
+        return dt.ASSET_DEAL, None
     return dt.UNKNOWN, None
 
 
@@ -253,7 +260,7 @@ def parse_card(card):
     price_raw = _group(_RE_PRICE, card)
     stake = parse_stake(price_raw)
     deal_label = _group(_RE_DEAL_LABEL, card)
-    structure, skip = classify_deal(deal_label, title, stake)
+    structure, skip = classify_deal(deal_label, title, stake, f"{headline} {desc}")
     if skip:
         return None, skip
 

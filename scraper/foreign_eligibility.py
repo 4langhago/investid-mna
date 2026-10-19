@@ -87,6 +87,8 @@ _SHARE_DEAL = re.compile(
     r"법인\s*(?:매각|양도|매매|인수)|지분\s*(?:매각|양도|인수|100\s*%)|주식\s*양도|"
     r"take\s*over\s*(?:pt|perusahaan|saham)|jual\s*(?:pt|perusahaan)\b|"
     r"akuisisi\s*saham|saham\s*(?:dijual|100\s*%)|share\s*(?:sale|deal|transfer)", re.I)
+# 법인이 이미 외국인투자법인(PMA)이라는 표기.
+_PMA_STATED = re.compile(r"\bpt\s*\.?\s*pma\b|\bpma\s+company\b|foreign[-\s]owned|외투\s*법인|외국인\s*투자\s*법인", re.I)
 # 매도인이 '법인·지분은 넘기지 않는다'고 못박은 글. 지분 인수 표현보다 우선한다.
 _ASSET_ONLY = re.compile(
     r"(?:지분|법인)[^.\n]{0,30}(?:매각|양도)하는\s*거래가\s*아닙|사업자산\s*양도|"
@@ -237,7 +239,13 @@ def classify(item):
         # 지분 인수: 법인과 그 인허가·임차계약을 그대로 넘겨받으므로 인수가와 무관하게
         # 외국인이 취득할 수 있는 구조다. 다만 법인이 PMDN(내국 법인)이면 지분 인수 순간
         # PMA 로 전환돼 투자 요건을 새로 받는다.
-        if _SHARE_DEAL.search(text) and not _ASSET_ONLY.search(text):
+        # 수집기가 딜 구조를 직접 넣어준 소스(SMERGERS 등)는 그 값을 따른다. 예전에는 이 필드를
+        # 무시하고 본문 키워드만 봐서, 수집기는 지분양수·여기서는 자산 양도로 판정이 엇갈렸다.
+        # (deal_tier 가 이 모듈을 import 하므로 상수 대신 같은 문자열을 쓴다.)
+        given = item.get("dealStructure")
+        is_share = (given == "지분양수" if given in ("지분양수", "자산양수")
+                    else _SHARE_DEAL.search(text) and not _ASSET_ONLY.search(text))
+        if is_share:
             steps = ["AHU 법인 등기부로 현재 주주 구성과 PMA/PMDN 여부 확인",
                      "OSS 에서 법인의 KBLI 가 외국인 지분 100% 허용 업종인지 확인",
                      "PMDN 이면 외국인 지분이 1%만 들어와도 PMA 전환 의무 - "
@@ -247,7 +255,12 @@ def classify(item):
                 steps.insert(0, "인수가 미표기 - 지분가와 법인 부채 인수 범위를 함께 확인")
             if item.get("propertyIncluded") or has_shm:
                 steps.append("법인 명의 부동산이 SHM 이면 법인이 보유할 수 없는 권리 - HGB 여부 확인")
-            return (ELIGIBLE, "기존 법인 지분 인수 - 신규 PT PMA 설립 없이 외국인 인수 가능한 구조",
+            # 법인이 이미 PMA 라고 적힌 경우만 '가능'이다. PMDN 이면 지분 인수 순간 PMA 로
+            # 전환되며 투자계획 Rp 100억 요건을 새로 받는다 — 모르면 '조건부'로 둔다.
+            if _PMA_STATED.search(text):
+                return (ELIGIBLE, "기존 법인(PT PMA) 지분 인수 - 신규 PT PMA 설립 없이 외국인 인수 가능한 구조",
+                        steps)
+            return (CONDITIONAL, "기존 법인 지분 인수 - 법인이 PMA 인지 미확인(PMDN 이면 PMA 전환 요건 재충족 필요)",
                     steps)
 
         # 가격 미표기(한인 커뮤니티 글은 '연락 주세요'로 끝나는 경우가 흔하다)를

@@ -26,7 +26,7 @@ import operability as op
 # 추천 대상에서 제외할 '순수 부동산' 신호. 사업체 인수가 아니라 부동산 매매다.
 _PROPERTY_ONLY = re.compile(
     r"\btanah\b|\bkavling\b|\bapartemen\b|\bapartment\b|아파트|토지|나대지|"
-    r"\bruko\b(?!.*\busaha\b)|레지던스|\bsoho\b", re.I)
+    r"^(?!.*\b(?:usaha|take\s*over)\b).*\bruko\b|레지던스|\bsoho\b", re.I)
 
 # 게시 후 이 기간을 넘긴 글은 추천하지 않는다(operability 의 180/365일보다 엄격하게 본다).
 MAX_POST_AGE_DAYS = 90
@@ -59,7 +59,7 @@ SECTORS = [
     # --- 외국인 투자 불가 ---
     ("세탁업(KBLI 96200)", r"\blaundry\b|\bbinatu\b|\bcuci\s*(?:kiloan|baju|setrika)\b|세탁소|런드리|빨래방",
      "BLOCKED", "UMKM·협동조합 유보"),
-    ("미용실(KBLI 96112)", r"salon\s*kecantikan|beauty\s*salon|\bsalon\b|미용실|헤어샵|헤어샾",
+    ("미용실(KBLI 96112)", r"salon\s*kecantikan|beauty\s*salon|\bsalon\b(?![^.\n]{0,20}\bmobil\b)|미용실|헤어샵|헤어샾",
      "BLOCKED", "소상공인 유보(2차 출처, 원문 미확인)"),
     ("소형 소매·편의점(KBLI 47111)",
      r"minimarket|toko\s*kelontong|sembako|alfamart|indomaret|alfamidi|구멍가게|편의점",
@@ -107,7 +107,12 @@ SECTORS = [
      "OPEN", "대부분 코드 개방"),
     ("IT·소프트웨어(KBLI 62xxx)", r"\bsoftware\b|aplikasi|\bit\s*service|개발사|소프트웨어",
      "OPEN", "개방 업종"),
-    ("스포츠시설(KBLI 93111)", r"\bpadel\b|\bgym\b|fitness|futsal|스포츠센터|헬스장",
+    ("광고대행(KBLI 73100)", r"advertising|ad\s*agency|periklanan|광고\s*대행|광고\s*에이전시",
+     "OPEN", "외국인 지분 100% 가능(2차 자료)"),
+    ("인테리어 디자인(KBLI 74100)", r"interior\s*design|desain\s*interior|인테리어\s*디자인",
+     "OPEN", "외국인 지분 100% 가능(2차 자료). 시공(건설업)이 섞이면 건설업 허가 별도"),
+    ("스포츠시설(KBLI 93111)",
+     r"\bpadel\b|\bgym\b|fitness|futsal|\byoga\b|pilates|스포츠센터|헬스장|요가|필라테스",
      "OPEN", "외국인 지분 100% 가능"),
 ]
 
@@ -117,13 +122,33 @@ def _text(item):
                     ("title", "description", "category", "type", "badge"))
 
 
+# 위치 설명 속 이웃 가게 이름. 지우지 않으면 '편의점 옆 치킨집'이 소형 소매로 판정된다.
+_LANDMARK_RE = re.compile(
+    r"(?:sebelah|samping|dekat|deket|depan|belakang|seberang|near|next\s+to)\s+\S+", re.I)
+
+
 def detect_sector(item):
-    """(업종명, 상태, 근거) 반환. 판정할 수 없으면 (None, None, None)."""
-    text = _text(item)
-    for name, pat, status, source in SECTORS:
-        if re.search(pat, text, re.I):
-            return name, status, source
+    """(업종명, 상태, 근거) 반환. 판정할 수 없으면 (None, None, None).
+
+    제목을 먼저 본다. 본문·카테고리 전체를 한 번에 보면 앞쪽 규칙이 이긴다 —
+    'Yoga Studio' 가 소스의 잘못된 분류('Cafe & Restaurant')와 본문 단어 때문에
+    요식업으로 판정된 적이 있다(2026-10-19, smg-tzuhy).
+    """
+    for text in (str(item.get("title") or ""), _text(item)):
+        # 'Sebelah Indomaret'·'dekat laundry' 같은 주변 랜드마크는 업종이 아니다.
+        text = _LANDMARK_RE.sub(" ", text)
+        for name, pat, status, source in SECTORS:
+            if re.search(pat, text, re.I):
+                return name, status, source
     return None, None, None
+
+
+# 지분이나 사업을 넘기지 않는 자금 조달 글. 플랫폼에는 '지분 매각'으로 올라와도 매도인
+# 본문에 '지분은 주지 않고 수익을 나눈다'고 적힌 경우가 있다(2026-10-19, smg-f8p1n).
+NON_ACQUISITION_RE = re.compile(
+    r"stake\s+is\s+not\s+being\s+provided|no\s+(?:equity|stake)\s+(?:will\s+be\s+)?(?:given|offered)|"
+    r"profit[-\s]sharing\s+basis|\bbagi\s*hasil\b|수익\s*(?:배분|분배)|"
+    r"seeking\s+(?:funding|expansion\s+capital)|투자자\s*모집", re.I)
 
 
 # 게시일이 없는 소스(SMERGERS)의 신선도 대체 근거. 플랫폼이 매도인의 최근 접속 상태를
@@ -155,6 +180,9 @@ def assess(item):
     is_business = item.get("type") == "bisnis" or item.get("subtype") == "akuisisi"
     if not is_business or _PROPERTY_ONLY.search(title):
         return False, "사업체 인수 매물이 아님(부동산 매매)", []
+
+    if NON_ACQUISITION_RE.search(_text(item)):
+        return False, "자금 조달·수익 배분 글 - 지분·경영권을 넘기는 인수가 아님", []
 
 
     sector, sector_status, sector_source = detect_sector(item)
@@ -206,11 +234,11 @@ def assess(item):
     else:
         reasons.append(f"매도인 활동 상태 {item.get('listingActivity')}(게시일 미제공 소스)")
 
-    # 50% 미만 지분은 인수가 아니라 증자 참여다. 경영권 없이 들어가면 운영도, 회수도
+    # 50% 이하 지분은 인수가 아니라 증자 참여다. 경영권 없이 들어가면 운영도, 회수도
     # 매도인 손에 달린다. 금액·업종이 맞아도 추천하지 않는다.
     structure, note = dt.classify_structure(item)
     if structure == dt.MINORITY:
-        return False, f"소수지분(50% 미만) - {note}", []
+        return False, f"소수지분(50% 이하) - {note}", []
     reasons.append(f"딜 구조 {structure} - {note}")
 
     return True, "", reasons
@@ -251,6 +279,9 @@ def screen(items):
         ok, why, reasons = assess(item)
         if ok:
             item["_gateReasons"] = reasons
+            # 메시지의 업종 표기는 관문이 판정에 쓴 업종을 따른다. 소스 카테고리·본문 키워드는
+            # 인테리어 디자인 회사를 '미용실·살롱'으로 적는 식으로 틀린 적이 있다(smg-i7viy).
+            item["_sector"] = detect_sector(item)[0]
             item["_tier"], item["_tierNote"] = budget_tier(item)
             dt.annotate(item)
             passed.append(item)

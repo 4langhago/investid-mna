@@ -435,6 +435,9 @@ def confirm_listing(item):
 
     validate()/business_gate 는 수집된 글의 '내용'을 본다. 여기서는 그 판정을 믿고 알려도
     되는지를 본다.
+      - 기존 법인 지분양수만 '인수 가능'으로 본다(2026-10-19 사용자 결정). 자산양수는 외국인이
+        신규 PT PMA(납입자본 Rp 25억 + 투자계획 Rp 100억 초과)를 세워야 해 단독 인수가
+        현실적이지 않으므로, 관문을 넘었더라도 검증 완료로 알리지 않는다.
       - 딜 구조(deal_tier)와 외국인 취득 판정(foreign_eligibility)이 같은 거래를 보고 있는가.
         한쪽은 지분양수, 다른 쪽은 자산 양도로 판정했다면 어느 쪽 인수 절차도 확정할 수 없다.
       - 원문 글이 지금 게시 중인가. 인도웹은 본문까지 읽어 삭제·거래완료를 확인하고
@@ -445,11 +448,13 @@ def confirm_listing(item):
     if structure not in (dt.SHARE_DEAL, dt.ASSET_DEAL):
         # 구조미확인(법인 언급만 있음)·소수지분은 인수 절차를 정할 수 없다.
         return False, f"딜 구조 미확정({structure or '판정 없음'})"
-    fe_share = fe_status == fe.ELIGIBLE and "지분 인수" in fe_reason
+    fe_share = fe_status != fe.BLOCKED and "지분 인수" in fe_reason
     if structure == dt.SHARE_DEAL and not fe_share:
         return False, f"판정 불일치: 딜 구조는 지분양수인데 외국인 취득 판정은 '{fe_reason}'"
     if structure == dt.ASSET_DEAL and fe_share:
         return False, "판정 불일치: 딜 구조는 자산양수인데 외국인 취득 판정은 지분 인수"
+    if structure == dt.ASSET_DEAL:
+        return False, "자산양수 - 신규 PT PMA 설립이 필요해 단독 인수 불가(지분양수만 알림)"
 
     url = str(item.get("sourceUrl") or "")
     if item.get("source") == "indoweb.org":
@@ -697,7 +702,8 @@ def format_item(item, rank, total, peers):
         spec.append(f"{item['floors']}층")
 
     where = md_safe(item.get("address") or item.get("locationKo") or item.get("location"))
-    kind = " / ".join(x for x in (md_safe(item.get("category")), md_safe(item.get("badge"))) if x)
+    kind = " / ".join(x for x in (md_safe(item.get("_sector") or item.get("category")),
+                                  md_safe(item.get("badge"))) if x)
 
     # 인도웹 벼룩시장 글은 제목 앞에 게시판 분류가 붙는다("식당/식품 | ..."). 수집기가
     # 상세 페이지를 못 받은 글에는 그대로 남아 있어, 표시할 때 한 번 더 걷어낸다.
@@ -878,8 +884,9 @@ def build_messages(picked, updated_at, peers):
                 f"_아래 관문을 모두 통과한 매물만 보냅니다._\n"
                 f"_① 업종 — 외국인 투자가 열려 있다고 확인된 업종만 "
                 f"(세탁·미용실·소형 소매·노점·화물운송은 제외)_\n"
-                f"_② 취득 구조 — 🟢 바로 취득 가능 · 🟡 PT PMA 설립 등 절차 필요_\n"
-                f"_③ 경영권 — 50% 미만 소수지분은 인수가 아니라 증자 참여이므로 제외_\n"
+                f"_② 취득 구조 — 기존 법인 지분양수만 (자산양수는 신규 PT PMA 가 필요해 제외). "
+                f"🟢 PMA 법인 · 🟡 PMA 여부 미확인(PMDN 이면 PMA 전환 요건)_\n"
+                f"_③ 경영권 — 50% 이하 지분은 인수가 아니라 증자 참여이므로 제외_\n"
                 f"_④ 영업 실체 — 영업 중·매출·업력·직원 신호가 확인된 매물만_\n"
                 f"_⑤ 규모와 신선도 — 인수가나 매출이 제시되고 90일 이내 게시_\n"
                 f"_업종 개방 여부는 2차 자료 기준입니다. 계약 전 OSS 에서 해당 KBLI 를 "

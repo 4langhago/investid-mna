@@ -31,13 +31,21 @@ def item(**kwargs):
 
 # --- 지분(share deal) 인수 -------------------------------------------------
 
-def test_share_deal_without_price_is_eligible():
-    # js/community_data.js 실제 매물: 가격 미표기 법인 매각
+def test_share_deal_without_pma_statement_is_conditional():
+    # js/community_data.js 실제 매물: 가격 미표기 법인 매각. PMA 인지 적혀 있지 않다 —
+    # PMDN 이면 지분 인수 순간 PMA 전환 요건을 다시 받으므로 '가능'으로 단정하지 않는다.
     it = item(title="법인 매각 (찌까랑 자바베카 1공단)", type="bisnis", subtype="akuisisi",
               description="법인을 매각하려고 합니다. 클린룸과 공사가 완공되고 현재까지 관리가 잘 되어 있습니다.")
     status, reason, steps = fe.classify(it)
+    assert status == fe.CONDITIONAL
+    assert "지분 인수" in reason and "PMA" in reason
+
+
+def test_share_deal_of_stated_pma_is_eligible():
+    it = item(title="PT PMA 법인 매각", type="bisnis", subtype="akuisisi",
+              description="PT PMA 법인을 지분 100% 매각합니다.")
+    status, reason, steps = fe.classify(it)
     assert status == fe.ELIGIBLE
-    assert "지분" in reason or "법인" in reason
 
 
 def test_asset_only_disclaimer_blocks_share_deal_path():
