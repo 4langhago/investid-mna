@@ -112,7 +112,9 @@ jobs:
       # 2026-07-27: 발송 소스를 js/data.js(실재 확인 불가) → js/live_data.js(99.co 실수집)로
       # 교체하고 재개함. 반드시 위 '매물 수집' 스텝 뒤에 있어야 한다 —
       # telegram_recommend.py 는 live_data.js 가 48시간 이내 갱신된 경우에만 발송한다.
-      - name: 텔레그램 매물 추천 (한인 커뮤니티 2 + 사업체 2 + 부동산)
+      # 2026-10-19: 매일 보내지 않는다. 최종 검증(원문 게시 확인·판정 일관성)까지 끝난
+      # '새' 매물이 있을 때만 보내고, 없으면 아무것도 보내지 않는다. 보낸 매물은 다시 안 보낸다.
+      - name: 텔레그램 매물 알림 (검증 완료된 새 매물이 있을 때만)
         # 저장소 변수 TELEGRAM_ENABLED 가 'false' 면 발송을 건너뛴다(판정 로직 손보는 동안 일시 중지).
         # 재개: gh variable set TELEGRAM_ENABLED --body true
         if: ${{ vars.TELEGRAM_ENABLED != 'false' }}
@@ -136,6 +138,8 @@ jobs:
       # 커밋하지 않으면 매 실행이 '첫 실행'이 되어 추적이 영원히 시작되지 않는다.
       # 발송 중지 기간에도 이력은 계속 쌓는다(요약 스텝이 이력을 갱신한다).
       - name: 발송 상태·매물 이력 커밋 & 푸시
+        # 발송이 중간에 실패해도 이미 보낸 매물 기록(sentIds)은 커밋해야 다음 날 다시 보내지 않는다.
+        if: ${{ always() }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

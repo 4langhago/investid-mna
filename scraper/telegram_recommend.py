@@ -1,6 +1,11 @@
 """수집한 매물 중 '한국인이 인수해서 실제로 사업을 굴릴 수 있는 것'만 텔레그램으로 보낸다.
 
-2026-09-17 정책: 건수를 채우지 않는다. 기준을 넘는 매물이 하나도 없으면 0건이라고 알린다.
+2026-10-19 정책: 매일 보내지 않는다. '실제로 인수 가능한지' 검증이 끝난 새 매물이 있을 때만
+보내고, 없으면 아무것도 보내지 않는다(0건 알림·탈락 사유 요약도 보내지 않는다). 한 번 보낸 매물은
+다시 보내지 않는다. 검증을 끝내지 못한 매물(원문 확인 실패·판정 불일치)은 '검증 미완료'로 보고
+보내지 않는다 — 확인 못 한 것을 확인된 것처럼 알리지 않는다.
+
+2026-09-17 정책: 건수를 채우지 않는다.
 예전에는 커뮤니티·사업체·부동산 세 섹션에 슬롯(2/2/나머지)을 배분해 매일 5건을 채웠고,
 그래서 기준에 못 미치는 날에도 애매한 물건이 추천으로 나갔다.
 
@@ -10,19 +15,21 @@
      루코·아파트·토지 같은 순수 부동산은 '인수해서 운영할 사업'이 아니므로 여기서 빠진다.
   2) 실재성 — 필수 필드·원문 링크·플레이스홀더 연락처·단위 오기재 가격 검증.
   3) 실물 확인 — 구글 Places 로 영구 폐업 제외, 인도웹 원문 글의 삭제·거래완료 확인.
+  4) 최종 검증 (confirm_listing) — 원문 글이 지금 게시 중임을 직접 확인했고, 딜 구조 판정과
+     외국인 취득 판정이 서로 모순되지 않아야 한다. 하나라도 확인 못 하면 보내지 않는다.
 
 메시지에는 한글 상세, 법적 쟁점, 인수 후 운영 개시 절차, 비용 구조, 사진·지도·평판 링크,
 공적 장부 조회 링크가 함께 붙는다. 업종 개방 여부는 2차 자료 기준이므로 계약 전 OSS 확인이 필요하다.
 
 사용법:
-  python scraper/telegram_recommend.py             # 실제 전송
+  python scraper/telegram_recommend.py             # 검증 완료된 새 매물이 있을 때만 전송
   python scraper/telegram_recommend.py --dry-run   # 전송 없이 선정 결과만 출력
-  python scraper/telegram_recommend.py --verify-urls  # 원본 URL 생존까지 확인
-  python scraper/telegram_recommend.py --test-mode    # 0건일 때 "추천 매물 없음" 1줄만
+  python scraper/telegram_recommend.py --verify-urls  # dry-run·summary 에서도 최종 검증까지 수행
+  python scraper/telegram_recommend.py --test-mode    # 0건이어도 "추천 매물 없음" 1줄 전송(경로 시험용)
   python scraper/telegram_recommend.py --summary      # 전송 없이 매물당 링크 + 3줄 요약만 출력
+  python scraper/telegram_recommend.py --include-sent # 이미 보낸 매물도 후보에 포함(점검용)
 
-2026-10-05: 텔레그램 발송을 전면 중지했다(저장소 변수 TELEGRAM_ENABLED=false).
-당분간은 --summary 로 추천 매물을 링크와 3줄 요약으로만 확인한다.
+저장소 변수 TELEGRAM_ENABLED=false 면 워크플로는 --summary 만 돌린다(전송 없음).
 """
 import json
 import os
@@ -61,6 +68,8 @@ STATE_FILE = Path(__file__).resolve().parent / "telegram_state.json"
 # 실수집 매물에 반드시 있어야 하는 값. 월매출/수익률은 99.co가 제공하지 않으므로 넣지 않는다.
 REQUIRED_FIELDS = ["title", "location", "price", "priceNum", "sourceUrl"]
 BATCH_SIZE = 5
+# 최종 검증(원문 확인)을 시도하는 후보 수 상한 = BATCH_SIZE × 이 값.
+MAX_CONFIRM_ATTEMPTS_FACTOR = 4
 # 이 시간을 넘긴 데이터는 '현재 게시 중'이라고 말할 수 없으므로 발송하지 않는다.
 MAX_DATA_AGE_HOURS = 48
 
@@ -147,17 +156,6 @@ def load_community_listings():
         return [], None
     return (export_var(COMMUNITY_JS, "COMMUNITY_LISTINGS"),
             export_var(COMMUNITY_JS, "COMMUNITY_LISTINGS_UPDATED_AT"))
-
-
-def load_brokers():
-    """한인 중개·컨설팅 업체 글 목록(scrape_indoweb.py 가 생성). 없으면 빈 목록."""
-    path = Path(__file__).resolve().parent / "output" / "korean_brokers.json"
-    if not path.exists():
-        return []
-    try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except (ValueError, OSError):
-        return []
 
 
 def data_age_hours(updated_at):
@@ -432,43 +430,52 @@ def pick_verified_batch(candidates, cursor, size, cache):
     return picked, (cursor + i) % n, dropped
 
 
-def verify_community_liveness(picked, pool, slots):
-    """발송 직전 커뮤니티 후보만 실물 페이지를 확인해 죽은 글을 빼고 다음 후보로 채운다.
+def confirm_listing(item):
+    """발송 직전 최종 검증. 확인을 끝내지 못한 매물은 보내지 않는다. (통과 여부, 사유) 반환.
 
-    인도웹 게시글은 팔린 뒤에도 글이 그대로 남아 있는 경우가 흔해(URL 이 200 을 계속
-    반환) validate() 의 존재 확인만으로는 걸러지지 않는다. 전체 후보를 다 확인하면
-    요청이 너무 많아지고(≥12초 간격 제한) 어차피 보내지 않을 글까지 확인하게 되므로,
-    실제로 보낼 몇 건만 확인한다.
+    validate()/business_gate 는 수집된 글의 '내용'을 본다. 여기서는 그 판정을 믿고 알려도
+    되는지를 본다.
+      - 딜 구조(deal_tier)와 외국인 취득 판정(foreign_eligibility)이 같은 거래를 보고 있는가.
+        한쪽은 지분양수, 다른 쪽은 자산 양도로 판정했다면 어느 쪽 인수 절차도 확정할 수 없다.
+      - 원문 글이 지금 게시 중인가. 인도웹은 본문까지 읽어 삭제·거래완료를 확인하고
+        ('unknown' 도 미확인으로 본다), 나머지 소스는 원문 URL 이 200 인지 본다.
     """
-    tried_ids = {x.get("id") for x in picked}
-    backfill = [x for x in pool if x.get("id") not in tried_ids]
-    bi = 0
-    alive, queue = [], list(picked)
-    while queue and len(alive) < slots:
-        item = queue.pop(0)
-        if item.get("source") != "indoweb.org" or not item.get("sourceUrl"):
-            alive.append(item)
-            continue
-        status, reason = check_indoweb_alive(item["sourceUrl"])
-        if status == "dead":
-            print(f"  !! 발송 직전 실물 확인 실패로 제외: {item.get('title')} - {reason}")
-            if bi < len(backfill):
-                queue.append(backfill[bi])
-                bi += 1
-            continue
-        if status == "unknown":
-            print(f"  !! 실물 확인 불가(발송은 유지, 로그만 남김): {item.get('title')} - {reason}")
-        else:
-            # 살아 있다는 것도 남긴다. 아무 줄도 안 남으면 확인을 건너뛴 건지 알 수 없다.
-            print(f"  [실물 확인] 게시 중: {item.get('title')} - {reason}")
-        alive.append(item)
-    return alive
+    fe_status, fe_reason, _steps = fe.classify(item)
+    structure = item.get("_dealStructure")
+    if structure not in (dt.SHARE_DEAL, dt.ASSET_DEAL):
+        # 구조미확인(법인 언급만 있음)·소수지분은 인수 절차를 정할 수 없다.
+        return False, f"딜 구조 미확정({structure or '판정 없음'})"
+    fe_share = fe_status == fe.ELIGIBLE and "지분 인수" in fe_reason
+    if structure == dt.SHARE_DEAL and not fe_share:
+        return False, f"판정 불일치: 딜 구조는 지분양수인데 외국인 취득 판정은 '{fe_reason}'"
+    if structure == dt.ASSET_DEAL and fe_share:
+        return False, "판정 불일치: 딜 구조는 자산양수인데 외국인 취득 판정은 지분 인수"
+
+    url = str(item.get("sourceUrl") or "")
+    if item.get("source") == "indoweb.org":
+        status, reason = check_indoweb_alive(url)
+        if status != "alive":
+            return False, f"원문 게시 확인 실패({status}): {reason}"
+        return True, ""
+    live, detail = url_is_live(url)
+    if not live:
+        return False, f"원문 게시 확인 실패({detail})"
+    return True, ""
 
 
 def load_state():
     if STATE_FILE.exists():
         return json.loads(STATE_FILE.read_text(encoding="utf-8"))
     return {"cursor": 0}
+
+
+def sent_listing_ids(state):
+    """지금까지 보낸 매물 id. sentIds 이전에 쓰던 lastSent*·seenCommunityIds 도 합친다."""
+    ids = set(state.get("sentIds") or [])
+    for key in ("lastSentIds", "lastSentBusinessIds", "lastSentPropertyIds",
+                "lastSentCommunityIds", "seenCommunityIds"):
+        ids |= set(state.get(key) or [])
+    return ids
 
 
 def save_state(state):
@@ -851,33 +858,17 @@ def build_summary_report(picked, scanned):
     return "\n\n".join(blocks)
 
 
-def build_empty_message(scanned, rejected):
-    """추천 0건인 날의 알림. 아무것도 안 보내면 파이프라인이 죽은 것과 구분되지 않는다."""
-    today = datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d")
-    top = sorted(rejected.items(), key=lambda x: -x[1])[:5]
-    lines = [f"*오늘의 매물 추천* ({today})",
-             "",
-             f"기준을 넘는 매물이 없습니다. 수집 {scanned}건 전부 탈락했습니다.",
-             "",
-             "*주요 탈락 사유*"]
-    lines += [f"• {md_safe(why)} — {n}건" for why, n in top]
-    lines.append("")
-    lines.append("_인수해서 실제로 운영할 수 있는 매물만 보냅니다. "
-                 "기준에 못 미치는 날은 건너뜁니다._")
-    return "\n".join(lines)
-
-
 def build_messages(picked, updated_at, peers):
     """머리말 1건 + 매물 1건당 1메시지. 텔레그램 4096자 제한을 넘기지 않기 위함."""
     today = datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d")
     total = len(picked)
     budget_n = sum(1 for x in picked if x.get("_tier") == bg.TIER_BUDGET)
     share_n = sum(1 for x in picked if x.get("_dealStructure") == dt.SHARE_DEAL)
-    messages = [f"*오늘의 매물 추천* ({today})\n"
-                f"인수해서 운영할 수 있다고 본 매물 {total}건 "
+    messages = [f"*검증 완료 매물* ({today})\n"
+                f"한국인이 인수해서 운영할 수 있다고 확인한 새 매물 {total}건 "
                 f"— 예산 구간(₩1~2억) {budget_n}건 · 지분양수 가능 {share_n}건\n\n"
-                f"_금액 5단계로 나눠 보냅니다. 단계에 매물이 없으면 '적합 매물 없음'으로 "
-                f"표시합니다 — 건수를 채우지 않습니다._\n"
+                f"_검증이 끝난 새 매물이 있을 때만 보냅니다. 한 번 보낸 매물은 다시 "
+                f"보내지 않습니다._\n"
                 f"_1~3단계(₩5억 이하)는 PT PMA 투자계획 Rp 100억(≈₩8.6억)에 미달해, "
                 f"단독으로는 합법 인수 구조가 성립하지 않습니다. 기존 PMA 활용이나 "
                 f"복수 매물 묶음(롤업)을 전제로 보셔야 합니다._\n"
@@ -896,19 +887,7 @@ def build_messages(picked, updated_at, peers):
                 f"_모든 수치는 매도인 게시 정보이며 검증된 값이 아닙니다. "
                 f"법률 자문이 아니고, 계약 전 현장 실사와 공증인(notaris) 확인이 필요합니다._"]
 
-    # 공개 게시판에 뜨는 매물은 일부다. 실제 물건을 들고 있는 한인 중개·컨설팅 채널을
-    # 함께 안내해, 직접 문의라는 다음 행동으로 이어지게 한다.
-    brokers = load_brokers()
-    if brokers:
-        lines = ["*■ 한인 중개·컨설팅 채널* (게시판에 안 뜨는 매물 문의처)"]
-        for b in brokers[:4]:
-            lines.append(f"• {md_safe(b['title'])}\n  {b['sourceUrl']}")
-        lines.append("_매물이 공개 게시판에 다 올라오지는 않습니다. "
-                     "위 업체에 조건(업종·예산·지역)을 직접 제시하면 비공개 물건을 받습니다._")
-        messages.append("\n".join(lines))
-
-    # 금액 5단계 + 구간 밖. 빈 단계도 건너뛰지 않고 '적합 매물 없음'으로 적는다 —
-    # 그 단계에 매물이 없다는 것 자체가 전략에 반영해야 하는 정보다.
+    # 금액 5단계 + 구간 밖. 검증된 매물만 알리므로 빈 단계는 적지 않는다(2026-10-19).
     sections = [(idx, label) for idx, label, _lo, _hi in dt.TIERS]
     sections.append(dt.TIER_OUT)
 
@@ -916,12 +895,12 @@ def build_messages(picked, updated_at, peers):
     for idx, label in sections:
         group = [x for x in picked if x.get("_tierIndex") == idx]
         if not group:
-            if idx != dt.TIER_OUT[0]:
-                messages.append(f"*■ {label}*\n_적합 매물 없음_")
             continue
         messages.append(f"*■ {label}* {len(group)}건")
         for x in group:
             rank += 1
+            # 발송 도중 실패해도 이미 나간 매물만 '보냄'으로 기록할 수 있게 위치를 남긴다.
+            x["_msgIndex"] = len(messages)
             messages.append(format_item(x, rank, total, peers))
     return messages
 
@@ -1001,10 +980,8 @@ def main():
     test_mode = "--test-mode" in sys.argv
     summary = "--summary" in sys.argv
 
-    # 2026-09-17 정책 변경: '인수해서 실제로 사업을 굴릴 수 있는 매물'만 보낸다.
-    # 예전에는 세 섹션(커뮤니티/사업체/부동산)을 슬롯 수만큼 채워 보냈다. 그러면 기준을
-    # 넘는 매물이 없는 날에도 목록을 채우려고 애매한 물건이 올라갔다.
-    # 이제 business_gate 를 통과한 것만 보내고, 0건이면 0건이라고 알린다.
+    # '인수해서 실제로 사업을 굴릴 수 있는 매물'만, 검증이 끝난 새 매물이 있을 때만 보낸다.
+    # 0건이면 아무것도 보내지 않는다(2026-10-19, 모듈 docstring 참고).
     listings, updated_at = load_listings()
     biz_all, biz_updated = load_business_listings()
     comm_all, comm_updated = load_community_listings()
@@ -1042,23 +1019,40 @@ def main():
                                    data_age_hours(x.get("postedAt")) or float("inf")))
 
     state = load_state()
+    # 한 번 보낸 매물은 다시 보내지 않는다(2026-10-19). 같은 매물을 매일 되풀이해 올리던 것을 막는다.
+    sent_ids = sent_listing_ids(state)
+    if "--include-sent" not in sys.argv:
+        before = len(candidates)
+        candidates = [x for x in candidates if x.get("id") not in sent_ids]
+        if before != len(candidates):
+            print(f"[선정] 이미 보낸 매물 {before - len(candidates)}건 제외")
+
+    # 3차: 최종 검증(판정 일관성 + 원문 게시 확인). 실제 발송에서는 항상 돈다.
+    # 탈락한 자리는 다음 후보로 채운다. 원문 확인은 요청이 나가고(인도웹은 12초 간격)
+    # 워크플로 시간 제한이 있으므로 확인 시도 횟수에 상한을 둔다. 남은 후보는 다음 실행에서 본다.
+    if not (dry_run or summary) or check_url:
+        confirmed = []
+        for x in candidates[:BATCH_SIZE * MAX_CONFIRM_ATTEMPTS_FACTOR]:
+            if len(confirmed) >= BATCH_SIZE:
+                break
+            ok, why = confirm_listing(x)
+            if ok:
+                confirmed.append(x)
+            else:
+                print(f"  !! 검증 미완료로 제외: {x.get('title')} - {why}")
+        candidates = confirmed
+    else:
+        print("[검증] dry-run/summary 라 최종 검증(원문 게시 확인) 생략 - --verify-urls 로 포함")
+
+    # 4차: 구글 실측(영구 폐업 제외)
     place_cache = pc._load_cache() if pc.enabled() else {}
     print(f"[구글 Places] {'사용' if pc.enabled() else '비활성(GOOGLE_PLACES_API_KEY 없음)'}")
-
-    # 3차: 구글 실측(영구 폐업 제외) + 원문 글 생존 확인
     picked, _next, dropped = pick_verified_batch(candidates, 0, min(BATCH_SIZE, len(candidates)),
                                                  place_cache)
     for item, why in dropped:
         print(f"  !! 구글 확인으로 제외: {item.get('title')} - {why}")
     if pc.enabled():
         pc._save_cache(place_cache)
-
-    community_picked = [x for x in picked if x.get("source") == "indoweb.org"]
-    if community_picked and (not dry_run or check_url):
-        alive = verify_community_liveness(community_picked, candidates, len(community_picked))
-        alive_ids = {x["id"] for x in alive}
-        picked = [x for x in picked
-                  if x.get("source") != "indoweb.org" or x["id"] in alive_ids]
 
     for x in picked:
         x["_historyNotes"] = lh.notes(history, x)
@@ -1084,11 +1078,10 @@ def main():
         messages = ["추천 매물 없음"]
         print("[선정] 0건 - 테스트 모드이므로 '추천 매물 없음' 1줄만 보낸다")
     else:
-        # 평소에는 탈락 사유 요약을 함께 보낸다. 아무것도 보내지 않으면 '매물이 없는 날'과
-        # '파이프라인이 죽은 날'을 구분할 수 없다 — 실제로 그 때문에 한 달간 추천이
-        # 끊긴 것을 아무도 몰랐던 적이 있다.
-        messages = [build_empty_message(len(pool), rejected)]
-        print("[선정] 기준을 넘는 매물 0건 - '추천 없음'과 탈락 사유를 알린다")
+        # 2026-10-19: 검증 완료된 새 매물이 없으면 보내지 않는다(사용자 지시 — 매일 보낼
+        # 필요 없음). 파이프라인이 살아 있는지는 Actions 실행 기록과 이 로그로 확인한다.
+        print("[선정] 검증 완료된 새 매물 0건 - 발송하지 않는다")
+        return
 
     print("----- 발송 내용 미리보기 -----")
     for m in messages:
@@ -1100,15 +1093,26 @@ def main():
         print("[dry-run] 전송 생략")
         return
 
-    for m in messages:
-        send_telegram(m)
-    state["lastRunAt"] = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
-    state["lastSentIds"] = [x["id"] for x in picked]
-    # 보낸 매물은 '본 것'으로 남겨 다음 실행에서 같은 물건을 다시 올리지 않는다.
-    state["seenCommunityIds"] = sorted(
-        set(state.get("seenCommunityIds") or []) | {x["id"] for x in picked})
-    save_state(state)
-    print(f"[전송 완료] 추천 {len(picked)}건")
+    sent_now = _send_and_record(messages, picked, state, sent_ids)
+    print(f"[전송 완료] 추천 {len(sent_now)}건")
+
+
+def _send_and_record(messages, picked, state, sent_ids):
+    """메시지를 순서대로 보내고, 실제로 나간 매물 id 를 발송 상태에 누적한다."""
+    sent_now = []
+    try:
+        for i, m in enumerate(messages):
+            send_telegram(m)
+            sent_now += [x["id"] for x in picked if x.get("_msgIndex") == i]
+    finally:
+        # 중간에 실패해도 이미 나간 매물은 기록한다. 안 그러면 다음 실행에서 다시 보낸다.
+        if sent_now:
+            state["lastRunAt"] = datetime.now(timezone.utc).astimezone().isoformat(
+                timespec="seconds")
+            state["lastSentIds"] = sent_now
+            state["sentIds"] = sorted(str(i) for i in sent_ids | set(sent_now))
+            save_state(state)
+    return sent_now
 
 
 if __name__ == "__main__":
