@@ -1,8 +1,8 @@
 // 자동 생성 파일 — scraper/scrape_indoweb.py 가 갱신합니다. 직접 수정 금지.
 // 제목/지역/게시일/가격/면적/사실 요약만 보관한다.
 // 글쓴이 이름·전화·이메일·메신저 ID 는 저장하지 않는다(MASK_RE 로 제거).
-// 갱신 시각: 2026-10-08T06:09:19+00:00
-const COMMUNITY_LISTINGS_UPDATED_AT = "2026-10-08T06:09:19+00:00";
+// 갱신 시각: 2026-10-20T04:46:15+00:00
+const COMMUNITY_LISTINGS_UPDATED_AT = "2026-10-20T04:46:15+00:00";
 const COMMUNITY_LISTINGS = [
   {
     "id": "iw-real_estate_mb-10428",
@@ -46,8 +46,8 @@ const COMMUNITY_LISTINGS = [
       "업종/용도: 공장·제조",
       "법인·인허가 관련 언급 있음"
     ],
-    "foreignStatus": "가능",
-    "foreignReason": "기존 법인 지분 인수 - 신규 PT PMA 설립 없이 외국인 인수 가능한 구조",
+    "foreignStatus": "조건부",
+    "foreignReason": "기존 법인 지분 인수 - 법인이 PMA 인지 미확인(PMDN 이면 PMA 전환 요건 재충족 필요)",
     "foreignSteps": [
       "인수가 미표기 - 지분가와 법인 부채 인수 범위를 함께 확인",
       "AHU 법인 등기부로 현재 주주 구성과 PMA/PMDN 여부 확인",
@@ -55,17 +55,12 @@ const COMMUNITY_LISTINGS = [
       "PMDN 이면 외국인 지분이 1%만 들어와도 PMA 전환 의무 - 납입자본 Rp 25억(12개월 인출 불가)·투자계획 Rp 100억 요건 재충족 필요",
       "세무(DJP)·임금·임차료 미납과 소송(SIPP) 등 법인에 딸린 채무 실사 필수"
     ],
-    "operability": "확인필요",
+    "operability": "부적합",
     "operabilityReasons": [
-      "사업자 등록·인허가 관련 언급이 있음",
-      "공장 가동·거래처 등 제조 영업 기반이 언급됨"
+      "영업 실체 신호(영업중 여부·매출·업력·직원)가 하나도 없음 - 실재 여부를 확인할 수 없는 글"
     ],
-    "operabilityTodos": [
-      "인수가(권리금 포함) 미표기 - 매도인에게 총액과 포함 범위 확인",
-      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": true
+    "operabilityTodos": [],
+    "koreanEligible": false
   },
   {
     "id": "iw-real_estate_mb-10427",
@@ -830,17 +825,19 @@ const COMMUNITY_LISTINGS = [
       "매도인에게 sertifikat(SHM/HGB/Hak Pakai) 종류 확인",
       "SHM 이면 PT PMA + HGB 전환이 전제됨"
     ],
-    "operability": "확인필요",
+    "operability": "부적합",
     "operabilityReasons": [
       "면적이 명시됨",
-      "주소가 기재됨"
+      "주소가 기재됨",
+      "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
+      "게시 후 181일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
-    "koreanEligible": true
+    "koreanEligible": false
   },
   {
     "id": "iw-real_estate_mb-10404",
@@ -902,6 +899,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
+      "게시 후 187일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -965,7 +963,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 184일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 196일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1027,7 +1025,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 184일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 196일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
@@ -1093,7 +1091,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 197일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 209일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1161,7 +1159,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 255일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 267일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1223,7 +1221,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 260일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 272일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
@@ -1290,7 +1288,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 272일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 284일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1355,7 +1353,7 @@ const COMMUNITY_LISTINGS = [
       "매물을 특정할 정보(가격·면적·위치·증서)가 너무 적음"
     ],
     "operabilityTodos": [
-      "게시 후 279일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 291일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1420,7 +1418,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 314일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 326일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1485,7 +1483,7 @@ const COMMUNITY_LISTINGS = [
       "주소가 기재됨"
     ],
     "operabilityTodos": [
-      "게시 후 317일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 329일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
@@ -1557,7 +1555,7 @@ const COMMUNITY_LISTINGS = [
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
-      "게시 후 321일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 333일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
@@ -1629,73 +1627,11 @@ const COMMUNITY_LISTINGS = [
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
-      "게시 후 321일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 333일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "증서 종류(SHM/HGB/Hak Pakai) 미표기 - 매도인에게 사본 요구",
       "매매가 미표기 - 원문·매도인에게 호가 확인",
       "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
     ],
     "koreanEligible": false
-  },
-  {
-    "id": "iw-real_estate_mb-10375",
-    "type": "properti",
-    "subtype": "jual",
-    "title": "아파트",
-    "category": "한인 커뮤니티 매물 · 아파트",
-    "dealType": "매매",
-    "board": "부동산·업체 매매(주력)",
-    "location": "Indonesia",
-    "locationKo": "지역 미상",
-    "address": "다르마왕사 Essence Tower 2 급매합니다!",
-    "description": "td>\n\r\n \r\n \r\n \r\n \r\n \r\n\r\n \n \n \r\n 안녕하세요, \nDharmawangsa Essence Tower 2, 중층 세대 매매합니다. \n방 3개, 화장실 2개, Maid 방 확장해서 창고 및 세탁기 공간으로 사용중입니다. \n전용면적 114m2 (약 35평)으로 매우 공간이 넓으며, 층고도 다른 세대보다 높은 층에 있는 몇 안되는 세대입니다. \nAJB(등기) 등록된 매물이라 안전하고, \n끄망과 가까워서 주변 인프라도 좋은 편입니다. \nAJB등록 비용, 인테리어 비용(2022년) 등 고려해서 IDR 28.5억에 매매하려 합니다. \n관심 있으신 분은 WA 주시면 최대한 빨리 답변 드리겠습니다. https://indoweb.org/love/data/file/real_estate_mb/3529412161_Y0XSoIFG_20240714_103350.heic\nWA: +81315776604 \r\n \n\r\n \r\n \r\n \r\n \n\r\n\r\n \r\n \r\n \r\n 추천 0",
-    "whatsapp": null,
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "2,850,000,000 IDR",
-    "priceNum": 2850000000.0,
-    "area": null,
-    "floors": null,
-    "established": null,
-    "facilities": [
-      "한인 커뮤니티",
-      "원문 링크에서 상세 확인",
-      "면적/방: ㎡"
-    ],
-    "c2c": false,
-    "images": "🇰🇷",
-    "photoUrls": [
-      "https://indoweb.org/love/bbs/view_image.php?bo_table=real_estate_mb&fn=3529412161_unNdbLCa_WhatsApp_Image_2025-08-25_at_19.09.21.jpeg"
-    ],
-    "badge": "커뮤니티 매물",
-    "source": "indoweb.org",
-    "sourceUrl": "https://indoweb.org/love/bbs/board.php?bo_table=real_estate_mb&wr_id=10375&page=2",
-    "postedAt": "2025-10-17T00:00:00+00:00",
-    "indexOnly": false,
-    "lat": null,
-    "lng": null,
-    "summaryKo": [
-      "업종/용도: 창고·물류",
-      "권리 형태: AJB(매매증서)",
-      "면적 114㎡"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "외국인 개인 취득 가능 유형이나 지역 미상(자카르타 기준 적용) 최소가 Rp 3.0십억 미달",
-    "foreignSteps": [
-      "표시가 Rp 2.9십억 - 최소가 미만이면 외국인 명의 등기 불가",
-      "최소가 이상으로 매매하는 경우에만 진행(다운계약은 등기 무효 위험)"
-    ],
-    "operability": "확인필요",
-    "operabilityReasons": [
-      "매매가가 명시됨",
-      "주소가 기재됨",
-      "권리 형태(증서)가 표기됨"
-    ],
-    "operabilityTodos": [
-      "게시 후 356일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
-      "면적 미표기 - 실측 면적과 증서상 면적 대조 필요",
-      "BPN 등기부(sertifikat) 진위와 저당·압류 설정 여부 조회"
-    ],
-    "koreanEligible": true
   }
 ];
