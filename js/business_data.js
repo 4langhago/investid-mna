@@ -1,7 +1,60 @@
 // 자동 생성 파일 — scraper/scrape_business.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-10-07T22:44:00+07:00
-const BUSINESS_LISTINGS_UPDATED_AT = "2026-10-07T22:44:00+07:00";
+// 갱신 시각: 2026-10-21T20:07:40+07:00
+const BUSINESS_LISTINGS_UPDATED_AT = "2026-10-21T20:07:40+07:00";
 const BUSINESS_LISTINGS = [
+  {
+    "id": "biz-11076",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Jual Bisnis / Take Over Usaha Cloud Kitchen dan Bangunan 2 Lantai - Cipete Jakarta Selatan",
+    "category": "기타 사업",
+    "location": "Jakarta Selatan",
+    "locationKo": "자카르타 남부",
+    "address": "Cipete, Kebayoran Baru, Jakarta Selatan",
+    "monthlyRevenue": null,
+    "monthlyRevenueNum": null,
+    "profit": null,
+    "price": "Rp 1 M",
+    "priceNum": 1000000000,
+    "established": null,
+    "area": 162.0,
+    "floors": null,
+    "description": "Lokasi: Cipete, Kebayoran Baru, Jakarta Selatan Luas Tanah: 162 m2 Luas Bangunan: 310 m2 Keterangan: DIJUAL | BISNIS CLOUD KITCHEN dan BANGUNAN KOMERSIAL di CIPETE JAKARTA SELATAN Kesempatan Investasi Menarik: Untuk memiliki bangunan komersial sekaligus bisnis cloud kitchen yang telah beroperasi di ...",
+    "facilities": [
+      "운영 중 사업체",
+      "tempat-usaha.com 수집"
+    ],
+    "whatsapp": "+6281332780827",
+    "c2c": false,
+    "images": "🏪",
+    "badge": "완전인수",
+    "source": "tempat-usaha.com",
+    "sourceUrl": "https://www.tempat-usaha.com/11076/jual-bisnis-take-over-usaha-cloud-kitchen-dan-bangunan-2-lantai-cipete-jakarta-selatan/",
+    "postedAt": "2026-10-21T15:16:00",
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 기타 사업",
+      "토지 면적 162m²",
+      "건물 면적 310m²",
+      "2층"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "자산 양도 Rp 1.0십억(≈₩0.86억) - 신규 PT PMA 납입자본(Rp 25억)·투자계획(Rp 100억)에 견줘 규모가 너무 작아 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
+    "foreignSteps": [
+      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
+    ],
+    "operability": "확인필요",
+    "operabilityReasons": [
+      "현재 영업 중이라고 명시됨",
+      "최근 게시(-0일 전)"
+    ],
+    "operabilityTodos": [
+      "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false
+  },
   {
     "id": "biz-10932",
     "type": "bisnis",
@@ -219,7 +272,7 @@ const BUSINESS_LISTINGS = [
       "설비·집기 인계 범위가 언급됨"
     ],
     "operabilityTodos": [
-      "게시 후 246일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 260일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
@@ -276,7 +329,7 @@ const BUSINESS_LISTINGS = [
       "설비·집기 인계 범위가 언급됨"
     ],
     "operabilityTodos": [
-      "게시 후 270일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 284일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
@@ -330,7 +383,7 @@ const BUSINESS_LISTINGS = [
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
-      "게시 후 275일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 289일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
@@ -390,7 +443,7 @@ const BUSINESS_LISTINGS = [
       "설비·집기 인계 범위가 언급됨"
     ],
     "operabilityTodos": [
-      "게시 후 338일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 351일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
@@ -436,7 +489,7 @@ const BUSINESS_LISTINGS = [
     "foreignSteps": [],
     "operability": "부적합",
     "operabilityReasons": [
-      "게시 후 517일 경과 - 거래 종료 가능성이 높아 추천 대상에서 제외"
+      "게시 후 531일 경과 - 거래 종료 가능성이 높아 추천 대상에서 제외"
     ],
     "operabilityTodos": [],
     "koreanEligible": false
