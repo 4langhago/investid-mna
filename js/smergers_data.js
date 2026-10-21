@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-10-20T04:38:35+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-20T04:38:35+00:00";
+// 갱신 시각: 2026-10-21T04:28:18+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-21T04:28:18+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -1426,6 +1426,85 @@ const SMERGERS_LISTINGS = [
     "_tierIndex": 2,
     "_tierLabel": "2단계 ₩1~3억",
     "_tierNote5": "인수가 ≈₩1.52억 · PMA 투자계획 미달 + 납입자본 Rp 25억(≈₩2.2억)이 인수가를 넘거나 비슷함 - 총 소요 현금이 인수가보다 커진다",
+    "_dealStructure": "소수지분",
+    "_dealStructureNote": "50% 이하 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
+  },
+  {
+    "id": "smg-ivuau",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Hygiene Products Company Equity Stake For Sale in Central Jakarta, Indonesia",
+    "category": "광고·마케팅",
+    "location": "Central Jakarta",
+    "locationKo": "자카르타 중부",
+    "address": "Central Jakarta, Special Capital Region of Jakarta, Indonesia",
+    "monthlyRevenue": "IDR 135 jt/월",
+    "monthlyRevenueNum": 134666666,
+    "profit": null,
+    "price": "IDR 2.00 M",
+    "priceNum": 2000000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Herbal hair and skincare brand with 15 years’ presence, strong distribution, and online-offline sales channels. Founded 15 years ago, our company is focused on commercial distribution of herbal hair and skin care products under own brand.\r\n- The company owns the product branding and formulations, while manufacturing is outsourced to a manufacturing partner in China.\r\n- Products are marketed through official stores on Shopee, TikTok Shop, Tokopedia, and Lazada.\r\n- Also distributed through modern market networks, including Guardian, Yogya, The FoodHall, Apotek Roxy, FamilyMart, and Dan+Dan, as well as traditional markets and resellers. Online and offline sales channels contribute equally to the company’s revenue.\r\n- Marketing activities are supported by paid influencer promotions, national TV advertisements, including Kompas TV, and advertisements in the Kompas newspaper.\r\n- The business model involves selling finished products to end consumers and retail partners through online and offline distribution channels.\r\n- Annual sales are approximately US$100,000, with over 200 orders per month.\r\n- The company holds NIB registration for its business operations. 매각 사유: Seeking investment to expand product inventory, strengthen working capital and cash flow, increase marketplace marketing activities, and hire additional marketing staff to support sales growth.The valuation reflects the company’s projected sales growth of approximately 2–3x over the next 3 years, supported by increased inventory, expanded marketplace marketing, and a larger sales team.",
+    "facilities": [
+      "SMERGERS 소수지분",
+      "연매출 IDR 1.62B",
+      "EBITDA 마진 10 - 20 %",
+      "플랫폼 인증: Email·Google·Phone",
+      "매도인 활동 Active"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "📊",
+    "badge": "M&A 플랫폼",
+    "source": "smergers.com",
+    "sourceUrl": "https://www.smergers.com/business/hygiene-products-company-equity-stake-for-sale-in-central-jakarta-indonesia/ivuau/",
+    "postedAt": null,
+    "listingActivity": "Active",
+    "platformRating": 6.9,
+    "platformRatingCount": 1,
+    "platformVerified": [
+      "Email",
+      "Google",
+      "Phone"
+    ],
+    "dealStructure": "소수지분",
+    "dealLabel": "Partial Stake Sale",
+    "stakePercent": 10.0,
+    "ebitdaMargin": "10 - 20 %",
+    "annualRevenueNum": 1616000000,
+    "sellReason": "Seeking investment to expand product inventory, strengthen working capital and cash flow, increase marketplace marketing activities, and hire additional marketing staff to support sales growth.The valuation reflects the company’s projected sales growth of approximately 2–3x over the next 3 years, supported by increased inventory, expanded marketplace marketing, and a larger sales team.",
+    "regionPriority": 1,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 약국",
+      "사업자 등록번호(NIB/SIUP/NPWP) 언급 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "자산 양도 Rp 2.0십억 - PT PMA 설립 시 인수 가능하나 납입자본(Rp 25억)이 인수가보다 크므로 총 현금 ₩2.2억 이상 필요",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "총 현금 약 Rp 25억(≈₩2.2억) 필요 - 납입자본을 입금한 뒤 인수가 Rp 2.0십억 와 운전자금을 그 안에서 지출(입금 후 12개월 인출 제한)",
+      "투자계획 Rp 100억(≈₩8.6억, 3년·설비·운전자금 포함) 제출과 이행 보고(LKPM) 필요 - 이 규모 매장 하나로는 계획이 과도하므로 증설 계획을 함께 설계할 것",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매출·수익 수치가 제시됨",
+      "인계 대상 직원이 있음",
+      "사업자 등록·인허가 관련 언급이 있음",
+      "매출·EBITDA 가 공개됨",
+      "연매출·EBITDA 마진이 수치로 제시됨"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true,
+    "_tierIndex": 2,
+    "_tierLabel": "2단계 ₩1~3억",
+    "_tierNote5": "인수가 ≈₩1.72억 · PMA 투자계획 미달 + 납입자본 Rp 25억(≈₩2.2억)이 인수가를 넘거나 비슷함 - 총 소요 현금이 인수가보다 커진다",
     "_dealStructure": "소수지분",
     "_dealStructureNote": "50% 이하 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
   },
@@ -3632,7 +3711,7 @@ const SMERGERS_LISTINGS = [
     "sourceUrl": "https://www.smergers.com/business/vehicle-rental-company-equity-stake-for-sale-in-east-jakarta-indonesia/nr5lx/",
     "postedAt": null,
     "listingActivity": "Active",
-    "platformRating": 9.3,
+    "platformRating": 9.2,
     "platformRatingCount": 2,
     "platformVerified": [
       "Google",
