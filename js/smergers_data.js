@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-10-21T04:28:18+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-21T04:28:18+00:00";
+// 갱신 시각: 2026-10-22T04:27:59+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-22T04:27:59+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -146,6 +146,79 @@ const SMERGERS_LISTINGS = [
     "_tierIndex": 1,
     "_tierLabel": "1단계 ₩1억 이하",
     "_tierNote5": "인수가 ≈₩0.15억 · PMA 투자계획 Rp 100억(≈₩8.6억) 미달 - 단독 인수로는 합법 구조 불성립. 동일 KBLI PT PMA 보유자의 자산 인수 또는 복수 매물 묶음(롤업)만 가능",
+    "_dealStructure": "소수지분",
+    "_dealStructureNote": "50% 이하 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
+  },
+  {
+    "id": "smg-zn3zu",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Enterprise Software Company Equity Stake For Sale in Jakarta, Indonesia",
+    "category": "IT·소프트웨어",
+    "location": "Jakarta",
+    "locationKo": "자카르타",
+    "address": "Jakarta, Special Capital Region of Jakarta, Indonesia",
+    "monthlyRevenue": "IDR 124 jt/월",
+    "monthlyRevenueNum": 124000000,
+    "profit": null,
+    "price": "IDR 283 jt",
+    "priceNum": 283200000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Tourism technology company building B2B and B2C ecosystem in tourism business seeking investment. We are tourism technology company building a fully integrated digital ecosystem for the tourism industry. We go beyond traditional ticketing systems by connecting tourism business owners, consumers, and resellers through a unified and scalable technology platform.\r\n\r\nHeadquartered in Jakarta, Indonesia, we specialise in advanced ticketing, ERP, and operational systems for tourism businesses, including theme parks, water parks, museums, venues, and experiential tourism destinations.\r\n\r\nSupported by a focused team of 10+ experienced and highly skilled professionals, the company is strategically positioned to create meaningful impact in the enterprise tourism software market.\r\n\r\nOur end-to-end product suite, delivered through a Software-as-a-Service (SaaS) model, addresses the full tourism value chain from operations and distribution to customer experience and data-driven decision making.\r\n\r\nCurrently, we serve 17 established tourism destinations across Indonesia. Over the next five years, the company targets expansion to 200+ tourism clients, reflecting strong scalability and long-term growth potential.\r\n\r\nPrevious year, we launched an app, which is a B2C leisure and lifestyle application designed to redefine how consumers discover, plan, and experience tourism destinations.\r\n\r\nThis month, we have introduced another app, a B2B platform that streamlines reseller management and automates collaboration between tourism sites and distribution partners.\r\n\r\nTogether, B2C app, B2B, and our core ticketing & operational systems form a comprehensive tourism ecosystem, delivering a true end-to-end solution for the industry.\r\n\r\nBy strategically addressing both B2B and B2C markets, we are well positioned to capture a growing share of the enterprise software segment within the tourism sector.\r\n\r\nAs of the end of previous year, the company recorded a 35% revenue growth compared to last year, demonstrating solid market traction and operational momentum.\r\n\r\nOur robust ticketing, ERP, and operational platforms are engineered to optimize operations, increase efficiency, and enhance visitor experience for large-scale tourism destinations.\r\n\r\nEBITDA performance and growth strategy.\r\n\r\nAt the end of 2025, the company experienced a temporary decline in EBITDA, driven by deliberate and strategic investments in product development and market expansion. During this period, we invested significantly in the development and launch of two new platforms.\r\n\r\nThese investments included technology development, infrastructure, talent acquisition, product validation, and go-to-market preparation. While these initiatives impacted short-term profitability, they were essential to building a scalable, long-term growth engine.\r\n\r\nWith the launch of 2 apps, we are transitioning from a pure B2B revenue model to a multi-channel ecosystem that generates revenue from:\r\nB2B enterprise clients (ticketing, ERP, and operational systems)\r\nB2B resellers and distribution partners.\r\nB2C consumers through leisure, ticketing, and experiential services.\r\n\r\nThis strategic shift is expected to multiply revenue streams, improve customer lifetime value, and significantly expand total addressable market (TAM). As platform adoption increases, operating leverage from the SaaS model is projected to drive strong EBITDA recovery and margin expansion in the following years.\r\n\r\nIn summary, the short-term EBITDA compression reflects intentional growth investment, positioning the company for accelerated and diversified revenue growth beyond traditional B2B limitations. 매각 사유: We are an Indonesia-based tourism technology company building a fully integrated, end-to-end digital ecosystem for the tourism industry. The company combines enterprise-grade ticketing and ERP systems with reseller distribution and consumer-facing platforms, enabling it to capture value across the entire tourism value chain.With proven traction across 17 established tourism destinations and 35% revenue growth in 2025, we have validated its product-market fit and execution capability. The core platforms—enterprise ticketing systems, B2B app, and B2C app —are fully developed and live, positioning the company at a critical inflection point for scale.The company is now seeking investment to accelerate geographic expansion across multiple cities in Indonesia and selected international markets. Capital will be deployed to strengthen local sales and operational teams, establish market presence in high-potential tourism hubs, form strategic partnerships, and drive adoption of both B2B and B2C platforms.Our ecosystem-driven model enables diversified and recurring revenue streams, combining SaaS subscriptions, transaction-based income, and direct consumer monetization. This structure creates strong network effects, increases customer lifetime value, and supports long-term margin expansion as scale increases.The temporary EBITDA compression in 2025 reflects deliberate investments in platform expansion and new product launches rather than operational weakness. As new cities and markets are activated, the SaaS-based model is expected to deliver accelerating revenue growth, improving profitability, and strong operating leverage.For both local and international investors, we offer a compelling opportunity to participate in the digital transformation of the tourism industry, backing a company that is scaling a proven Indonesian technology platform into a regional tourism ecosystem leader.",
+    "facilities": [
+      "SMERGERS 소수지분",
+      "연매출 IDR 1.49B",
+      "EBITDA 마진 10 - 20 %",
+      "플랫폼 인증: Google·Phone",
+      "매도인 활동 Active"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "📊",
+    "badge": "M&A 플랫폼",
+    "source": "smergers.com",
+    "sourceUrl": "https://www.smergers.com/business/enterprise-software-company-equity-stake-for-sale-in-jakarta-indonesia/zn3zu/",
+    "postedAt": null,
+    "listingActivity": "Active",
+    "platformRating": 9.5,
+    "platformRatingCount": 8,
+    "platformVerified": [
+      "Google",
+      "Phone"
+    ],
+    "dealStructure": "소수지분",
+    "dealLabel": "Partial Stake Sale",
+    "stakePercent": 20.0,
+    "ebitdaMargin": "10 - 20 %",
+    "annualRevenueNum": 1488000000,
+    "sellReason": "We are an Indonesia-based tourism technology company building a fully integrated, end-to-end digital ecosystem for the tourism industry. The company combines enterprise-grade ticketing and ERP systems with reseller distribution and consumer-facing platforms, enabling it to capture value across the entire tourism value chain.With proven traction across 17 established tourism destinations and 35% revenue growth in 2025, we have validated its product-market fit and execution capability. The core platforms—enterprise ticketing systems, B2B app, and B2C app —are fully developed and live, positioning the company at a critical inflection point for scale.The company is now seeking investment to accelerate geographic expansion across multiple cities in Indonesia and selected international markets. Capital will be deployed to strengthen local sales and operational teams, establish market presence in high-potential tourism hubs, form strategic partnerships, and drive adoption of both B2B and B2C platforms.Our ecosystem-driven model enables diversified and recurring revenue streams, combining SaaS subscriptions, transaction-based income, and direct consumer monetization. This structure creates strong network effects, increases customer lifetime value, and supports long-term margin expansion as scale increases.The temporary EBITDA compression in 2025 reflects deliberate investments in platform expansion and new product launches rather than operational weakness. As new cities and markets are activated, the SaaS-based model is expected to deliver accelerating revenue growth, improving profitability, and strong operating leverage.For both local and international investors, we offer a compelling opportunity to participate in the digital transformation of the tourism industry, backing a company that is scaling a proven Indonesian technology platform into a regional tourism ecosystem leader.",
+    "regionPriority": 1,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: IT·소프트웨어"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "자산 양도 Rp 283백만(≈₩0.24억) - 신규 PT PMA 납입자본(Rp 25억)·투자계획(Rp 100억)에 견줘 규모가 너무 작아 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
+    "foreignSteps": [
+      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매출·수익 수치가 제시됨",
+      "매출·EBITDA 가 공개됨",
+      "고정 고객·거래처 기반이 언급됨",
+      "연매출·EBITDA 마진이 수치로 제시됨"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false,
+    "_tierIndex": 1,
+    "_tierLabel": "1단계 ₩1억 이하",
+    "_tierNote5": "인수가 ≈₩0.24억 · PMA 투자계획 Rp 100억(≈₩8.6억) 미달 - 단독 인수로는 합법 구조 불성립. 동일 KBLI PT PMA 보유자의 자산 인수 또는 복수 매물 묶음(롤업)만 가능",
     "_dealStructure": "소수지분",
     "_dealStructureNote": "50% 이하 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
   },
@@ -1430,85 +1503,6 @@ const SMERGERS_LISTINGS = [
     "_dealStructureNote": "50% 이하 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
   },
   {
-    "id": "smg-ivuau",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Hygiene Products Company Equity Stake For Sale in Central Jakarta, Indonesia",
-    "category": "광고·마케팅",
-    "location": "Central Jakarta",
-    "locationKo": "자카르타 중부",
-    "address": "Central Jakarta, Special Capital Region of Jakarta, Indonesia",
-    "monthlyRevenue": "IDR 135 jt/월",
-    "monthlyRevenueNum": 134666666,
-    "profit": null,
-    "price": "IDR 2.00 M",
-    "priceNum": 2000000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Herbal hair and skincare brand with 15 years’ presence, strong distribution, and online-offline sales channels. Founded 15 years ago, our company is focused on commercial distribution of herbal hair and skin care products under own brand.\r\n- The company owns the product branding and formulations, while manufacturing is outsourced to a manufacturing partner in China.\r\n- Products are marketed through official stores on Shopee, TikTok Shop, Tokopedia, and Lazada.\r\n- Also distributed through modern market networks, including Guardian, Yogya, The FoodHall, Apotek Roxy, FamilyMart, and Dan+Dan, as well as traditional markets and resellers. Online and offline sales channels contribute equally to the company’s revenue.\r\n- Marketing activities are supported by paid influencer promotions, national TV advertisements, including Kompas TV, and advertisements in the Kompas newspaper.\r\n- The business model involves selling finished products to end consumers and retail partners through online and offline distribution channels.\r\n- Annual sales are approximately US$100,000, with over 200 orders per month.\r\n- The company holds NIB registration for its business operations. 매각 사유: Seeking investment to expand product inventory, strengthen working capital and cash flow, increase marketplace marketing activities, and hire additional marketing staff to support sales growth.The valuation reflects the company’s projected sales growth of approximately 2–3x over the next 3 years, supported by increased inventory, expanded marketplace marketing, and a larger sales team.",
-    "facilities": [
-      "SMERGERS 소수지분",
-      "연매출 IDR 1.62B",
-      "EBITDA 마진 10 - 20 %",
-      "플랫폼 인증: Email·Google·Phone",
-      "매도인 활동 Active"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "📊",
-    "badge": "M&A 플랫폼",
-    "source": "smergers.com",
-    "sourceUrl": "https://www.smergers.com/business/hygiene-products-company-equity-stake-for-sale-in-central-jakarta-indonesia/ivuau/",
-    "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 6.9,
-    "platformRatingCount": 1,
-    "platformVerified": [
-      "Email",
-      "Google",
-      "Phone"
-    ],
-    "dealStructure": "소수지분",
-    "dealLabel": "Partial Stake Sale",
-    "stakePercent": 10.0,
-    "ebitdaMargin": "10 - 20 %",
-    "annualRevenueNum": 1616000000,
-    "sellReason": "Seeking investment to expand product inventory, strengthen working capital and cash flow, increase marketplace marketing activities, and hire additional marketing staff to support sales growth.The valuation reflects the company’s projected sales growth of approximately 2–3x over the next 3 years, supported by increased inventory, expanded marketplace marketing, and a larger sales team.",
-    "regionPriority": 1,
-    "lat": null,
-    "lng": null,
-    "summaryKo": [
-      "업종/용도: 약국",
-      "사업자 등록번호(NIB/SIUP/NPWP) 언급 있음"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "자산 양도 Rp 2.0십억 - PT PMA 설립 시 인수 가능하나 납입자본(Rp 25억)이 인수가보다 크므로 총 현금 ₩2.2억 이상 필요",
-    "foreignSteps": [
-      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
-      "총 현금 약 Rp 25억(≈₩2.2억) 필요 - 납입자본을 입금한 뒤 인수가 Rp 2.0십억 와 운전자금을 그 안에서 지출(입금 후 12개월 인출 제한)",
-      "투자계획 Rp 100억(≈₩8.6억, 3년·설비·운전자금 포함) 제출과 이행 보고(LKPM) 필요 - 이 규모 매장 하나로는 계획이 과도하므로 증설 계획을 함께 설계할 것",
-      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매출·수익 수치가 제시됨",
-      "인계 대상 직원이 있음",
-      "사업자 등록·인허가 관련 언급이 있음",
-      "매출·EBITDA 가 공개됨",
-      "연매출·EBITDA 마진이 수치로 제시됨"
-    ],
-    "operabilityTodos": [
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": true,
-    "_tierIndex": 2,
-    "_tierLabel": "2단계 ₩1~3억",
-    "_tierNote5": "인수가 ≈₩1.72억 · PMA 투자계획 미달 + 납입자본 Rp 25억(≈₩2.2억)이 인수가를 넘거나 비슷함 - 총 소요 현금이 인수가보다 커진다",
-    "_dealStructure": "소수지분",
-    "_dealStructureNote": "50% 이하 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
-  },
-  {
     "id": "smg-tzuhy",
     "type": "bisnis",
     "subtype": "akuisisi",
@@ -2705,6 +2699,84 @@ const SMERGERS_LISTINGS = [
     "_tierIndex": 4,
     "_tierLabel": "4단계 ₩5~7억",
     "_tierNote5": "인수가 ≈₩5.79억 · PMA 투자계획 Rp 100억에 근접 - 운전자금 합산으로 요건 충족 여지 있음",
+    "_dealStructure": "자산양수",
+    "_dealStructureNote": "인허가 비승계 - 인도네시아는 NIB·업종허가의 법인 간 이전 제도가 없어, 자산 양수 시 신설 PT PMA 가 전부 새로 발급받아야 한다(그 사이 영업 공백 발생). 매도인에게 '주식 양수 구조가 가능한지' 먼저 확인할 것"
+  },
+  {
+    "id": "smg-5rpov",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Warehousing Company for Sale in Jakarta, Indonesia",
+    "category": "물류",
+    "location": "Jakarta",
+    "locationKo": "자카르타",
+    "address": "Jakarta, Special Capital Region of Jakarta, Indonesia",
+    "monthlyRevenue": "IDR 893 jt/월",
+    "monthlyRevenueNum": 893333333,
+    "profit": null,
+    "price": "IDR 7.04 M",
+    "priceNum": 7040000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Profitable Indonesian warehousing and fulfillment company with existing contracts across five locations, available for acquisition. Profitable fulfillment and logistics company specializing in warehousing and warehouse management services across Indonesia.\r\n- Operates across five locations: Jakarta, Medan, Bali, Samarinda, and Bengkulu, providing a regional footprint for logistics and inventory management.\r\n- Warehousing services are provided to two prominent e-commerce companies and five smaller clients, establishing a diversified customer base.\r\n- Maintains ongoing client relationships through annual contracts with certain customers and longer-term agreements of approximately two years with others.\r\n- Provides warehouse management services to three clients across its operating network, supporting their day-to-day warehousing and operational requirements.\r\n- Generates revenue through warehousing contracts and warehouse management services, supported by recurring client engagements.\r\n- Sales have increased this year following the onboarding of two major clients, contributing significantly to business growth and revenue expansion.\r\n- Operates with a contract-based workforce, providing flexibility in staffing according to operational requirements.\r\n- Holds a Nomor Induk Berusaha (NIB) business identification licence for its operations in Indonesia.\r\n- Offers an established operating platform with existing contracts, multiple locations, and opportunities to expand its client base and warehousing services. 매각 사유: The business is being offered for sale due to cash flow constraints limiting further expansion. The owners are seeking a strategic buyer with the resources and vision to take the business to the next level of growth.",
+    "facilities": [
+      "SMERGERS 자산양수",
+      "연매출 IDR 10.72B",
+      "EBITDA 마진 10 - 20 %",
+      "플랫폼 인증: Google·Phone",
+      "매도인 활동 Active"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "📊",
+    "badge": "M&A 플랫폼",
+    "source": "smergers.com",
+    "sourceUrl": "https://www.smergers.com/business/warehousing-company-for-sale-in-jakarta-indonesia/5rpov/",
+    "postedAt": null,
+    "listingActivity": "Active",
+    "platformRating": 7.2,
+    "platformRatingCount": 1,
+    "platformVerified": [
+      "Google",
+      "Phone"
+    ],
+    "dealStructure": "자산양수",
+    "dealLabel": "Business for Sale",
+    "stakePercent": null,
+    "ebitdaMargin": "10 - 20 %",
+    "annualRevenueNum": 10720000000,
+    "sellReason": "The business is being offered for sale due to cash flow constraints limiting further expansion. The owners are seeking a strategic buyer with the resources and vision to take the business to the next level of growth.",
+    "regionPriority": 1,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 창고·물류",
+      "사업자 등록번호(NIB/SIUP/NPWP) 언급 있음"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 7.0십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매출·수익 수치가 제시됨",
+      "인계 대상 직원이 있음",
+      "사업자 등록·인허가 관련 언급이 있음",
+      "매출·EBITDA 가 공개됨",
+      "고정 고객·거래처 기반이 언급됨",
+      "연매출·EBITDA 마진이 수치로 제시됨"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true,
+    "_tierIndex": 4,
+    "_tierLabel": "4단계 ₩5~7억",
+    "_tierNote5": "인수가 ≈₩6.07억 · PMA 투자계획 Rp 100억에 근접 - 운전자금 합산으로 요건 충족 여지 있음",
     "_dealStructure": "자산양수",
     "_dealStructureNote": "인허가 비승계 - 인도네시아는 NIB·업종허가의 법인 간 이전 제도가 없어, 자산 양수 시 신설 PT PMA 가 전부 새로 발급받아야 한다(그 사이 영업 공백 발생). 매도인에게 '주식 양수 구조가 가능한지' 먼저 확인할 것"
   },
