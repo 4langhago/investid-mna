@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-10-22T04:27:59+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-22T04:27:59+00:00";
+// 갱신 시각: 2026-10-23T04:32:11+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-23T04:32:11+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -1077,7 +1077,7 @@ const SMERGERS_LISTINGS = [
     "postedAt": null,
     "listingActivity": "Moderately Active",
     "platformRating": 5.8,
-    "platformRatingCount": 3,
+    "platformRatingCount": 2,
     "platformVerified": [
       "Google",
       "Phone"
@@ -1834,7 +1834,7 @@ const SMERGERS_LISTINGS = [
     "sourceUrl": "https://www.smergers.com/business/hr-consulting-business-equity-stake-for-sale-in-jakarta-indonesia/t56x5/",
     "postedAt": null,
     "listingActivity": "Active",
-    "platformRating": 7.2,
+    "platformRating": 6.8,
     "platformRatingCount": 1,
     "platformVerified": [
       "Google",
@@ -2701,6 +2701,84 @@ const SMERGERS_LISTINGS = [
     "_tierNote5": "인수가 ≈₩5.79억 · PMA 투자계획 Rp 100억에 근접 - 운전자금 합산으로 요건 충족 여지 있음",
     "_dealStructure": "자산양수",
     "_dealStructureNote": "인허가 비승계 - 인도네시아는 NIB·업종허가의 법인 간 이전 제도가 없어, 자산 양수 시 신설 PT PMA 가 전부 새로 발급받아야 한다(그 사이 영업 공백 발생). 매도인에게 '주식 양수 구조가 가능한지' 먼저 확인할 것"
+  },
+  {
+    "id": "smg-jrp0f",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Engineering, Procurement & Construction Company Equity Stake For Sale in East Jakarta, Indonesia",
+    "category": "건설·인테리어",
+    "location": "East Jakarta",
+    "locationKo": "자카르타 동부",
+    "address": "East Jakarta, Special Capital Region of Jakarta, Indonesia",
+    "monthlyRevenue": "IDR 707 jt/월",
+    "monthlyRevenueNum": 706666666,
+    "profit": null,
+    "price": "IDR 6.72 M",
+    "priceNum": 6720000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Established 20-year-old general supply business in East Jakarta serving civil, mechanical, electrical, and oilfield projects. Based in East Jakarta, we specialize in general supply, procurement, maintenance services, and installation for civil, mechanical, and electrical (M&E) projects, with approximately 20 years of industry presence.\r\n- Our product range includes consumables, tools and equipment for the oil and gas industry, specialized instrumentation, valves, painting and sandblasting equipment, safety equipment, and electrical equipment.\r\n- We primarily supply consumable parts and equipment required for project execution and maintenance activities, supporting clients with multiple ongoing projects and long-term maintenance requirements.\r\n- We follow a just-in-time procurement model, maintaining no inventory and sourcing fast-moving items and other materials according to specific project requirements rather than holding substantial stock.\r\n- We currently serve approximately two to three major customers, each managing multiple projects, primarily involving maintenance activities.\r\n- Long-term contracts and regular monthly billing cycles support recurring revenue, with current annual revenue of approximately IDR 9–10 billion.\r\n- Our operations remain flexible through the engagement of temporary subcontractors on a project-by-project basis, allowing us to meet varying maintenance, procurement, and installation requirements.\r\n- Looking ahead, we aim to expand our business by leveraging potential partnerships in Maluku to pursue opportunities associated with the Masela Block project, involving INPEX, Pertamina, and Petronas.\r\n- The business holds relevant registrations, licences, and certifications, including SPDA certification, ISO certification, NIB license, SIUP, TDP, and NPWP registrations, supporting its operations in the general supply and project services sector. 매각 사유: The promoter is seeking investment partners to support business expansion and pursue larger projects, leveraging his 20 years of industry experience gained since he was young.",
+    "facilities": [
+      "SMERGERS 소수지분",
+      "연매출 IDR 8.48B",
+      "EBITDA 마진 10 - 20 %",
+      "플랫폼 인증: Email·Phone",
+      "매도인 활동 Active"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "📊",
+    "badge": "M&A 플랫폼",
+    "source": "smergers.com",
+    "sourceUrl": "https://www.smergers.com/business/engineering-procurement-construction-company-equity-stake-for-sale-in-east-jakarta-indonesia/jrp0f/",
+    "postedAt": null,
+    "listingActivity": "Active",
+    "platformRating": 7.1,
+    "platformRatingCount": 1,
+    "platformVerified": [
+      "Email",
+      "Phone"
+    ],
+    "dealStructure": "소수지분",
+    "dealLabel": "Partial Stake Sale",
+    "stakePercent": 30.0,
+    "ebitdaMargin": "10 - 20 %",
+    "annualRevenueNum": 8480000000,
+    "sellReason": "The promoter is seeking investment partners to support business expansion and pursue larger projects, leveraging his 20 years of industry experience gained since he was young.",
+    "regionPriority": 1,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 건설·인테리어",
+      "사업자 등록번호(NIB/SIUP/NPWP) 언급 있음",
+      "재고·비품 인계 포함"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 6.7십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매출·수익 수치가 제시됨",
+      "사업자 등록·인허가 관련 언급이 있음",
+      "매출·EBITDA 가 공개됨",
+      "고정 고객·거래처 기반이 언급됨",
+      "연매출·EBITDA 마진이 수치로 제시됨"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true,
+    "_tierIndex": 4,
+    "_tierLabel": "4단계 ₩5~7억",
+    "_tierNote5": "인수가 ≈₩5.79억 · PMA 투자계획 Rp 100억에 근접 - 운전자금 합산으로 요건 충족 여지 있음",
+    "_dealStructure": "소수지분",
+    "_dealStructureNote": "50% 이하 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
   },
   {
     "id": "smg-5rpov",
