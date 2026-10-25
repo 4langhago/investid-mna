@@ -20,7 +20,7 @@ py -3 scraper/scrape_99co.py tangerang depok # 특정 지역만 (99.co 도시 �
 관리자 PowerShell에서 1회 실행 (매일 07:00 수집):
 ```powershell
 schtasks /Create /TN "MNA-99co-scraper" /SC DAILY /ST 07:00 `
-  /TR "py -3 D:\0.Cursor\MNA\scraper\scrape_99co.py" /F
+  /TR "py -3 D:\0.Cursor\business\MNA\scraper\scrape_99co.py" /F
 ```
 해제: `schtasks /Delete /TN "MNA-99co-scraper" /F`
 
