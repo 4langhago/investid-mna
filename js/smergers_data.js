@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-10-24T04:26:32+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-24T04:26:32+00:00";
+// 갱신 시각: 2026-10-25T04:24:51+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-25T04:24:51+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -99,7 +99,7 @@ const SMERGERS_LISTINGS = [
       "연매출 IDR 1.06B",
       "EBITDA 마진 0 - 10 %",
       "플랫폼 인증: Phone",
-      "매도인 활동 Active"
+      "매도인 활동 Moderately Active"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -108,8 +108,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/taxi-business-equity-stake-for-sale-in-jakarta-indonesia/3f8i7/",
     "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 8.0,
+    "listingActivity": "Moderately Active",
+    "platformRating": 7.2,
     "platformRatingCount": 6,
     "platformVerified": [
       "Phone"
@@ -183,7 +183,7 @@ const SMERGERS_LISTINGS = [
     "postedAt": null,
     "listingActivity": "Active",
     "platformRating": 7.2,
-    "platformRatingCount": 4,
+    "platformRatingCount": 5,
     "platformVerified": [
       "Email",
       "Google",
@@ -1761,7 +1761,7 @@ const SMERGERS_LISTINGS = [
     "postedAt": null,
     "listingActivity": "미표기",
     "platformRating": 6.8,
-    "platformRatingCount": 1,
+    "platformRatingCount": 3,
     "platformVerified": [
       "Google",
       "Phone"
@@ -2650,8 +2650,7 @@ const SMERGERS_LISTINGS = [
       "SMERGERS 소수지분",
       "연매출 IDR 8.32B",
       "EBITDA 마진 10 - 20 %",
-      "플랫폼 인증: Email·Phone",
-      "매도인 활동 Active"
+      "플랫폼 인증: Email·Phone"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -2660,8 +2659,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/engineering-procurement-construction-company-equity-stake-for-sale-in-east-jakarta-indonesia/jrp0f/",
     "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 7.1,
+    "listingActivity": "미표기",
+    "platformRating": 6.7,
     "platformRatingCount": 1,
     "platformVerified": [
       "Email",
