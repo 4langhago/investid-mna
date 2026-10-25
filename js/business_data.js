@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_business.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-10-25T12:06:00+07:00
-const BUSINESS_LISTINGS_UPDATED_AT = "2026-10-25T12:06:00+07:00";
+// 갱신 시각: 2026-10-25T20:40:13+07:00
+const BUSINESS_LISTINGS_UPDATED_AT = "2026-10-25T20:40:13+07:00";
 const BUSINESS_LISTINGS = [
   {
     "id": "biz-11076",
@@ -329,7 +329,7 @@ const BUSINESS_LISTINGS = [
       "설비·집기 인계 범위가 언급됨"
     ],
     "operabilityTodos": [
-      "게시 후 287일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 288일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
@@ -489,7 +489,7 @@ const BUSINESS_LISTINGS = [
     "foreignSteps": [],
     "operability": "부적합",
     "operabilityReasons": [
-      "게시 후 534일 경과 - 거래 종료 가능성이 높아 추천 대상에서 제외"
+      "게시 후 535일 경과 - 거래 종료 가능성이 높아 추천 대상에서 제외"
     ],
     "operabilityTodos": [],
     "koreanEligible": false
