@@ -11,3 +11,10 @@ docs/
 MNA1.txt
 scraper/logs/
 __pycache__/
+
+# 시크릿(공개 저장소) — 예시 파일만 허용
+.env
+.env.*
+!.env.example
+*.pem
+*.key
