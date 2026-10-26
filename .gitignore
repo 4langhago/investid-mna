@@ -11,3 +11,19 @@ docs/
 MNA1.txt
 scraper/logs/
 __pycache__/
+
+# ── 비밀값·로컬 설정 (2026-10-26 공통 규칙, idx-quant 기준) ──
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+.claude/settings.local.json
+.claude/worktrees/
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+.DS_Store
+Thumbs.db
