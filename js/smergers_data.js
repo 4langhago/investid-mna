@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-10-25T04:24:51+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-25T04:24:51+00:00";
+// 갱신 시각: 2026-10-26T04:28:30+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-26T04:28:30+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -99,7 +99,7 @@ const SMERGERS_LISTINGS = [
       "연매출 IDR 1.06B",
       "EBITDA 마진 0 - 10 %",
       "플랫폼 인증: Phone",
-      "매도인 활동 Moderately Active"
+      "매도인 활동 Active"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -108,8 +108,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/taxi-business-equity-stake-for-sale-in-jakarta-indonesia/3f8i7/",
     "postedAt": null,
-    "listingActivity": "Moderately Active",
-    "platformRating": 7.2,
+    "listingActivity": "Active",
+    "platformRating": 8.0,
     "platformRatingCount": 6,
     "platformVerified": [
       "Phone"
@@ -146,6 +146,79 @@ const SMERGERS_LISTINGS = [
     "_tierIndex": 1,
     "_tierLabel": "1단계 ₩1억 이하",
     "_tierNote5": "인수가 ≈₩0.15억 · PMA 투자계획 Rp 100억(≈₩8.6억) 미달 - 단독 인수로는 합법 구조 불성립. 동일 KBLI PT PMA 보유자의 자산 인수 또는 복수 매물 묶음(롤업)만 가능",
+    "_dealStructure": "소수지분",
+    "_dealStructureNote": "50% 이하 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
+  },
+  {
+    "id": "smg-zn3zu",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Enterprise Software Company Equity Stake For Sale in Jakarta, Indonesia",
+    "category": "광고·마케팅",
+    "location": "Jakarta",
+    "locationKo": "자카르타",
+    "address": "Jakarta, Special Capital Region of Jakarta, Indonesia",
+    "monthlyRevenue": "IDR 115 jt/월",
+    "monthlyRevenueNum": 114666666,
+    "profit": null,
+    "price": "IDR 283 jt",
+    "priceNum": 283200000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Tourism ecosystem technology company building a B2B and B2C ecosystem for tourism businesses, seeks investment. Indonesian tourism technology business founded 4 years ago, building an integrated tourism technology ecosystem that connects businesses, tourism destinations, distribution partners, and visitors through two core solutions: business and experiences.\r\n\r\nThe business digitizes and connects businesses across four key sectors: F&B, retail, tourism sites, and hotels and villas. The system provides business management solutions, including POS, ticketing, F&B and retail operations, and hotel and villa management systems. It also expands distribution through a B2B network connecting tourism destinations with travel agents, tour operators, and ticket resellers. Revenue is generated through software subscriptions, implementation and integration services, transaction fees, and distribution services.\r\n\r\nWe offer a visitor-facing digital platform designed to enhance the customer journey before, during, and after visiting a destination. Its features include digital ticketing, QR check-in, digital maps and navigation, digital queues, tenant and event discovery, and rewards and loyalty programs. The platform helps destinations build direct relationships with visitors, improve engagement, encourage repeat visits, and create additional transaction and promotional revenue opportunities.\r\n\r\nFinancial performance: The company&#x27;s reported revenue grew from approximately IDR 272 million 3 years ago to IDR 1.13 billion 2 years ago and IDR 1.56 billion last year. Revenue for the first half of this year has already approached IDR 1 billion. This demonstrates early commercial traction, with further growth potential through recurring software subscriptions, transaction-based revenue, B2B distribution, and cross-selling across its two core solutions.\r\n\r\nFounder has expertise in tourism technology and ecosystem development with experience in ticketing, distribution, marketing, and business development. The company leverages its understanding of tourism operations and a portfolio of integrated technology products designed to serve businesses of different sizes.\r\n\r\nInvestment proposition: The company aims to become a scalable technology infrastructure provider for the tourism and hospitality industry. Its business solution digitizes business operations and captures demand across multiple sectors, while its experiences platform connects those businesses with visitors. Together, these solutions create opportunities for recurring revenue, increased transaction volume, stronger customer relationships, and expansion across Indonesia&#x27;s tourism and service industries. 매각 사유: 1. An integrated tourism technology ecosystem:The company operates through two complementary solutions: Business, which digitizes operations across F&B, retail, tourism sites, and hotels and villas; and Experiences, which enhances visitor engagement through digital ticketing, navigation, digital queues, events, and loyalty programs.2. Proven commercial foundation:With annual revenue of IDR 1.56 billion and cumulative revenue exceeding IDR 3.8 billion during last 3 years since inception, the business has established an initial commercial foundation for further expansion.3. Significant five-year growth ambition:The business targets at least IDR 60 billion in annual revenue within the next five years. This ambition is supported by a roadmap to expand its customer base, scale its technology solutions, increase recurring revenue, and enter additional business segments. This is a management target, not a guaranteed outcome.4. Strategic technology investment already underway:During last 2 years, the business has made substantial investments in its technology systems and infrastructure. These investments have put pressure on EBITDA in the short term, but management views them as long-term investments designed to build scalable technology, support future growth, and reduce the need for major foundational redevelopment as the business expands.5. Multiple revenue streams and scalability.The business combines software subscriptions, implementation services, transaction fees, and platform-related revenue. Its integrated solutions create opportunities for cross-selling, increasing revenue per customer, and expanding across Indonesia&#x27;s tourism and hospitality sectors.6. An opportunity to invest before the next growth phase:The business is seeking equity investment. The proposed valuation offers investors an opportunity to participate before the business reaches its targeted scale. It reflects the current stage of development while recognizing the technology foundation, market presence, and growth roadmap already established. The investment would support the next phase of expansion and execution.Our investment proposition:Invest in the business to participate in the development of an integrated tourism technology ecosystem with an existing commercial foundation, scalable technology solutions, diversified revenue opportunities, and an ambition to reach at least IDR 60 billion in annual revenue within five years.The focus is on building long-term enterprise value through disciplined execution, sustainable revenue growth, and stronger profitability as the business scales.",
+    "facilities": [
+      "SMERGERS 소수지분",
+      "연매출 IDR 1.38B",
+      "EBITDA 마진 10 - 20 %",
+      "플랫폼 인증: Google·Phone",
+      "매도인 활동 Active"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "📊",
+    "badge": "M&A 플랫폼",
+    "source": "smergers.com",
+    "sourceUrl": "https://www.smergers.com/business/enterprise-software-company-equity-stake-for-sale-in-jakarta-indonesia/zn3zu/",
+    "postedAt": null,
+    "listingActivity": "Active",
+    "platformRating": 9.6,
+    "platformRatingCount": 8,
+    "platformVerified": [
+      "Google",
+      "Phone"
+    ],
+    "dealStructure": "소수지분",
+    "dealLabel": "Partial Stake Sale",
+    "stakePercent": 20.0,
+    "ebitdaMargin": "10 - 20 %",
+    "annualRevenueNum": 1376000000,
+    "sellReason": "1. An integrated tourism technology ecosystem:The company operates through two complementary solutions: Business, which digitizes operations across F&B, retail, tourism sites, and hotels and villas; and Experiences, which enhances visitor engagement through digital ticketing, navigation, digital queues, events, and loyalty programs.2. Proven commercial foundation:With annual revenue of IDR 1.56 billion and cumulative revenue exceeding IDR 3.8 billion during last 3 years since inception, the business has established an initial commercial foundation for further expansion.3. Significant five-year growth ambition:The business targets at least IDR 60 billion in annual revenue within the next five years. This ambition is supported by a roadmap to expand its customer base, scale its technology solutions, increase recurring revenue, and enter additional business segments. This is a management target, not a guaranteed outcome.4. Strategic technology investment already underway:During last 2 years, the business has made substantial investments in its technology systems and infrastructure. These investments have put pressure on EBITDA in the short term, but management views them as long-term investments designed to build scalable technology, support future growth, and reduce the need for major foundational redevelopment as the business expands.5. Multiple revenue streams and scalability.The business combines software subscriptions, implementation services, transaction fees, and platform-related revenue. Its integrated solutions create opportunities for cross-selling, increasing revenue per customer, and expanding across Indonesia&#x27;s tourism and hospitality sectors.6. An opportunity to invest before the next growth phase:The business is seeking equity investment. The proposed valuation offers investors an opportunity to participate before the business reaches its targeted scale. It reflects the current stage of development while recognizing the technology foundation, market presence, and growth roadmap already established. The investment would support the next phase of expansion and execution.Our investment proposition:Invest in the business to participate in the development of an integrated tourism technology ecosystem with an existing commercial foundation, scalable technology solutions, diversified revenue opportunities, and an ambition to reach at least IDR 60 billion in annual revenue within five years.The focus is on building long-term enterprise value through disciplined execution, sustainable revenue growth, and stronger profitability as the business scales.",
+    "regionPriority": 1,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: 숙박업"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "자산 양도 Rp 283백만(≈₩0.24억) - 신규 PT PMA 납입자본(Rp 25억)·투자계획(Rp 100억)에 견줘 규모가 너무 작아 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
+    "foreignSteps": [
+      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매출·수익 수치가 제시됨",
+      "매출·EBITDA 가 공개됨",
+      "고정 고객·거래처 기반이 언급됨",
+      "연매출·EBITDA 마진이 수치로 제시됨"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false,
+    "_tierIndex": 1,
+    "_tierLabel": "1단계 ₩1억 이하",
+    "_tierNote5": "인수가 ≈₩0.24억 · PMA 투자계획 Rp 100억(≈₩8.6억) 미달 - 단독 인수로는 합법 구조 불성립. 동일 KBLI PT PMA 보유자의 자산 인수 또는 복수 매물 묶음(롤업)만 가능",
     "_dealStructure": "소수지분",
     "_dealStructureNote": "50% 이하 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
   },
@@ -2510,7 +2583,7 @@ const SMERGERS_LISTINGS = [
     "postedAt": null,
     "listingActivity": "Active",
     "platformRating": 9.2,
-    "platformRatingCount": 11,
+    "platformRatingCount": 10,
     "platformVerified": [
       "Google",
       "Phone"
