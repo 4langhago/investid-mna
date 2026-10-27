@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-10-26T04:28:30+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-26T04:28:30+00:00";
+// 갱신 시각: 2026-10-27T04:51:15+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-27T04:51:15+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -183,7 +183,7 @@ const SMERGERS_LISTINGS = [
     "postedAt": null,
     "listingActivity": "Active",
     "platformRating": 9.6,
-    "platformRatingCount": 8,
+    "platformRatingCount": 9,
     "platformVerified": [
       "Google",
       "Phone"
@@ -2953,8 +2953,7 @@ const SMERGERS_LISTINGS = [
       "SMERGERS 자산양수",
       "연매출 IDR 1.06B",
       "EBITDA 마진 Operating at loss",
-      "플랫폼 인증: Google·Phone",
-      "매도인 활동 Active"
+      "플랫폼 인증: Google·Phone"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -2963,8 +2962,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/cosmetics-company-for-sale-in-jakarta-indonesia/ivn5r/",
     "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 8.1,
+    "listingActivity": "미표기",
+    "platformRating": 7.8,
     "platformRatingCount": 1,
     "platformVerified": [
       "Google",
