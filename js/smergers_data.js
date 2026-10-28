@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-10-27T04:51:15+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-27T04:51:15+00:00";
+// 갱신 시각: 2026-10-28T05:19:48+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-28T05:19:48+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -697,7 +697,7 @@ const SMERGERS_LISTINGS = [
     "postedAt": null,
     "listingActivity": "Active",
     "platformRating": 8.3,
-    "platformRatingCount": 5,
+    "platformRatingCount": 6,
     "platformVerified": [
       "LinkedIn",
       "Phone"
@@ -2964,7 +2964,7 @@ const SMERGERS_LISTINGS = [
     "postedAt": null,
     "listingActivity": "미표기",
     "platformRating": 7.8,
-    "platformRatingCount": 1,
+    "platformRatingCount": 2,
     "platformVerified": [
       "Google",
       "Phone"
@@ -4425,79 +4425,5 @@ const SMERGERS_LISTINGS = [
     "_tierNote5": "인수가 ≈₩689.7억 - ₩10억 초과",
     "_dealStructure": "자산양수",
     "_dealStructureNote": "인허가 비승계 - 인도네시아는 NIB·업종허가의 법인 간 이전 제도가 없어, 자산 양수 시 신설 PT PMA 가 전부 새로 발급받아야 한다(그 사이 영업 공백 발생). 매도인에게 '주식 양수 구조가 가능한지' 먼저 확인할 것"
-  },
-  {
-    "id": "smg-xu7hv",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Digital Marketing Company Equity Stake For Sale in Albuquerque, USA",
-    "category": "광고·마케팅",
-    "location": "Bogor",
-    "locationKo": "보고르",
-    "address": "Bogor, West Java, Indonesia",
-    "monthlyRevenue": "IDR 211 jt/월",
-    "monthlyRevenueNum": 210666666,
-    "profit": null,
-    "price": "IDR 800 jt",
-    "priceNum": 800000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Profitable e-commerce management company with USD 144k ARR/13 active clients, seeking investment for expansion. E-commerce management company providing Amazon account management, Google Ads and Meta Ads services to CPG brands.\n- Supports clients with e-commerce growth across Amazon and is expanding into Instacart and Walmart.\n- Has 13 active clients with an average monthly billing of approximately USD 1,300 per client.\n- Generates an annual recurring revenue (ARR) of approximately USD 144,000 and is reported to be highly profitable.\n- The company has grown approximately 26% month-on-month over the past 6 months.\n- Has developed a network with US-based incubators and accelerator groups and aims to become a preferred service partner for their portfolio businesses.\n- Promoter brings approximately 10 years of industry experience.\n- Uses contract-based employees to support service delivery.\n- Holds an incorporation certificate and does not require additional approvals to operate. 매각 사유: We are seeking investment to expand our agency’s marketing reach and strengthen staffing capacity. This will allow leadership to dedicate more time to business development and partnership collaborations, while the existing team and new hires take on the operational workload.",
-    "facilities": [
-      "SMERGERS 소수지분",
-      "연매출 IDR 2.53B",
-      "EBITDA 마진 30 - 40 %",
-      "플랫폼 인증: Google·Phone"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "📊",
-    "badge": "M&A 플랫폼",
-    "source": "smergers.com",
-    "sourceUrl": "https://www.smergers.com/business/digital-marketing-company-equity-stake-for-sale-in-albuquerque-usa/xu7hv/",
-    "postedAt": null,
-    "listingActivity": "미표기",
-    "platformRating": 7.8,
-    "platformRatingCount": 1,
-    "platformVerified": [
-      "Google",
-      "Phone"
-    ],
-    "dealStructure": "소수지분",
-    "dealLabel": "Partial Stake Sale",
-    "stakePercent": 12.0,
-    "ebitdaMargin": "30 - 40 %",
-    "annualRevenueNum": 2528000000,
-    "sellReason": "We are seeking investment to expand our agency’s marketing reach and strengthen staffing capacity. This will allow leadership to dedicate more time to business development and partnership collaborations, while the existing team and new hires take on the operational workload.",
-    "regionPriority": 3,
-    "lat": null,
-    "lng": null,
-    "summaryKo": [
-      "업종/용도: 광고·마케팅"
-    ],
-    "foreignStatus": "불가",
-    "foreignReason": "자산 양도 Rp 800백만(≈₩0.69억) - 신규 PT PMA 납입자본(Rp 25억)·투자계획(Rp 100억)에 견줘 규모가 너무 작아 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
-    "foreignSteps": [
-      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매출·수익 수치가 제시됨",
-      "인계 대상 직원이 있음",
-      "매출·EBITDA 가 공개됨",
-      "인계 대상 직원이 있음",
-      "고정 고객·거래처 기반이 언급됨",
-      "연매출·EBITDA 마진이 수치로 제시됨"
-    ],
-    "operabilityTodos": [
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": false,
-    "_tierIndex": 1,
-    "_tierLabel": "1단계 ₩1억 이하",
-    "_tierNote5": "인수가 ≈₩0.69억 · PMA 투자계획 Rp 100억(≈₩8.6억) 미달 - 단독 인수로는 합법 구조 불성립. 동일 KBLI PT PMA 보유자의 자산 인수 또는 복수 매물 묶음(롤업)만 가능",
-    "_dealStructure": "소수지분",
-    "_dealStructureNote": "50% 이하 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
   }
 ];
