@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-10-29T05:33:33+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-29T05:33:33+00:00";
+// 갱신 시각: 2026-10-30T05:33:13+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-10-30T05:33:13+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -3477,7 +3477,8 @@ const SMERGERS_LISTINGS = [
       "SMERGERS 자산양수",
       "연매출 IDR 5.28B",
       "EBITDA 마진 30 - 40 %",
-      "플랫폼 인증: Email·Google·Phone"
+      "플랫폼 인증: Email·Google·Phone",
+      "매도인 활동 Moderately Active"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -3486,8 +3487,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/book-printing-company-for-sale-in-jakarta-indonesia/ainnn/",
     "postedAt": null,
-    "listingActivity": "미표기",
-    "platformRating": 6.4,
+    "listingActivity": "Moderately Active",
+    "platformRating": 6.0,
     "platformRatingCount": 1,
     "platformVerified": [
       "Email",
@@ -4163,7 +4164,7 @@ const SMERGERS_LISTINGS = [
     "postedAt": null,
     "listingActivity": "Moderately Active",
     "platformRating": 6.3,
-    "platformRatingCount": 2,
+    "platformRatingCount": 1,
     "platformVerified": [
       "Email",
       "Google",
