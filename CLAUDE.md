@@ -29,5 +29,6 @@ Actions secrets / 로컬 환경변수에만 저장. 값은 읽거나 커밋 금�
 - 커밋 전 `git status` 로 자동 생성 파일과 수동 변경을 구분.
 
 ## 연동 도구
+- 프로젝트 skill: `mna-scraper-safe-change` (pull 우선, rate limit·0건 덮어쓰기 방지 유지, 공개 저장소 유출 점검)
 - `devops-infra-ops` Actions·스케줄러·시크릿 점검 (공개 저장소 유출 감사)
 - OMC `executor`, `test-engineer`, `code-reviewer`, `security-reviewer`, `designer`(사이트 UI)
