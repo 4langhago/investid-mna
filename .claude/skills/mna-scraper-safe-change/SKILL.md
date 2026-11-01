@@ -23,8 +23,9 @@ description: investid-mna(PUBLIC 저장소, GitHub Actions 매일 자동 수집�
 ## 3. 검증
 
 - `py -3 -m pytest` (pytest.ini 가 `scraper/tests` 지정).
-- 실제 수집 실행은 사이트 부하·차단 위험이 있으므로 필요할 때만, 지역 슬러그를 좁혀서: `py -3 scraper/scrape_99co.py <지역슬러그>`.
-- 텔레그램 발송은 토큰이 GitHub Secrets 에만 있어 로컬 테스트 불가. 발송만 시험하려면 사용자가 Actions 에서 `telegram_only` 입력으로 수동 실행한다(실제 발송이므로 사용자 승인).
+- 기본 검증은 pytest 만으로 한다. 실제 수집은 사이트 부하·차단 위험이 있어 사용자 승인 후에만.
+- **주의: `py -3 scraper/scrape_99co.py <지역슬러그>` 는 `js/live_data.js`·`scraper/output/live_listings.json` 을 그 지역 결과만으로 덮어쓴다**(0건 가드는 0건일 때만 동작). 실행했다면 `git diff --stat` 으로 확인하고 `git checkout -- js/live_data.js scraper/output/live_listings.json` 으로 되돌린다. 축소된 데이터를 커밋하지 않는다(로컬 예약 작업이 main 에서 이 파일을 그대로 커밋·푸시한다).
+- 텔레그램 발송은 토큰이 GitHub Secrets 에만 있어 로컬 테스트 불가. 발송만 시험하려면 사용자가 Actions 에서 `telegram_only` 입력으로 수동 실행한다. 저장소 변수 `TELEGRAM_ENABLED` 가 `false` 면(2026-10-05 부터 중지) 발송 없이 선정 요약만 돈다. 아니면 실제 발송이므로 사용자 승인.
 
 ## 4. 공개 저장소 유출 점검 (커밋 전 스테이징 diff)
 
@@ -35,5 +36,18 @@ description: investid-mna(PUBLIC 저장소, GitHub Actions 매일 자동 수집�
 ## 5. 금지
 
 - 사용자 승인 없는 push. force push 금지(자동 커밋 이력 손실).
+- 로컬 예약 작업(`daily_update.ps1`)은 main 에서만 커밋·`pull --rebase`·push 하고, 다른 브랜치면 exit 1 로 건너뛴다. 작업 브랜치를 체크아웃한 채로 두지 말고 끝나면 main 으로 돌아간다.
 - rate limit·재시도 간격 완화, 0건 안전장치 제거, 차단 우회.
 - 워크플로 cron·concurrency 변경을 확인 없이 진행.
+
+## 6. 에이전트 연동 (단계별)
+
+| 단계 | 에이전트 | 역할 |
+|---|---|---|
+| 워크플로·스케줄러 | `devops-infra-ops` | daily-scrape.yml, 로컬 `MNA-99co-scraper`·daily_update.ps1, Actions secrets |
+| 공개 저장소 감사 | `security-reviewer` | 커밋 전 토큰·chat ID·판매자 연락처 유출 점검 |
+| 테스트 보강 | `test-engineer` | 0건 안전장치·추천 기준(business_gate) 변경 시 scraper/tests 회귀 테스트 |
+| 코드 검수 | `code-reviewer` | rate limit·재시도·소스별 continue-on-error 가 유지되는지 |
+| 수집 실패 원인 | `debugger` / `tracer` | 403·429·0건의 원인 추적(IP 차단 vs 코드 결함) |
+| git 정리 | `git-master` | 자동 커밋과 수동 커밋이 섞여 분기됐을 때 rebase 계획 |
+| 사이트 UI | `designer` | index.html·admin.html 화면 변경 |
