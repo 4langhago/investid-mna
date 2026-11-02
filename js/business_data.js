@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_business.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-10-25T20:40:13+07:00
-const BUSINESS_LISTINGS_UPDATED_AT = "2026-10-25T20:40:13+07:00";
+// 갱신 시각: 2026-11-02T19:33:29+07:00
+const BUSINESS_LISTINGS_UPDATED_AT = "2026-11-02T19:33:29+07:00";
 const BUSINESS_LISTINGS = [
   {
     "id": "biz-11076",
@@ -30,7 +30,7 @@ const BUSINESS_LISTINGS = [
     "badge": "완전인수",
     "source": "tempat-usaha.com",
     "sourceUrl": "https://www.tempat-usaha.com/11076/jual-bisnis-take-over-usaha-cloud-kitchen-dan-bangunan-2-lantai-cipete-jakarta-selatan/",
-    "postedAt": "2026-10-21T15:16:00",
+    "postedAt": "2026-10-30T13:28:12",
     "lat": null,
     "lng": null,
     "summaryKo": [
@@ -47,7 +47,7 @@ const BUSINESS_LISTINGS = [
     "operability": "확인필요",
     "operabilityReasons": [
       "현재 영업 중이라고 명시됨",
-      "최근 게시(4일 전)"
+      "최근 게시(3일 전)"
     ],
     "operabilityTodos": [
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
@@ -211,15 +211,17 @@ const BUSINESS_LISTINGS = [
       "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
       "인수가 Rp 2.9십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
     ],
-    "operability": "확인필요",
+    "operability": "부적합",
     "operabilityReasons": [
-      "현재 영업 중이라고 명시됨"
+      "현재 영업 중이라고 명시됨",
+      "운영 실체를 뒷받침하는 정보가 너무 적음"
     ],
     "operabilityTodos": [
+      "게시 후 187일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
-    "koreanEligible": true
+    "koreanEligible": false
   },
   {
     "id": "biz-10730",
@@ -272,7 +274,7 @@ const BUSINESS_LISTINGS = [
       "설비·집기 인계 범위가 언급됨"
     ],
     "operabilityTodos": [
-      "게시 후 264일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 272일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
@@ -329,7 +331,7 @@ const BUSINESS_LISTINGS = [
       "설비·집기 인계 범위가 언급됨"
     ],
     "operabilityTodos": [
-      "게시 후 288일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 296일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
@@ -383,7 +385,7 @@ const BUSINESS_LISTINGS = [
     ],
     "operabilityTodos": [
       "임차 점포 - 임대인 승계 동의와 잔여 기간 확인 전에는 운영 지속을 보장할 수 없음",
-      "게시 후 293일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 301일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
@@ -443,55 +445,10 @@ const BUSINESS_LISTINGS = [
       "설비·집기 인계 범위가 언급됨"
     ],
     "operabilityTodos": [
-      "게시 후 355일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
+      "게시 후 363일 경과 - 매도인에게 매물 유효 여부 먼저 확인",
       "매출·순익 미공개 - 최근 12개월 장부와 세금계산서 요구",
       "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
     ],
     "koreanEligible": true
-  },
-  {
-    "id": "biz-10490",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Take Over Warteg 24 Jam di Graha Raya Tangerang Lokasi Ramai",
-    "category": "카페 & 레스토랑",
-    "location": "Tangerang",
-    "locationKo": "탕그랑",
-    "address": "Graha Raya Ruko fortune 8 blok C no 18 Tangerang",
-    "monthlyRevenue": null,
-    "monthlyRevenueNum": null,
-    "profit": null,
-    "price": "Rp 400 jt",
-    "priceNum": 400000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Lokasi: Graha Raya Ruko fortune 8 blok C no 18 Tangerang Keterangan: Warteg 24 jam baru dibuka Des 2024. Sistem yang digunakan sekarang adalah autopilot pembagian laba 50:50 dengan manajemen, namun jika mau kontrol 100% tanpa bagi laba juga bisa. Di area depan warteg sudah dipasang kanopi ada meja k...",
-    "facilities": [
-      "운영 중 사업체",
-      "tempat-usaha.com 수집"
-    ],
-    "whatsapp": "+6281575018721",
-    "c2c": false,
-    "images": "🏪",
-    "badge": "완전인수",
-    "source": "tempat-usaha.com",
-    "sourceUrl": "https://www.tempat-usaha.com/10490/take-over-warteg-24-jam-di-graha-raya-tangerang-lokasi-ramai/",
-    "postedAt": "2025-05-08T19:26:00",
-    "lat": null,
-    "lng": null,
-    "summaryKo": [
-      "업종/용도: 카페 · 음식점",
-      "유동인구·배후세대가 많은 곳(매도인 주장)"
-    ],
-    "foreignStatus": "불가",
-    "foreignReason": "노점·소형 식당은 UMKM 유보 업종으로 외국인 투자가 허용되지 않음",
-    "foreignSteps": [],
-    "operability": "부적합",
-    "operabilityReasons": [
-      "게시 후 535일 경과 - 거래 종료 가능성이 높아 추천 대상에서 제외"
-    ],
-    "operabilityTodos": [],
-    "koreanEligible": false
   }
 ];
