@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-11-01T05:38:13+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-01T05:38:13+00:00";
+// 갱신 시각: 2026-11-02T05:39:10+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-02T05:39:10+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -245,7 +245,7 @@ const SMERGERS_LISTINGS = [
       "연매출 IDR 0.19B",
       "EBITDA 마진 30 - 40 %",
       "플랫폼 인증: Email·Google·Phone",
-      "매도인 활동 Active"
+      "매도인 활동 Moderately Active"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -254,8 +254,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/profitable-nutrition-food-company-for-sale-in-jakarta-indonesia/p739z/",
     "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 7.2,
+    "listingActivity": "Moderately Active",
+    "platformRating": 6.5,
     "platformRatingCount": 5,
     "platformVerified": [
       "Email",
