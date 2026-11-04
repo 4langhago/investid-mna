@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-11-03T06:28:25+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-03T06:28:25+00:00";
+// 갱신 시각: 2026-11-04T06:03:15+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-04T06:03:15+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -2584,7 +2584,7 @@ const SMERGERS_LISTINGS = [
     "postedAt": null,
     "listingActivity": "Active",
     "platformRating": 9.2,
-    "platformRatingCount": 10,
+    "platformRatingCount": 11,
     "platformVerified": [
       "Google",
       "Phone"
@@ -2801,8 +2801,7 @@ const SMERGERS_LISTINGS = [
       "SMERGERS 자산양수",
       "연매출 IDR 10.56B",
       "EBITDA 마진 10 - 20 %",
-      "플랫폼 인증: Google·Phone",
-      "매도인 활동 Active"
+      "플랫폼 인증: Google·Phone"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -2811,8 +2810,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/warehousing-company-for-sale-in-jakarta-indonesia/5rpov/",
     "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 7.2,
+    "listingActivity": "미표기",
+    "platformRating": 6.8,
     "platformRatingCount": 1,
     "platformVerified": [
       "Google",
@@ -2954,7 +2953,8 @@ const SMERGERS_LISTINGS = [
       "SMERGERS 자산양수",
       "연매출 IDR 1.06B",
       "EBITDA 마진 Operating at loss",
-      "플랫폼 인증: Google·Phone"
+      "플랫폼 인증: Google·Phone",
+      "매도인 활동 Active"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -2963,8 +2963,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/cosmetics-company-for-sale-in-jakarta-indonesia/ivn5r/",
     "postedAt": null,
-    "listingActivity": "미표기",
-    "platformRating": 7.8,
+    "listingActivity": "Active",
+    "platformRating": 8.1,
     "platformRatingCount": 2,
     "platformVerified": [
       "Google",
@@ -3860,7 +3860,7 @@ const SMERGERS_LISTINGS = [
     "sourceUrl": "https://www.smergers.com/business/vehicle-rental-company-equity-stake-for-sale-in-east-jakarta-indonesia/nr5lx/",
     "postedAt": null,
     "listingActivity": "Active",
-    "platformRating": 9.2,
+    "platformRating": 9.1,
     "platformRatingCount": 2,
     "platformVerified": [
       "Google",
