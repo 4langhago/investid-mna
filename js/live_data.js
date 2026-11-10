@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_99co.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-11-10T23:14:34+07:00
-const LIVE_LISTINGS_UPDATED_AT = "2026-11-10T23:14:34+07:00";
+// 갱신 시각: 2026-11-10T23:21:04+07:00
+const LIVE_LISTINGS_UPDATED_AT = "2026-11-10T23:21:04+07:00";
 const LIVE_LISTINGS = [
   {
     "id": "live-1015219299",
