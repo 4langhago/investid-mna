@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-11-10T07:07:56+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-10T07:07:56+00:00";
+// 갱신 시각: 2026-11-11T05:53:42+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-11T05:53:42+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -2572,8 +2572,7 @@ const SMERGERS_LISTINGS = [
       "SMERGERS 자산양수",
       "연매출 IDR 13.76B",
       "EBITDA 마진 15 %",
-      "플랫폼 인증: Google·Phone",
-      "매도인 활동 Active"
+      "플랫폼 인증: Google·Phone"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -2582,8 +2581,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/freight-logistics-company-for-sale-in-jakarta-indonesia/ihuiy/",
     "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 9.2,
+    "listingActivity": "미표기",
+    "platformRating": 8.8,
     "platformRatingCount": 11,
     "platformVerified": [
       "Google",
@@ -3860,7 +3859,7 @@ const SMERGERS_LISTINGS = [
     "sourceUrl": "https://www.smergers.com/business/vehicle-rental-company-equity-stake-for-sale-in-east-jakarta-indonesia/nr5lx/",
     "postedAt": null,
     "listingActivity": "Active",
-    "platformRating": 9.1,
+    "platformRating": 9.0,
     "platformRatingCount": 2,
     "platformVerified": [
       "Google",
