@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-11-11T05:53:42+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-11T05:53:42+00:00";
+// 갱신 시각: 2026-11-12T06:58:37+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-12T06:58:37+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -651,81 +651,6 @@ const SMERGERS_LISTINGS = [
     "operabilityReasons": [
       "매출·수익 수치가 제시됨",
       "매출·EBITDA 가 공개됨",
-      "연매출·EBITDA 마진이 수치로 제시됨"
-    ],
-    "operabilityTodos": [
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": false,
-    "_tierIndex": 1,
-    "_tierLabel": "1단계 ₩1억 이하",
-    "_tierNote5": "인수가 ≈₩0.76억 · PMA 투자계획 Rp 100억(≈₩8.6억) 미달 - 단독 인수로는 합법 구조 불성립. 동일 KBLI PT PMA 보유자의 자산 인수 또는 복수 매물 묶음(롤업)만 가능",
-    "_dealStructure": "소수지분",
-    "_dealStructureNote": "50% 이하 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
-  },
-  {
-    "id": "smg-ivdp7",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Payment Services Company Equity Stake For Sale in South Jakarta, Indonesia",
-    "category": "제조",
-    "location": "South Jakarta",
-    "locationKo": "자카르타 남부",
-    "address": "South Jakarta, Special Capital Region of Jakarta, Indonesia",
-    "monthlyRevenue": "IDR 61 jt/월",
-    "monthlyRevenueNum": 61333333,
-    "profit": null,
-    "price": "IDR 880 jt",
-    "priceNum": 880000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Jakarta technology company providing integrated cloud, POS, AI and industrial solutions, seeks funding. Technology company headquartered in Jakarta providing an integrated suite of cloud, software and industrial technology solutions.\r\n- Offers a POS system, email services, domain and hosting services, AI-powered application development, colocation and industrial monitoring solutions.\r\n- Provides monitoring solutions for oil and gas pumps, mining systems and factory operations.\r\n- AI technology supports automated development of websites, web applications, Android applications and Apple applications.\r\n- XCSM Vault provides virtual machine protection and secure system connectivity for high-security data protection.\r\n- POS system is integrated with dynamic QRIS payments and is designed for UMKM and SME businesses across food and non-food sectors.\r\n- Android-based POS application supports menu management, automated ordering, payment recording with Dynamic QRIS provided by our partner DOKU tier 1 PJP in indonesia, multi-branch operations and analytics covering sales, employees, products and branches.\r\n- POS platform is offered without an upfront usage charge, no subscription, and applies only a 5% fee on final sales, to attract merchants with full stand alone pos system, stand alone qris dynamic, stand alone kitchen system, table order, and stand alone with AI manage and interconnection between apps to be super apps for UMKM selling system.\r\n- The company targets large-scale adoption among UMKM users and plans to expand its POS network with target of 1,000,000 merchant in 10 years with revenue of 4,3% from each sale per merchant with possible of revenue to IDR 9,000,000,000,000/year.\r\n- Generated approximately IDR 500 million in revenue last year, with an additional IDR 200 million pipeline from colocation and monitoring services.\r\n- Email services generated approximately IDR 100 million in revenue.\r\n- The company provides migration solutions for organisations affected by the planned discontinuation of AWS WorkMail, targeting customers across Indonesia and ASEAN.\r\n- All domain services are integrated with the company&#x27;s proprietary technology platform.\r\n- Maintains a corporate banking account with Bank Mandiri through Kopra.\r\n- The business is fully registered with Akta Pendirian, NIB, Ijin Usaha and NPWP. Does not need any other approvals for operations. 매각 사유: An investment of IDR 1 billion for a 5% primary equity stake offers immediate downside protection through a 2.4% annual cash yield floor, alongside significant asymmetric growth potential. The business model utilizes a zero-cost MSME merchant acquisition strategy and an automated DOKU Split Settlement architecture to capture high-margin platform commissions without holding merchant custody risk.Our latest market research indicates a massive, underserved demand among MSME merchants for a highly portable, physical POS system capable of issuing instant payment printouts. In response, we have successfully developed and field-tested a native hardware-software integration. By locking premium, portable smart hardware into our proprietary ecosystem via absolute device management, we have created an ultimate All-in-One Portable Retail OS. Within a single, compact handheld device, merchants can snap product photos, manage infinite inventory, register sales, issue instant printed receipts, process unified QRIS payments, and execute daily settlements.To accelerate our Phase 1 market capture, the IDR 1 billion primary capital injection will be strictly allocated to deploy this all-in-one hardware network to our first 100 validated merchants under a free-placement lease model, generating immediate transaction volume.To accommodate varying investor appetites, we have structured a flexible, multi-tiered entry framework designed to secure founder alignment while scaling operations:• Tier 1 (Base Entry): IDR 1 Billion primary investment injected into the corporate treasury for 5.0% equity to fully fund the 100-device hardware fleet rollout.• Tier 2 (Aligned Growth): The base entry can be combined with a secondary buy-out of 2.5% existing founder shares, bringing the total immediate position to 7.5% equity.• Tier 3 (Maximum Scale JV & Board Representation): For institutional partners seeking significant governance, we offer up to a 20.0% total equity stake. This structure is balanced as 5.0% primary investment directly funding the company&#x27;s hardware expansion reserves and 15.0% secondary founder shares purchased as a strategic divestment block. Upon reaching this 20% tier, the investor is entitled to appoint a representative to one Board of Directors seat (e. g. , CFO or COO) to ensure financial transparency, strictly excluding the key executive positions of Chief Executive Officer (CEO) and Chief Technology Officer (CTO).This immediate product rollout complements the company’s broader, high-margin revenue streams across corporate email migration (targeting an IDR 1 billion pipeline) and colocation data services (targeting an IDR 700 million net-income opportunity), supported by an existing 7-year enterprise operational history and infrastructure capacity expansion potential.",
-    "facilities": [
-      "SMERGERS 소수지분",
-      "연매출 IDR 0.74B",
-      "EBITDA 마진 0 - 10 %",
-      "플랫폼 인증: LinkedIn·Phone",
-      "매도인 활동 Active"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "📊",
-    "badge": "M&A 플랫폼",
-    "source": "smergers.com",
-    "sourceUrl": "https://www.smergers.com/business/payment-services-company-equity-stake-for-sale-in-south-jakarta-indonesia/ivdp7/",
-    "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 8.1,
-    "platformRatingCount": 6,
-    "platformVerified": [
-      "LinkedIn",
-      "Phone"
-    ],
-    "dealStructure": "소수지분",
-    "dealLabel": "Partial Stake Sale",
-    "stakePercent": 5.0,
-    "ebitdaMargin": "0 - 10 %",
-    "annualRevenueNum": 736000000,
-    "sellReason": "An investment of IDR 1 billion for a 5% primary equity stake offers immediate downside protection through a 2.4% annual cash yield floor, alongside significant asymmetric growth potential. The business model utilizes a zero-cost MSME merchant acquisition strategy and an automated DOKU Split Settlement architecture to capture high-margin platform commissions without holding merchant custody risk.Our latest market research indicates a massive, underserved demand among MSME merchants for a highly portable, physical POS system capable of issuing instant payment printouts. In response, we have successfully developed and field-tested a native hardware-software integration. By locking premium, portable smart hardware into our proprietary ecosystem via absolute device management, we have created an ultimate All-in-One Portable Retail OS. Within a single, compact handheld device, merchants can snap product photos, manage infinite inventory, register sales, issue instant printed receipts, process unified QRIS payments, and execute daily settlements.To accelerate our Phase 1 market capture, the IDR 1 billion primary capital injection will be strictly allocated to deploy this all-in-one hardware network to our first 100 validated merchants under a free-placement lease model, generating immediate transaction volume.To accommodate varying investor appetites, we have structured a flexible, multi-tiered entry framework designed to secure founder alignment while scaling operations:• Tier 1 (Base Entry): IDR 1 Billion primary investment injected into the corporate treasury for 5.0% equity to fully fund the 100-device hardware fleet rollout.• Tier 2 (Aligned Growth): The base entry can be combined with a secondary buy-out of 2.5% existing founder shares, bringing the total immediate position to 7.5% equity.• Tier 3 (Maximum Scale JV & Board Representation): For institutional partners seeking significant governance, we offer up to a 20.0% total equity stake. This structure is balanced as 5.0% primary investment directly funding the company&#x27;s hardware expansion reserves and 15.0% secondary founder shares purchased as a strategic divestment block. Upon reaching this 20% tier, the investor is entitled to appoint a representative to one Board of Directors seat (e. g. , CFO or COO) to ensure financial transparency, strictly excluding the key executive positions of Chief Executive Officer (CEO) and Chief Technology Officer (CTO).This immediate product rollout complements the company’s broader, high-margin revenue streams across corporate email migration (targeting an IDR 1 billion pipeline) and colocation data services (targeting an IDR 700 million net-income opportunity), supported by an existing 7-year enterprise operational history and infrastructure capacity expansion potential.",
-    "regionPriority": 1,
-    "lat": null,
-    "lng": null,
-    "summaryKo": [
-      "업종/용도: 공장·제조",
-      "사업자 등록번호(NIB/SIUP/NPWP) 언급 있음"
-    ],
-    "foreignStatus": "불가",
-    "foreignReason": "자산 양도 Rp 880백만(≈₩0.76억) - 신규 PT PMA 납입자본(Rp 25억)·투자계획(Rp 100억)에 견줘 규모가 너무 작아 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
-    "foreignSteps": [
-      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매출·수익 수치가 제시됨",
-      "사업자 등록·인허가 관련 언급이 있음",
-      "매출·EBITDA 가 공개됨",
-      "인계 대상 직원이 있음",
       "연매출·EBITDA 마진이 수치로 제시됨"
     ],
     "operabilityTodos": [
@@ -2402,6 +2327,82 @@ const SMERGERS_LISTINGS = [
     "_dealStructureNote": "50% 이하 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
   },
   {
+    "id": "smg-ov6i5",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Enterprise Software Company for Sale in West Jakarta, Indonesia",
+    "category": "IT·소프트웨어",
+    "location": "West Jakarta",
+    "locationKo": "자카르타 서부",
+    "address": "West Jakarta, Special Capital Region of Jakarta, Indonesia",
+    "monthlyRevenue": "IDR 107 jt/월",
+    "monthlyRevenueNum": 106666666,
+    "profit": null,
+    "price": "IDR 4.42 M",
+    "priceNum": 4416000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "Enterprise software business for sale with 28 years of market expertise and stable revenue streams. The business has been operating since 28 years with deep domain expertise in enterprise software development.\r\n- It has an experienced leadership team and a stable software engineering workforce.\r\n- The business follows a diversified revenue model comprising software licensing fees, implementation and customisation services, and recurring annual maintenance and support contracts.\r\n- It serves long-standing enterprise clients through ongoing software solutions and technical support.\r\n- Monthly sales have declined slightly due to a minor slowdown in business activity and seasonal fluctuations.\r\n- Its integrated HRIS and payroll platforms help businesses streamline workforce management and administrative operations.\r\n- The business currently employs 7 people.\r\n- It holds a business registration certificate. 매각 사유: The founding owner is planning for retirement and is seeking a strategic transition for the business. The business has a strong market position supported by long-standing enterprise clients, stable recurring revenue streams, and specialised software products with proven market demand. The owners are looking for a capable buyer or technology partner who can take over operations and leverage the existing foundation to drive further growth and expansion.",
+    "facilities": [
+      "SMERGERS 자산양수",
+      "연매출 IDR 1.28B",
+      "EBITDA 마진 18 %",
+      "플랫폼 인증: Google·Phone",
+      "매도인 활동 Active"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "📊",
+    "badge": "M&A 플랫폼",
+    "source": "smergers.com",
+    "sourceUrl": "https://www.smergers.com/business/enterprise-software-company-for-sale-in-west-jakarta-indonesia/ov6i5/",
+    "postedAt": null,
+    "listingActivity": "Active",
+    "platformRating": 8.1,
+    "platformRatingCount": 1,
+    "platformVerified": [
+      "Google",
+      "Phone"
+    ],
+    "dealStructure": "자산양수",
+    "dealLabel": "Business for Sale",
+    "stakePercent": null,
+    "ebitdaMargin": "18 %",
+    "annualRevenueNum": 1280000000,
+    "sellReason": "The founding owner is planning for retirement and is seeking a strategic transition for the business. The business has a strong market position supported by long-standing enterprise clients, stable recurring revenue streams, and specialised software products with proven market demand. The owners are looking for a capable buyer or technology partner who can take over operations and leverage the existing foundation to drive further growth and expansion.",
+    "regionPriority": 1,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: IT·소프트웨어"
+    ],
+    "foreignStatus": "조건부",
+    "foreignReason": "PT PMA 설립 시 인수 가능하나 최소 투자 요건(Rp 100억) 미달",
+    "foreignSteps": [
+      "PT PMA(외국인투자법인) 설립 후 법인 명의로 인수 - 개인 명의 인수 불가",
+      "해당 업종 KBLI 의 외국인 지분 상한을 OSS 에서 먼저 확인",
+      "인수가 Rp 4.4십억 < PT PMA 최소 투자 요건 Rp 100억 - 최소 투자액은 인수 대금이 아니라 3년 투자 계획 총액(설비·운전자금 포함, 토지·건물 제외) 기준이므로, 증설·운전자금 계획으로 요건을 설계할 것"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매출·수익 수치가 제시됨",
+      "매출·EBITDA 가 공개됨",
+      "영업 기간(업력)이 제시됨",
+      "고정 고객·거래처 기반이 언급됨",
+      "연매출·EBITDA 마진이 수치로 제시됨"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": true,
+    "_tierIndex": 3,
+    "_tierLabel": "3단계 ₩3~5억",
+    "_tierNote5": "인수가 ≈₩3.81억 · PMA 투자계획 미달 - 복수 매물 묶음 또는 기존 PMA 활용 전제",
+    "_dealStructure": "자산양수",
+    "_dealStructureNote": "인허가 비승계 - 인도네시아는 NIB·업종허가의 법인 간 이전 제도가 없어, 자산 양수 시 신설 PT PMA 가 전부 새로 발급받아야 한다(그 사이 영업 공백 발생). 매도인에게 '주식 양수 구조가 가능한지' 먼저 확인할 것"
+  },
+  {
     "id": "smg-h1adf",
     "type": "bisnis",
     "subtype": "akuisisi",
@@ -2583,7 +2584,7 @@ const SMERGERS_LISTINGS = [
     "postedAt": null,
     "listingActivity": "미표기",
     "platformRating": 8.8,
-    "platformRatingCount": 11,
+    "platformRatingCount": 10,
     "platformVerified": [
       "Google",
       "Phone"
@@ -2800,7 +2801,8 @@ const SMERGERS_LISTINGS = [
       "SMERGERS 자산양수",
       "연매출 IDR 10.56B",
       "EBITDA 마진 10 - 20 %",
-      "플랫폼 인증: Google·Phone"
+      "플랫폼 인증: Google·Phone",
+      "매도인 활동 Active"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -2809,8 +2811,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/warehousing-company-for-sale-in-jakarta-indonesia/5rpov/",
     "postedAt": null,
-    "listingActivity": "미표기",
-    "platformRating": 6.8,
+    "listingActivity": "Active",
+    "platformRating": 7.1,
     "platformRatingCount": 1,
     "platformVerified": [
       "Google",
