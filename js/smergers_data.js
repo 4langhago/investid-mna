@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-11-12T06:58:37+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-12T06:58:37+00:00";
+// 갱신 시각: 2026-11-13T06:19:35+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-13T06:19:35+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -3827,83 +3827,6 @@ const SMERGERS_LISTINGS = [
     "_tierNote5": "인수가 ≈₩22.9억 - ₩10억 초과",
     "_dealStructure": "소수지분",
     "_dealStructureNote": "50% 이하 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
-  },
-  {
-    "id": "smg-nr5lx",
-    "type": "bisnis",
-    "subtype": "akuisisi",
-    "title": "Vehicle Rental Company Equity Stake For Sale in East Jakarta, Indonesia",
-    "category": "물류",
-    "location": "East Jakarta",
-    "locationKo": "자카르타 동부",
-    "address": "East Jakarta, Special Capital Region of Jakarta, Indonesia",
-    "monthlyRevenue": "IDR 947 jt/월",
-    "monthlyRevenueNum": 946666666,
-    "profit": null,
-    "price": "IDR 28.48 M",
-    "priceNum": 28480000000,
-    "established": null,
-    "area": null,
-    "floors": null,
-    "description": "Long-established vehicle rental business with 42-vehicle fleet, recurring corporate rentals, and diversified revenue streams. Long-established vehicle rental business with 5 decades of industry experience and a proven operating track record.\r\n- Proven recurring revenue model driven primarily by long-term/monthly vehicle rentals (70–75%) followed by short-term rentals (15–20%), chauffeur-driven rentals (5–10%), and driver outsourcing (approximately 5%).\r\n- Long-term/monthly rentals are typically priced at IDR 5–15 million per vehicle per month, short-term rentals at IDR 500,000–1.5 million per vehicle per day, chauffeur-driven rentals at IDR 800,000–2 million per day, and driver outsourcing at IDR 4–7 million per driver per month.\r\n- Long-standing relationships with corporate customers and experience managing recurring fleet requirements.\r\n- Asset-backed business model with an operating fleet of approximately 42 vehicles and supporting operational facilities.\r\n- Experienced founder-led management with extensive industry and operational knowledge.\r\n- Growth strategy includes fleet expansion, adoption of EV and hybrid vehicles, and potential diversification into commercial and logistics vehicle rental.\r\n- The business holds a valid business registration certificate. 매각 사유: The business is being offered for investment primarily as part of a family succession and retirement plan. One of the existing shareholders, the founder’s father, holds 50% of the company and plans to retire, while the remaining 50% is held by the other shareholder.The investment will provide capital to expand the vehicle fleet, strengthen working capital, and support future business diversification, including commercial and logistics vehicle rental.The preferred transaction is to offer a 70% stake to an investor, with the remaining 30% retained by the existing shareholder, as this would provide greater capital to support the company’s expansion.",
-    "facilities": [
-      "SMERGERS 지분양수",
-      "연매출 IDR 11.36B",
-      "EBITDA 마진 40 %",
-      "플랫폼 인증: Google·LinkedIn·Phone",
-      "매도인 활동 Active"
-    ],
-    "whatsapp": null,
-    "c2c": false,
-    "images": "📊",
-    "badge": "M&A 플랫폼",
-    "source": "smergers.com",
-    "sourceUrl": "https://www.smergers.com/business/vehicle-rental-company-equity-stake-for-sale-in-east-jakarta-indonesia/nr5lx/",
-    "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 9.0,
-    "platformRatingCount": 2,
-    "platformVerified": [
-      "Google",
-      "LinkedIn",
-      "Phone"
-    ],
-    "dealStructure": "지분양수",
-    "dealLabel": "Partial Stake Sale",
-    "stakePercent": 70.0,
-    "ebitdaMargin": "40 %",
-    "annualRevenueNum": 11360000000,
-    "sellReason": "The business is being offered for investment primarily as part of a family succession and retirement plan. One of the existing shareholders, the founder’s father, holds 50% of the company and plans to retire, while the remaining 50% is held by the other shareholder.The investment will provide capital to expand the vehicle fleet, strengthen working capital, and support future business diversification, including commercial and logistics vehicle rental.The preferred transaction is to offer a 70% stake to an investor, with the remaining 30% retained by the existing shareholder, as this would provide greater capital to support the company’s expansion.",
-    "regionPriority": 1,
-    "lat": null,
-    "lng": null,
-    "summaryKo": [
-      "업종/용도: 창고·물류"
-    ],
-    "foreignStatus": "조건부",
-    "foreignReason": "기존 법인 지분 인수 - 법인이 PMA 인지 미확인(PMDN 이면 PMA 전환 요건 재충족 필요)",
-    "foreignSteps": [
-      "AHU 법인 등기부로 현재 주주 구성과 PMA/PMDN 여부 확인",
-      "OSS 에서 법인의 KBLI 가 외국인 지분 100% 허용 업종인지 확인",
-      "PMDN 이면 외국인 지분이 1%만 들어와도 PMA 전환 의무 - 납입자본 Rp 25억(12개월 인출 불가)·투자계획 Rp 100억 요건 재충족 필요",
-      "세무(DJP)·임금·임차료 미납과 소송(SIPP) 등 법인에 딸린 채무 실사 필수"
-    ],
-    "operability": "운영가능",
-    "operabilityReasons": [
-      "매출·수익 수치가 제시됨",
-      "매출·EBITDA 가 공개됨",
-      "고정 고객·거래처 기반이 언급됨",
-      "연매출·EBITDA 마진이 수치로 제시됨"
-    ],
-    "operabilityTodos": [
-      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
-    ],
-    "koreanEligible": true,
-    "_tierIndex": 9,
-    "_tierLabel": "구간 밖",
-    "_tierNote5": "인수가 ≈₩24.6억 - ₩10억 초과",
-    "_dealStructure": "지분양수",
-    "_dealStructureNote": "법인 주식을 인수하면 NIB·업종허가·거래처 계약이 함께 넘어온다. 대신 과거 세무·노무 우발부채도 함께 인수하므로 3개년 재무·세무 실사가 필수"
   },
   {
     "id": "smg-voivr",
