@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-11-14T06:09:10+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-14T06:09:10+00:00";
+// 갱신 시각: 2026-11-15T06:07:03+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-15T06:07:03+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -2359,7 +2359,7 @@ const SMERGERS_LISTINGS = [
     "sourceUrl": "https://www.smergers.com/business/enterprise-software-company-for-sale-in-west-jakarta-indonesia/ov6i5/",
     "postedAt": null,
     "listingActivity": "Active",
-    "platformRating": 8.1,
+    "platformRating": 8.0,
     "platformRatingCount": 1,
     "platformVerified": [
       "Google",
