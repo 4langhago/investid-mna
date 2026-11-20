@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-11-16T06:05:12+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-16T06:05:12+00:00";
+// 갱신 시각: 2026-11-20T06:18:36+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-20T06:18:36+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -245,7 +245,7 @@ const SMERGERS_LISTINGS = [
       "연매출 IDR 0.19B",
       "EBITDA 마진 30 - 40 %",
       "플랫폼 인증: Email·Google·Phone",
-      "매도인 활동 Moderately Active"
+      "매도인 활동 Active"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -254,8 +254,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/profitable-nutrition-food-company-for-sale-in-jakarta-indonesia/p739z/",
     "postedAt": null,
-    "listingActivity": "Moderately Active",
-    "platformRating": 6.5,
+    "listingActivity": "Active",
+    "platformRating": 7.2,
     "platformRatingCount": 5,
     "platformVerified": [
       "Email",
@@ -662,6 +662,80 @@ const SMERGERS_LISTINGS = [
     "_tierNote5": "인수가 ≈₩0.76억 · PMA 투자계획 Rp 100억(≈₩8.6억) 미달 - 단독 인수로는 합법 구조 불성립. 동일 KBLI PT PMA 보유자의 자산 인수 또는 복수 매물 묶음(롤업)만 가능",
     "_dealStructure": "소수지분",
     "_dealStructureNote": "50% 이하 지분은 경영권이 없다 - 인수가 아니라 증자 참여다. 경영권 있는 구조로 재협상하지 못하면 검토 가치 없음"
+  },
+  {
+    "id": "smg-t5jjd",
+    "type": "bisnis",
+    "subtype": "akuisisi",
+    "title": "Custom Application Development Company for Sale in South Jakarta, Indonesia",
+    "category": "IT·소프트웨어",
+    "location": "South Jakarta",
+    "locationKo": "자카르타 남부",
+    "address": "South Jakarta, Special Capital Region of Jakarta, Indonesia",
+    "monthlyRevenue": "IDR 44 jt/월",
+    "monthlyRevenueNum": 44000000,
+    "profit": null,
+    "price": "IDR 880 jt",
+    "priceNum": 880000000,
+    "established": null,
+    "area": null,
+    "floors": null,
+    "description": "IIBS solutions provider and FTTH infrastructure business for sale, ready for new growth opportunities. Established IT company specialising in software development, IIBS (Integrated Insurance Broker System), and FTTH/FWA telecommunications infrastructure.\r\n- Offers IIBS software solutions, custom software development, and fibre-to-the-home (FTTH) and fixed wireless access (FWA) infrastructure services.\r\n- Caters to insurance brokerage companies, telecommunications providers, and businesses seeking customised technology solutions.\r\n- Has established business relationships with industry partners and serves over 10 customers.\r\n- Generates revenue through software licensing, system implementation, project-based software development, and telecommunications infrastructure deployment.\r\n- Led by an experienced technology entrepreneur with expertise in IT and telecommunications.\r\n- Is open to strategic investment through a company takeover (Company TO), offering investors an opportunity to participate in its software and telecommunications business.\r\n- Holds an NIB licence.\r\n- Offers scope for expansion through strategic partnerships, technology projects, and telecommunications infrastructure development. 매각 사유: The owner is seeking a strategic exit to pursue new business opportunities and allow the company to grow under new ownership with stronger capital and resources.",
+    "facilities": [
+      "SMERGERS 자산양수",
+      "연매출 IDR 0.53B",
+      "EBITDA 마진 30 - 40 %",
+      "플랫폼 인증: Google·Phone",
+      "매도인 활동 Active"
+    ],
+    "whatsapp": null,
+    "c2c": false,
+    "images": "📊",
+    "badge": "M&A 플랫폼",
+    "source": "smergers.com",
+    "sourceUrl": "https://www.smergers.com/business/custom-application-development-company-for-sale-in-south-jakarta-indonesia/t5jjd/",
+    "postedAt": null,
+    "listingActivity": "Active",
+    "platformRating": 7.6,
+    "platformRatingCount": 1,
+    "platformVerified": [
+      "Google",
+      "Phone"
+    ],
+    "dealStructure": "자산양수",
+    "dealLabel": "Business for Sale",
+    "stakePercent": null,
+    "ebitdaMargin": "30 - 40 %",
+    "annualRevenueNum": 528000000,
+    "sellReason": "The owner is seeking a strategic exit to pursue new business opportunities and allow the company to grow under new ownership with stronger capital and resources.",
+    "regionPriority": 1,
+    "lat": null,
+    "lng": null,
+    "summaryKo": [
+      "업종/용도: IT·소프트웨어",
+      "사업자 등록번호(NIB/SIUP/NPWP) 언급 있음"
+    ],
+    "foreignStatus": "불가",
+    "foreignReason": "자산 양도 Rp 880백만(≈₩0.76억) - 신규 PT PMA 납입자본(Rp 25억)·투자계획(Rp 100억)에 견줘 규모가 너무 작아 적법한 인수 구조가 성립하지 않음(현지인 명의 대여는 무효)",
+    "foreignSteps": [
+      "이미 같은 업종(KBLI)의 PT PMA 를 보유한 경우에만 그 법인 명의로 검토 가능"
+    ],
+    "operability": "운영가능",
+    "operabilityReasons": [
+      "매출·수익 수치가 제시됨",
+      "사업자 등록·인허가 관련 언급이 있음",
+      "매출·EBITDA 가 공개됨",
+      "연매출·EBITDA 마진이 수치로 제시됨"
+    ],
+    "operabilityTodos": [
+      "영업 인허가(NIB/OSS) 명의 이전 가능 여부와 임대인 승계 동의 확인"
+    ],
+    "koreanEligible": false,
+    "_tierIndex": 1,
+    "_tierLabel": "1단계 ₩1억 이하",
+    "_tierNote5": "인수가 ≈₩0.76억 · PMA 투자계획 Rp 100억(≈₩8.6억) 미달 - 단독 인수로는 합법 구조 불성립. 동일 KBLI PT PMA 보유자의 자산 인수 또는 복수 매물 묶음(롤업)만 가능",
+    "_dealStructure": "자산양수",
+    "_dealStructureNote": "인허가 비승계 - 인도네시아는 NIB·업종허가의 법인 간 이전 제도가 없어, 자산 양수 시 신설 PT PMA 가 전부 새로 발급받아야 한다(그 사이 영업 공백 발생). 매도인에게 '주식 양수 구조가 가능한지' 먼저 확인할 것"
   },
   {
     "id": "smg-5z7ta",
@@ -2724,7 +2798,8 @@ const SMERGERS_LISTINGS = [
       "SMERGERS 소수지분",
       "연매출 IDR 8.32B",
       "EBITDA 마진 10 - 20 %",
-      "플랫폼 인증: Email·Phone"
+      "플랫폼 인증: Email·Phone",
+      "매도인 활동 Active"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -2733,8 +2808,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/engineering-procurement-construction-company-equity-stake-for-sale-in-east-jakarta-indonesia/jrp0f/",
     "postedAt": null,
-    "listingActivity": "미표기",
-    "platformRating": 6.5,
+    "listingActivity": "Active",
+    "platformRating": 6.8,
     "platformRatingCount": 2,
     "platformVerified": [
       "Email",
@@ -2801,8 +2876,7 @@ const SMERGERS_LISTINGS = [
       "SMERGERS 자산양수",
       "연매출 IDR 10.56B",
       "EBITDA 마진 10 - 20 %",
-      "플랫폼 인증: Google·Phone",
-      "매도인 활동 Active"
+      "플랫폼 인증: Google·Phone"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -2811,8 +2885,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/warehousing-company-for-sale-in-jakarta-indonesia/5rpov/",
     "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 7.1,
+    "listingActivity": "미표기",
+    "platformRating": 6.7,
     "platformRatingCount": 1,
     "platformVerified": [
       "Google",
@@ -3414,8 +3488,8 @@ const SMERGERS_LISTINGS = [
     "sourceUrl": "https://www.smergers.com/business/enterprise-software-startup-equity-stake-for-sale-in-jakarta-indonesia/p9z3y/",
     "postedAt": null,
     "listingActivity": "Active",
-    "platformRating": 9.1,
-    "platformRatingCount": 6,
+    "platformRating": 9.0,
+    "platformRatingCount": 7,
     "platformVerified": [
       "Google",
       "Phone"
