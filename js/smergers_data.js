@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-11-21T06:08:23+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-21T06:08:23+00:00";
+// 갱신 시각: 2026-11-22T05:44:01+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-22T05:44:01+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -697,7 +697,7 @@ const SMERGERS_LISTINGS = [
     "postedAt": null,
     "listingActivity": "Active",
     "platformRating": 7.6,
-    "platformRatingCount": 1,
+    "platformRatingCount": 2,
     "platformVerified": [
       "Google",
       "Phone"
@@ -1833,7 +1833,7 @@ const SMERGERS_LISTINGS = [
     "sourceUrl": "https://www.smergers.com/business/hr-consulting-business-equity-stake-for-sale-in-jakarta-indonesia/t56x5/",
     "postedAt": null,
     "listingActivity": "Active",
-    "platformRating": 7.1,
+    "platformRating": 7.0,
     "platformRatingCount": 3,
     "platformVerified": [
       "Google",
@@ -2422,8 +2422,7 @@ const SMERGERS_LISTINGS = [
       "SMERGERS 자산양수",
       "연매출 IDR 1.26B",
       "EBITDA 마진 18 %",
-      "플랫폼 인증: Google·Phone",
-      "매도인 활동 Active"
+      "플랫폼 인증: Google·Phone"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -2432,8 +2431,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/enterprise-software-company-for-sale-in-west-jakarta-indonesia/ov6i5/",
     "postedAt": null,
-    "listingActivity": "Active",
-    "platformRating": 8.0,
+    "listingActivity": "미표기",
+    "platformRating": 7.7,
     "platformRatingCount": 1,
     "platformVerified": [
       "Google",
@@ -2647,7 +2646,8 @@ const SMERGERS_LISTINGS = [
       "SMERGERS 자산양수",
       "연매출 IDR 13.60B",
       "EBITDA 마진 15 %",
-      "플랫폼 인증: Google·Phone"
+      "플랫폼 인증: Google·Phone",
+      "매도인 활동 Active"
     ],
     "whatsapp": null,
     "c2c": false,
@@ -2656,8 +2656,8 @@ const SMERGERS_LISTINGS = [
     "source": "smergers.com",
     "sourceUrl": "https://www.smergers.com/business/freight-logistics-company-for-sale-in-jakarta-indonesia/ihuiy/",
     "postedAt": null,
-    "listingActivity": "미표기",
-    "platformRating": 8.8,
+    "listingActivity": "Active",
+    "platformRating": 9.2,
     "platformRatingCount": 10,
     "platformVerified": [
       "Google",
@@ -2886,7 +2886,7 @@ const SMERGERS_LISTINGS = [
     "sourceUrl": "https://www.smergers.com/business/warehousing-company-for-sale-in-jakarta-indonesia/5rpov/",
     "postedAt": null,
     "listingActivity": "미표기",
-    "platformRating": 6.7,
+    "platformRating": 6.6,
     "platformRatingCount": 1,
     "platformVerified": [
       "Google",
@@ -3039,7 +3039,7 @@ const SMERGERS_LISTINGS = [
     "sourceUrl": "https://www.smergers.com/business/cosmetics-company-for-sale-in-jakarta-indonesia/ivn5r/",
     "postedAt": null,
     "listingActivity": "Active",
-    "platformRating": 8.0,
+    "platformRating": 7.9,
     "platformRatingCount": 2,
     "platformVerified": [
       "Google",
@@ -4088,7 +4088,7 @@ const SMERGERS_LISTINGS = [
     "postedAt": null,
     "listingActivity": "Active",
     "platformRating": 7.5,
-    "platformRatingCount": 6,
+    "platformRatingCount": 7,
     "platformVerified": [
       "Email",
       "Google",
