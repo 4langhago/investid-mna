@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-11-23T06:27:48+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-23T06:27:48+00:00";
+// 갱신 시각: 2026-11-24T08:59:56+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-24T08:59:56+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -696,7 +696,7 @@ const SMERGERS_LISTINGS = [
     "sourceUrl": "https://www.smergers.com/business/custom-application-development-company-for-sale-in-south-jakarta-indonesia/t5jjd/",
     "postedAt": null,
     "listingActivity": "Active",
-    "platformRating": 7.6,
+    "platformRating": 7.5,
     "platformRatingCount": 2,
     "platformVerified": [
       "Google",
