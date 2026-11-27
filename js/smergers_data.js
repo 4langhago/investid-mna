@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scraper/scrape_smergers.py 가 갱신합니다. 직접 수정 금지.
-// 갱신 시각: 2026-11-26T07:26:16+00:00
-const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-26T07:26:16+00:00";
+// 갱신 시각: 2026-11-27T07:22:10+00:00
+const SMERGERS_LISTINGS_UPDATED_AT = "2026-11-27T07:22:10+00:00";
 const SMERGERS_LISTINGS = [
   {
     "id": "smg-6yzhx",
@@ -3039,7 +3039,7 @@ const SMERGERS_LISTINGS = [
     "sourceUrl": "https://www.smergers.com/business/cosmetics-company-for-sale-in-jakarta-indonesia/ivn5r/",
     "postedAt": null,
     "listingActivity": "Active",
-    "platformRating": 7.9,
+    "platformRating": 7.8,
     "platformRatingCount": 2,
     "platformVerified": [
       "Google",
